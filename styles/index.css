@@ -1,77 +1,72 @@
-/* Desktop View */
-body{
-    background-color: rgb(73, 73, 73);
-}
-@media (min-width: 1025px){
-    .logo{
-        background: url("../assets/logo1.png");
-        padding: 64px 0 0 637px;
-    }
-
-    body{
-        background-color: rgb(73, 73, 73);
-    }
-
-    .main-background{
-        background-color: rgb(180, 180, 180) !important;
-    }
-
-    img{
-        image-rendering: -moz-crisp-edges;
-        image-rendering: -webkit-crisp-edges;
-        image-rendering: pixelated;
-        image-rendering: crisp-edges;
-        width: 200px;
-        height: auto;
-    }
-}
-
-/* Tablet View 1*/
-@media (min-width: 400px) and (max-width: 1024px){
-    .logo{
-        background: url("../assets/Shortened-logo.png");
-        height: 40px;
-        width: 162px;
-    }
-    body{
-        background-color: rgb(73, 73, 73);
-    }
-
-    .main-background{
-        background-color: rgb(73, 73, 73) !important;
-    }
-    img{
-        image-rendering: -moz-crisp-edges;
-        image-rendering: -webkit-crisp-edges;
-        image-rendering: pixelated;
-        image-rendering: crisp-edges;
-        width: 100px;
-        height: auto;
-    }
-}
-
-/* Mobile View (changed max-width to 414 to fit largest phone)*/
-@media (min-width: 0px) and (max-width: 414px){
-    body{
-        background-color: rgb(73, 73, 73);
-    }
-    .main-background{
-        background-color: rgb(90, 90, 90) !important;
-    }
-    .logo{
-        background: url("../assets/Shortened-logo.png");
-        height: 40px;
-        width: 162px;
-    }
     /* Main Grid*/
-    div#outer{
-        border: 1px red solid;
-
-
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 4fr 2fr 1fr;
+    section{
+        background-color: rgb(151, 151, 151);
+        margin: 2%;
+        padding: 2%;
+        text-align: center;
+        border: 4px solid rgb(37, 37, 37);
     }
 
-}
+    h1{
+        font-size: 15vw;
+    }
 
+    p{
+        font-size: 5vw;
+    }
+
+    input{
+        width: 25%;
+        height: auto;
+    }
+
+    #play_now{
+        text-align: center;
+        border: 4px solid rgb(151, 151, 151);
+        margin: 7% 2%;
+        padding: 2% 0;
+    }
+
+    #play_now > h1{
+        font-family: Pixel;
+        color: whitesmoke;
+        font-size: 15vw;
+    }
+
+    form{
+        text-align: center;
+    }
+
+    #Synopsis{
+        background-color: rgb(212, 212, 212);
+        margin: 2%;
+        padding: 2%;
+        text-align: center;
+        border: 4px solid rgb(37, 37, 37);
+    }
+
+    img{
+        image-rendering: -moz-crisp-edges;
+        image-rendering: -webkit-crisp-edges;
+        image-rendering: pixelated;
+        image-rendering: crisp-edges;
+        width: 50%;
+        height: auto;
+    }
+
+    /* for tablet view */
+    @media (min-width: 414px){
+        img{
+            width: 200px;
+            height: auto;
+        }
+
+        h1{
+            font-size: 70px;
+        }
+
+        p{
+            font-size: 35px;
+        }
+
+    }

@@ -1,0 +1,20 @@
+@font-face {
+    font-family: Pixel;
+    src: url("../assets/VT323-Regular.ttf");
+}
+
+div,section{
+    font-family: Pixel;
+}
+
+.logo{
+    background: url("../assets/logo1.png");
+    padding: 26px 0 0 112px;
+}
+
+body{
+    background-color: rgb(73, 73, 73);
+}
+.main-background{
+    background-color: rgb(90, 90, 90) !important;
+}
