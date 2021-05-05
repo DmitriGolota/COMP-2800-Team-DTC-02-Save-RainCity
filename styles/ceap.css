@@ -1,0 +1,30 @@
+body{
+    background-color: rgb(73, 73, 73);
+    color: whitesmoke;
+}
+.information-section {
+    margin: 10px;
+}
+hr {
+    color: whitesmoke;
+}
+/*Media queries for Pixel 2 phone max-width*/
+@media (min-width: 0px) and (max-width: 414px){
+    body{
+        background-color: rgb(73, 73, 73);
+    }
+    .main-background{
+        background-color: rgb(90, 90, 90) !important;
+    }
+    .logo{
+        background: url("../assets/Shortened-logo.png");
+        height: 40px;
+        width: 162px;
+    }
+    /* Main Grid*/
+    div#outer{
+        display: flex;
+        flex-direction: column;
+    }
+
+}

@@ -50,8 +50,8 @@ body{
     }
 }
 
-/* Mobile View*/
-@media (min-width: 0px) and (max-width: 399px){
+/* Mobile View (changed max-width to 414 to fit largest phone)*/
+@media (min-width: 0px) and (max-width: 414px){
     body{
         background-color: rgb(73, 73, 73);
     }
