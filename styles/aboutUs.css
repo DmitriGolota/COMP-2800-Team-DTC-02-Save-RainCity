@@ -1,0 +1,27 @@
+img{
+    display: inline;
+}
+
+h2{
+    display: inline;
+}
+
+h1{
+    text-align: center;
+}
+
+h1 + p{
+    text-align: center;
+}
+
+#aboutUs{
+    background-color: rgb(212, 212, 212);
+    margin: 2%;
+    padding: 1%;
+}
+
+#devs{
+    background-color: rgb(151, 151, 151);
+    margin: 2%;
+    padding: 1%;
+}
