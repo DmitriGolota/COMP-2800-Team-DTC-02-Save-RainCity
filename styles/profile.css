@@ -25,9 +25,4 @@ table {
     .main-background{
         background-color: rgb(90, 90, 90) !important;
     }
-    .logo{
-        background: url("../assets/Shortened-logo.png");
-        height: 40px;
-        width: 162px;
-    }
 }
