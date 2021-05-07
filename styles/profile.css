@@ -3,7 +3,7 @@
 body{
     background-color: rgb(73, 73, 73);
 }
-section{
+.content{
     background-color: rgb(151, 151, 151);
     margin: 2%;
     padding: 2%;

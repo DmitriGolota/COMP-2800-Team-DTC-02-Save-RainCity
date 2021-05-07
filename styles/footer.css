@@ -16,6 +16,7 @@ aside{
     grid-area: "about";
     text-align: center;
     width: 50vw;
+
 }
 
 ul{
@@ -30,4 +31,8 @@ ul{
 
 h4{
     font-family: Pixel;
+}
+
+#trademark{
+    font-size: 3vw;
 }
