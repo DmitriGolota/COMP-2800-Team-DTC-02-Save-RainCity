@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ab40f5a1-5f48-4ee6-a572-86ccc14ead7c" name="Default Changelist" comment="updated customize.html id's">
-      <change beforePath="$PROJECT_DIR$/assets/Defaulthair.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/Defaultskins.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/Defaultsuit.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/customize.html" beforeDir="false" afterPath="$PROJECT_DIR$/customize.html" afterDir="false" />
+    <list default="true" id="ab40f5a1-5f48-4ee6-a572-86ccc14ead7c" name="Default Changelist" comment="added temp hair, skin, and suit">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021-05-06_6_12_p_m___Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021-05-06_6_12_p_m___Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021-05-06_9_05_a_m___Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021-05-06_9_05_a_m___Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021-05-06_9_05_a_m___Default_Changelist_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021-05-06_9_05_a_m___Default_Changelist_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021-05-06_9_12_a_m___Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021-05-06_9_12_a_m___Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/customize.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/customize.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -74,7 +75,9 @@
       <workItem from="1620274187336" duration="5947000" />
       <workItem from="1620317141071" duration="2457000" />
       <workItem from="1620326278387" duration="658000" />
-      <workItem from="1620342405445" duration="7607000" />
+      <workItem from="1620342405445" duration="7701000" />
+      <workItem from="1620403839400" duration="646000" />
+      <workItem from="1620413885719" duration="979000" />
     </task>
     <task id="LOCAL-00001" summary="CEAP html skeleton and temp CSS">
       <created>1620251860834</created>
@@ -118,7 +121,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620351071628</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="added temp hair, skin, and suit">
+      <created>1620353309335</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1620353309335</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -143,6 +153,7 @@
     <MESSAGE value="added files for consistency" />
     <MESSAGE value="basic customization cycling javascript" />
     <MESSAGE value="updated customize.html id's" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated customize.html id's" />
+    <MESSAGE value="added temp hair, skin, and suit" />
+    <option name="LAST_COMMIT_MESSAGE" value="added temp hair, skin, and suit" />
   </component>
 </project>
