@@ -6,6 +6,7 @@ let suitNum = 0;
 let hairImage = document.getElementById('hairImage');
 let skinImage = document.getElementById('skinImage');
 let suitImage = document.getElementById('suitImage');
+let firebase = 
 
 function hairPrev() {
     "use strict";
@@ -88,4 +89,5 @@ function writeCustomizedCharacter (hair, skin, suit) {
             'suit': suit
         })
     })
+    console.log("Save Success")
 };
