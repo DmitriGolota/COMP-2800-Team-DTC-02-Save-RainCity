@@ -1,0 +1,36 @@
+
+.pixelArt{
+    image-rendering: pixelated;
+}
+
+.custom{
+    position: absolute;
+    width: 50%;
+    height: auto;
+}
+
+.character{
+    position: fixed;
+    width: 50%;
+    height: auto;
+    margin-left: 15%;
+    margin-top: 5%;
+}
+
+.labels{
+    width: 25%;
+    height: auto;
+    display: inline;
+}
+
+button{
+    display: block;
+}
+
+.choices{
+    margin: 5vh 0 5vh 50vw;
+}
+
+.choose{
+    padding: 5vh 0;
+}
