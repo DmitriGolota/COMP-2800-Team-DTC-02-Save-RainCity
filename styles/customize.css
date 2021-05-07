@@ -5,29 +5,32 @@
 
 .custom{
     position: absolute;
-    width: 50%;
-    height: auto;
+    width: auto;
+    height: 70vh;
 }
 
 .character{
     position: fixed;
-    width: 50%;
-    height: auto;
-    margin-left: 15%;
-    margin-top: 5%;
+    width: auto;
+    height: 70vh;
+    margin-left: 10vw;
+    margin-top: 15vh;
+    margin-bottom: 15vh;
 }
 
 .labels{
-    width: 25%;
-    height: auto;
+    width: auto;
+    height: 10vh;
     display: inline;
 }
 
-button{
-    display: block;
+input{
+    height: 10vh;
+    width: auto;
 }
 
 .choices{
+    padding: 0 8vw;
     margin: 5vh 0 5vh 50vw;
 }
 
