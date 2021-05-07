@@ -72,3 +72,20 @@ function suitNext() {
     }
     suitImage.setAttribute("src", "./assets/suit" + suitNum + ".png");
 }
+
+document.getElementById('save-button').addEventListener('click', function () {
+    writeCustomizedCharacter(hairNum, skinNum, suitNum)
+});
+
+// Writes user's customized character to Firestore
+function writeCustomizedCharacter (hair, skin, suit) {
+    firebase.auth().onAuthStateChanged(function (user) {
+        db.collection('users').doc(user.uid)
+        .collection('character')
+        .set({
+            'hair': hair,
+            'skin': skin,
+            'suit': suit
+        })
+    })
+};
