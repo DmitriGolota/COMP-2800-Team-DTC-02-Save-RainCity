@@ -59,7 +59,7 @@ function suitPrev() {
     else {
         suitNum -= 1;
     }
-    suitImage.setAttribute("src", "./assets/skin" + suitNum + ".png");
+    suitImage.setAttribute("src", "./assets/suit" + suitNum + ".png");
 }
 
 function suitNext() {
@@ -70,5 +70,5 @@ function suitNext() {
     else {
         suitNum += 1;
     }
-    suitImage.setAttribute("src", "./assets/skin" + suitNum + ".png");
+    suitImage.setAttribute("src", "./assets/suit" + suitNum + ".png");
 }
