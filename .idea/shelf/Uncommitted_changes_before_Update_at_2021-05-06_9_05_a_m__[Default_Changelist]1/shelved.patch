@@ -1,0 +1,270 @@
+Index: styles/ceap.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>body{\r\n    background-color: rgb(73, 73, 73);\r\n    color: whitesmoke;\r\n}\r\n.information-section {\r\n    margin: 10px;\r\n}\r\nhr {\r\n    color: whitesmoke;\r\n}\r\n/*Media queries for Pixel 2 phone max-width*/\r\n@media (min-width: 0px) and (max-width: 414px){\r\n    body{\r\n        background-color: rgb(73, 73, 73);\r\n    }\r\n    .main-background{\r\n        background-color: rgb(90, 90, 90) !important;\r\n    }\r\n    .logo{\r\n        background: url(\"../assets/Shortened-logo.png\");\r\n        height: 40px;\r\n        width: 162px;\r\n    }\r\n    /* Main Grid*/\r\n    div#outer{\r\n        display: flex;\r\n        flex-direction: column;\r\n    }\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/styles/ceap.css b/styles/ceap.css
+--- a/styles/ceap.css	
++++ b/styles/ceap.css	
+@@ -1,6 +1,7 @@
++@import "header.css";
++
+ body{
+     background-color: rgb(73, 73, 73);
+-    color: whitesmoke;
+ }
+ .information-section {
+     margin: 10px;
+@@ -8,11 +9,15 @@
+ hr {
+     color: whitesmoke;
+ }
++section{
++    background-color: rgb(151, 151, 151);
++    margin: 2%;
++    padding: 2%;
++    text-align: center;
++    border: 4px solid rgb(37, 37, 37);
++}
+ /*Media queries for Pixel 2 phone max-width*/
+ @media (min-width: 0px) and (max-width: 414px){
+-    body{
+-        background-color: rgb(73, 73, 73);
+-    }
+     .main-background{
+         background-color: rgb(90, 90, 90) !important;
+     }
+@@ -27,4 +32,4 @@
+         flex-direction: column;
+     }
+ 
+-}
+\ No newline at end of file
++}
+Index: ceap.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"utf-8\">\r\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\r\n    <title>Save Raincity - CEAP Information</title>\r\n    <meta name=\"description\" content=\"\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n    <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css\" rel=\"stylesheet\"\r\n          integrity=\"sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl\" crossorigin=\"anonymous\">\r\n\r\n    <link rel=\"stylesheet\" href=\"./styles/ceap.css\">\r\n</head>\r\n<body>\r\n    <header>\r\n        <nav class=\"navbar navbar-dark bg-dark main-background\">\r\n          <div class=\"container-fluid\">\r\n            <a class=\"navbar-brand\" href=\"index.html\"> <div class=\"logo\"></div></a>\r\n            <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarSupportedContent\"\r\n              aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n              <span class=\"navbar-toggler-icon\"></span>\r\n            </button>\r\n            <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\r\n              <ul class=\"navbar-nav me-auto mb-2 mb-lg-0\">\r\n                <li class=\"nav-item\">\r\n                  <a class=\"nav-link main-link\" href=\"\">Profile</a>\r\n                </li>\r\n                <li class=\"nav-item\">\r\n                  <a class=\"nav-link main-link\" href=\"\">CEAP Information</a>\r\n                </li>\r\n                <li class=\"nav-item\">\r\n                  <a class=\"nav-link main-link\" href=\"aboutus.html\">About the Devs</a>\r\n                </li>\r\n                <li class=\"nav-item\">\r\n                  <a class=\"nav-link main-link\" href=\"links.html\">Links</a>\r\n                </li>\r\n              </ul>\r\n            </div>\r\n          </div>\r\n        </nav>\r\n    </header>\r\n    <div id=\"outer\">\r\n        <div class=\"information-section\" id=\"info-sec-1\">\r\n            <h1>What is the CEAP?</h1>\r\n            <p>yuh yuh</p>\r\n        </div>\r\n        <hr>\r\n        <div class=\"information-section\" id=\"info-sec-2\">\r\n            <h1>Proposed Benefits</h1>\r\n            <p>yuh yuh</p>\r\n        </div>\r\n        <hr>\r\n        <div class=\"information-section\" id=\"info-sec-3\">\r\n            <h1>What if we do not follow the CEAP?</h1>\r\n            <p>yuh yuh</p>\r\n        </div>\r\n        <hr>\r\n        <div class=\"information-section\" id=\"info-sec-4\">\r\n            <h1>Things you can do</h1>\r\n            <p>yuh yuh</p>\r\n        </div>\r\n        <hr>\r\n        <div class=\"information-section\" id=\"info-sec-5\">\r\n            <h1>Extra links</h1>\r\n            <a>link-1</a>\r\n            <a>link-2</a>\r\n            <a>link-3</a>\r\n        </div>\r\n    </div>\r\n\r\n\r\n    <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js\"\r\n            integrity=\"sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0\"\r\n            crossorigin=\"anonymous\"></script>\r\n\r\n        <!-- The core Firebase JS SDK is always required and must be listed first -->\r\n    <script src=\"https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js\"></script>\r\n\r\n    <script src=\"./server/firebase_api_saveraincity.js\"></script>\r\n    <script src=\"./scripts/index.js\" async defer></script>\r\n</body>\r\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ceap.html b/ceap.html
+--- a/ceap.html	
++++ b/ceap.html	
+@@ -23,10 +23,10 @@
+             <div class="collapse navbar-collapse" id="navbarSupportedContent">
+               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                 <li class="nav-item">
+-                  <a class="nav-link main-link" href="">Profile</a>
++                  <a class="nav-link main-link" href="profile.html">Profile</a>
+                 </li>
+                 <li class="nav-item">
+-                  <a class="nav-link main-link" href="">CEAP Information</a>
++                  <a class="nav-link main-link" href="ceap.html">CEAP Information</a>
+                 </li>
+                 <li class="nav-item">
+                   <a class="nav-link main-link" href="aboutus.html">About the Devs</a>
+@@ -39,33 +39,40 @@
+           </div>
+         </nav>
+     </header>
++
+     <div id="outer">
+-        <div class="information-section" id="info-sec-1">
+-            <h1>What is the CEAP?</h1>
+-            <p>yuh yuh</p>
+-        </div>
+-        <hr>
+-        <div class="information-section" id="info-sec-2">
+-            <h1>Proposed Benefits</h1>
+-            <p>yuh yuh</p>
+-        </div>
+-        <hr>
+-        <div class="information-section" id="info-sec-3">
+-            <h1>What if we do not follow the CEAP?</h1>
+-            <p>yuh yuh</p>
+-        </div>
+-        <hr>
+-        <div class="information-section" id="info-sec-4">
+-            <h1>Things you can do</h1>
+-            <p>yuh yuh</p>
+-        </div>
+-        <hr>
+-        <div class="information-section" id="info-sec-5">
+-            <h1>Extra links</h1>
+-            <a>link-1</a>
+-            <a>link-2</a>
+-            <a>link-3</a>
+-        </div>
++        <section>
++            <div class="information-section" id="info-sec-1">
++                <h1>What is the CEAP?</h1>
++                <p>yuh yuh</p>
++            </div>
++        </section>
++        <section>
++            <div class="information-section" id="info-sec-2">
++                <h1>Proposed Benefits</h1>
++                <p>yuh yuh</p>
++            </div>
++        </section>
++        <section>
++            <div class="information-section" id="info-sec-3">
++                <h1>What if we do not follow the CEAP?</h1>
++                <p>yuh yuh</p>
++            </div>
++        </section>
++        <section>
++            <div class="information-section" id="info-sec-4">
++                <h1>Things you can do</h1>
++                <p>yuh yuh</p>
++            </div>
++        </section>
++        <section>
++            <div class="information-section" id="info-sec-5">
++                <h1>Extra links</h1>
++                <a>link-1</a>
++                <a>link-2</a>
++                <a>link-3</a>
++            </div>
++        </section>
+     </div>
+ 
+ 
+Index: styles/profile.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/styles/profile.css b/styles/profile.css
+new file mode 100644
+--- /dev/null	
++++ b/styles/profile.css	
+@@ -0,0 +1,33 @@
++@import "header.css";
++
++body{
++    background-color: rgb(73, 73, 73);
++}
++section{
++    background-color: rgb(151, 151, 151);
++    margin: 2%;
++    padding: 2%;
++    text-align: center;
++    border: 4px solid rgb(37, 37, 37);
++}
++#table {
++    display: grid;
++    grid-template-columns: 1fr 1fr 1fr;
++}
++table {
++    grid-column: 2;
++}
++/*Media queries for Pixel 2 phone max-width*/
++@media (min-width: 0px) and (max-width: 414px){
++    body{
++        background-color: rgb(73, 73, 73);
++    }
++    .main-background{
++        background-color: rgb(90, 90, 90) !important;
++    }
++    .logo{
++        background: url("../assets/Shortened-logo.png");
++        height: 40px;
++        width: 162px;
++    }
++}
+Index: profile.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/profile.html b/profile.html
+new file mode 100644
+--- /dev/null	
++++ b/profile.html	
+@@ -0,0 +1,81 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="utf-8">
++    <meta http-equiv="X-UA-Compatible" content="IE=edge">
++    <title>Save Raincity - Profile</title>
++    <meta name="description" content="">
++    <meta name="viewport" content="width=device-width, initial-scale=1">
++    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
++          integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
++
++    <link rel="stylesheet" href="./styles/profile.css">
++</head>
++<body>
++    <header>
++        <nav class="navbar navbar-dark bg-dark main-background">
++          <div class="container-fluid">
++            <a class="navbar-brand" href="index.html"> <div class="logo"></div></a>
++            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
++              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
++              <span class="navbar-toggler-icon"></span>
++            </button>
++            <div class="collapse navbar-collapse" id="navbarSupportedContent">
++              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
++                <li class="nav-item">
++                  <a class="nav-link main-link" href="profile.html">Profile</a>
++                </li>
++                <li class="nav-item">
++                  <a class="nav-link main-link" href="ceap.html">CEAP Information</a>
++                </li>
++                <li class="nav-item">
++                  <a class="nav-link main-link" href="aboutus.html">About the Devs</a>
++                </li>
++                <li class="nav-item">
++                  <a class="nav-link main-link" href="links.html">Links</a>
++                </li>
++              </ul>
++            </div>
++          </div>
++        </nav>
++    </header>
++
++    <section>
++        <img src="https://via.placeholder.com/150" alt="character image">
++    </section>
++    <section>
++        <h1>Name</h1>
++    </section>
++    <section id="table">
++        <table>
++            <tr>
++                <th>Highscore</th>
++            </tr>
++            <tr>
++                <td>123</td>
++            </tr>
++            <tr>
++                <td>456</td>
++            </tr>
++            <tr>
++                <td>789</td>
++            </tr>
++            <tr>
++                <td>000</td>
++            </tr>
++        </table>
++    </section>
++    <section>
++        <p>SHARE TO FRIENDS API THING GOES HERE</p>
++    </section>
++    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
++            integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
++            crossorigin="anonymous"></script>
++
++        <!-- The core Firebase JS SDK is always required and must be listed first -->
++    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
++
++    <script src="./server/firebase_api_saveraincity.js"></script>
++    <script src="./scripts/index.js" async defer></script>
++</body>
++</html>
+\ No newline at end of file

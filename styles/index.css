@@ -1,77 +1,101 @@
-/* Desktop View */
-body{
-    background-color: rgb(73, 73, 73);
-}
-@media (min-width: 1025px){
-    .logo{
-        background: url("../assets/logo1.png");
-        padding: 64px 0 0 637px;
-    }
-
-    body{
-        background-color: rgb(73, 73, 73);
-    }
-
-    .main-background{
-        background-color: rgb(180, 180, 180) !important;
-    }
-
-    img{
-        image-rendering: -moz-crisp-edges;
-        image-rendering: -webkit-crisp-edges;
-        image-rendering: pixelated;
-        image-rendering: crisp-edges;
-        width: 200px;
-        height: auto;
-    }
-}
-
-/* Tablet View 1*/
-@media (min-width: 400px) and (max-width: 1024px){
-    .logo{
-        background: url("../assets/Shortened-logo.png");
-        height: 40px;
-        width: 162px;
-    }
-    body{
-        background-color: rgb(73, 73, 73);
-    }
-
-    .main-background{
-        background-color: rgb(73, 73, 73) !important;
-    }
-    img{
-        image-rendering: -moz-crisp-edges;
-        image-rendering: -webkit-crisp-edges;
-        image-rendering: pixelated;
-        image-rendering: crisp-edges;
-        width: 100px;
-        height: auto;
-    }
-}
-
-/* Mobile View*/
-@media (min-width: 0px) and (max-width: 399px){
-    body{
-        background-color: rgb(73, 73, 73);
-    }
-    .main-background{
-        background-color: rgb(90, 90, 90) !important;
-    }
-    .logo{
-        background: url("../assets/Shortened-logo.png");
-        height: 40px;
-        width: 162px;
-    }
     /* Main Grid*/
-    div#outer{
-        border: 1px red solid;
-
-
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 4fr 2fr 1fr;
+    body{
+        color: white;
+    }
+    section{
+        margin: 2%;
+        padding: 2%;
+        text-align: center;
     }
 
-}
+    h1{
+        font-size: 15vw;
+    }
 
+    p{
+        font-size: 25px;
+    }
+
+    input{
+        width: 25%;
+        height: auto;
+    }
+
+    #play_now{
+        text-align: center;
+        border: 4px solid rgb(151, 151, 151);
+        margin: 5%;
+        padding: 5%;
+        border-radius: 20px;
+    }
+
+    #play_now > h1{
+        font-family: Pixel;
+        color: whitesmoke;
+        font-size: 15vw;
+    }
+
+    form{
+        text-align: center;
+    }
+
+    #Synopsis{
+        background-color: rgba(184, 184, 184, 0.11);
+        margin: 5%;
+        padding: 5%;
+        text-align: center;
+        border-radius: 20px;
+    }
+
+    img{
+        image-rendering: -moz-crisp-edges;
+        image-rendering: -webkit-crisp-edges;
+        image-rendering: pixelated;
+        image-rendering: crisp-edges;
+        width: 50%;
+        height: auto;
+    }
+    
+    #red{
+        color: rgb(255, 6, 6);
+        border: 1px;
+    }
+    #green{
+        color: rgb(0, 236, 0);
+    }
+    #blue{
+        color: rgb(0, 217, 255);
+    }
+
+    #orange{
+        color: rgb(229, 255, 0);
+    }
+    #grey{
+        color:rgb(167, 167, 167);
+    }
+
+    #saverain{
+        font-size: 3em;
+        font: bold;
+    }
+
+    #features section{
+        background-image: radial-gradient(rgb(138, 138, 138) 0%, rgba(255, 255, 255, 0) 70%);
+    }
+
+    /* for tablet view */
+    @media (min-width: 414px){
+        img{
+            width: 200px;
+            height: auto;
+        }
+
+        h1{
+            font-size: 70px;
+        }
+
+        p{
+            font-size: 35px;
+        }
+
+    }

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ab40f5a1-5f48-4ee6-a572-86ccc14ead7c" name="Default Changelist" comment="updated customize.html id's">
+      <change beforePath="$PROJECT_DIR$/assets/Defaulthair.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/Defaultskins.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/Defaultsuit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/customize.html" beforeDir="false" afterPath="$PROJECT_DIR$/customize.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/customize.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/customize.js" afterDir="false" />
+    </list>
+    <list default="true" id="90c9f7e9-f77a-4acb-93cb-73eb5595833d" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/scripts/customize.js" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="ProjectId" id="1s5Vs4rHDHvfmcbrQIs4VO2gIlu" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\maxim\PycharmProjects\COMP-2800-Team-DTC-02-Save-RainCity\" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ab40f5a1-5f48-4ee6-a572-86ccc14ead7c" name="Default Changelist" comment="" />
+      <created>1620162640581</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1620162640581</updated>
+      <workItem from="1620162642205" duration="1302000" />
+      <workItem from="1620238005053" duration="5066000" />
+      <workItem from="1620274187336" duration="5947000" />
+      <workItem from="1620317141071" duration="2457000" />
+      <workItem from="1620326278387" duration="658000" />
+      <workItem from="1620342405445" duration="7607000" />
+    </task>
+    <task id="LOCAL-00001" summary="CEAP html skeleton and temp CSS">
+      <created>1620251860834</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1620251860834</updated>
+    </task>
+    <task id="LOCAL-00002" summary="profile page skeleton and css">
+      <created>1620317773953</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1620317773953</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Minor consistency changes for drop down menu">
+      <created>1620318110014</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1620318110014</updated>
+    </task>
+    <task id="LOCAL-00004" summary="added files for consistency">
+      <created>1620343989764</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1620343989764</updated>
+    </task>
+    <task id="LOCAL-00005" summary="basic customization cycling javascript">
+      <created>1620350903663</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1620350903663</updated>
+    </task>
+    <task id="LOCAL-00006" summary="updated customize.html id's">
+      <created>1620351071628</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1620351071628</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="CEAP html skeleton and temp CSS" />
+    <MESSAGE value="profile page skeleton and css" />
+    <MESSAGE value="Minor consistency changes for drop down menu" />
+    <MESSAGE value="added files for consistency" />
+    <MESSAGE value="basic customization cycling javascript" />
+    <MESSAGE value="updated customize.html id's" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated customize.html id's" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
+  <component name="TaskManager">
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>

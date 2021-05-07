@@ -1,0 +1,84 @@
+@font-face {
+    font-family: Pixel;
+    src: url("../assets/VT323-Regular.ttf");
+}
+
+.pixelArt{
+    image-rendering: pixelated;
+}
+
+.custom{
+    position: absolute;
+    width: auto;
+    height: 70vh;
+}
+
+.character{
+    position: fixed;
+    width: auto;
+    height: 70vh;
+    margin-left: 10vw;
+    margin-top: 15vh;
+    margin-bottom: 15vh;
+}
+
+.labels{
+    width: auto;
+    height: 10vh;
+    display: inline;
+}
+
+input{
+    height: 10vh;
+    width: auto;
+}
+
+.choices{
+    padding: 0 8vw;
+    margin: 5vh 0 5vh 50vw;
+}
+
+.save{
+    margin-left: 55.7vw;
+}
+
+.choose{
+    padding: 5vh 0;
+}
+
+.orientation{
+    display: none;
+    background-color: black;
+    color: white;
+    height: 60vh;
+    width: 100%;
+}
+
+@media (orientation: portrait) {
+    .orientation{
+        display: block;
+        text-align: center;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 20vh 0;
+    }
+
+    .choices{
+        display: none;
+    }
+
+    .choose{
+        display: none;
+    }
+
+    .orientation h1{
+        font-size: 12vh;
+        margin: 0;
+        font-family: Pixel;
+    }
+
+    .character{
+        display: none;
+    }
+}

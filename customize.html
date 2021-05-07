@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save Raincity - Customize</title>
+
+    <!--StyleSheets-->
+    <link rel="stylesheet" href="./styles/customize.css">
+</head>
+<body>
+    <div class = "orientation">
+        <h1>Please turn your phone to landscape</h1>
+    </div>
+    <div class="character">
+        <img src="./assets/skin0.png" alt="skin" class="skin custom pixelArt" id="skinImage">
+        <img src="./assets/hair0.png" alt="hair" class="hair custom pixelArt" id="hairImage">
+        <img src="./assets/suit0.png" alt="suit" class="suit custom pixelArt" id="suitImage">
+        
+    </div>
+    <section class="choose">
+        <section class="choices">
+            <input type="image" class="hairPrev prev pixelArt" src="./assets/prev.png" onclick="hairPrev()">
+            <img src="./assets/hairtemp.png" alt="Hair" class="labels pixelArt hairLabel">
+            <input type="image" class="hairNext next pixelArt" src="./assets/next.png" onclick="hairNext()">
+        </section>
+        <section class="choices">
+            <input type="image" class="skinPrev prev pixelArt" src="./assets/prev.png" onclick="skinPrev()">
+            <img src="./assets/skintemp.png" alt="Skin" class="labels pixelArt skinLabel">
+            <input type="image" class="skinNext next pixelArt" src="./assets/next.png" onclick="skinNext()">
+        </section>
+        <section class="choices">
+            <input type="image" class="suitPrev prev pixelArt" src="./assets/prev.png" onclick="suitPrev()">
+            <img src="./assets/suittemp.png" alt="Suit" class="labels pixelArt suitLabel">
+            <input type="image" class="suitNext next pixelArt" src="./assets/next.png" onclick="suitNext()">
+        </section>
+        <section class="choices save">
+            <input type="image" alt="play" id="save-button" class="pixelArt" src="./assets/playbutton.png">
+        </section>
+    </section>
+
+    <!----------------------------------------------->
+    <!-- JS: Boostrap, JQuery, Firebase, API related    -->
+    <!----------------------------------------------->
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-firestore.js"></script>
+
+    <!-- Link to the api key for our firebase project -->
+    <script src="./server/firebase_api_saveraincity.js"></script>
+
+    <!--------------------------------------------------------------------->
+    <!-- JS files: Your own JavaScript functions included here    -->
+    <!--------------------------------------------------------------------->
+    <script src="scripts/customize.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+@import "header.css";
+
+body{
+    background-color: rgb(73, 73, 73);
+}
+.information-section {
+    margin: 10px;
+}
+hr {
+    color: whitesmoke;
+}
+.content{
+    background-color: rgb(151, 151, 151);
+    margin: 2%;
+    padding: 2%;
+    text-align: center;
+    border: 4px solid rgb(37, 37, 37);
+}
+/*Media queries for Pixel 2 phone max-width*/
+@media (min-width: 0px) and (max-width: 414px){
+    .main-background{
+        background-color: rgb(90, 90, 90) !important;
+    }
+    /* Main Grid*/
+    div#outer{
+        display: flex;
+        flex-direction: column;
+    }
+
+}

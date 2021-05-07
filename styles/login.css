@@ -1,0 +1,39 @@
+html {
+    height: 100%;
+}
+
+body {
+    background-color: blueviolet;
+    background-image: linear-gradient(to bottom right, green, rgb(18, 18, 136));
+}
+
+#firebaseui-auth-container {
+    margin: 10%;
+}
+
+form {
+    /* background-color: rgb(180, 157, 141); */
+}
+
+#logo {
+    margin-top: 25%;
+    width: 100%;
+}
+
+.firebaseui-card-header {
+    /* background-color: #5351bb; */
+}
+
+.firebaseui-title{
+
+}
+
+/* next button */
+.mdl-button--raised.mdl-button--colored {
+    /* background-color: #7EB35F; */
+}
+
+/* cancel button */
+.mdl-button--primary.mdl-button--primary {
+    /* color: #7EB35F; */
+}

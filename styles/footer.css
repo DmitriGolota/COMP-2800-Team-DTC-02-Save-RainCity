@@ -1,0 +1,38 @@
+footer{
+    display: grid;
+    grid-template-areas: 
+    "about aside";
+    background-color: rgb(160, 160, 160);
+}
+
+aside{
+    grid-area: "aside";
+    text-align: center;
+    border-left: 2px solid white;
+    width: 50vw;
+}
+
+.about{
+    grid-area: "about";
+    text-align: center;
+    width: 50vw;
+
+}
+
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footerDescription{
+    font-size: 4vw;
+}
+
+h4{
+    font-family: Pixel;
+}
+
+#trademark{
+    font-size: 3vw;
+}
