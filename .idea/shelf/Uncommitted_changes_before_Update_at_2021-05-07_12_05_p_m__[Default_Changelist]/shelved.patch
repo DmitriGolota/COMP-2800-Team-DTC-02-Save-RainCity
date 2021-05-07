@@ -1,0 +1,83 @@
+Index: scripts/customize.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>/*jshint esversion: 6 */\r\n// hair, skin, and suit assets must named like so: hair1.png, hair2.png, skin1.png, skin2.png etc.\r\nlet hairNum = 0;\r\nlet skinNum = 0;\r\nlet suitNum = 0;\r\nlet hairImage = document.getElementById('hairImage');\r\nlet skinImage = document.getElementById('skinImage');\r\nlet suitImage = document.getElementById('suitImage');\r\n\r\nfunction hairPrev() {\r\n    \"use strict\";\r\n    if (0 === hairNum) {\r\n        hairNum = 2;\r\n    }\r\n    else {\r\n        hairNum -= 1;\r\n    }\r\n    hairImage.setAttribute(\"src\", \"./assets/hair\" + hairNum + \".png\");\r\n}\r\n\r\nfunction hairNext() {\r\n    \"use strict\";\r\n    if (2 === hairNum) {\r\n        hairNum = 0;\r\n    }\r\n    else {\r\n        hairNum += 1;\r\n    }\r\n    hairImage.setAttribute(\"src\", \"./assets/hair\" + hairNum + \".png\");\r\n}\r\n\r\nfunction skinPrev() {\r\n    \"use strict\";\r\n    if (0 === skinNum) {\r\n        skinNum = 2;\r\n    }\r\n    else {\r\n        skinNum -= 1;\r\n    }\r\n    skinImage.setAttribute(\"src\", \"./assets/skin\" + skinNum + \".png\");\r\n}\r\n\r\nfunction skinNext() {\r\n    \"use strict\";\r\n    if (2 === skinNum) {\r\n        skinNum = 0;\r\n    }\r\n    else {\r\n        skinNum += 1;\r\n    }\r\n    skinImage.setAttribute(\"src\", \"./assets/skin\" + skinNum + \".png\");\r\n}\r\n\r\nfunction suitPrev() {\r\n    \"use strict\";\r\n    if (0 === suitNum) {\r\n        suitNum = 2;\r\n    }\r\n    else {\r\n        suitNum -= 1;\r\n    }\r\n    suitImage.setAttribute(\"src\", \"./assets/suit\" + suitNum + \".png\");\r\n}\r\n\r\nfunction suitNext() {\r\n    \"use strict\";\r\n    if (2 === suitNum) {\r\n        suitNum = 0;\r\n    }\r\n    else {\r\n        suitNum += 1;\r\n    }\r\n    suitImage.setAttribute(\"src\", \"./assets/suit\" + suitNum + \".png\");\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/scripts/customize.js b/scripts/customize.js
+--- a/scripts/customize.js	(revision 85c8989f1fae3d62de876950707719223bb65965)
++++ b/scripts/customize.js	(date 1620414321160)
+@@ -7,6 +7,10 @@
+ let skinImage = document.getElementById('skinImage');
+ let suitImage = document.getElementById('suitImage');
+ 
++let hairAssets = {
++    1:
++}
++
+ function hairPrev() {
+     "use strict";
+     if (0 === hairNum) {
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"ab40f5a1-5f48-4ee6-a572-86ccc14ead7c\" name=\"Default Changelist\" comment=\"updated customize.html id's\">\r\n      <change beforePath=\"$PROJECT_DIR$/assets/Defaulthair.png\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/assets/Defaultskins.png\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/assets/Defaultsuit.png\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/customize.html\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/customize.html\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/scripts/customize.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/scripts/customize.js\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"HTML File\" />\r\n        <option value=\"JavaScript File\" />\r\n        <option value=\"CSS File\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"master\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"HighlightingSettingsPerFile\">\r\n    <setting file=\"file://$PROJECT_DIR$/scripts/customize.js\" root0=\"FORCE_HIGHLIGHTING\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"1s5Vs4rHDHvfmcbrQIs4VO2gIlu\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"DefaultHtmlFileTemplate\" value=\"HTML File\" />\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\r\n    <property name=\"list.type.of.created.stylesheet\" value=\"CSS\" />\r\n    <property name=\"node.js.detected.package.eslint\" value=\"true\" />\r\n    <property name=\"node.js.detected.package.standard\" value=\"true\" />\r\n    <property name=\"node.js.detected.package.tslint\" value=\"true\" />\r\n    <property name=\"node.js.path.for.package.eslint\" value=\"project\" />\r\n    <property name=\"node.js.path.for.package.standard\" value=\"project\" />\r\n    <property name=\"node.js.path.for.package.tslint\" value=\"project\" />\r\n    <property name=\"node.js.selected.package.eslint\" value=\"(autodetect)\" />\r\n    <property name=\"node.js.selected.package.standard\" value=\"\" />\r\n    <property name=\"node.js.selected.package.tslint\" value=\"(autodetect)\" />\r\n    <property name=\"nodejs_package_manager_path\" value=\"npm\" />\r\n    <property name=\"settings.editor.selected.configurable\" value=\"Errors\" />\r\n  </component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\maxim\\PycharmProjects\\COMP-2800-Team-DTC-02-Save-RainCity\\\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"ab40f5a1-5f48-4ee6-a572-86ccc14ead7c\" name=\"Default Changelist\" comment=\"\" />\r\n      <created>1620162640581</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1620162640581</updated>\r\n      <workItem from=\"1620162642205\" duration=\"1302000\" />\r\n      <workItem from=\"1620238005053\" duration=\"5066000\" />\r\n      <workItem from=\"1620274187336\" duration=\"5947000\" />\r\n      <workItem from=\"1620317141071\" duration=\"2457000\" />\r\n      <workItem from=\"1620326278387\" duration=\"658000\" />\r\n      <workItem from=\"1620342405445\" duration=\"7607000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"CEAP html skeleton and temp CSS\">\r\n      <created>1620251860834</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1620251860834</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"profile page skeleton and css\">\r\n      <created>1620317773953</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1620317773953</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"Minor consistency changes for drop down menu\">\r\n      <created>1620318110014</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1620318110014</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"added files for consistency\">\r\n      <created>1620343989764</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1620343989764</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"basic customization cycling javascript\">\r\n      <created>1620350903663</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1620350903663</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"updated customize.html id's\">\r\n      <created>1620351071628</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1620351071628</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"7\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n    <option name=\"oldMeFiltersMigrated\" value=\"true\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"CEAP html skeleton and temp CSS\" />\r\n    <MESSAGE value=\"profile page skeleton and css\" />\r\n    <MESSAGE value=\"Minor consistency changes for drop down menu\" />\r\n    <MESSAGE value=\"added files for consistency\" />\r\n    <MESSAGE value=\"basic customization cycling javascript\" />\r\n    <MESSAGE value=\"updated customize.html id's\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"updated customize.html id's\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 85c8989f1fae3d62de876950707719223bb65965)
++++ b/.idea/workspace.xml	(date 1620414243894)
+@@ -1,12 +1,8 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ChangeListManager">
+-    <list default="true" id="ab40f5a1-5f48-4ee6-a572-86ccc14ead7c" name="Default Changelist" comment="updated customize.html id's">
+-      <change beforePath="$PROJECT_DIR$/assets/Defaulthair.png" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/assets/Defaultskins.png" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/assets/Defaultsuit.png" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/customize.html" beforeDir="false" afterPath="$PROJECT_DIR$/customize.html" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/scripts/customize.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/customize.js" afterDir="false" />
++    <list default="true" id="ab40f5a1-5f48-4ee6-a572-86ccc14ead7c" name="Default Changelist" comment="added temp hair, skin, and suit">
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -74,7 +70,9 @@
+       <workItem from="1620274187336" duration="5947000" />
+       <workItem from="1620317141071" duration="2457000" />
+       <workItem from="1620326278387" duration="658000" />
+-      <workItem from="1620342405445" duration="7607000" />
++      <workItem from="1620342405445" duration="7701000" />
++      <workItem from="1620403839400" duration="646000" />
++      <workItem from="1620413885719" duration="355000" />
+     </task>
+     <task id="LOCAL-00001" summary="CEAP html skeleton and temp CSS">
+       <created>1620251860834</created>
+@@ -118,7 +116,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1620351071628</updated>
+     </task>
+-    <option name="localTasksCounter" value="7" />
++    <task id="LOCAL-00007" summary="added temp hair, skin, and suit">
++      <created>1620353309335</created>
++      <option name="number" value="00007" />
++      <option name="presentableId" value="LOCAL-00007" />
++      <option name="project" value="LOCAL" />
++      <updated>1620353309335</updated>
++    </task>
++    <option name="localTasksCounter" value="8" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -143,6 +148,7 @@
+     <MESSAGE value="added files for consistency" />
+     <MESSAGE value="basic customization cycling javascript" />
+     <MESSAGE value="updated customize.html id's" />
+-    <option name="LAST_COMMIT_MESSAGE" value="updated customize.html id's" />
++    <MESSAGE value="added temp hair, skin, and suit" />
++    <option name="LAST_COMMIT_MESSAGE" value="added temp hair, skin, and suit" />
+   </component>
+ </project>
+\ No newline at end of file
