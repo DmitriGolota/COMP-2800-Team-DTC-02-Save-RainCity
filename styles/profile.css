@@ -1,0 +1,28 @@
+@import "header.css";
+
+body{
+    background-color: rgb(73, 73, 73);
+}
+.content{
+    background-color: rgb(151, 151, 151);
+    margin: 2%;
+    padding: 2%;
+    text-align: center;
+    border: 4px solid rgb(37, 37, 37);
+}
+#table {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+table {
+    grid-column: 2;
+}
+/*Media queries for Pixel 2 phone max-width*/
+@media (min-width: 0px) and (max-width: 414px){
+    body{
+        background-color: rgb(73, 73, 73);
+    }
+    .main-background{
+        background-color: rgb(90, 90, 90) !important;
+    }
+}
