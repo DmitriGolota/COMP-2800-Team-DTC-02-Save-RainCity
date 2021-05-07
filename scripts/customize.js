@@ -6,7 +6,7 @@ let suitNum = 0;
 let hairImage = document.getElementById('hairImage');
 let skinImage = document.getElementById('skinImage');
 let suitImage = document.getElementById('suitImage');
-let firebase = 
+
 
 function hairPrev() {
     "use strict";
@@ -82,7 +82,7 @@ document.getElementById('save-button').addEventListener('click', function () {
 function writeCustomizedCharacter (hair, skin, suit) {
     firebase.auth().onAuthStateChanged(function (user) {
         db.collection('users').doc(user.uid)
-        .collection('character')
+        .collection('character').doc('character')
         .set({
             'hair': hair,
             'skin': skin,
