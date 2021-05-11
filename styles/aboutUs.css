@@ -17,12 +17,13 @@ h1 + p{
 #aboutUs{
     background-color: rgb(212, 212, 212);
     margin: 2%;
-    padding: 1%;
+    padding: 2%;
 
 }
 
 #devs{
     background-color: rgb(151, 151, 151);
     margin: 2%;
-    padding: 1%;
+    padding: 2%;
 }
+
