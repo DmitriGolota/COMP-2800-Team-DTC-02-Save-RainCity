@@ -1,0 +1,67 @@
+@font-face {
+    font-family: Pixel;
+    src: url("../assets/VT323-Regular.ttf");
+}
+body {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+.orientation{
+    display: none;
+    background-color: black;
+    color: white;
+    height: 60vh;
+    width: 100%;
+    
+}
+div {
+    position: absolute;
+}
+img {
+    position: absolute;
+}
+#map{
+    width: 100vw;
+    height: 100vh;
+}
+#question-prompt-overlay {
+    width: 100vw;
+    height: 100vh;
+    background-color: peachpuff;
+    opacity: 50%;
+}
+#question-prompt {
+    width: 66.66%;
+    height: 100%;
+    margin: auto;
+    margin-left: 16.66%;
+    
+}
+#main-character {
+    margin: auto;
+}
+#assistant {
+    margin: auto;
+}
+button {
+    width: 5vw;
+    height: 5vh;
+    position: absolute;
+    margin: auto;
+}
+@media (orientation: portrait) {
+    .orientation{
+        display: block;
+        text-align: center;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 20vh 0;
+    }
+    .orientation h1 {
+        font-size: 12vh;
+        margin: 0;
+        font-family: Pixel;
+    }
+}
