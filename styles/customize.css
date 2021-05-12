@@ -3,6 +3,10 @@
     src: url("../assets/VT323-Regular.ttf");
 }
 
+body{
+    background-color: rgb(80, 233, 233);
+}
+
 .pixelArt{
     image-rendering: pixelated;
 }
@@ -10,16 +14,15 @@
 .custom{
     position: absolute;
     width: auto;
-    height: 70vh;
+    height: 50vh;
 }
 
 .character{
-    position: fixed;
+    position: relative;
     width: auto;
-    height: 70vh;
-    margin-left: 10vw;
-    margin-top: 15vh;
-    margin-bottom: 15vh;
+    height: 50vh;
+    margin: 26vh 18vw;
+    margin-bottom: 0;
 }
 
 .labels{
@@ -28,22 +31,32 @@
     display: inline;
 }
 
-input{
-    height: 10vh;
-    width: auto;
+.prev{
+    padding: 0 8vw;
+    margin: 1.5vh 0 5vh 49vw;
 }
 
-.choices{
+.next{
     padding: 0 8vw;
-    margin: 5vh 0 5vh 50vw;
+    margin: 1.5vh 0 5vh -3.25vw;
+}
+
+input{
+    height: 10vh;
 }
 
 .save{
-    margin-left: 55.7vw;
+    margin-left: 67vw;
+    margin-top: -2vh;
 }
 
 .choose{
     padding: 5vh 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    margin-top: 22vh;
 }
 
 .orientation{
@@ -52,6 +65,15 @@ input{
     color: white;
     height: 60vh;
     width: 100%;
+}
+
+.notebook{
+    position: absolute;
+    width: 80vw;
+    padding: 6vh 10vw;
+    top: 0;
+    right: 0;
+    padding-bottom: 0;
 }
 
 @media (orientation: portrait) {
@@ -81,4 +103,205 @@ input{
     .character{
         display: none;
     }
+    
+    .notebook{
+        display: none;
+    }
 }
+
+@media (width: 653px) and (height: 280px) {
+    .notebook{
+        width: 67vw;
+        top: 0.5vh;
+        left: 6.5vw;
+        padding-top: 1.5vh;
+    }
+
+    .prev{
+        padding: 0 8vw;
+        margin: 3vh 0 5vh 48vw;
+    }
+
+    .next{
+        padding: 0 8vw;
+        margin: 3vh 0 5vh -5vw;
+    }
+
+    .choose{
+        top: 0;
+        left: 0;
+    
+        margin-top: 20vh;
+    }
+
+    .character{
+        margin: 26vh 23.5vw;
+        margin-bottom: 0;
+    }
+
+    .save{
+        margin-left: 64.5vw;
+    }
+}
+
+@media (width: 720px) and (height: 540px) {
+    .notebook{
+        width: 90vw;
+        top: 13vh;
+        left: 5vw;
+        padding: 0;
+    }
+
+    .custom{
+        position: absolute;
+        width: auto;
+        height: 41vh;
+    }
+    
+    .character{
+        position: relative;
+        width: auto;
+        height: 41vh;
+        margin: 30.5vh 14.5vw;
+        margin-bottom: 0;
+    }
+
+    .prev{
+        padding: 0 8vw;
+        margin: 2vh 0 3vh 49.5vw;
+    }
+    
+    .next{
+        padding: 0 8vw;
+        margin: 2vh 0 3vh -1.5vw;
+    }
+    
+    .choose{
+        top: 0;
+        left: 0;
+    
+        margin-top: 25vh;
+    }
+
+    input{
+        height: 9vh;
+    }
+
+    .save{
+        margin-top: 0vh;
+        margin-left: 68.5vw;
+    }
+}
+
+@media (min-width: 811px) and (max-width: 821px) {
+    .notebook{
+        width: 72vw;
+        top: 1vh;
+        left: 4vw;
+        padding-top: 1.5vh;
+    }
+
+    .character{
+        margin: 27vh 22vw;
+        margin-bottom: 0;
+    }
+
+    .choose{
+        top: 0;
+        left: 0;
+    
+        margin-top: 20vh;
+    }
+
+    .prev{
+        padding: 0 8vw;
+        margin: 3vh 0 5vh 48.5vw;
+    }
+    
+    .next{
+        padding: 0 8vw;
+        margin: 3vh 0 5vh -4vw;
+    }
+
+    .save{
+        margin-left: 65.5vw;
+    }
+
+}
+
+@media (min-width: 822px) and (max-width: 1022px){
+    .notebook{
+        width: 78vw;
+        top: 1vh;
+        left: 2vw;
+        padding-top: 1.5vh;
+    }
+
+    .character{
+        margin: 27.5vh 21vw;
+        margin-bottom: 0;
+    }
+
+    .prev{
+        padding: 0 8vw;
+        margin: 3vh 0 5vh 50vw;
+    }
+    
+    .next{
+        padding: 0 8vw;
+        margin: 2vh 0 5vh -3vw;
+    }
+    
+    .choose{
+        top: 0;
+        left: 0;
+    
+        margin-top: 20vh;
+    }
+
+    .save{
+        margin-left: 68vw;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1367px){
+    .notebook{
+        width: 90vw;
+        top: 10vh;
+        left: 5vw;
+        padding: 0;
+        padding-top: 1.5vh;
+    }
+
+    .custom{
+        height: 41vh;
+    }
+    
+    .character{
+        height: 41vh;
+        margin: 29vh 15vw;
+        margin-bottom: 0;
+    }
+
+    .prev{
+        padding: 0 8vw;
+        margin: 2vh 0 3vh 49.5vw;
+    }
+    
+    .next{
+        padding: 0 8vw;
+        margin: 2vh 0 3vh -1.5vw;
+    }
+    
+    .choose{
+        top: 0;
+        left: 0;
+    
+        margin-top: 23.5vh;
+    }
+
+    input{
+        height: 9vh;
+    }
+}
+
