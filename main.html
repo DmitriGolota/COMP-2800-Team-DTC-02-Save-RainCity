@@ -12,13 +12,24 @@
         <h1>Please turn your phone to landscape</h1>
     </div>
     <div id="map">
-        <img src="/assets/raincity.png" id="raincity">
+        <img src="/assets/map/mainmapplaceholder.svg" id="raincity">
     </div>
-    <div id="question-prompt-overlay"></div>
-    <img src="/assets/questionOverlay.png" id="question-prompt">
-    <img src="/assets/character.png" id="main-character">
-    <img src="/assets/assistant.png" id="assistant">
-    <button><img src="/assets/yesButton.png"></button>
-    <button><img src="/assets/noButton.png"></button>
+    <div id="question-prompt-overlay">
+        <img src="/assets/dialogue_box/MainDialogueUI.svg" id="question-prompt">
+        <div id="main-character">
+            <img src="/assets/static_elements/charbody.svg" id="main-character-body">
+            <img src="/assets/skin/charskin1.svg" id="main-character-skin">
+            <img src="/assets/hair/charhair2.svg" id="main-character-hair">
+            <img src="/assets/suit/charsuit1.svg" id="main-character-suit">
+        </div>
+        <img src="/assets/npc/npc1.svg" id="assistant">
+        <input type="image" onclick="nextQuestion('yes')">
+            <img src="/assets/dialogue_box/buttons/YesButtonUnclicked.svg" id="yes-button">
+        </input>
+        <input type="image" onclick="nextQuestion('no')">
+            <img src="/assets/dialogue_box/buttons/NoButtonUnclicked.svg" id="no-button">
+        </input>
+    </div>
+
 </body>
 </html>

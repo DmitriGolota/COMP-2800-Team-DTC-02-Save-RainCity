@@ -7,13 +7,18 @@ body {
     margin: 0;
     padding: 0;
 }
-.orientation{
+.orientation {
     display: none;
+    z-index: 10;
     background-color: black;
     color: white;
     height: 60vh;
     width: 100%;
     
+}
+#raincity {
+    width: 100vw;
+    height: 100vh;
 }
 div {
     position: absolute;
@@ -24,31 +29,58 @@ img {
 #map{
     width: 100vw;
     height: 100vh;
+    z-index: -2;
 }
 #question-prompt-overlay {
+    z-index: -1;
     width: 100vw;
     height: 100vh;
-    background-color: peachpuff;
-    opacity: 50%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
 }
 #question-prompt {
-    width: 66.66%;
-    height: 100%;
-    margin: auto;
-    margin-left: 16.66%;
-    
+    width: 100vw;
+    height: 100vh;
 }
 #main-character {
+    width: 20vw;
+    height: 50vh;
     margin: auto;
+    grid-column: 2;
+    grid-row: 2;
+}
+#main-character img {
+    width: 100%;
+    height: 100%;
 }
 #assistant {
+    width: 20vw;
+    height: 50vh;
     margin: auto;
+    grid-column: 4;
+    grid-row: 2;
 }
-button {
+#yes-button {
+    width: 100%;
+    height: 100%;
     width: 5vw;
     height: 5vh;
     position: absolute;
-    margin: auto;
+}
+#yes-button:active {
+    content: url(/assets/dialogue_box/buttons/YesButtonClicked.svg);
+}
+#no-button {
+    width: 100%;
+    height: 100%;
+    margin-left: 100px;
+    width: 5vw;
+    height: 5vh;
+    position: absolute;
+}
+#no-button:active {
+    content: url(/assets/dialogue_box/buttons/NoButtonClicked.svg);
 }
 @media (orientation: portrait) {
     .orientation{
