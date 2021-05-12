@@ -25,7 +25,7 @@ body{
     position: relative;
     width: auto;
     height: 50vh;
-    margin: 26vh 18vw;
+    margin: 2vh 19vw;
     margin-bottom: 0;
 }
 
@@ -61,7 +61,7 @@ body{
 }
 
 #save-button{
-    margin-left: 65vw;
+    margin-left: 66.5vw;
     height: 12vh;
     position: absolute;
 }
@@ -142,13 +142,13 @@ body{
     }
 
     .character{
-        margin: 26vh 23.5vw;
+        margin: 2.5vh 25vw;
         margin-bottom: 0;
     }
 
     #save-button{
         margin-top: 3vh;
-        margin-left: 62vw;
+        margin-left: 63.5vw;
         height: 15vh;
     }
 
@@ -179,7 +179,7 @@ body{
         position: relative;
         width: auto;
         height: 41vh;
-        margin: 30.5vh 14.5vw;
+        margin: 2vh 15.5vw;
         margin-bottom: 0;
     }
 
@@ -202,7 +202,7 @@ body{
 
     #save-button{
         margin-top: 0vh;
-        margin-left: 66.5vw;
+        margin-left: 67.5vw;
     }
 
     .skinButton{
@@ -223,7 +223,7 @@ body{
     }
 
     .character{
-        margin: 27vh 22vw;
+        margin: 3vh 23vw;
         margin-bottom: 0;
     }
 
@@ -247,7 +247,7 @@ body{
     #save-button{
         margin-top: 2vh;
         height: 16vh;
-        margin-left: 63vw;
+        margin-left: 63.5vw;
     }
 
     .skinButton{
@@ -268,7 +268,7 @@ body{
     }
 
     .character{
-        margin: 27.5vh 21vw;
+        margin: 3vh 22vw;
         margin-bottom: 0;
     }
 
@@ -292,7 +292,7 @@ body{
     #save-button{
         margin-top: 1.5vh;
         height: 16vh;
-        margin-left: 65vw;
+        margin-left: 66vw;
     }
 
     .skinButton{
@@ -319,7 +319,7 @@ body{
     
     .character{
         height: 41vh;
-        margin: 29vh 15vw;
+        margin: -1vh 15vw;
         margin-bottom: 0;
     }
 
@@ -351,7 +351,7 @@ body{
     #save-button{
         margin-top: 0.5vh;
         height: 12vh;
-        margin-left: 67vw;
+        margin-left: 67.5vw;
     }
 
 }
