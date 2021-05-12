@@ -32,31 +32,34 @@ body{
 }
 
 .prev{
-    padding: 0 8vw;
-    margin: 1.5vh 0 5vh 49vw;
+    padding: 0;
+    margin: 29vh 0 0 51vw;
 }
 
 .next{
-    padding: 0 8vw;
-    margin: 1.5vh 0 5vh -3.25vw;
+    padding: 0;
+    margin: 29vh 0 0 72vw;
 }
 
-input{
+.skinButton{
+    margin-top: 46vh;
+}
+
+.suitButton{
+    margin-top: 64vh;
+}
+
+.switch{
     height: 10vh;
-}
-
-.save{
-    margin-left: 67vw;
-    margin-top: -2vh;
-}
-
-.choose{
-    padding: 5vh 0;
     position: absolute;
     top: 0;
-    left: 0;
+    left: 10vh;
+}
 
-    margin-top: 22vh;
+#save-button{
+    margin-left: 65vw;
+    height: 12vh;
+    position: absolute;
 }
 
 .orientation{
@@ -86,11 +89,11 @@ input{
         padding: 20vh 0;
     }
 
-    .choices{
+    .switch{
         display: none;
     }
 
-    .choose{
+    #save-button{
         display: none;
     }
 
@@ -119,19 +122,19 @@ input{
 
     .prev{
         padding: 0 8vw;
-        margin: 3vh 0 5vh 48vw;
+        margin: 28vh 0 5vh 43.5vw;
     }
 
     .next{
         padding: 0 8vw;
-        margin: 3vh 0 5vh -5vw;
+        margin: 28vh 0 5vh 61vw;
     }
 
-    .choose{
+    .switch{
+        height: 10vh;
+        position: absolute;
         top: 0;
-        left: 0;
-    
-        margin-top: 20vh;
+        left: 10vh;
     }
 
     .character{
@@ -139,8 +142,18 @@ input{
         margin-bottom: 0;
     }
 
-    .save{
-        margin-left: 64.5vw;
+    #save-button{
+        margin-top: 3vh;
+        margin-left: 62vw;
+        height: 15vh;
+    }
+
+    .skinButton{
+        margin-top: 46.5vh;
+    }
+    
+    .suitButton{
+        margin-top: 66vh;
     }
 }
 
@@ -168,28 +181,24 @@ input{
 
     .prev{
         padding: 0 8vw;
-        margin: 2vh 0 3vh 49.5vw;
+        margin: 32vh 0 3vh 41.5vw;
     }
     
     .next{
         padding: 0 8vw;
-        margin: 2vh 0 3vh -1.5vw;
+        margin: 32vh 0 3vh 65.5vw;
     }
     
-    .choose{
-        top: 0;
-        left: 0;
-    
-        margin-top: 25vh;
-    }
-
-    input{
+    .switch{
         height: 9vh;
+        position: absolute;
+        top: 0;
+        left: 10vh;
     }
 
-    .save{
+    #save-button{
         margin-top: 0vh;
-        margin-left: 68.5vw;
+        margin-left: 67vw;
     }
 }
 
