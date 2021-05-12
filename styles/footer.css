@@ -4,6 +4,7 @@ html{
 }
 
 footer{
+    color: whitesmoke;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
