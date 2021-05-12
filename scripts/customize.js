@@ -1,4 +1,9 @@
 /*jshint esversion: 6 */
+document.body.addEventListener('click', function(){
+    var audio = document.getElementById('myaudio');
+    audio.play();   
+}, true); 
+
 // hair, skin, and suit assets must named like so: hair1.png, hair2.png, skin1.png, skin2.png etc.
 let hairNum = 0;
 let skinNum = 0;
@@ -189,3 +194,4 @@ function writeCustomizedCharacter (hair, skin, suit) {
     })
     console.log("Save Success")
 };
+
