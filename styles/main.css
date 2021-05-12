@@ -20,7 +20,7 @@ body {
     width: 100vw;
     height: 100vh;
 }
-div {
+.absolute-div {
     position: absolute;
 }
 img {
