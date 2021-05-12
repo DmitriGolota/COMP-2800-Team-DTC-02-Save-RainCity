@@ -168,18 +168,6 @@ function suitNext() {
     suitImage.setAttribute("src", suitAssets[suitNum]);
 }
 
-// document.getElementById('save-button').addEventListener('click', function () {
-//     //button movement
-//     document.getElementById('save-button').src = "./assets/intro_box/ContinueButtonCllicked.svg"
-//     setTimeout(function(){
-//         document.getElementById("save-button").src = "./assets/intro_box/ContinueButtonUncllicked.svg"
-//     }, 50)
-//     //button sound
-
-
-//     // writeCustomizedCharacter(hairNum, skinNum, suitNum)
-// });
-
 // // Writes user's customized character to Firestore
 // function writeCustomizedCharacter (hair, skin, suit) {
 //     firebase.auth().onAuthStateChanged(function (user) {
@@ -232,6 +220,7 @@ document.getElementById('save-button').addEventListener('click', function () {
     let nextButton = document.createElement('img');
     nextButton.setAttribute('src', './assets/intro_box/ContinueButtonUncllicked.svg');
     nextButton.setAttribute('id', 'next-dialogue-button');
+    nextButton.setAttribute('class', 'hidden');
     // Event Listener for the button to prompt the next span of dialogue during introduction
     nextButton.addEventListener('click', masterIntroDialogue);
 
@@ -241,7 +230,7 @@ document.getElementById('save-button').addEventListener('click', function () {
 
     mainContainer.append(mainMap);
     mainContainer.append(introDiv);
-
+    masterIntroDialogue()
 });
 
 // Each string in this array is one span of dialogue for the intro
@@ -256,20 +245,19 @@ let introDialogueText = introDialogueArray.shift().split('');
 
 // Main function to run the intro dialogue
 function masterIntroDialogue() {
-    // document.getElementById("next-dialogue-button").src = "./assets/buttons/ContinueButtonCllicked.svg"
-    // setTimeout(function(){
-    //     document.getElementById("next-dialogue-button").src = "./assets/intro_box/ContinueButtonUncllicked.svg"
-    // }, 50)
-
-    if (introDialogueArray.length === 0 && introDialogueText.length === 0) {
-        document.getElementById('intro-div').remove()
-        setTimeout(firstPrompt, 5000);
-    } else {
-        let dialogueTextBox = document.getElementById('intro-text');
-        dialogueTextBox.textContent = '';
-        introDialogue();
-    }
-
+    document.getElementById("next-dialogue-button").src = "./assets/intro_box/ContinueButtonCllicked.svg"
+    buttonClickThree.play()
+    setTimeout(function(){
+        document.getElementById("next-dialogue-button").src = "./assets/intro_box/ContinueButtonUncllicked.svg"
+        if (introDialogueArray.length === 0 && introDialogueText.length === 0) {
+            document.getElementById('intro-div').remove()
+            setTimeout(firstPrompt, 5000);
+        } else {
+            let dialogueTextBox = document.getElementById('intro-text');
+            dialogueTextBox.textContent = '';
+            introDialogue();
+        }
+    }, 50)
 };
 
 // Decomposed function to add each individual letter to text box with a timeout in-between
@@ -285,10 +273,10 @@ function introDialogue() {
         document.getElementById('next-dialogue-button').setAttribute('class', 'visible')
         return false
     }
-    setTimeout('introDialogue()', 5);
+    setTimeout('introDialogue()', 50);
 };
 
-
+// Function for the first question prompt that appears after the intro
 function firstPrompt() {
     // Toggle visiblity for this one
     let questionPromptDiv = document.createElement('div');
@@ -296,29 +284,40 @@ function firstPrompt() {
 
     // Everything goes in here
     let questionPromptOverlay = document.createElement('div');
-    questionPromptDiv.setAttribute('id', 'question-prompt-overlay');
+    questionPromptOverlay.setAttribute('id', 'question-prompt-overlay');
 
     // Main Dialogue UI Box
     let mainDialogueUI = document.createElement('img');
     mainDialogueUI.setAttribute('src', 'assets/dialogue_box/MainDialogueUI.svg')
     mainDialogueUI.setAttribute('id', 'question-prompt')
 
+    // Text box for the current question / prompt
+    let questionPromptText = document.createElement('p');
+    questionPromptText.setAttribute('id', 'question-prompt-text');
+    questionPromptText.textContent = 'To further encourage cycling as a form of transportation, \
+    we want to build more bike-only paths that connect outer neighbourhoods to the core of \
+    RainCity. Do you agree to this plan?'
+
     // Div for Main Character
     let mainCharacterDiv = document.createElement('div');
     mainCharacterDiv.setAttribute('id', 'main-character');
 
+    // Body image for Main Character
     let mainCharacterBody = document.createElement('img')
     mainCharacterBody.setAttribute('src', 'assets/static_elements/charbody.svg')
     mainCharacterBody.setAttribute('id', 'main-character-body');
 
+    // Skin image for Main Character
     let mainCharacterSkin = document.createElement('img');
-    mainCharacterSkin.setAttribute('src', hairAssets[skinNum])
+    mainCharacterSkin.setAttribute('src', skinAssets[skinNum])
     mainCharacterSkin.setAttribute('id', 'main-character-skin');
 
+    // Hair image for Main Character
     let mainCharacterHair = document.createElement('img');
     mainCharacterHair.setAttribute('src', hairAssets[hairNum])
     mainCharacterSkin.setAttribute('id', 'main-character-hair');
 
+    // Suit image for Main Character
     let mainCharacterSuit = document.createElement('img');
     mainCharacterSuit.setAttribute('src', suitAssets[suitNum])
     mainCharacterSkin.setAttribute('id', 'main-character-suit');
@@ -328,21 +327,27 @@ function firstPrompt() {
     mainCharacterDiv.appendChild(mainCharacterHair);
     mainCharacterDiv.appendChild(mainCharacterSuit);
 
+    // Create NPC image
     let NPC = document.createElement('img');
     // change this later because it will not always be assistant
     NPC.setAttribute('id', 'assistant');
     NPC.setAttribute('src', 'assets/npc/npc1.svg');
 
+    // Create Yes button
     let yesButton = document.createElement('img');
     yesButton.setAttribute('src', '/assets/dialogue_box/buttons/YesButtonUnclicked.svg');
     yesButton.setAttribute('id', 'yes-button');
 
+    // Create No button
     let noButton = document.createElement('img');
     noButton.setAttribute('src', '/assets/dialogue_box/buttons/NoButtonUnclicked.svg');
     noButton.setAttribute('id', 'no-button');
 
+    // Append it all together
     questionPromptOverlay.appendChild(mainDialogueUI);
+    questionPromptOverlay.appendChild(questionPromptText);
     questionPromptOverlay.appendChild(mainCharacterDiv);
+    questionPromptOverlay.appendChild(NPC);
     questionPromptOverlay.appendChild(yesButton);
     questionPromptOverlay.appendChild(noButton);
 
