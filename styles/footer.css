@@ -5,7 +5,8 @@ html{
 
 footer{
     display: grid;
-    grid-template-areas: 
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
     "about aside";
     background-color: rgb(151, 151, 151);
     margin: 2%;
@@ -19,14 +20,12 @@ aside{
     text-align: center;
     border-left: 2px solid rgb(37, 37, 37);
     padding-top: 2%;
-    width: 50vw;
     font-size: 3vw;
 }
 
 .about{
     grid-area: "about";
     text-align: center;
-    width: 50vw;
     padding-top: 2%;
 }
 
