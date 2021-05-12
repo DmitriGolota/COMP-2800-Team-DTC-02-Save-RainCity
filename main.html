@@ -4,46 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Save RainCity</title>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Save Raincity</title>
     <link rel="stylesheet" href="styles/main.css">
-
 </head>
-
 <body>
-    <main id="container">
-        <img src="./assets/mainmapplaceholder.svg" id="game-map">
-        <div id="intro-div">
-            <img src="./assets/IntroBoxUI.svg" id="intro-box">
-            <p id="intro-text"></p>
-            <img src="./assets/ContinueButtonUncllicked.svg" id="next-dialogue-button">
+    <div class = "orientation">
+        <h1>Please turn your phone to landscape</h1>
+    </div>
+    <div id="map">
+        <img src="/assets/map/mainmapplaceholder.svg" id="raincity">
+    </div>
+    <div id="question-prompt-overlay">
+        <img src="/assets/dialogue_box/MainDialogueUI.svg" id="question-prompt">
+        <div id="main-character">
+            <img src="/assets/static_elements/charbody.svg" id="main-character-body">
+            <img src="/assets/skin/charskin1.svg" id="main-character-skin">
+            <img src="/assets/hair/charhair2.svg" id="main-character-hair">
+            <img src="/assets/suit/charsuit1.svg" id="main-character-suit">
         </div>
-    </main>
-
-    <!----------------------------------------------->
-    <!-- JS: Boostrap, JQuery, Firebase, API related    -->
-    <!----------------------------------------------->
-
-    <!-- Firebase -->
-    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/ui/4.8.0/firebase-ui-auth.js"></script>
-
-    <!-- Bootstrap -->
-
-    <!-- Jquery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-    <!-- Link to the api key for our firebase project -->
-    <script src="./server/firebase_api_saveraincity.js"></script>
-
-    <!--------------------------------------------------------------------->
-    <!-- JS files: Your own JavaScript functions included here    -->
-    <!--------------------------------------------------------------------->
-    <script src="./scripts/main.js"></script>
+        <img src="/assets/npc/npc1.svg" id="assistant">
+        <input type="image" onclick="nextQuestion('yes')">
+            <img src="/assets/dialogue_box/buttons/YesButtonUnclicked.svg" id="yes-button">
+        </input>
+        <input type="image" onclick="nextQuestion('no')">
+            <img src="/assets/dialogue_box/buttons/NoButtonUnclicked.svg" id="no-button">
+        </input>
+    </div>
 
 </body>
-
 </html>
