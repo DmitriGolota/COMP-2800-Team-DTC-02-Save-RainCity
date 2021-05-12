@@ -2,6 +2,7 @@ body {
     overflow: hidden;
     margin: 0;
     padding: 0;
+    background-color: rgb(80, 233, 233);
 }
 .orientation {
     display: none;
@@ -10,18 +11,21 @@ body {
     color: white;
     height: 60vh;
     width: 100%;
-    
 }
+
 #raincity {
     width: 100vw;
     height: 100vh;
 }
+/* 
 div {
     position: absolute;
 }
+
 img {
     position: absolute;
-}
+} */
+
 #map{
     width: 100vw;
     height: 100vh;
