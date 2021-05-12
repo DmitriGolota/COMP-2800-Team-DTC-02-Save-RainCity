@@ -174,10 +174,11 @@ document.getElementById('save-button').addEventListener('click', function () {
     //button sound
     let audio = new Audio("./assets/audio/buttonclick3.mp3")
     audio.play()
-    setTimeout(function(){
-        window.location.href = "main.html"
-    }, 300)
-    
+    document.getElementById('main-game').style.display = "initial";
+    document.getElementById('character-customization').style.display = "none";
+    // setTimeout(function(){
+    //     window.location.href = "main.html"
+    // }, 300)
     writeCustomizedCharacter(hairNum, skinNum, suitNum)
 });
 
