@@ -454,12 +454,12 @@ body{
     position: absolute;
     color: rgb(235, 226, 226);
     font-family: Pixel;
-    font-size: 1.15em;
+    font-size: 1.18em;
     text-align: center;
     width: 60vw;
     height: 16vh;
     left: 20vw;
-    top: 14vh;
+    top: 12vh;
 }
 
 #main-character {

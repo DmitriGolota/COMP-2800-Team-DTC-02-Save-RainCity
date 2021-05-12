@@ -335,12 +335,12 @@ function firstPrompt() {
 
     // Create Yes button
     let yesButton = document.createElement('img');
-    yesButton.setAttribute('src', '/assets/dialogue_box/buttons/YesButtonUnclicked.svg');
+    yesButton.setAttribute('src', './assets/dialogue_box/buttons/YesButtonUnclicked.svg');
     yesButton.setAttribute('id', 'yes-button');
 
     // Create No button
     let noButton = document.createElement('img');
-    noButton.setAttribute('src', '/assets/dialogue_box/buttons/NoButtonUnclicked.svg');
+    noButton.setAttribute('src', './assets/dialogue_box/buttons/NoButtonUnclicked.svg');
     noButton.setAttribute('id', 'no-button');
 
     // Append it all together

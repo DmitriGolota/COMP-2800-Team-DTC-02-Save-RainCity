@@ -35,11 +35,9 @@ body {
 #map{
     width: 100vw;
     height: 100vh;
-    z-index: -2;
 }
 
 #question-prompt-overlay {
-    z-index: -1;
     width: 100vw;
     height: 100vh;
 }
