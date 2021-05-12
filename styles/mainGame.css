@@ -3,6 +3,39 @@
     src: url("../assets/VT323-Regular.ttf");
 }
 
+.hidden {
+    visibility: hidden;
+}
+
+.visible {
+    visibility: visible;
+}
+
+/* For Phones Landscape */
+@media (max-height: 430px) {
+    #game-map {
+        position: absolute;
+    }
+}
+
+/* For Tablets (this was from introduction.css -- 
+-- this is a method of stretching the map image for tablets)*/
+@media (min-height: 431px) {
+    #game-map {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/* For all views */
+#container {
+    width: 100vw;
+    height: 100vh;
+}
+
+
+
 /* Character Customization */
 body{
     background-color: rgb(80, 233, 233);
@@ -22,11 +55,13 @@ body{
 }
 
 .character{
-    position: relative;
+    position: absolute;
     width: auto;
     height: 50vh;
-    margin: 2vh 19vw;
-    margin-bottom: 0;
+    left: 19vw;
+    top: 26vh;
+    /* margin: 2vh 19vw; */
+    /* margin-bottom: 0; */
 }
 
 .labels{
@@ -61,8 +96,10 @@ body{
 }
 
 #save-button{
-    margin-left: 66.5vw;
+    /* margin-left: 66.5vw; */
     height: 12vh;
+    bottom: 10vh;
+    right: 25vw;
     position: absolute;
 }
 
@@ -93,26 +130,14 @@ body{
         padding: 20vh 0;
     }
 
-    .switch{
-        display: none;
-    }
-
-    #save-button{
-        display: none;
-    }
-
     .orientation h1{
         font-size: 12vh;
         margin: 0;
         font-family: Pixel;
     }
 
-    .character{
-        display: none;
-    }
-    
-    .notebook{
-        display: none;
+    #container {
+        visibility: hidden;
     }
 }
 
@@ -223,8 +248,11 @@ body{
     }
 
     .character{
-        margin: 3vh 23vw;
-        margin-bottom: 0;
+        position: absolute;
+        width: auto;
+        height: 50vh;
+        left: 23vw;
+        top: 26vh;
     }
 
     .switch{
@@ -245,9 +273,12 @@ body{
     }
 
     #save-button{
-        margin-top: 2vh;
+        /* margin-top: 2vh; */
         height: 16vh;
-        margin-left: 63.5vw;
+        /* margin-left: 63.5vw; */
+        position: absolute;
+        bottom: 5vh;
+        right: 27vw;
     }
 
     .skinButton{
@@ -355,6 +386,43 @@ body{
     }
 
 }
+/* End of Character Customization */
+
+
+
+
+/* Introduction Styles */
+#intro-div {
+    width: 100%;
+    height: 100%;
+}
+
+#intro-box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#intro-text {
+    position: absolute;
+    margin: 0;
+    text-align: center;
+    font-family: Pixel;
+    font-size: 150%;
+    width: 60%;
+    color: rgb(235, 226, 226);
+    top: 20vh;
+    left: 20vw;
+} 
+
+#next-dialogue-button {
+    position: absolute;
+    height: 10vh;
+    top: 70vh;
+    left: 45vw;
+    height: 15vh;
+}
+/* End of Introduction styles */
 
 /* Main game */
 .absolute-div {
@@ -370,14 +438,8 @@ body{
     height: 100vh;
 }
 
-#map{
-    width: 100vw;
-    height: 100vh;
-    z-index: -2;
-}
-
 #question-prompt-overlay {
-    z-index: -1;
+    position: absolute;
     width: 100vw;
     height: 100vh;
 }
@@ -385,23 +447,43 @@ body{
 #question-prompt {
     width: 100vw;
     height: 100vh;
+    position: absolute;
+}
+
+#question-prompt-text {
+    position: absolute;
+    color: rgb(235, 226, 226);
+    font-family: Pixel;
+    font-size: 1.15em;
+    text-align: center;
+    width: 60vw;
+    height: 16vh;
+    left: 20vw;
+    top: 14vh;
 }
 
 #main-character {
     width: 15vw;
     height: 50vh;
-    margin: 43vh 20vw;
+    /* margin: 43vh 20vw; */
+    bottom: 7vh;
+    left: 20vw;
+    position: absolute;
 }
 
 #main-character img {
     width: 100%;
     height: 100%;
+    position: absolute;
 }
 
 #assistant {
-    width: 20vw;
-    height: 50vh;
-    margin: 41vh 62vw;
+    width: 19vw;
+    height: 45vh;
+    /* margin: 41vh 62vw; */
+    bottom: 9vh;
+    right: 18vw;
+    position: absolute;
 }
 
 #yes-button {
