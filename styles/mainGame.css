@@ -42,6 +42,10 @@ body{
     overflow: hidden;
     margin: 0;
     padding: 0;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-crisp-edges;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
 }
 
 .pixelArt{
