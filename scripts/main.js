@@ -18,92 +18,145 @@ let questions = {
         'question': 'To decrease the need for private vehicles, we want to create more walkable neighborhoods for the residents of RainCity. This means ensuring that neighborhoods have access to  Do you agree to this plan?',
         'answer': true,
         'good-result': 'You made the correct decision!',
-        'bad-result': 'You made the wrong decision!'
+        'bad-result': 'You made the wrong decision!',
+        'eco-score': 1,
+        'pop-score': 1
     },
     1: {
         'question': 'To reduce traffic congestion in Downtown RainCity, we want to charge a fee for private vehicles entering the Metro Core. Do you agree to this plan?',
         'answer': true,
-        'consequence': '<numeric value, either good or bad, to effect eco-score and/or popularity>'
+        'good-result': 'You made the correct decision!',
+        'bad-result': 'You made the wrong decision!',
+        'eco-score': 1,
+        'pop-score': 1
     },
     2: {
         'question': 'To further encourage cycling as a form of transportation, we want to build more bike-only paths that connect outer neighbourhoods to the core of RainCity. Do you agree to this plan?',
         'answer': true,
-        'consequence': '<numeric value, either good or bad, to effect eco-score and/or popularity>'
+        'good-result': 'You made the correct decision!',
+        'bad-result': 'You made the wrong decision!',
+        'eco-score': 1,
+        'pop-score': 1
     },
     3: {
         'question': 'The bus system is getting expensive with the new green requirements! Should we reduce the schedule and frequency of busses to save money?',
         'answer': false,
-        'consequence': '<numeric value, either good or bad, to effect eco-score and/or popularity>'
+        'good-result': 'You made the correct decision!',
+        'bad-result': 'You made the wrong decision!',
+        'eco-score': 1,
+        'pop-score': 1
     },
     4: {
         'question': 'To reduce vehicle pollution, we want to offer incentives for employers that encourage sustainable transportation such as walking, cycling, and public transit. Do you agree to this plan? ',
         'answer': true,
-        'consequence': '<numeric value, either good or bad, to effect eco-score and/or popularity>'
+        'good-result': 'You made the correct decision!',
+        'bad-result': 'You made the wrong decision!',
+        'eco-score': 1,
+        'pop-score': 1
     },
     5: {
         'question': 'To discourage the ownership of private vehicles, we want to expand our residential parking permits city-wide. Do you agree to this plan?',
         'answer': true,
-        'consequence': '<numeric value, either good or bad, to effect eco-score and/or popularity>'
+        'good-result': 'You made the correct decision!',
+        'bad-result': 'You made the wrong decision!',
+        'eco-score': 1,
+        'pop-score': 1
     },
     6: {
         'question': 'Wow! With such an increase in public transit use, we want to increase the ticket prices for buses and trains from $x to $x. Do you agree to this plan?',
         'answer': false,
-        'consequence': '<numeric value, either good or bad, to effect eco-score and/or popularity>'
+        'good-result': 'You made the correct decision!',
+        'bad-result': 'You made the wrong decision!',
+        'eco-score': 1,
+        'pop-score': 1
     },
     7: {
         'question': 'People are complaining about the lack of parking in Downtown RainCity! Can we pave over a greespace to build a parkade?',
         'answer': false,
-        'consequence': '<numeric value, either good or bad, to effect eco-score and/or popularity>'
+        'good-result': 'You made the correct decision!',
+        'bad-result': 'You made the wrong decision!',
+        'eco-score': 1,
+        'pop-score': 1
     },
     8: {
         'question': 'We want to increase the number of electric vehicle charging stations within RainCity. Do you agree to this plan?',
         'answer': true,
-        'consequence': '<numeric value, either good or bad, to effect eco-score and/or popularity>'
+        'good-result': 'You made the correct decision!',
+        'bad-result': 'You made the wrong decision!',
+        'eco-score': 1,
+        'pop-score': 1
     },
     9: {
         'question': 'To further discourage non-electric private vehicles, we want to add an additional carbon pollution surcharge to parking permits for non-electric vehicles. Do you agree to this plan?',
         'answer': true,
-        'consequence': '<numeric value, either good or bad, to effect eco-score and/or popularity>'
+        'good-result': 'You made the correct decision!',
+        'bad-result': 'You made the wrong decision!',
+        'eco-score': 1,
+        'pop-score': 1
     },
     10: {
         'question': 'Over 3 quarters of carbon emission from building operations can be eliminated by switching natural gas to electricity or renewable natural gas for space and water heating. Do you think it is feasible to require the majority of new home constructions to use electrical appliances for heating and hot water.',
         'answer': true,
-        'consequence': '<numeric value, either good or bad, to effect eco-score and/or popularity>'
+        'good-result': 'You made the correct decision!',
+        'bad-result': 'You made the wrong decision!',
+        'eco-score': 1,
+        'pop-score': 1
     },
     11: {
         'question': 'Do you agree to issue fines to building owners that still operate on unrenweable natural gas?',
         'answer': true,
-        'consequence': '<numeric value, either good or bad, to effect eco-score and/or popularity>'
+        'good-result': 'You made the correct decision!',
+        'bad-result': 'You made the wrong decision!',
+        'eco-score': 1,
+        'pop-score': 1
     },
     12: {
         'question': 'The Architechture Association of Raincity hates big windows; they believe it is a faux-pas. Bigger windows allows for improved air flow which allows for reduced energy usage for heating. Do you want to mandate the usage of big windows or appease the powerful architects of Raincity?',
         'answer': '<yes or no here>',
-        'consequence': '<numeric value, either good or bad, to effect eco-score and/or popularity>'
+        'good-result': 'You made the correct decision!',
+        'bad-result': 'You made the wrong decision!',
+        'eco-score': 1,
+        'pop-score': 1
     },
     13: {
         'question': 'Although wood is an excellent source of low carbon material, the deforestation of Raincity is a big controversy amongst Raincity denizens. Do you increase the production of the forestry industry?',
         'answer': '<yes or no here>',
-        'consequence': '<numeric value, either good or bad, to effect eco-score and/or popularity>'
+        'good-result': 'You made the correct decision!',
+        'bad-result': 'You made the wrong decision!',
+        'eco-score': 1,
+        'pop-score': 1
     },
     14: {
         'question': 'One of our aims to lower embodied emissions is to decrease parking spaces in buildings. Do you agree with this?',
         'answer': '<yes or no here>',
-        'consequence': '<numeric value, either good or bad, to effect eco-score and/or popularity>'
+        'good-result': 'You made the correct decision!',
+        'bad-result': 'You made the wrong decision!',
+        'eco-score': 1,
+        'pop-score': 1
     },
     15: {
         'question': 'The reforestation of Raincity is an immiment issue that needs to be adressed. Do you agree with mandating the planting of trees for every tree cut down?',
         'answer': true,
-        'consequence': '<numeric value, either good or bad, to effect eco-score and/or popularity>'
+        'good-result': 'You made the correct decision!',
+        'bad-result': 'You made the wrong decision!',
+        'eco-score': 1,
+        'pop-score': 1
     },
     16: {
         'question': 'Wood is a major export of Raincity. This is goes against the reforestation goals for the city. Do you decrease the exports of wood?',
         'answer': '<yes or no here>',
-        'consequence': '<numeric value, either good or bad, to effect eco-score and/or popularity>'
+        'good-result': 'You made the correct decision!',
+        'bad-result': 'You made the wrong decision!',
+        'eco-score': 1,
+        'pop-score': 1
     },
     17: {
         'question': 'As the climate grows warmer, the environment of Raincity will change. Longer summers and shorter winters will occur, resulting in an increase of innovations in farming. Do you agree with exacerbating climate change and its repurcussions in order to flourish our farming industry?',
         'answer': false,
-        'consequence': '<numeric value, either good or bad, to effect eco-score and/or popularity>'
+        'good-result': 'You made the correct decision!',
+        'bad-result': 'You made the wrong decision!',
+        'eco-score': 1,
+        'pop-score': 1
     }
 };
 
@@ -405,7 +458,7 @@ function introDialogue() {
         document.getElementById('next-dialogue-button').setAttribute('class', 'visible')
         return false
     }
-    setTimeout('introDialogue()', 5);
+    setTimeout('introDialogue()', 50);
 };
 
 // Function for the first question prompt that appears after the intro
@@ -500,7 +553,7 @@ function selectYesButton() {
         // Reflect popularity score
     } else {
         // wrong answer
-        console.log('You answered No; the correct answer is ' + questions[questionCounter]['answer'])
+        console.log('You answered Yes; the correct answer is ' + questions[questionCounter]['answer'])
         document.getElementById('answerBoxText').textContent = questions[questionCounter]['bad-result']
     }
     setTimeout(displayAnswerBox, 1000);
@@ -513,7 +566,7 @@ function selectNoButton() {
     buttonClickOne.play();
     if (questions[questionCounter]['answer'] === false) {
         // correct answer
-        console.log('You answered Yes; the correct answer is ' + questions[questionCounter]['answer'])
+        console.log('You answered No; the correct answer is ' + questions[questionCounter]['answer'])
         document.getElementById('answerBoxText').textContent = questions[questionCounter]['good-result']
     } else {
         // wrong answer
@@ -541,5 +594,7 @@ function nextQuestionPrompt() {
     document.getElementById('question-prompt-text').textContent = questions[questionCounter]['question'];
     if (questionCounter === 18) {
         // end game
+    } else if (popularityScore <= 0) {
+        // you lose
     }
 };
