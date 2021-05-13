@@ -1,5 +1,5 @@
-let buttonClickThree = new Audio("./assets/audio/buttonclick3.mp3")
-let boxPopAudio = new Audio('./assets/audio/boxpop1.mp3')
+let buttonClickOne = document.getElementById('buttonClickOne');
+let boxPopAudio = new Audio('./assets/Audio/boxpop1.mp3')
 
 /*jshint esversion: 6 */
 document.getElementById('char-customization').addEventListener('click', function () {
@@ -143,7 +143,7 @@ function hairPrev() {
     }, 50)
 
     //button sound
-    buttonClickThree.play();
+    buttonClickOne.play();
 
     //change hair
     "use strict";
@@ -164,7 +164,7 @@ function hairNext() {
     }, 50)
 
     //button sound
-    buttonClickThree.play();
+    buttonClickOne.play();
 
 
     //change hair
@@ -187,7 +187,7 @@ function skinPrev() {
     }, 50)
 
     //button sound
-    buttonClickThree.play();
+    buttonClickOne.play();
 
     "use strict";
     if (0 === skinNum) {
@@ -207,7 +207,7 @@ function skinNext() {
     }, 50)
 
     //button sound
-    buttonClickThree.play();
+    buttonClickOne.play();
 
 
     "use strict";
@@ -228,7 +228,7 @@ function suitPrev() {
     }, 50)
 
     //button sound
-    buttonClickThree.play();
+    buttonClickOne.play();
 
 
     "use strict";
@@ -249,7 +249,7 @@ function suitNext() {
     }, 50)
 
     //button sound
-    buttonClickThree.play();
+    buttonClickOne.play();
 
 
     "use strict";
