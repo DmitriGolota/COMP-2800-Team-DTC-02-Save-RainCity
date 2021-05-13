@@ -7,13 +7,18 @@ document.getElementById('char-customization').addEventListener('click', function
     audio.play();
 }, true);
 
+// Score for player
+let popularityScore = 10;
+let ecoScore = 10;
+
 let questionCounter = 0;
 
 let questions = {
     0: {
         'question': 'To decrease the need for private vehicles, we want to create more walkable neighborhoods for the residents of RainCity. This means ensuring that neighborhoods have access to  Do you agree to this plan?',
         'answer': true,
-        'consequence': '<numeric value, either good or bad, to effect eco-score and/or popularity>'
+        'good-result': 'You made the correct decision!',
+        'bad-result': 'You made the wrong decision!'
     },
     1: {
         'question': 'To reduce traffic congestion in Downtown RainCity, we want to charge a fee for private vehicles entering the Metro Core. Do you agree to this plan?',
@@ -302,15 +307,30 @@ document.getElementById('save-button').addEventListener('click', function () {
     mainMap.setAttribute('src', './assets/map/mainmapplaceholder.svg');
     mainMap.setAttribute('id', 'game-map');
 
+    // Create the answer box for consequences of decisions
+    let answerBox = document.createElement('img');
+    answerBox.setAttribute('src', './assets/dialogue_box/AnswerBox.svg')
+    answerBox.setAttribute('id', 'answerBox');
+    answerBox.setAttribute('class', 'hidden');
+
+    // Create the text box for the answer box
+    let answerBoxText = document.createElement('p');
+    answerBoxText.setAttribute('id', 'answerBoxText');
+    answerBoxText.setAttribute('class', 'hidden');
+
     // Create UI Bar and set initial score
     let uibarcontainer = document.createElement('div');
-    let uibar = document.createElement('img');
-    let uiecoscore = document.createElement('img');
-    let uipopscore = document.createElement('img');
     uibarcontainer.setAttribute('id', 'ui-container');
-    uibar.setAttribute('src', './assets/eco_score/eco_score10.svg');
-    uiecoscore.setAttribute('src', './assets/pop_score/pop_score10.svg');
-    uipopscore.setAttribute('src', './assets/status_bar/ui_bar.svg');
+
+    let uibar = document.createElement('img');
+    uibar.setAttribute('src', './assets/status_bar/ui_bar.svg');
+
+    let uiecoscore = document.createElement('img');
+    uiecoscore.setAttribute('src', './assets/eco_score/eco_score10.svg');
+    uiecoscore.setAttribute('id', 'uiEcoScore');
+
+    let uipopscore = document.createElement('img');
+    uipopscore.setAttribute('src', './assets/pop_score/pop_score10.svg');
 
     let introDiv = document.createElement('div');
     introDiv.setAttribute('id', 'intro-div');
@@ -333,14 +353,16 @@ document.getElementById('save-button').addEventListener('click', function () {
     introDiv.appendChild(introText);
     introDiv.appendChild(nextButton);
 
+    uibarcontainer.appendChild(uibar);
     uibarcontainer.appendChild(uipopscore);
     uibarcontainer.appendChild(uiecoscore);
-    uibarcontainer.appendChild(uibar);
 
     mainContainer.append(mainMap);
+    mainContainer.append(answerBox);
+    mainContainer.append(answerBoxText);
     mainContainer.append(uibarcontainer);
     mainContainer.append(introDiv);
-    masterIntroDialogue()
+    masterIntroDialogue();
 });
 
 // Each string in this array is one span of dialogue for the intro
@@ -383,7 +405,7 @@ function introDialogue() {
         document.getElementById('next-dialogue-button').setAttribute('class', 'visible')
         return false
     }
-    setTimeout('introDialogue()', 50);
+    setTimeout('introDialogue()', 5);
 };
 
 // Function for the first question prompt that appears after the intro
@@ -468,24 +490,56 @@ function firstPrompt() {
 
 function selectYesButton() {
     document.getElementById('question-prompt-div').setAttribute('class', 'hidden');
+    buttonClickOne.play();
     if (questions[questionCounter]['answer'] === true) {
         // correct answer
         console.log('You answered Yes; the correct answer is ' + questions[questionCounter]['answer'])
+        document.getElementById('answerBoxText').textContent = questions[questionCounter]['good-result']
+        // Reflect on eco score
+        // document.getElementById('uiEcoScore').setAttribute('src', './assets/eco_score/eco_score2.svg')
+        // Reflect popularity score
     } else {
         // wrong answer
         console.log('You answered No; the correct answer is ' + questions[questionCounter]['answer'])
+        document.getElementById('answerBoxText').textContent = questions[questionCounter]['bad-result']
     }
+    setTimeout(displayAnswerBox, 1000);
     questionCounter += 1
+    setTimeout(nextQuestionPrompt, 11000);
 };
 
 function selectNoButton() {
     document.getElementById('question-prompt-div').setAttribute('class', 'hidden');
+    buttonClickOne.play();
     if (questions[questionCounter]['answer'] === false) {
         // correct answer
         console.log('You answered Yes; the correct answer is ' + questions[questionCounter]['answer'])
+        document.getElementById('answerBoxText').textContent = questions[questionCounter]['good-result']
     } else {
         // wrong answer
         console.log('You answered No; the correct answer is ' + questions[questionCounter]['answer'])
+        document.getElementById('answerBoxText').textContent = questions[questionCounter]['bad-result']
     }
+    setTimeout(displayAnswerBox, 1000);
     questionCounter += 1
+    setTimeout(nextQuestionPrompt, 11000);
+};
+
+function displayAnswerBox() {
+    document.getElementById('answerBox').setAttribute('class', 'visible');
+    document.getElementById('answerBoxText').setAttribute('class', 'visible')
+    setTimeout(hideAnswerBox, 5000);
+};
+
+function hideAnswerBox() {
+    document.getElementById('answerBox').setAttribute('class', 'hidden');
+    document.getElementById('answerBoxText').setAttribute('class', 'hidden')
+};
+
+function nextQuestionPrompt() {
+    document.getElementById('question-prompt-div').setAttribute('class', 'visible');
+    document.getElementById('question-prompt-text').textContent = questions[questionCounter]['question'];
+    if (questionCounter === 18) {
+        // end game
+    }
 };
