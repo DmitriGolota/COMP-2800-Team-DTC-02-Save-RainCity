@@ -285,7 +285,7 @@ document.getElementById('save-button').addEventListener('click', function () {
     var audio = document.getElementById('myaudio');
     audio.pause();
 
-    buttonClickThree.play()
+    buttonClickOne.play()
     // Populate introduction scene
 
     // Play boxPopAudio
@@ -340,7 +340,7 @@ let introDialogueText = introDialogueArray.shift().split('');
 // Main function to run the intro dialogue
 function masterIntroDialogue() {
     document.getElementById("next-dialogue-button").src = "./assets/intro_box/ContinueButtonCllicked.svg"
-    buttonClickThree.play()
+    buttonClickOne.play()
     setTimeout(function(){
         document.getElementById("next-dialogue-button").src = "./assets/intro_box/ContinueButtonUncllicked.svg"
         if (introDialogueArray.length === 0 && introDialogueText.length === 0) {
