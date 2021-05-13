@@ -37,3 +37,88 @@
     top: 83vh;
     left: 24vw;
 }
+
+@media (width: 720px) and (height: 540px) {
+    #paper{
+        width: 60vw;
+        left: 20vw;
+    }
+
+    #newspaperContinue{
+        font-size: 8vh;
+        left: 19vw;
+    }
+
+    #headline{
+        width: 52vw;
+        left: 21vw;
+    }
+}
+
+@media (width: 653px) and (height: 280px) {
+    #paper{
+        width: 34vw;
+        left: 33vw;
+    }
+
+    #newspaperContinue{
+        top: 79vh;
+    }
+
+    #headline{
+        width: 30vw;
+        left: 33.5vw;
+    }
+}
+
+@media (width: 812px) and (height: 375px) {
+    #paper{
+        width: 37vw;
+        left: 31.5vw;
+    }
+
+    #newspaperContinue{
+        left: 29.5vw;
+    }
+
+    #headline{
+        width: 32vw;
+        left: 32.25vw;
+    }
+}
+
+@media (width: 823px) and (height: 411px) {
+    #paper{
+        width: 40vw;
+        left: 30vw;
+    }
+
+    #headline{
+        width: 34vw;
+        left: 31vw;
+    }
+
+    #newspaperContinue{
+        left: 30vw;
+    }
+}
+
+@media (min-width: 1024px) {
+    #paper{
+        width: 60vw;
+        left: 20vw;
+    }
+
+    #newspaperContinue{
+        font-size: 8vh;
+        left: 18vw;
+    }
+
+    #headline{
+        width: 52vw;
+        left: 21vw;
+    }
+}
+
+
+

@@ -1,5 +1,5 @@
 let popularity = 500;
-let ecoScore = 750;
+let ecoScore = 1000;
 
 let papers = {
     0 : false,
@@ -54,17 +54,17 @@ let defineDefaultHeadline = () => {
         papers[6] = true;
         return document.createTextNode("Massive Tsunami Due to Polution Submerges RainCity ")
     }
-    else if (ecoScore >= 1000 && !papers[11]){
-        papers[11] = true;
-        return document.createTextNode("RainCity Becomes the World's Greenest and Most Sustainable City")
+    else if(ecoScore >= 750 && !papers[9]){
+        papers[9] = true;
+        return document.createTextNode("Mayor Improves Quality of Live with Green Initiatives")
     }
     else if (ecoScore >= 900 && !papers[10]){
         papers[10] = true;
         return document.createTextNode("Mayor Leads RainCity to Almost Having a ZERO Carbon Footprint")
     }
-    else if(ecoScore >= 750 && !papers[9]){
-        papers[9] = true;
-        return document.createTextNode("Mayor Improves Quality of Live with Green Initiatives")
+    else if (ecoScore >= 1000 && !papers[11]){
+        papers[11] = true;
+        return document.createTextNode("RainCity Becomes the World's Greenest and Most Sustainable City")
     }
     else {
         return document.createTextNode("null");
@@ -89,8 +89,10 @@ let createNewspaper = (headlineDefiner) => {
     var newspaper = document.createElement("div");
     newspaper.id = "newspaper";
     newspaper.onclick = function () {
+        let audio = new Audio("./assets/Audio/newspaperAway.mp3")
         var newspaper = document.getElementById('newspaper');
         newspaper.remove();
+        audio.play();
     }
     if(headlineDefiner == "default"){
         headline.appendChild(defineDefaultHeadline());
@@ -106,6 +108,9 @@ let createNewspaper = (headlineDefiner) => {
     newspaper.appendChild(headline);
     newspaper.appendChild(continueHeader);
     body.appendChild(newspaper);
+
+    let audio = new Audio("./assets/Audio/newspaperLoad.mp3")
+    audio.play();
 }
 
 let deletePaper = () => {
