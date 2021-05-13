@@ -1,5 +1,6 @@
 let buttonClickOne = document.getElementById('buttonClickOne');
-let boxPopAudio = new Audio('./assets/Audio/boxpop1.mp3')
+let boxPopAudioOne = document.getElementById('boxPopAudioOne');
+let boxPopAudioThree = document.getElementById('boxPopAudioThree');
 
 /*jshint esversion: 6 */
 document.getElementById('char-customization').addEventListener('click', function () {
@@ -17,7 +18,7 @@ let questionCounter = 0;
 
 let questions = {
     0: {
-        'question': 'To decrease the need for private vehicles, we want to create more walkable neighborhoods for the residents of RainCity. This means ensuring that neighborhoods have access to  Do you agree to this plan?',
+        'question': 'Mayor! People have been defacing trees in the parks! Should we increase the amount of plantlife near sidewalks to make it more enjoyable to walk?',
         'answer': true,
         'good-result': 'You made the correct decision!',
         'bad-result': 'You made the wrong decision!',
@@ -26,52 +27,52 @@ let questions = {
         'NPC-img-num': 1
     },
     1: {
-        'question': 'To reduce traffic congestion in Downtown RainCity, we want to charge a fee for private vehicles entering the Metro Core. Do you agree to this plan?',
+        'question': "These bikers never look where they're going.. but I guess its better than driving... to further encourage cycling as a form of transportation, we want to build more bike-only paths that connect outer neighbourhoods to the core of RainCity. Do you agree to this plan?",
         'answer': true,
         'good-result': 'You made the correct decision!',
         'bad-result': 'You made the wrong decision!',
         'eco-score': 1,
         'pop-score': 1,
-        'NPC-img-num': 1
+        'NPC-img-num': 2
     },
     2: {
-        'question': 'To further encourage cycling as a form of transportation, we want to build more bike-only paths that connect outer neighbourhoods to the core of RainCity. Do you agree to this plan?',
+        'question': 'Traffic in Downtown RainCity is at an all time high and that means lots of vehicle carbon emissions! Do you want to charge a fee for private vehicles entering the Metro Core?',
         'answer': true,
         'good-result': 'You made the correct decision!',
         'bad-result': 'You made the wrong decision!',
         'eco-score': 1,
         'pop-score': 1,
-        'NPC-img-num': 1
+        'NPC-img-num': 3
     },
     3: {
-        'question': 'The bus system is getting expensive with the new green requirements! Should we reduce the schedule and frequency of busses to save money?',
+        'question': 'The bus system is getting expensive with the new green requirements! Should we reduce the schedule and frequency of buses to save money?',
         'answer': false,
         'good-result': 'You made the correct decision!',
         'bad-result': 'You made the wrong decision!',
         'eco-score': 1,
         'pop-score': 1,
-        'NPC-img-num': 1
+        'NPC-img-num': 4
     },
     4: {
-        'question': 'To reduce vehicle pollution, we want to offer incentives for employers that encourage sustainable transportation such as walking, cycling, and public transit. Do you agree to this plan? ',
+        'question': 'Back in my day we used to walk 10km to get to work...maybe we can reduce vehicle pollution by offering incentives for employers that encourage sustainable transportation such as walking, cycling, and public transit. Do you agree to this plan?',
         'answer': true,
         'good-result': 'You made the correct decision!',
         'bad-result': 'You made the wrong decision!',
         'eco-score': 1,
         'pop-score': 1,
-        'NPC-img-num': 1
+        'NPC-img-num': 5
     },
     5: {
-        'question': 'To discourage the ownership of private vehicles, we want to expand our residential parking permits city-wide. Do you agree to this plan?',
+        'question': 'Mayor! Still too many people are driving private vehicles unnecessarily! Should we expand our residential parking permits city-wide?',
         'answer': true,
         'good-result': 'You made the correct decision!',
         'bad-result': 'You made the wrong decision!',
         'eco-score': 1,
         'pop-score': 1,
-        'NPC-img-num': 1
+        'NPC-img-num': 6
     },
     6: {
-        'question': 'Wow! With such an increase in public transit use, we want to increase the ticket prices for buses and trains from $x to $x. Do you agree to this plan?',
+        'question': 'Wow! With such an increase in public transit use, we want to increase the ticket prices for buses and trains from $2 to $4. Do you agree to this plan?',
         'answer': false,
         'good-result': 'You made the correct decision!',
         'bad-result': 'You made the wrong decision!',
@@ -80,7 +81,7 @@ let questions = {
         'NPC-img-num': 1
     },
     7: {
-        'question': 'People are complaining about the lack of parking in Downtown RainCity! Can we pave over a greespace to build a parkade?',
+        'question': 'People are complaining about the lack of parking in Downtown RainCity! Can we pave over a greenspace to build a parkade?',
         'answer': false,
         'good-result': 'You made the correct decision!',
         'bad-result': 'You made the wrong decision!',
@@ -89,7 +90,7 @@ let questions = {
         'NPC-img-num': 1
     },
     8: {
-        'question': 'We want to increase the number of electric vehicle charging stations within RainCity. Do you agree to this plan?',
+        'question': "We just got a call from Elon Musk! He's paying cities lots of DogeCoin to add more electric vehicle charging stations! Should we?",
         'answer': true,
         'good-result': 'You made the correct decision!',
         'bad-result': 'You made the wrong decision!',
@@ -98,7 +99,7 @@ let questions = {
         'NPC-img-num': 1
     },
     9: {
-        'question': 'To further discourage non-electric private vehicles, we want to add an additional carbon pollution surcharge to parking permits for non-electric vehicles. Do you agree to this plan?',
+        'question': 'Mayor, is it just me or is it hard to breathe downtown? To further discourage non-electric private vehicles, we want to add an additional carbon pollution surcharge to parking permits for non-electric vehicles. Do you agree to this plan?',
         'answer': true,
         'good-result': 'You made the correct decision!',
         'bad-result': 'You made the wrong decision!',
@@ -134,7 +135,7 @@ let questions = {
         'NPC-img-num': 1
     },
     13: {
-        'question': 'Although wood is an excellent source of low carbon material, the deforestation of Raincity is a big controversy amongst Raincity denizens. Do you increase the production of the forestry industry?',
+        'question': "Mayor, Tim's Mill just called and they want to increase their wood production. Wood is a great low carbon material, but the citizens really hate deforestation. Should we do it?",
         'answer': '<yes or no here>',
         'good-result': 'You made the correct decision!',
         'bad-result': 'You made the wrong decision!',
@@ -152,7 +153,7 @@ let questions = {
         'NPC-img-num': 1
     },
     15: {
-        'question': 'The reforestation of Raincity is an immiment issue that needs to be adressed. Do you agree with mandating the planting of trees for every tree cut down?',
+        'question': 'Yooo man... We gotta replant the trees dude, it a real issue man. The trees are gonna save us from the terrible carbon pollution bro. I love trees man. *Kisses Tree*',
         'answer': true,
         'good-result': 'You made the correct decision!',
         'bad-result': 'You made the wrong decision!',
@@ -161,7 +162,7 @@ let questions = {
         'NPC-img-num': 1
     },
     16: {
-        'question': 'Wood is a major export of Raincity. This is goes against the reforestation goals for the city. Do you decrease the exports of wood?',
+        'question': "Bro, exporting out massive amounts of wood is totally not cool man. This totally goes against the grain of the trees dude. Let's export less so we can save our tree brethren. *Kisses you*",
         'answer': '<yes or no here>',
         'good-result': 'You made the correct decision!',
         'bad-result': 'You made the wrong decision!',
@@ -170,7 +171,7 @@ let questions = {
         'NPC-img-num': 1
     },
     17: {
-        'question': 'As the climate grows warmer, the environment of Raincity will change. Longer summers and shorter winters will occur, resulting in an increase of innovations in farming. Do you agree with exacerbating climate change and its repurcussions in order to flourish our farming industry?',
+        'question': 'Climate change is not cool at all man. But the changing temperatures and seasons could make the farmining industry innovate more dude... As a vegan, I think the farming industry is hella cool... We should ignore climate change to help save the cows *Kisses cow*',
         'answer': false,
         'good-result': 'You made the correct decision!',
         'bad-result': 'You made the wrong decision!',
@@ -367,7 +368,7 @@ document.getElementById('save-button').addEventListener('click', function () {
     // Populate introduction scene
 
     // Play boxPopAudio
-    boxPopAudio.play()
+    boxPopAudioOne.play()
 
     // Begin main soundtrack    
     var audioMain = document.getElementById('mainSoundTrack');
@@ -404,6 +405,7 @@ document.getElementById('save-button').addEventListener('click', function () {
 
     let uipopscore = document.createElement('img');
     uipopscore.setAttribute('src', './assets/pop_score/pop_score10.svg');
+    uipopscore.setAttribute('id', 'uiPopScore')
 
     let introDiv = document.createElement('div');
     introDiv.setAttribute('id', 'intro-div');
@@ -452,7 +454,7 @@ let introDialogueText = introDialogueArray.shift().split('');
 function masterIntroDialogue() {
     document.getElementById("next-dialogue-button").src = "./assets/intro_box/ContinueButtonCllicked.svg"
     buttonClickOne.play()
-    setTimeout(function(){
+    setTimeout(function () {
         document.getElementById("next-dialogue-button").src = "./assets/intro_box/ContinueButtonUncllicked.svg"
         if (introDialogueArray.length === 0 && introDialogueText.length === 0) {
             document.getElementById('intro-div').remove()
@@ -478,7 +480,7 @@ function introDialogue() {
         document.getElementById('next-dialogue-button').setAttribute('class', 'visible')
         return false
     }
-    setTimeout('introDialogue()', 50);
+    setTimeout('introDialogue()', 5);
 };
 
 // Function for the first question prompt that appears after the intro
@@ -559,6 +561,7 @@ function firstPrompt() {
     questionPromptDiv.appendChild(questionPromptOverlay);
 
     document.getElementById('container').appendChild(questionPromptDiv);
+    boxPopAudioOne.play();
 };
 
 function selectYesButton() {
@@ -600,6 +603,7 @@ function selectNoButton() {
 };
 
 function displayAnswerBox() {
+    boxPopAudioThree.play();
     document.getElementById('answerBox').setAttribute('class', 'visible');
     document.getElementById('answerBoxText').setAttribute('class', 'visible')
     setTimeout(hideAnswerBox, 5000);
@@ -611,11 +615,83 @@ function hideAnswerBox() {
 };
 
 function nextQuestionPrompt() {
+    boxPopAudioOne.play();
     document.getElementById('question-prompt-div').setAttribute('class', 'visible');
+
+    // Change the question to the next question
     document.getElementById('question-prompt-text').textContent = questions[questionCounter]['question'];
-    if (questionCounter === 18) {
+
+    // Change the NPC to correct NPC image
+    document.getElementById('assistant').setAttribute('src', "assets/npc/npc" + questions[questionCounter]['NPC-img-num'] + ".svg")
+    
+    if (questionCounter === 1) {
         // end game
+        endGameSequence();
     } else if (popularityScore <= 0) {
         // you lose
+    }
+};
+
+function endGameSequence() {
+    // Remove everything
+    document.getElementById('container').remove();
+
+    let endGameBox = document.createElement('img');
+    endGameBox.setAttribute('id', 'endGameBox');
+    endGameBox.setAttribute('src', './assets/end_game_box/EndGameBox.svg');
+
+    let gameOverText = document.createElement('img');
+    gameOverText.setAttribute('id', 'gameOverText');
+    gameOverText.setAttribute('src', './assets/end_game_box/game_over_anim/GameOver1.svg')
+
+    let returnButton = document.createElement('img');
+    returnButton.setAttribute('id', 'returnButton');
+    returnButton.setAttribute('src', './assets/intro_box/ContinueButtonUncllicked.svg');
+    returnButton.setAttribute('onclick', 'window.location.assign("index.html")');
+
+    document.body.append(endGameBox);
+    document.body.append(gameOverText);
+    document.body.append(returnButton);
+
+
+    setInterval(function () {
+        animatepic();
+    }, 100);
+};
+
+gameOverFrames = {
+    "0": "./assets/end_game_box/game_over_anim/GameOver1.svg",
+    "1": "./assets/end_game_box/game_over_anim/GameOver2.svg",
+    "2": "./assets/end_game_box/game_over_anim/GameOver3.svg",
+    "3": "./assets/end_game_box/game_over_anim/GameOver4.svg",
+    "4": "./assets/end_game_box/game_over_anim/GameOver5.svg",
+    "5": "./assets/end_game_box/game_over_anim/GameOver6.svg",
+    "6": "./assets/end_game_box/game_over_anim/GameOver7.svg",
+    "7": "./assets/end_game_box/game_over_anim/GameOver8.svg",
+    "8": "./assets/end_game_box/game_over_anim/GameOver9.svg",
+    "9": "./assets/end_game_box/game_over_anim/GameOver10.svg",
+    "10": "./assets/end_game_box/game_over_anim/GameOver11.svg",
+    "11": "./assets/end_game_box/game_over_anim/GameOver12.svg",
+    "12": "./assets/end_game_box/game_over_anim/GameOver13.svg",
+    "13": "./assets/end_game_box/game_over_anim/GameOver14.svg",
+    "14": "./assets/end_game_box/game_over_anim/GameOver15.svg",
+    "15": "./assets/end_game_box/game_over_anim/GameOver16.svg",
+    "16": "./assets/end_game_box/game_over_anim/GameOver17.svg",
+    "17": "./assets/end_game_box/game_over_anim/GameOver18.svg",
+    "18": "./assets/end_game_box/game_over_anim/GameOver19.svg",
+    "19": "./assets/end_game_box/game_over_anim/GameOver20.svg",
+    "20": "./assets/end_game_box/game_over_anim/GameOver21.svg",
+    "21": "./assets/end_game_box/game_over_anim/GameOver22.svg",
+}
+
+let statcount = 0;
+
+function animatepic() {
+    if (statcount == 21) {
+        statcount = 0;
+        gameOverText.setAttribute('src', gameOverFrames[statcount])
+    } else {
+        statcount += 1
+        gameOverText.setAttribute('src', gameOverFrames[statcount])
     }
 };
