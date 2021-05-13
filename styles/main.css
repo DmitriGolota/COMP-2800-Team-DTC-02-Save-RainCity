@@ -440,7 +440,7 @@ body{
 }
 /* End of Introduction styles */
 
-/* Main game */
+/* Question Prompt styles */
 .absolute-div {
     position: absolute;
 }
@@ -541,6 +541,29 @@ body{
 
 #no-button:active {
     content: url(/assets/dialogue_box/buttons/NoButtonClicked.svg);
+}
+/* End of Question Prompt styles */
+
+
+/* End Game Sequence */
+
+#endGameBox {
+    position: absolute;
+    width: 70vw;
+    left: 15vw;
+}
+
+#gameOverText {
+    position: absolute;
+    width: 70vw;
+    left: 15vw;
+}
+
+#returnButton {
+    position: absolute;
+    height: 18vh;
+    left: 45vw;
+    bottom: 17vh;
 }
 
 /* All pages */
