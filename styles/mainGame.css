@@ -548,3 +548,62 @@ body{
 #main-game {
     display: none;
 }
+
+
+/* Wider phones */
+@media (min-width: 811px) and (max-width: 825px) {
+    #main-character {
+        width: 13vw;
+        height: 40vh;
+        margin: 48vh 23.5vw;
+    }
+
+    #assistant {
+        width: 17vw;
+        height: 50vh;
+        margin: 41vh 61vw;
+    }
+}
+
+@media (min-width: 811px) and (max-width: 815px) and (min-height: 370px) and (max-height: 380px) {
+    #main-character {
+        width: 12vw;
+        height: 40vh;
+        margin: 48vh 25.5vw;
+    }
+
+    #assistant {
+        width: 15.5vw;
+        height: 50vh;
+        margin: 41vh 60vw;
+    }
+}
+
+/* Tablets / iPads */
+@media (min-width: 1000px) and (max-width: 1500px) and (min-height: 750px) and (max-height: 1200px) {
+    #question-prompt {
+        width: 70vw;
+        height: 80vh;
+        margin: 10vh 15vw;
+    }
+
+    #main-character {
+        width: 13vw;
+        height: 40vh;
+        margin: 43vh 23vw;
+    }
+
+    #assistant {
+        width: 17vw;
+        height: 50vh;
+        margin: 36vh 62vw;
+    }
+
+    #yes-button {
+        margin: 48vh 42.5vw;
+    }
+
+    #no-button {
+        margin: 60vh 42.5vw;
+    }
+}
