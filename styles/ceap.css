@@ -10,21 +10,30 @@ hr {
     color: whitesmoke;
 }
 .content{
+    color: whitesmoke;
     background-color: rgb(151, 151, 151);
     margin: 2%;
     padding: 2%;
     text-align: center;
     border: 4px solid rgb(37, 37, 37);
 }
-/*Media queries for Pixel 2 phone max-width*/
-@media (min-width: 0px) and (max-width: 414px){
-    .main-background{
-        background-color: rgb(90, 90, 90) !important;
-    }
-    /* Main Grid*/
-    div#outer{
-        display: flex;
-        flex-direction: column;
-    }
 
+#red{
+    color: rgb(255, 6, 6);
+    border: 1px;
 }
+#green{
+    color: rgb(0, 236, 0);
+}
+#blue{
+    color: rgb(0, 217, 255);
+}
+
+#orange{
+    color: rgb(229, 255, 0);
+}
+#purple{
+    color:rgb(128, 0, 128);
+}
+
+

@@ -297,9 +297,20 @@ document.getElementById('save-button').addEventListener('click', function () {
 
     let mainContainer = document.getElementById('container');
 
+    // Create Map and set as background
     let mainMap = document.createElement('img');
     mainMap.setAttribute('src', './assets/map/mainmapplaceholder.svg');
     mainMap.setAttribute('id', 'game-map');
+
+    // Create UI Bar and set initial score
+    let uibarcontainer = document.createElement('div');
+    let uibar = document.createElement('img');
+    let uiecoscore = document.createElement('img');
+    let uipopscore = document.createElement('img');
+    uibarcontainer.setAttribute('id', 'ui-container');
+    uibar.setAttribute('src', './assets/eco_score/eco_score10.svg');
+    uiecoscore.setAttribute('src', './assets/pop_score/pop_score10.svg');
+    uipopscore.setAttribute('src', './assets/status_bar/ui_bar.svg');
 
     let introDiv = document.createElement('div');
     introDiv.setAttribute('id', 'intro-div');
@@ -322,7 +333,12 @@ document.getElementById('save-button').addEventListener('click', function () {
     introDiv.appendChild(introText);
     introDiv.appendChild(nextButton);
 
+    uibarcontainer.appendChild(uipopscore);
+    uibarcontainer.appendChild(uiecoscore);
+    uibarcontainer.appendChild(uibar);
+
     mainContainer.append(mainMap);
+    mainContainer.append(uibarcontainer);
     mainContainer.append(introDiv);
     masterIntroDialogue()
 });

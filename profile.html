@@ -8,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    
+    <!--StyleSheets-->
     <link rel="stylesheet" href="./styles/header.css">
     <link rel="stylesheet" href="./styles/profile.css">
     <link rel="stylesheet" href="./styles/footer.css">
@@ -42,9 +44,6 @@
     </header>
 
     <section class="content">
-        <img src="https://via.placeholder.com/150" alt="character image">
-    </section>
-    <section class="content">
         <h1>Name</h1>
     </section>
     <section id="table" class="content">
@@ -66,37 +65,55 @@
             </tr>
         </table>
     </section>
-    <section class="content">
+    <section class="content bottom-box">
         <p>SHARE TO FRIENDS API THING GOES HERE</p>
     </section>
     <footer>
-      <section class="about">
-        <h4>About the project</h4>
-        <p class="footerDescription"> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      </section>
-      <aside>
-        <h4>Links</h4>
-        <ul>
-          <li>
-            <a href="./ceap.html">CEAP info</a>
-          </li>
-          <li>
-            <a href="./aboutUs.html">About us</a>
-          </li>
-          <li id="trademark">
-            Rogoca Wuli LTD
-          </li>
-        </ul>
-      </aside>
-    </footer>
+        <section class="about">
+          <h4>About the project</h4>
+          <p class="footerDescription"> A group of developers come together to create a fun and interactive game to teach Vancouverites about the Climate Emergency Action Plan.</p>
+        </section>
+        <aside>
+          <h4>Navigation</h4>
+          <ul>
+              <li>
+              <a href="./index.html">Home</a>
+            </li>
+            <li>
+              <a href="./ceap.html">CEAP info</a>
+            </li>
+            <li>
+              <a href="./aboutUs.html">About the devs</a>
+            </li>
+          </ul>
+        </aside>
+      </footer>
+
+
+    <!----------------------------------------------->
+    <!-- JS: Boostrap, JQuery, Firebase, API related    -->
+    <!----------------------------------------------->
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.0/firebase-ui-auth.js"></script>
+
+    <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
             crossorigin="anonymous"></script>
 
-        <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+    <!-- Link to the api key for our firebase project -->
     <script src="./server/firebase_api_saveraincity.js"></script>
-    <script src="./scripts/index.js" async defer></script>
+
+    <!--------------------------------------------------------------------->
+    <!-- JS files: Your own JavaScript functions included here    -->
+    <!--------------------------------------------------------------------->
+    <script></script>
 </body>
 </html>

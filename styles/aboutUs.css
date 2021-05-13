@@ -14,14 +14,100 @@ h1 + p{
     text-align: center;
 }
 
+section {
+    color: whitesmoke;
+}
+
 #aboutUs{
-    background-color: rgb(212, 212, 212);
+    background-color: rgb(110, 110, 110);
     margin: 2%;
-    padding: 1%;
+    padding: 2%;
+    text-align: center;
+    border: 4px solid rgb(37, 37, 37);
+    border-radius: 20px;
+
 }
 
 #devs{
     background-color: rgb(151, 151, 151);
     margin: 2%;
-    padding: 1%;
+    padding: 2%;
+    text-align: center;
+    border: 4px solid rgb(37, 37, 37);
+}
+
+/* Following CSS was provided by www.w3schools.com 
+https://www.w3schools.com/howto/howto_css_flip_card.asp
+Adjusted to fit our layout
+*/
+
+.flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 300px;
+    border: 5px solid black;
+    margin: auto;
+    margin-bottom: 10%;
+    perspective: 1000px;
+    border-radius: 20px;
+  }
+  
+  /* This container is needed to position the front and back side */
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  /* Position the front and back side */
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+    border-radius: 10px;
+  }
+  
+  /* Style the front side (fallback if image is missing) */
+  .flip-card-front {
+    background-color: rgb(255, 255, 255);
+    color: black;
+  }
+  
+  /* Style the back side */
+  .flip-card-back {
+      border: solid 5px black;
+    background-color: rgb(75, 75, 75);
+    color: white;
+    transform: rotateY(180deg);
+  }
+
+#red{
+    color: rgb(255, 6, 6);
+    border: 1px;
+}
+#green{
+    color: rgb(0, 236, 0);
+}
+#blue{
+    color: rgb(0, 217, 255);
+}
+
+#orange{
+    color: rgb(229, 255, 0);
+}
+#grey{
+    color:rgb(167, 167, 167);
+}
+#purple{
+    color: rgb(140, 66, 224);
 }

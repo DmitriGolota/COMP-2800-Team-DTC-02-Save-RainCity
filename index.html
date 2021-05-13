@@ -31,7 +31,7 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link main-link" href="profile.html">Profile</a>
+                    <a class="nav-link main-link" href="login.html" id="profileAnchor">Profile</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link main-link" href="./ceap.html">CEAP Information</a>
@@ -45,10 +45,10 @@
           </nav>
           
           <!--Page Content-->
-          <div id="outer">
+          <div id="outer" class="bottom-box">
               <div id="Synopsis">
                   <p>On <span id="red">Nov 17th, 2020,</span> Vancouver City Council approved the Climate Emergency Action Plan!</p>
-                  <p>In an effort to gather public input, we want <span id="orange">YOU</span> to become Mayor for a day!</p>
+                  <p>In order to raise public awareness, we want <span id="orange">YOU</span> to become Mayor for a day!</p>
                   <p>Let's see if you have what it takes to</p>  
                   <p id="saverain"><span id="green">SAVE</span> <span id="blue">RAIN</span> <span id=grey>CITY</span></p> 
               </div>
@@ -67,51 +67,70 @@
                   <section>
                       <h1 id="blue">Contribute</h1>
                   <img src="./assets/icon2.png" alt="">
-                  <p>Help contribute to big decisions of Raincity as Mayor! Find hidden easter eggs and trouble in the city with this dynamic and ever changing city</p>
+                  <p>Make big changes to RainCity and determine your fate as Mayor! Find hidden easter eggs and trouble within the dynamic and ever changing RainCity</p>
                   </section>
                   <section>
                     <h1 id="orange">Change</h1>
                     <img src="./assets/icon3.png" alt="">
-                    <p>On your journy as Mayor you can change Raincity as into the best place on earth to live. Cut down on natural gas, create electric vehicle initiatives, and create a walkable city for Raincity to emit zero carbon emmisions.</p>
+                    <p>On your journey as Mayor you can mae RainCity into the greenest place on earth. Cut down on natural gas, create electric vehicle initiatives, and implement many more possible changes! </p>
                   </section>
                   <section>
                     <h1 id="red">Learn</h1>
                     <img src="./assets/icon4.png" alt="">
-                    <p>Dive into Raincity to learn about eco-friendly choices you can make right now to gelp your own real life city! Learn all about B.C.'s Emergency Climate Action Plan through fun and interactive gameplay.</p>
+                    <p>Dive into RainCity to learn about eco-friendly choices you can make right now to gelp your own real life city! Learn all about B.C.'s Emergency Climate Action Plan through fun and interactive gameplay.</p>
                   </section>
-
               </div>
           </div>
+          
+    <!--Footer-->
     <footer>
-      <section class="about">
-        <h4>About the project</h4>
-        <p class="footerDescription"> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      </section>
-      <aside>
-        <h4>Links</h4>
-        <ul>
-          <li>
-            <a href="./ceap.html">CEAP info</a>
-          </li>
-          <li>
-            <a href="./aboutUs.html">About us</a>
-          </li>
-          <li id="trademark">
-            Rogoca Wuli LTD
-          </li>
-        </ul>
-      </aside>
-    </footer>
+        <section class="about">
+          <h4>About the project</h4>
+          <p class="footerDescription"> A group of developers come together to create a fun and interactive game to teach Vancouverites about the Climate Emergency Action Plan.</p>
+        </section>
+        <aside>
+          <h4>Navigation</h4>
+          <ul>
+              <li>
+              <a href="./index.html">Home</a>
+            </li>
+            <li>
+              <a href="./ceap.html">CEAP info</a>
+            </li>
+            <li>
+              <a href="./aboutUs.html">About the devs</a>
+            </li>
+          </ul>
+        </aside>
+      </footer>
         
-      <!--Scripts-->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-          integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
-          crossorigin="anonymous"></script>
+    <!----------------------------------------------->
+    <!-- JS: Boostrap, JQuery, Firebase, API related    -->
+    <!----------------------------------------------->
 
-      <!-- The core Firebase JS SDK is always required and must be listed first -->
-      <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.0/firebase-ui-auth.js"></script>
 
-      <script src="./server/firebase_api_saveraincity.js"></script>
-      <script src="./scripts/index.js" async defer></script>
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+            crossorigin="anonymous"></script>
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Link to the api key for our firebase project -->
+    <script src="./server/firebase_api_saveraincity.js"></script>
+
+    <!--------------------------------------------------------------------->
+    <!-- JS files: Your own JavaScript functions included here    -->
+    <!--------------------------------------------------------------------->
+    <script src="./scripts/landingpages.js"></script>
+    <script>
+      checkLoginStatus();
+    </script>
+
   </body>
 </html>
