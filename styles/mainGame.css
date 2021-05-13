@@ -124,6 +124,18 @@ body{
     padding-bottom: 0;
 }
 
+#ui-container{
+    position: absolute;
+    width: 30vw;
+    right: 1%;
+    top:1%;
+}
+
+#ui-container img{
+    position: absolute;
+    
+}
+
 @media (orientation: portrait) {
     .orientation{
         display: block;
