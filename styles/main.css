@@ -1,0 +1,866 @@
+@font-face {
+    font-family: Pixel;
+    src: url("../assets/VT323-Regular.ttf");
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.visible {
+    visibility: visible;
+}
+
+/* For Phones Landscape */
+@media (max-height: 430px) {
+    #game-map {
+        position: absolute;
+    }
+}
+
+/* For Tablets (this was from introduction.css -- 
+-- this is a method of stretching the map image for tablets)*/
+@media (min-height: 431px) {
+    #game-map {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/* For all views */
+#container {
+    width: 100vw;
+    height: 100vh;
+}
+
+/* Character Customization */
+body{
+    background-color: rgb(80, 233, 233);
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-crisp-edges;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+
+.pixelArt{
+    image-rendering: pixelated;
+}
+
+.custom{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.character{
+    position: absolute;
+    width: 25vw;
+    height: 50vh;
+    top: 26vh;
+    left: 19vw;
+}
+
+.labels{
+    width: auto;
+    height: 10vh;
+    display: inline;
+}
+
+.switch{
+    height: 10vh;
+    position: absolute;
+}
+
+#save-button{
+    height: 12vh;
+    top: 78vh;
+    left: 66.5vw;
+    position: absolute;
+}
+
+.orientation{
+    display: none;
+    background-color: black;
+    color: white;
+    height: 60vh;
+    width: 100%;
+}
+
+.notebook{
+    position: absolute;
+    width: 80vw;
+    height: 90vh;
+    top: 5vh;
+    left: 10vw;
+    padding: 0;
+}
+
+#ui-container{
+    position: absolute;
+    width: 30vw;
+}
+
+#ui-container img{
+    position: absolute;
+}
+
+.hairButton {
+    top: 29.5vh;
+}
+
+.skinButton {
+    top: 46.5vh;
+}
+
+.suitButton {
+    top: 64.5vh;
+}
+
+.prev {
+    left: 56.5vw;
+    padding: 0;
+    margin: 0;
+}
+
+.next {
+    left: 77.5vw;
+    padding: 0;
+    margin: 0;
+}
+
+@media (orientation: portrait) {
+    .orientation{
+        display: block;
+        text-align: center;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 20vh 0;
+    }
+
+    .orientation h1{
+        font-size: 12vh;
+        margin: 0;
+        font-family: Pixel;
+    }
+
+    #container {
+        visibility: hidden;
+    }
+}
+/* End of Character Customization */
+
+/* Introduction Styles */
+#intro-div {
+    width: 100%;
+    height: 100%;
+}
+
+#intro-box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#intro-text {
+    position: absolute;
+    margin: 0;
+    text-align: center;
+    font-family: Pixel;
+    font-size: 2vw;
+    width: 60%;
+    color: rgb(235, 226, 226);
+    top: 20vh;
+    left: 20vw;
+} 
+
+#next-dialogue-button {
+    position: absolute;
+    height: 10vh;
+    top: 71vh;
+    left: 80vw;
+    height: 17vh;
+}
+/* End of Introduction styles */
+
+/* Question Prompt styles */
+.absolute-div {
+    position: absolute;
+}
+
+/*Game map .gif*/
+#game-map{
+    position: absolute;
+    width: 100%;
+
+}
+
+.main-game-images {
+    position: absolute;
+}
+
+#answerBoxText {
+    width: 62vw;
+    height: 26vh;
+    top: 50vh;
+    left: 19vw;
+}
+
+#ui-container {
+    right: 0;
+}
+
+#raincity {
+    width: 100vw;
+    height: 100vh;
+}
+
+#answerBox {
+    position: absolute;
+    width: 70vw;
+    height: 50vh;
+    top: 25vh;
+    left: 14vw;
+}
+
+#answerBoxText {
+    position: absolute;
+    color: rgb(235, 226, 226);
+    font-family: Pixel;
+    font-size: 3vw;
+    margin: 0;
+    top: 38vh;
+    left: 18vw;
+    width: 64vw;
+    height: 24vh;
+}
+
+#question-prompt-overlay {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+}
+
+#question-prompt {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+}
+
+#question-prompt-text {
+    position: absolute;
+    color: rgb(235, 226, 226);
+    font-family: Pixel;
+    font-size: 2vw;
+    text-align: center;
+    width: 60vw;
+    height: 16vh;
+    left: 20vw;
+    top: 12vh;
+}
+
+#main-character {
+    width: 15vw;
+    height: 50vh;
+    bottom: 7vh;
+    left: 20vw;
+    position: absolute;
+}
+
+#main-character img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+#assistant {
+    width: 19vw;
+    height: 45vh;
+    bottom: 9vh;
+    right: 18vw;
+    position: absolute;
+}
+
+#yes-button {
+    width: 15vw;
+    height: 15vh;
+    position: absolute;
+    top: 50vh;
+    left: 43vw;
+}
+
+#no-button {
+    width: 15vw;
+    height: 15vh;
+    position: absolute;
+    top: 69vh;
+    left: 43vw;
+}
+
+/* End of Question Prompt styles */
+
+
+/* End Game Sequence */
+
+#endGameBox {
+    position: absolute;
+    width: 70vw;
+    height: 60vh;
+    left: 15vw;
+    top: 20vh;
+}
+
+#gameOverText {
+    position: absolute;
+    width: 70vw;
+    height: 60vh;
+    left: 15vw;
+    top: 20vh;
+}
+
+#endGameScoreText {
+    position: absolute;
+    color: white;
+    margin: 0;
+    font-family: Pixel;
+    text-align: right;
+    font-size: 2vw;
+    top: 50vh;
+    left: 70vw;
+}
+
+#returnButton {
+    position: absolute;
+    height: 12vh;
+    width: 12vw;
+    top: 62vh;
+    left: 44vw;
+}
+
+/* All pages */
+
+#main-game {
+    display: none;
+}
+
+/* Media Queries for different phone aspect ratios */
+@media (min-aspect-ratio: 19/9) and (max-aspect-ratio: 20/9) {
+    #main-character {
+        width: 13vw;
+        height: 36vh;
+        top: 50vh;
+        left: 25vw;
+    }
+
+    #assistant {
+        width: 17vw;
+        height: 45vh;
+        top: 45vh;
+        left: 60vw;
+    }
+
+    #question-prompt-text {
+        font-size: 2vw;
+        width: 47vw;
+        height: 16vh;
+        left: 26vw;
+        top: 12vh;
+    }
+
+    .character {
+        left: 20.5vw;
+    }
+
+    #save-button {
+        left: 64.5vw;
+    }
+
+    .hairButton {
+        top: 29vh;
+    }
+    
+    .skinButton {
+        top: 46.5vh;
+    }
+    
+    .suitButton {
+        top: 65vh;
+    }
+    
+    .prev {
+        left: 56vw;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .next {
+        left: 74vw;
+        padding: 0;
+        margin: 0;
+    }
+
+    #intro-text {
+        font-size: 3vw;
+        left: 24vw;
+        width: 53vw;
+    }
+
+    #next-dialogue-button {
+        left: 60vw;
+    }
+    
+    #endGameScoreText {
+        font-size: 4vw;
+        top: 50vh;
+        left: 57vw;
+    }
+}
+
+@media (min-aspect-ratio: 18/9) and (max-aspect-ratio: 19/9) {
+    #main-character {
+        width: 13vw;
+        height: 36vh;
+        top: 50vh;
+        left: 24vw;
+    }
+
+    #assistant {
+        width: 17vw;
+        height: 45vh;
+        top: 45vh;
+        left: 60.5vw;
+    }
+
+    #question-prompt-text {
+        font-size: 2vw;
+        width: 47vw;
+        height: 16vh;
+        left: 26vw;
+        top: 12vh;
+    }
+
+    .character {
+        left: 19.5vw;
+    }
+
+    #save-button {
+        left: 65.5vw;
+    }
+
+    .hairButton {
+        top: 29vh;
+    }
+    
+    .skinButton {
+        top: 46.5vh;
+    }
+    
+    .suitButton {
+        top: 65vh;
+    }
+    
+    .prev {
+        left: 56vw;
+    }
+    
+    .next {
+        left: 75vw;
+    }
+
+    #intro-text {
+        font-size: 3vw;
+        left: 24vw;
+        width: 53vw;
+    }
+
+    #next-dialogue-button {
+        left: 60vw;
+    }
+
+    #endGameScoreText {
+        font-size: 4vw;
+        top: 50vh;
+        left: 58vw;
+    }
+}
+
+@media (min-aspect-ratio: 16/9) and (max-aspect-ratio: 17/9) {
+    #main-character {
+        width: 16vw;
+        height: 35vh;
+        top: 50.5vh;
+        left: 20vw;
+    }
+
+    #assistant {
+        width: 19vw;
+        height: 46vh;
+        top: 45vh;
+        left: 62vw;
+    }
+
+    #question-prompt-text {
+        font-size: 2.3vw;
+        width: 57vw;
+        height: 16vh;
+        left: 21.5vw;
+        top: 13vh;
+    }
+
+    .character {
+        top: 28vh;
+        left: 17vw;
+        height: 48vh;
+    }
+
+    #save-button {
+        left: 66.5vw;
+    }
+
+    .hairButton {
+        top: 29vh;
+    }
+    
+    .skinButton {
+        top: 46.5vh;
+    }
+    
+    .suitButton {
+        top: 65vh;
+    }
+    
+    .prev {
+        left: 56.5vw;
+    }
+    
+    .next {
+        left: 78vw;
+    }
+
+    #intro-text {
+        font-size: 3vw;
+        left: 21vw;
+        width: 58vw;
+    }
+
+    #next-dialogue-button {
+        left: 60vw;
+    }
+
+    #endGameScoreText {
+        font-size: 4vw;
+        top: 50.5vh;
+        left: 60vw;
+    }
+}
+
+@media (min-aspect-ratio: 15/9) and (max-aspect-ratio: 16/9) {
+    #main-character {
+        width: 16vw;
+        height: 35vh;
+        top: 50.5vh;
+        left: 18.5vw;
+    }
+
+    #assistant {
+        width: 20vw;
+        height: 46vh;
+        top: 45vh;
+        left: 63vw;
+    }
+
+    #question-prompt-text {
+        font-size: 2vw;
+        width: 58vw;
+        height: 16vh;
+        left: 21vw;
+        top: 14vh;
+    }
+
+    .character {
+        top: 28vh;
+        left: 17vw;
+        height: 47vh;
+    }
+
+    #save-button {
+        left: 66.5vw;
+    }
+
+    .hairButton {
+        top: 30vh;
+    }
+    
+    .skinButton {
+        top: 46.5vh;
+    }
+    
+    .suitButton {
+        top: 63.5vh;
+    }
+    
+    .prev {
+        left: 56.5vw;
+    }
+    
+    .next {
+        left: 77.5vw;
+    }
+
+    #intro-text {
+        font-size: 3vw;
+        left: 20vw;
+        width: 60vw;
+    }
+
+    #next-dialogue-button {
+        left: 60vw;
+    }
+
+    #endGameScoreText {
+        font-size: 4vw;
+        top: 50.5vh;
+        left: 61vw;
+    }
+}
+
+/* Media Queries for different tablet/iPad aspect ratios */
+@media (min-aspect-ratio: 16/12) and (max-aspect-ratio: 17/12) {
+    #question-prompt {
+        width: 70vw;
+        left: 15vw;
+    }
+
+    #intro-box {
+        width: 70vw;
+        left: 15vw;
+    }
+
+    #main-character {
+        width: 13.5vw;
+        height: 36vh;
+        top: 45vh;
+        left: 23vw;
+    }
+
+    #assistant {
+        width: 19vw;
+        height: 45vh;
+        top: 40vh;
+        left: 61vw;
+    }
+
+    #yes-button {
+        width: 12vw;
+        left: 44vw;
+        top: 48vh;
+    }
+
+    #no-button {
+        width: 12vw;
+        left: 44vw;
+        top: 60vh;
+    }
+
+    #question-prompt-text {
+        font-size: 2vw;
+        width: 55vw;
+        height: 16vh;
+        left: 23vw;
+        top: 24vh;
+    }
+
+    .character {
+        top: 33vh;
+        left: 17vw;
+        height: 36vh;
+    }
+
+    #save-button {
+        top: 71vh;
+        left: 66vw;
+        height: 10vh;
+    }
+
+    .switch {
+        height: 7.5vh;
+    }
+
+    .hairButton {
+        top: 34.2vh;
+    }
+    
+    .skinButton {
+        top: 47.5vh;
+    }
+    
+    .suitButton {
+        top: 61.2vh;
+    }
+    
+    .prev {
+        left: 56.5vw;
+    }
+    
+    .next {
+        left: 78vw;
+    }
+
+    #intro-text {
+        font-size: 3.5vw;
+        top: 27vh;
+        left: 20vw;
+        width: 60vw;
+    }
+
+    #next-dialogue-button {
+        height: 10vh;
+        top: 65vh;
+        left: 60vw;
+    }
+
+    #answerBox {
+        position: absolute;
+        width: 80vw;
+        height: 60vh;
+        top: 20vh;
+        left: 10vw;
+    }
+    
+    #answerBoxText {
+        position: absolute;
+        font-size: 3vw;
+        top: 40vh;
+        left: 15vw;
+        width: 70vw;
+        height: 20vh;
+    }
+
+    #endGameScoreText {
+        font-size: 5vw;
+        top: 50.5vh;
+        left: 63vw;
+    }
+}
+
+@media (min-aspect-ratio: 15/12) and (max-aspect-ratio: 16/12) {
+    #question-prompt {
+        width: 70vw;
+        left: 15vw;
+    }
+
+    #intro-box {
+        width: 70vw;
+        left: 15vw;
+    }
+
+    #main-character {
+        width: 13.5vw;
+        height: 36vh;
+        top: 44vh;
+        left: 23vw;
+    }
+
+    #assistant {
+        width: 18vw;
+        height: 45vh;
+        top: 39vh;
+        left: 61vw;
+    }
+
+    #yes-button {
+        width: 12vw;
+        left: 44vw;
+        top: 48vh;
+    }
+
+    #no-button {
+        width: 12vw;
+        left: 44vw;
+        top: 60vh;
+    }
+
+    #question-prompt-text {
+        font-size: 2vw;
+        width: 50vw;
+        height: 16vh;
+        left: 25vw;
+        top: 25vh;
+    }
+
+    .character {
+        top: 33vh;
+        left: 17vw;
+        height: 36vh;
+    }
+
+    #save-button {
+        top: 69.5vh;
+        left: 66vw;
+        height: 10vh;
+    }
+
+    .switch {
+        height: 7vh;
+    }
+
+    .hairButton {
+        top: 35.3vh;
+    }
+    
+    .skinButton {
+        top: 47.5vh;
+    }
+    
+    .suitButton {
+        top: 60.5vh;
+    }
+    
+    .prev {
+        left: 56.5vw;
+    }
+    
+    .next {
+        left: 78vw;
+    }
+
+    #intro-text {
+        font-size: 3.5vw;
+        top: 27vh;
+        left: 20vw;
+        width: 60vw;
+    }
+
+    #next-dialogue-button {
+        height: 10vh;
+        top: 65vh;
+        left: 60vw;
+    }
+
+    #answerBox {
+        position: absolute;
+        width: 80vw;
+        height: 60vh;
+        top: 20vh;
+        left: 10vw;
+    }
+    
+    #answerBoxText {
+        position: absolute;
+        font-size: 3vw;
+        top: 40vh;
+        left: 15vw;
+        width: 70vw;
+        height: 20vh;
+    }
+
+    #endGameScoreText {
+        font-size: 5vw;
+        top: 50.5vh;
+        left: 64vw;
+    }
+}
