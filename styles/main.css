@@ -535,9 +535,7 @@ body{
     margin: 50vh 43vw;
 }
 
-#yes-button:active {
-    content: url(../assets/dialogue_box/buttons/YesButtonClicked.svg);
-}
+
 
 #no-button {
     width: 15vw;
@@ -546,9 +544,7 @@ body{
     margin: 69vh 43vw;
 }
 
-#no-button:active {
-    content: url(../assets/dialogue_box/buttons/NoButtonClicked.svg);
-}
+
 /* End of Question Prompt styles */
 
 

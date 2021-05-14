@@ -571,10 +571,15 @@ function firstPrompt() {
     boxPopAudioOne.play();
 };
 
+
 function selectYesButton() {
-    document.getElementById('question-prompt-div').setAttribute('class', 'hidden');
+    document.getElementById('yes-button').setAttribute('src', './assets/dialogue_box/buttons/YesButtonClicked.svg')
+    buttonClickOne.play();
+    setTimeout( function(){
+
     buttonClickOne.play();
     document.getElementById('answerBoxText').textContent = questions[questionCounter]['yes-result']
+    document.getElementById('yes-button').setAttribute('src', './assets/dialogue_box/buttons/YesButtonUnclicked.svg')
     // Reflect on eco score
     ecoScore += questions[questionCounter]['eco-score'];
     if (ecoScore >= 10) {
@@ -596,12 +601,17 @@ function selectYesButton() {
     setTimeout(displayAnswerBox, 1000);
     questionCounter += 1
     setTimeout(nextQuestionPrompt, 11000);
+ }, 50)
 };
 
 function selectNoButton() {
+    document.getElementById('no-button').setAttribute('src', './assets/dialogue_box/buttons/NoButtonClicked.svg')
+    setTimeout(function(){
+
     document.getElementById('question-prompt-div').setAttribute('class', 'hidden');
     buttonClickOne.play();
     document.getElementById('answerBoxText').textContent = questions[questionCounter]['no-result']
+    document.getElementById('no-button').setAttribute('src', './assets/dialogue_box/buttons/NoButtonUnclicked.svg')
     // Reflect on eco score
     ecoScore -= questions[questionCounter]['eco-score'];
     if (ecoScore >= 10) {
@@ -623,6 +633,8 @@ function selectNoButton() {
     setTimeout(displayAnswerBox, 1000);
     questionCounter += 1
     setTimeout(nextQuestionPrompt, 11000);
+    }, 50)
+    
 };
 
 function displayAnswerBox() {
