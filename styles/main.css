@@ -34,8 +34,6 @@
     height: 100vh;
 }
 
-
-
 /* Character Customization */
 body{
     background-color: rgb(80, 233, 233);
@@ -64,8 +62,6 @@ body{
     height: 50vh;
     left: 19vw;
     top: 26vh;
-    /* margin: 2vh 19vw; */
-    /* margin-bottom: 0; */
 }
 
 .labels{
@@ -76,12 +72,12 @@ body{
 
 .prev{
     padding: 0;
-    margin: 29vh 0 0 51vw;
+    margin: 29.5vh 0 0 51vw;
 }
 
 .next{
     padding: 0;
-    margin: 29vh 0 0 72vw;
+    margin: 29.5vh 0 0 70vw;
 }
 
 .skinButton{
@@ -202,7 +198,8 @@ body{
     }
 }
 
-@media (width: 720px) and (height: 540px) {
+/* tablet */
+@media (min-aspect-ratio: 16/12) and (max-aspect-ratio: 17/12) {
     .notebook{
         width: 90vw;
         top: 13vh;
@@ -217,11 +214,11 @@ body{
     }
     
     .character{
-        position: relative;
+        position: absolute;
         width: auto;
         height: 41vh;
-        margin: 2vh 15.5vw;
-        margin-bottom: 0;
+        top: 30vh;
+        left: 15vw;
     }
 
     .prev{
@@ -242,8 +239,8 @@ body{
     }
 
     #save-button{
-        margin-top: 0vh;
-        margin-left: 67.5vw;
+        top: 72vh;
+        left: 67.5vw;
     }
 
     .skinButton{
@@ -252,6 +249,16 @@ body{
     
     .suitButton{
         margin-top: 61.5vh;
+    }
+}
+
+@media (aspect-ratio: 16/12) {
+    .character{
+        position: absolute;
+        width: auto;
+        height: 41vh;
+        top: 30vh;
+        left: 0vw;
     }
 }
 
@@ -289,9 +296,7 @@ body{
     }
 
     #save-button{
-        /* margin-top: 2vh; */
         height: 16vh;
-        /* margin-left: 63.5vw; */
         position: absolute;
         bottom: 5vh;
         right: 27vw;
@@ -311,7 +316,6 @@ body{
         width: 78vw;
         top: 1vh;
         left: 2vw;
-        padding-top: 1.5vh;
     }
 
     .character{
@@ -357,7 +361,6 @@ body{
         top: 10vh;
         left: 5vw;
         padding: 0;
-        padding-top: 1.5vh;
     }
 
     .custom{
@@ -400,12 +403,34 @@ body{
         height: 12vh;
         margin-left: 67.5vw;
     }
-
 }
+
+@media (min-aspect-ratio: 19/9) and (max-aspect-ratio: 20/9) {
+    .notebook{
+        width: 70vw;
+        height: 80vh;
+        top: 2vh;
+        left: 15vw;
+        padding: 0;
+        padding-top: 1.5vh;
+    }
+
+    .character{
+        position: absolute;
+        width: auto;
+        height: 41vh;
+        top: 27vh;
+        left: 23.5vw;
+    }
+
+    #save-button {
+        height: 15vh;
+        top: 77vh;
+        left: 64vw;
+    }
+}
+
 /* End of Character Customization */
-
-
-
 
 /* Introduction Styles */
 #intro-div {
@@ -507,7 +532,6 @@ body{
 #main-character {
     width: 15vw;
     height: 50vh;
-    /* margin: 43vh 20vw; */
     bottom: 7vh;
     left: 20vw;
     position: absolute;
@@ -522,7 +546,6 @@ body{
 #assistant {
     width: 19vw;
     height: 45vh;
-    /* margin: 41vh 62vw; */
     bottom: 9vh;
     right: 18vw;
     position: absolute;
@@ -532,18 +555,17 @@ body{
     width: 15vw;
     height: 15vh;
     position: absolute;
-    margin: 50vh 43vw;
+    top: 50vh;
+    left: 43vw;
 }
-
-
 
 #no-button {
     width: 15vw;
     height: 15vh;
     position: absolute;
-    margin: 69vh 43vw;
+    top: 69vh;
+    left: 43vw;
 }
-
 
 /* End of Question Prompt styles */
 
@@ -584,4 +606,175 @@ body{
 
 #main-game {
     display: none;
+}
+
+/* Media Queries for different phone aspect ratios */
+@media (min-aspect-ratio: 19/9) and (max-aspect-ratio: 20/9) {
+    #main-character {
+        width: 13vw;
+        height: 36vh;
+        top: 50vh;
+        left: 25vw;
+    }
+
+    #assistant {
+        width: 16vw;
+        height: 45vh;
+        top: 43vh;
+        left: 60vw;
+    }
+
+    #question-prompt-text {
+        font-size: 4em;
+        width: 47vw;
+        height: 16vh;
+        left: 26vw;
+        top: 10vh;
+    }
+}
+
+@media (min-aspect-ratio: 18/9) and (max-aspect-ratio: 19/9) {
+    #main-character {
+        width: 13vw;
+        height: 36vh;
+        top: 50vh;
+        left: 24vw;
+    }
+
+    #assistant {
+        width: 17vw;
+        height: 45vh;
+        top: 43vh;
+        left: 60.5vw;
+    }
+
+    #question-prompt-text {
+        font-size: 3em;
+        width: 47vw;
+        height: 16vh;
+        left: 26vw;
+        top: 10vh;
+    }
+}
+
+@media (min-aspect-ratio: 15/9) and (max-aspect-ratio: 16/9) {
+    #main-character {
+        width: 16vw;
+        height: 35vh;
+        top: 50.5vh;
+        left: 18.5vw;
+    }
+
+    #assistant {
+        width: 20vw;
+        height: 46vh;
+        top: 43vh;
+        left: 63vw;
+    }
+
+    #question-prompt-text {
+        font-size: 3em;
+        width: 47vw;
+        height: 16vh;
+        left: 26vw;
+        top: 10vh;
+    }
+}
+
+@media (min-aspect-ratio: 16/9) and (max-aspect-ratio: 17/9) {
+    #main-character {
+        width: 16vw;
+        height: 35vh;
+        top: 50.5vh;
+        left: 20vw;
+    }
+
+    #assistant {
+        width: 18vw;
+        height: 46vh;
+        top: 43vh;
+        left: 62vw;
+    }
+}
+
+/* Media Queries for different tablet/iPad aspect ratios */
+@media (min-aspect-ratio: 16/12) and (max-aspect-ratio: 17/12) {
+    #question-prompt {
+        width: 70vw;
+        left: 15vw;
+    }
+    #main-character {
+        width: 13.5vw;
+        height: 36vh;
+        top: 45vh;
+        left: 23vw;
+    }
+
+    #assistant {
+        width: 17.5vw;
+        height: 45vh;
+        top: 39vh;
+        left: 61vw;
+    }
+
+    #yes-button {
+        width: 12vw;
+        left: 44vw;
+        top: 48vh;
+    }
+
+    #no-button {
+        width: 12vw;
+        left: 44vw;
+        top: 60vh;
+    }
+
+    #question-prompt-text {
+        font-size: 5em;
+        width: 55vw;
+        height: 16vh;
+        left: 23vw;
+        top: 22vh;
+    }
+}
+
+@media (min-aspect-ratio: 15/12) and (max-aspect-ratio: 16/12) {
+    #question-prompt {
+        width: 70vw;
+        left: 15vw;
+    }
+    
+    #main-character {
+        width: 13.5vw;
+        height: 36vh;
+        top: 44vh;
+        left: 23vw;
+    }
+
+    #assistant {
+        width: 18vw;
+        height: 45vh;
+        top: 38vh;
+        left: 61vw;
+    }
+
+    #yes-button {
+        width: 12vw;
+        left: 44vw;
+        top: 48vh;
+    }
+
+    #no-button {
+        width: 12vw;
+        left: 44vw;
+        top: 60vh;
+    }
+
+    #question-prompt-text {
+        font-size: 3em;
+        width: 47vw;
+        height: 16vh;
+        left: 26vw;
+        top: 21vh;
+    }
 }
