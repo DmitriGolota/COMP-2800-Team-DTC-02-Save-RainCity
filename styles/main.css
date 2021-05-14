@@ -445,6 +445,13 @@ body{
     position: absolute;
 }
 
+/*Game map .gif*/
+#game-map{
+    position: absolute;
+    width: 100%;
+
+}
+
 .main-game-images {
     position: absolute;
 }

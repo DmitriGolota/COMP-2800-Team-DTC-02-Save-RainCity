@@ -378,11 +378,17 @@ document.getElementById('save-button').addEventListener('click', function () {
 
     // Create Map and set as background
     let mainMap = document.createElement('img');
-    mainMap.setAttribute('src', './assets/main_map/mainmap1.png');
+    mainMap.setAttribute('src', './assets/mainmap.gif');
     mainMap.setAttribute('id', 'game-map');
+    
+    
+    // Manual Animation Sequence
+    /*
     setInterval(function () {
         animateMainMap();
     }, 300);
+    */
+
 
     // Create the answer box for consequences of decisions
     let answerBox = document.createElement('img');
@@ -665,7 +671,7 @@ function endGameSequence() {
 };
 
 // Main Map Animation
-
+/*
 mainMapFrames = {
     "0": "./assets/main_map/mainmap1.svg",
     "1": "./assets/main_map/mainmap2.svg",
@@ -720,6 +726,7 @@ function animateMainMap() {
         mainMap.setAttribute('src', mainMapFrames[mainmapframe])
     }
 };
+*/
 
 
 // Game Over Animation
