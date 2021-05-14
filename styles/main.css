@@ -224,14 +224,14 @@ body{
     width: 70vw;
     height: 50vh;
     top: 25vh;
-    left: 15vw;
+    left: 14vw;
 }
 
 #answerBoxText {
     position: absolute;
     color: rgb(235, 226, 226);
     font-family: Pixel;
-    font-size: 2vw;
+    font-size: 3vw;
     margin: 0;
     top: 38vh;
     left: 18vw;
@@ -504,7 +504,7 @@ body{
     }
 
     #question-prompt-text {
-        font-size: 2vw;
+        font-size: 2.3vw;
         width: 57vw;
         height: 16vh;
         left: 21.5vw;
