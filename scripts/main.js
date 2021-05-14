@@ -17,54 +17,52 @@ let questionCounter = 0;
 
 let questions = {
     0: {
-        'question': 'Mayor! People have been defacing trees in the parks! Should we increase the amount of plantlife near sidewalks to make it more enjoyable to walk?',
-        'yes-result': 'That was a good choice!',
-        'no-result': 'That was a bad choice!',
+        'question': 'Mayor! People have raised concerns about how boring it is to walk in some neighbourhoods. Should we increase the amount of trees and plants near sidewalks to make them more enjoyable to walk?',
+        'yes-result': 'People are starting to walk more now! The less cars on the road the better! They are thrilled by your first decision as Mayor!',
+        'no-result': 'People are still unmotivated to walk rather than drive. Hopefully your next decisions will be better!',
         'eco-score': 1,
         'pop-score': 1,
-        'NPC-img-num': 1
+        'NPC-img-num': 4
     },
     1: {
-        'question': "These bikers never look where they're going.. but I guess it's better than driving... Do you think that building more bike-only paths will help further encourage cycling as a form of transportation?",
-        'yes-result': 'The majority of the driving population are sick of bikers! They disagree with your decision, but the environment is looking better.',
-        'no-result': 'The driving population is pleased with your decision, though it does hurt the environment.',
+        'question': "These bikers never look where they're going.. but I guess it's better than driving... Should we build more bike-only paths to help encourage cycling as a form of transportation?",
+        'yes-result': 'Some of the driving population are angry to see more bikers on the road! At least there are less cars on the road!',
+        'no-result': 'The driving population is pleased with your decision, however; you did not help the environment.',
         'eco-score': 1,
         'pop-score': -1,
-        'NPC-img-num': 2
+        'NPC-img-num': 5
     },
     2: {
-        'question': 'Traffic in Downtown RainCity is at an all time high and that means lots of vehicle carbon emissions! Do you want to charge a fee for private vehicles entering the Metro Core?',
-        'yes-result': 'The driving population is furious at your decision!',
-        'no-result': 'The drivers are thankful for your decision.',
+        'question': 'Traffic in Downtown RainCity is at an all time high and that means lots of vehicle carbon emissions! Should we charge a fee for private vehicles entering the Metro Core?',
+        'yes-result': 'Drivers are not happy with your decision, but this is definitely going to reduce carbon emissions! Good work!',
+        'no-result': 'Drivers are happy to continue driving wherever they please, but your decision has not reduced any carbon emissions!',
         'eco-score': 2,
-        'pop-score': -4,
+        'pop-score': -3,
         'NPC-img-num': 3
     },
     3: {
-        'question': 'The bus system is getting expensive with the new green requirements! Should we reduce the schedule and frequency of buses to save money?',
-        'yes-result': 'The masses who commute on a daily basis are furious at your decision!',
-        'no-result': 'Commuters are happy about the regular bus schedules, but the environment continues to deteriorate.',
+        'question': 'The bus system is getting expensive with the new eco-friendly policies! Should we reduce the schedule and frequency of buses to save money?',
+        'yes-result': 'Citizens of RainCity are now further discouraged to consider public transit! That was not a good move!',
+        'no-result': 'Commuters are glad to keep the regular bus schedules! The budget department can kick rocks!',
         'eco-score': 1,
         'pop-score': -4,
-        'NPC-img-num': 4
+        'NPC-img-num': 1
     },
     4: {
-        'question': 'Back in my day we used to walk 10km to get to work... Do you want to offer incentives for employers that encourage sustainable transportation such as walking, cycling, and public transit to reduce vehicle pollution?',
-        'answer': true,
-        'yes-result': 'The employees, employers, and environment are happy with this decision!',
-        'no-result': 'Bummer, that was a bad choice.',
+        'question': 'Yooo man... We gotta replant the trees dude, it is a real issue man. I love trees man. *kisses tree* Should we enforce a law that requires people to plant a tree for every tree they chop down?',
+        'yes-result': 'Totally tubular, man! The more trees the better!',
+        'no-result': 'That is so bogus! We are gonna run out of trees, at this rate!',
         'eco-score': 2,
         'pop-score': 2,
-        'NPC-img-num': 5
+        'NPC-img-num': 6
     },
     5: {
-        'question': 'Mayor! Still too many people are driving private vehicles unnecessarily! Should we expand our residential parking permits city-wide?',
-        'answer': true,
-        'good-result': 'The environment is thriving, but the people are angry.',
-        'bad-result': 'The people are happy, but at what cost.',
+        'question': 'We just got a call from Elon Musk! He is paying cities lots of DogeCoin to add more electric vehicle charging stations! Should we add more EV chargers around RainCity?',
+        'yes-result': 'Woohoo, that is a lot of DogeCoin! We are starting to see more electric vehicles across the city! Nicely done!',
+        'no-result': "Uh-oh, you do not want to get on Elon's bad side. It would have been a good idea to make electric vehicles more accessible too!",
         'eco-score': 2,
-        'pop-score': -2,
-        'NPC-img-num': 6
+        'pop-score': 1,
+        'NPC-img-num': 2
     },
     6: {
         'question': 'Wow! With such an increase in public transit use, we want to increase the ticket prices for buses and trains from $2 to $4. Do you agree to this plan?',
@@ -85,7 +83,7 @@ let questions = {
         'NPC-img-num': 1
     },
     8: {
-        'question': "We just got a call from Elon Musk! He's paying cities lots of DogeCoin to add more electric vehicle charging stations! Should we?",
+        'question': "Mayor! Still too many people are driving private vehicles unnecessarily! Should we expand our residential parking permits city-wide?",
         'answer': true,
         'good-result': 'You made the correct decision!',
         'bad-result': 'You made the wrong decision!',
@@ -486,7 +484,7 @@ function introDialogue() {
         document.getElementById('next-dialogue-button').setAttribute('class', 'visible')
         return false
     }
-    setTimeout('introDialogue()', 5);
+    setTimeout('introDialogue()', 50);
 };
 
 // Function for the first question prompt that appears after the intro
@@ -631,7 +629,7 @@ function selectNoButton() {
         document.getElementById('uiPopScore').setAttribute('src', './assets/pop_score/pop_score' + popularityScore + '.svg');
         setTimeout(displayAnswerBox, 1000);
         questionCounter += 1
-        setTimeout(nextQuestionPrompt, 12000);
+        setTimeout(nextQuestionPrompt, 11000);
     }, 50)
 
 };
@@ -649,7 +647,7 @@ function hideAnswerBox() {
 };
 
 function nextQuestionPrompt() {
-    if (questionCounter === 1 || popularityScore === 0) {
+    if (questionCounter === 6 || popularityScore === 0) {
         // end game
         endGameSequence();
     } else {
