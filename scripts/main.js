@@ -540,7 +540,7 @@ function firstPrompt() {
     let NPC = document.createElement('img');
     // change this later because it will not always be assistant
     NPC.setAttribute('id', 'assistant');
-    NPC.setAttribute('src', 'assets/npc/npc1.svg');
+    NPC.setAttribute('src', 'assets/npc/npc4.svg');
 
     // Create Yes button
     let yesButton = document.createElement('img');
@@ -593,10 +593,21 @@ function selectYesButton() {
         if (popularityScore <= 0) {
             popularityScore = 0;
         }
+
         document.getElementById('uiEcoScore').setAttribute('src', './assets/eco_score/eco_score' + ecoScore + '.svg');
         document.getElementById('uiPopScore').setAttribute('src', './assets/pop_score/pop_score' + popularityScore + '.svg');
+
         setTimeout(displayAnswerBox, 1000);
+
         questionCounter += 1
+
+        // Change the NPC to next NPC image
+        document.getElementById('assistant').setAttribute('src', "assets/npc/npc" + questions[questionCounter]['NPC-img-num'] + ".svg")
+
+        // Change the question text to the next question
+        document.getElementById('question-prompt-text').textContent = questions[questionCounter]['question'];
+
+
         setTimeout(nextQuestionPrompt, 11000);
     }, 50)
 };
@@ -625,10 +636,20 @@ function selectNoButton() {
         if (popularityScore <= 0) {
             popularityScore = 0;
         }
+
         document.getElementById('uiEcoScore').setAttribute('src', './assets/eco_score/eco_score' + ecoScore + '.svg');
         document.getElementById('uiPopScore').setAttribute('src', './assets/pop_score/pop_score' + popularityScore + '.svg');
+
         setTimeout(displayAnswerBox, 1000);
+
         questionCounter += 1
+
+        // Change the NPC to correct NPC image
+        document.getElementById('assistant').setAttribute('src', "assets/npc/npc" + questions[questionCounter]['NPC-img-num'] + ".svg")
+
+        // Change the question to the next question
+        document.getElementById('question-prompt-text').textContent = questions[questionCounter]['question'];
+
         setTimeout(nextQuestionPrompt, 11000);
     }, 50)
 
@@ -653,12 +674,6 @@ function nextQuestionPrompt() {
     } else {
         boxPopAudioOne.play();
         document.getElementById('question-prompt-div').setAttribute('class', 'visible');
-    
-        // Change the question to the next question
-        document.getElementById('question-prompt-text').textContent = questions[questionCounter]['question'];
-    
-        // Change the NPC to correct NPC image
-        document.getElementById('assistant').setAttribute('src', "assets/npc/npc" + questions[questionCounter]['NPC-img-num'] + ".svg") 
     }
 };
 
