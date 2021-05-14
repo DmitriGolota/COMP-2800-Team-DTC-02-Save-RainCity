@@ -10,65 +10,61 @@ document.getElementById('char-customization').addEventListener('click', function
 
 // Score for player
 let popularityScore = 10;
-let ecoScore = 10;
+let ecoScore = 0;
 
-let endGameScore = (popularityScore * ecoScore) * 4.2069;
+let endGameScore = (popularityScore * ecoScore) * 420.69;
 
 let questionCounter = 0;
 
 let questions = {
     0: {
         'question': 'Mayor! People have been defacing trees in the parks! Should we increase the amount of plantlife near sidewalks to make it more enjoyable to walk?',
-        'answer': true,
-        'good-result': 'You made the correct decision!',
-        'bad-result': 'You made the wrong decision!',
+        'yes-result': 'That was a good choice!',
+        'no-result': 'That was a bad choice!',
         'eco-score': 1,
         'pop-score': 1,
         'NPC-img-num': 1
     },
     1: {
-        'question': "These bikers never look where they're going.. but I guess its better than driving... to further encourage cycling as a form of transportation, we want to build more bike-only paths that connect outer neighbourhoods to the core of RainCity. Do you agree to this plan?",
-        'answer': true,
-        'good-result': 'You made the correct decision!',
-        'bad-result': 'You made the wrong decision!',
+        'question': "These bikers never look where they're going.. but I guess it's better than driving... Do you think that building more bike-only paths will help further encourage cycling as a form of transportation?",
+        'yes-result': 'The majority of the driving population are sick of bikers! They disagree with your decision, but the environment is looking better.',
+        'no-result': 'The driving population is pleased with your decision, though it does hurt the environment.',
         'eco-score': 1,
-        'pop-score': 1,
+        'pop-score': -1,
         'NPC-img-num': 2
     },
     2: {
         'question': 'Traffic in Downtown RainCity is at an all time high and that means lots of vehicle carbon emissions! Do you want to charge a fee for private vehicles entering the Metro Core?',
-        'answer': true,
-        'good-result': 'You made the correct decision!',
-        'bad-result': 'You made the wrong decision!',
-        'eco-score': 1,
-        'pop-score': 1,
+        'yes-result': 'The driving population is furious at your decision!',
+        'no-result': 'The drivers are thankful for your decision.',
+        'eco-score': 2,
+        'pop-score': -4,
         'NPC-img-num': 3
     },
     3: {
         'question': 'The bus system is getting expensive with the new green requirements! Should we reduce the schedule and frequency of buses to save money?',
-        'answer': false,
-        'good-result': 'You made the correct decision!',
-        'bad-result': 'You made the wrong decision!',
+        'yes-result': 'The masses who commute on a daily basis are furious at your decision!',
+        'no-result': 'Commuters are happy about the regular bus schedules, but the environment continues to deteriorate.',
         'eco-score': 1,
-        'pop-score': 1,
+        'pop-score': -4,
         'NPC-img-num': 4
     },
     4: {
-        'question': 'Back in my day we used to walk 10km to get to work...maybe we can reduce vehicle pollution by offering incentives for employers that encourage sustainable transportation such as walking, cycling, and public transit. Do you agree to this plan?',
+        'question': 'Back in my day we used to walk 10km to get to work... Do you want to offer incentives for employers that encourage sustainable transportation such as walking, cycling, and public transit to reduce vehicle pollution?',
         'answer': true,
-        'good-result': 'You made the correct decision!',
-        'bad-result': 'You made the wrong decision!',
-        'eco-score': 1,
-        'pop-score': 1,
+        'yes-result': 'The employees, employers, and environment are happy with this decision!',
+        'no-result': 'Bummer, that was a bad choice.',
+        'eco-score': 2,
+        'pop-score': 2,
         'NPC-img-num': 5
     },
     5: {
         'question': 'Mayor! Still too many people are driving private vehicles unnecessarily! Should we expand our residential parking permits city-wide?',
         'answer': true,
-        'good-result': 'You made the correct decision!',
-        'bad-result': 'You made the wrong decision!',
-        'eco-score': 1,
-        'pop-score': 1,
+        'good-result': 'The environment is thriving, but the people are angry.',
+        'bad-result': 'The people are happy, but at what cost.',
+        'eco-score': 2,
+        'pop-score': -2,
         'NPC-img-num': 6
     },
     6: {
@@ -409,11 +405,11 @@ document.getElementById('save-button').addEventListener('click', function () {
     uibar.setAttribute('src', './assets/status_bar/ui_bar.svg');
 
     let uiecoscore = document.createElement('img');
-    uiecoscore.setAttribute('src', './assets/eco_score/eco_score10.svg');
+    uiecoscore.setAttribute('src', './assets/pop_score/pop_score' + popularityScore + '.svg');
     uiecoscore.setAttribute('id', 'uiEcoScore');
 
     let uipopscore = document.createElement('img');
-    uipopscore.setAttribute('src', './assets/pop_score/pop_score10.svg');
+    uipopscore.setAttribute('src', './assets/pop_score/pop_score' + popularityScore + '.svg');
     uipopscore.setAttribute('id', 'uiPopScore')
 
     let introDiv = document.createElement('div');
@@ -578,19 +574,25 @@ function firstPrompt() {
 function selectYesButton() {
     document.getElementById('question-prompt-div').setAttribute('class', 'hidden');
     buttonClickOne.play();
-    if (questions[questionCounter]['answer'] === true) {
-        // correct answer
-        console.log('You answered Yes; the correct answer is ' + questions[questionCounter]['answer'])
-        document.getElementById('answerBoxText').textContent = questions[questionCounter]['good-result']
-        // Reflect on eco score
-        document.getElementById('uiEcoScore').setAttribute('src', './assets/eco_score/eco_score' + ecoScore + '.svg');
-        // Reflect popularity score
-        document.getElementById('uiPopScore').setAttribute('src', '/assets/pop_score/pop_score' + popularityScore + '.svg');
-    } else {
-        // wrong answer
-        console.log('You answered Yes; the correct answer is ' + questions[questionCounter]['answer'])
-        document.getElementById('answerBoxText').textContent = questions[questionCounter]['bad-result']
+    document.getElementById('answerBoxText').textContent = questions[questionCounter]['yes-result']
+    // Reflect on eco score
+    ecoScore += questions[questionCounter]['eco-score'];
+    if (ecoScore >= 10) {
+        ecoScore = 10;
     }
+    if (ecoScore <= 0) {
+        ecoScore = 0;
+    }
+    // Reflect popularity score
+    popularityScore += questions[questionCounter]['pop-score'];
+    if (popularityScore >= 10) {
+        popularityScore = 10;
+    }
+    if (popularityScore <= 0) {
+        popularityScore = 0;
+    }
+    document.getElementById('uiEcoScore').setAttribute('src', './assets/eco_score/eco_score' + ecoScore + '.svg');
+    document.getElementById('uiPopScore').setAttribute('src', './assets/pop_score/pop_score' + popularityScore + '.svg');
     setTimeout(displayAnswerBox, 1000);
     questionCounter += 1
     setTimeout(nextQuestionPrompt, 11000);
@@ -599,15 +601,25 @@ function selectYesButton() {
 function selectNoButton() {
     document.getElementById('question-prompt-div').setAttribute('class', 'hidden');
     buttonClickOne.play();
-    if (questions[questionCounter]['answer'] === false) {
-        // correct answer
-        console.log('You answered No; the correct answer is ' + questions[questionCounter]['answer'])
-        document.getElementById('answerBoxText').textContent = questions[questionCounter]['good-result']
-    } else {
-        // wrong answer
-        console.log('You answered No; the correct answer is ' + questions[questionCounter]['answer'])
-        document.getElementById('answerBoxText').textContent = questions[questionCounter]['bad-result']
+    document.getElementById('answerBoxText').textContent = questions[questionCounter]['no-result']
+    // Reflect on eco score
+    ecoScore -= questions[questionCounter]['eco-score'];
+    if (ecoScore >= 10) {
+        ecoScore = 10;
     }
+    if (ecoScore <= 0) {
+        ecoScore = 0;
+    }
+    // Reflect popularity score
+    popularityScore -= questions[questionCounter]['pop-score'];
+    if (popularityScore >= 10) {
+        popularityScore = 10;
+    }
+    if (popularityScore <= 0) {
+        popularityScore = 0;
+    }
+    document.getElementById('uiEcoScore').setAttribute('src', './assets/eco_score/eco_score' + ecoScore + '.svg');
+    document.getElementById('uiPopScore').setAttribute('src', './assets/pop_score/pop_score' + popularityScore + '.svg');
     setTimeout(displayAnswerBox, 1000);
     questionCounter += 1
     setTimeout(nextQuestionPrompt, 11000);
@@ -635,11 +647,9 @@ function nextQuestionPrompt() {
     // Change the NPC to correct NPC image
     document.getElementById('assistant').setAttribute('src', "assets/npc/npc" + questions[questionCounter]['NPC-img-num'] + ".svg")
     
-    if (questionCounter === 1) {
+    if (questionCounter === 5 || popularityScore === 0) {
         // end game
         endGameSequence();
-    } else if (popularityScore <= 0) {
-        // you lose
     }
 };
 

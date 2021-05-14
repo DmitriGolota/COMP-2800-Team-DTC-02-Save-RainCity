@@ -536,7 +536,7 @@ body{
 }
 
 #yes-button:active {
-    content: url(/assets/dialogue_box/buttons/YesButtonClicked.svg);
+    content: url(./assets/dialogue_box/buttons/YesButtonClicked.svg);
 }
 
 #no-button {
@@ -547,7 +547,7 @@ body{
 }
 
 #no-button:active {
-    content: url(/assets/dialogue_box/buttons/NoButtonClicked.svg);
+    content: url(./assets/dialogue_box/buttons/NoButtonClicked.svg);
 }
 /* End of Question Prompt styles */
 
