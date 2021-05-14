@@ -12,7 +12,6 @@ document.getElementById('char-customization').addEventListener('click', function
 let popularityScore = 10;
 let ecoScore = 0;
 
-let endGameScore = (popularityScore * ecoScore) * 420.69;
 
 let questionCounter = 0;
 
@@ -376,8 +375,8 @@ document.getElementById('save-button').addEventListener('click', function () {
     let mainMap = document.createElement('img');
     mainMap.setAttribute('src', './assets/mainmap.gif');
     mainMap.setAttribute('id', 'game-map');
-    
-    
+
+
     // Manual Animation Sequence
     /*
     setInterval(function () {
@@ -442,7 +441,7 @@ document.getElementById('save-button').addEventListener('click', function () {
     mainContainer.append(answerBoxText);
     mainContainer.append(uibarcontainer);
     mainContainer.append(introDiv);
-    
+
     masterIntroDialogue();
 
 });
@@ -575,67 +574,66 @@ function firstPrompt() {
 function selectYesButton() {
     document.getElementById('yes-button').setAttribute('src', './assets/dialogue_box/buttons/YesButtonClicked.svg')
     buttonClickOne.play();
-    setTimeout( function(){
-
-    document.getElementById('question-prompt-div').setAttribute('class', 'hidden');
-    buttonClickOne.play();
-    document.getElementById('answerBoxText').textContent = questions[questionCounter]['yes-result']
-    document.getElementById('yes-button').setAttribute('src', './assets/dialogue_box/buttons/YesButtonUnclicked.svg')
-    // Reflect on eco score
-    ecoScore += questions[questionCounter]['eco-score'];
-    if (ecoScore >= 10) {
-        ecoScore = 10;
-    }
-    if (ecoScore <= 0) {
-        ecoScore = 0;
-    }
-    // Reflect popularity score
-    popularityScore += questions[questionCounter]['pop-score'];
-    if (popularityScore >= 10) {
-        popularityScore = 10;
-    }
-    if (popularityScore <= 0) {
-        popularityScore = 0;
-    }
-    document.getElementById('uiEcoScore').setAttribute('src', './assets/eco_score/eco_score' + ecoScore + '.svg');
-    document.getElementById('uiPopScore').setAttribute('src', './assets/pop_score/pop_score' + popularityScore + '.svg');
-    setTimeout(displayAnswerBox, 1000);
-    questionCounter += 1
-    setTimeout(nextQuestionPrompt, 11000);
- }, 50)
+    setTimeout(function () {
+        document.getElementById('question-prompt-div').setAttribute('class', 'hidden');
+        buttonClickOne.play();
+        document.getElementById('answerBoxText').textContent = questions[questionCounter]['yes-result']
+        document.getElementById('yes-button').setAttribute('src', './assets/dialogue_box/buttons/YesButtonUnclicked.svg')
+        // Reflect on eco score
+        ecoScore += questions[questionCounter]['eco-score'];
+        if (ecoScore >= 10) {
+            ecoScore = 10;
+        }
+        if (ecoScore <= 0) {
+            ecoScore = 0;
+        }
+        // Reflect popularity score
+        popularityScore += questions[questionCounter]['pop-score'];
+        if (popularityScore >= 10) {
+            popularityScore = 10;
+        }
+        if (popularityScore <= 0) {
+            popularityScore = 0;
+        }
+        document.getElementById('uiEcoScore').setAttribute('src', './assets/eco_score/eco_score' + ecoScore + '.svg');
+        document.getElementById('uiPopScore').setAttribute('src', './assets/pop_score/pop_score' + popularityScore + '.svg');
+        setTimeout(displayAnswerBox, 1000);
+        questionCounter += 1
+        setTimeout(nextQuestionPrompt, 11000);
+    }, 50)
 };
 
 function selectNoButton() {
     document.getElementById('no-button').setAttribute('src', './assets/dialogue_box/buttons/NoButtonClicked.svg')
-    setTimeout(function(){
+    setTimeout(function () {
 
-    document.getElementById('question-prompt-div').setAttribute('class', 'hidden');
-    buttonClickOne.play();
-    document.getElementById('answerBoxText').textContent = questions[questionCounter]['no-result']
-    document.getElementById('no-button').setAttribute('src', './assets/dialogue_box/buttons/NoButtonUnclicked.svg')
-    // Reflect on eco score
-    ecoScore -= questions[questionCounter]['eco-score'];
-    if (ecoScore >= 10) {
-        ecoScore = 10;
-    }
-    if (ecoScore <= 0) {
-        ecoScore = 0;
-    }
-    // Reflect popularity score
-    popularityScore -= questions[questionCounter]['pop-score'];
-    if (popularityScore >= 10) {
-        popularityScore = 10;
-    }
-    if (popularityScore <= 0) {
-        popularityScore = 0;
-    }
-    document.getElementById('uiEcoScore').setAttribute('src', './assets/eco_score/eco_score' + ecoScore + '.svg');
-    document.getElementById('uiPopScore').setAttribute('src', './assets/pop_score/pop_score' + popularityScore + '.svg');
-    setTimeout(displayAnswerBox, 1000);
-    questionCounter += 1
-    setTimeout(nextQuestionPrompt, 11000);
+        document.getElementById('question-prompt-div').setAttribute('class', 'hidden');
+        buttonClickOne.play();
+        document.getElementById('answerBoxText').textContent = questions[questionCounter]['no-result']
+        document.getElementById('no-button').setAttribute('src', './assets/dialogue_box/buttons/NoButtonUnclicked.svg')
+        // Reflect on eco score
+        ecoScore -= questions[questionCounter]['eco-score'];
+        if (ecoScore >= 10) {
+            ecoScore = 10;
+        }
+        if (ecoScore <= 0) {
+            ecoScore = 0;
+        }
+        // Reflect popularity score
+        popularityScore -= questions[questionCounter]['pop-score'];
+        if (popularityScore >= 10) {
+            popularityScore = 10;
+        }
+        if (popularityScore <= 0) {
+            popularityScore = 0;
+        }
+        document.getElementById('uiEcoScore').setAttribute('src', './assets/eco_score/eco_score' + ecoScore + '.svg');
+        document.getElementById('uiPopScore').setAttribute('src', './assets/pop_score/pop_score' + popularityScore + '.svg');
+        setTimeout(displayAnswerBox, 1000);
+        questionCounter += 1
+        setTimeout(nextQuestionPrompt, 12000);
     }, 50)
-    
+
 };
 
 function displayAnswerBox() {
@@ -651,41 +649,50 @@ function hideAnswerBox() {
 };
 
 function nextQuestionPrompt() {
-    boxPopAudioOne.play();
-    document.getElementById('question-prompt-div').setAttribute('class', 'visible');
-
-    // Change the question to the next question
-    document.getElementById('question-prompt-text').textContent = questions[questionCounter]['question'];
-
-    // Change the NPC to correct NPC image
-    document.getElementById('assistant').setAttribute('src', "assets/npc/npc" + questions[questionCounter]['NPC-img-num'] + ".svg")
-    
-    if (questionCounter === 5 || popularityScore === 0) {
+    if (questionCounter === 1 || popularityScore === 0) {
         // end game
         endGameSequence();
+    } else {
+        boxPopAudioOne.play();
+        document.getElementById('question-prompt-div').setAttribute('class', 'visible');
+    
+        // Change the question to the next question
+        document.getElementById('question-prompt-text').textContent = questions[questionCounter]['question'];
+    
+        // Change the NPC to correct NPC image
+        document.getElementById('assistant').setAttribute('src', "assets/npc/npc" + questions[questionCounter]['NPC-img-num'] + ".svg") 
     }
 };
 
 function endGameSequence() {
     // Remove everything
-    document.getElementById('container').remove();
+    let endGameScore = (popularityScore + ecoScore) * 69;
+    setTimeout(() => {
+        document.getElementById('container').remove();
 
-    let endGameBox = document.createElement('img');
-    endGameBox.setAttribute('id', 'endGameBox');
-    endGameBox.setAttribute('src', './assets/end_game_box/EndGameBox.svg');
+        let endGameBox = document.createElement('img');
+        endGameBox.setAttribute('id', 'endGameBox');
+        endGameBox.setAttribute('src', './assets/end_game_box/EndGameBox.svg');
 
-    let gameOverText = document.createElement('img');
-    gameOverText.setAttribute('id', 'gameOverText');
-    gameOverText.setAttribute('src', './assets/end_game_box/game_over_anim/GameOver1.svg')
+        let gameOverText = document.createElement('img');
+        gameOverText.setAttribute('id', 'gameOverText');
+        gameOverText.setAttribute('src', './assets/end_game_box/game_over_anim/GameOver1.svg')
 
-    let returnButton = document.createElement('img');
-    returnButton.setAttribute('id', 'returnButton');
-    returnButton.setAttribute('src', './assets/intro_box/ContinueButtonUncllicked.svg');
-    returnButton.setAttribute('onclick', 'window.location.assign("index.html")');
+        let endGameScoreText = document.createElement('p');
+        endGameScoreText.textContent = '' + endGameScore;
+        endGameScoreText.setAttribute('id', 'endGameScoreText');
 
-    document.body.append(endGameBox);
-    document.body.append(gameOverText);
-    document.body.append(returnButton);
+        let returnButton = document.createElement('img');
+        returnButton.setAttribute('id', 'returnButton');
+        returnButton.setAttribute('src', './assets/intro_box/ContinueButtonUncllicked.svg');
+        returnButton.setAttribute('onclick', 'window.location.assign("index.html")');
+
+        document.body.append(endGameBox);
+        document.body.append(gameOverText);
+        document.body.append(endGameScoreText);
+        document.body.append(returnButton);
+    }, 100);
+
 
 
     setInterval(function () {
