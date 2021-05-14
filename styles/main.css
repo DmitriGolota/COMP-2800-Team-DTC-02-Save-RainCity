@@ -416,7 +416,7 @@ body{
     #endGameScoreText {
         font-size: 4vw;
         top: 50vh;
-        left: 58.5vw;
+        left: 57vw;
     }
 }
 
@@ -484,7 +484,7 @@ body{
     #endGameScoreText {
         font-size: 4vw;
         top: 50vh;
-        left: 59vw;
+        left: 58vw;
     }
 }
 
@@ -554,7 +554,7 @@ body{
     #endGameScoreText {
         font-size: 4vw;
         top: 50.5vh;
-        left: 61.5vw;
+        left: 60vw;
     }
 }
 
@@ -624,7 +624,7 @@ body{
     #endGameScoreText {
         font-size: 4vw;
         top: 50.5vh;
-        left: 62.5vw;
+        left: 61vw;
     }
 }
 
@@ -743,7 +743,7 @@ body{
     #endGameScoreText {
         font-size: 5vw;
         top: 50.5vh;
-        left: 65.5vw;
+        left: 63vw;
     }
 }
 
@@ -861,6 +861,6 @@ body{
     #endGameScoreText {
         font-size: 5vw;
         top: 50.5vh;
-        left: 66vw;
+        left: 64vw;
     }
 }

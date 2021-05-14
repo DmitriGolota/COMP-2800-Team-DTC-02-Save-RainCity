@@ -484,7 +484,7 @@ function introDialogue() {
         document.getElementById('next-dialogue-button').setAttribute('class', 'visible')
         return false
     }
-    setTimeout('introDialogue()', 50);
+    setTimeout('introDialogue()', 25);
 };
 
 // Function for the first question prompt that appears after the intro
