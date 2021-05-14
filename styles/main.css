@@ -562,6 +562,17 @@ body{
     left: 15vw;
 }
 
+#endGameScoreText {
+    position: absolute;
+    color: white;
+    margin: 0;
+    font-family: Pixel;
+    text-align: center;
+    font-size: 4em;
+    top: 44.5vh;
+    right: 26vw;
+}
+
 #returnButton {
     position: absolute;
     height: 18vh;
