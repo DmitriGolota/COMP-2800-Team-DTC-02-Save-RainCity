@@ -577,6 +577,7 @@ function selectYesButton() {
     buttonClickOne.play();
     setTimeout( function(){
 
+    document.getElementById('question-prompt-div').setAttribute('class', 'hidden');
     buttonClickOne.play();
     document.getElementById('answerBoxText').textContent = questions[questionCounter]['yes-result']
     document.getElementById('yes-button').setAttribute('src', './assets/dialogue_box/buttons/YesButtonUnclicked.svg')
