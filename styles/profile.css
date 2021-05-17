@@ -19,10 +19,6 @@ body{
 }
 #table {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-}
-table {
-    grid-column: 2;
 }
 
 footer{
@@ -31,5 +27,24 @@ footer{
     "about aside";
     background-color: rgb(160, 160, 160);
     bottom: 0;
-    position: absolute;
+    position: fixed;
+}
+
+#usersName, tr > td {
+    font-size: 1.25em;
+}
+
+.red{
+    color: rgb(206, 24, 24);
+    border: 1px;
+}
+.green{
+    color: rgb(0, 236, 0);
+}
+.blue{
+    color: rgb(0, 217, 255);
+}
+
+.orange{
+    color: rgb(229, 255, 0);
 }
