@@ -173,8 +173,6 @@ let questions = {
         'NPC-img-num': 1
     }
 };
-
-// hair, skin, and suit assets must named like so: hair1.png, hair2.png, skin1.png, skin2.png etc.
 let hairNum = 0;
 let skinNum = 0;
 let suitNum = 0;
@@ -183,23 +181,23 @@ let skinImage = document.getElementById('skinImage');
 let suitImage = document.getElementById('suitImage');
 
 let hairAssets = {
-    0: "./assets/hair/charhair1.png",
-    1: "./assets/hair/charhair2.png",
-    2: "./assets/hair/charhair3.png",
+    0: "./assets/hair/charhair1.svg",
+    1: "./assets/hair/charhair2.svg",
+    2: "./assets/hair/charhair3.svg",
 };
 let hairAssetsLength = Object.keys(hairAssets).length - 1;
 
 let skinAssets = {
-    0: "./assets/skin/charskin1.png",
-    1: "./assets/skin/charskin2.png",
-    2: "./assets/skin/charskin3.png",
+    0: "./assets/skin/charskin1.svg",
+    1: "./assets/skin/charskin2.svg",
+    2: "./assets/skin/charskin3.svg",
 };
 let skinAssetsLength = Object.keys(skinAssets).length - 1;
 
 let suitAssets = {
-    0: "./assets/suit/charsuit1.png",
-    1: "./assets/suit/charsuit2.png",
-    2: "./assets/suit/charsuit3.png",
+    0: "./assets/suit/charsuit1.svg",
+    1: "./assets/suit/charsuit2.svg",
+    2: "./assets/suit/charsuit3.svg",
 };
 let suitAssetsLength = Object.keys(suitAssets).length - 1;
 
@@ -209,9 +207,9 @@ function test() {
 
 function hairPrev() {
     //button movement
-    document.getElementById("hairPrev").src = "./assets/buttons/arrowleftclicked.png"
+    document.getElementById("hairPrev").src = "./assets/buttons/arrowleftclicked.svg"
     setTimeout(function () {
-        document.getElementById("hairPrev").src = "./assets/buttons/arrowleftunclicked.png"
+        document.getElementById("hairPrev").src = "./assets/buttons/arrowleftunclicked.svg"
     }, 50)
 
     //button sound
@@ -230,9 +228,9 @@ function hairPrev() {
 
 function hairNext() {
     //button movement
-    document.getElementById("hairNext").src = "./assets/buttons/arrowrightclicked.png"
+    document.getElementById("hairNext").src = "./assets/buttons/arrowrightclicked.svg"
     setTimeout(function () {
-        document.getElementById("hairNext").src = "./assets/buttons/arrowrightsunclicked.png"
+        document.getElementById("hairNext").src = "./assets/buttons/arrowrightsunclicked.svg"
     }, 50)
 
     //button sound
@@ -253,9 +251,9 @@ function hairNext() {
 function skinPrev() {
 
     //button movement
-    document.getElementById("skinPrev").src = "./assets/buttons/arrowleftclicked.png"
+    document.getElementById("skinPrev").src = "./assets/buttons/arrowleftclicked.svg"
     setTimeout(function () {
-        document.getElementById("skinPrev").src = "./assets/buttons/arrowleftunclicked.png"
+        document.getElementById("skinPrev").src = "./assets/buttons/arrowleftunclicked.svg"
     }, 50)
 
     //button sound
@@ -273,9 +271,9 @@ function skinPrev() {
 
 function skinNext() {
     //button movement
-    document.getElementById("skinNext").src = "./assets/buttons/arrowrightclicked.png"
+    document.getElementById("skinNext").src = "./assets/buttons/arrowrightclicked.svg"
     setTimeout(function () {
-        document.getElementById("skinNext").src = "./assets/buttons/arrowrightsunclicked.png"
+        document.getElementById("skinNext").src = "./assets/buttons/arrowrightsunclicked.svg"
     }, 50)
 
     //button sound
@@ -294,9 +292,9 @@ function skinNext() {
 
 function suitPrev() {
     //button movement
-    document.getElementById("suitPrev").src = "./assets/buttons/arrowleftclicked.png"
+    document.getElementById("suitPrev").src = "./assets/buttons/arrowleftclicked.svg"
     setTimeout(function () {
-        document.getElementById("suitPrev").src = "./assets/buttons/arrowleftunclicked.png"
+        document.getElementById("suitPrev").src = "./assets/buttons/arrowleftunclicked.svg"
     }, 50)
 
     //button sound
@@ -315,9 +313,9 @@ function suitPrev() {
 
 function suitNext() {
     //button movement
-    document.getElementById("suitNext").src = "./assets/buttons/arrowrightclicked.png"
+    document.getElementById("suitNext").src = "./assets/buttons/arrowrightclicked.svg"
     setTimeout(function () {
-        document.getElementById("suitNext").src = "./assets/buttons/arrowrightsunclicked.png"
+        document.getElementById("suitNext").src = "./assets/buttons/arrowrightsunclicked.svg"
     }, 50)
 
     //button sound
@@ -385,7 +383,7 @@ document.getElementById('save-button').addEventListener('click', function () {
 
     // Create the answer box for consequences of decisions
     let answerBox = document.createElement('img');
-    answerBox.setAttribute('src', './assets/dialogue_box/AnswerBox.png')
+    answerBox.setAttribute('src', './assets/dialogue_box/AnswerBox.svg')
     answerBox.setAttribute('id', 'answerBox');
     answerBox.setAttribute('class', 'hidden');
 
@@ -399,28 +397,28 @@ document.getElementById('save-button').addEventListener('click', function () {
     uibarcontainer.setAttribute('id', 'ui-container');
 
     let uibar = document.createElement('img');
-    uibar.setAttribute('src', './assets/status_bar/ui_bar.png');
+    uibar.setAttribute('src', './assets/status_bar/ui_bar.svg');
 
     let uiecoscore = document.createElement('img');
-    uiecoscore.setAttribute('src', './assets/pop_score/pop_score' + popularityScore + '.png');
+    uiecoscore.setAttribute('src', './assets/pop_score/pop_score' + popularityScore + '.svg');
     uiecoscore.setAttribute('id', 'uiEcoScore');
 
     let uipopscore = document.createElement('img');
-    uipopscore.setAttribute('src', './assets/pop_score/pop_score' + popularityScore + '.png');
+    uipopscore.setAttribute('src', './assets/pop_score/pop_score' + popularityScore + '.svg');
     uipopscore.setAttribute('id', 'uiPopScore')
 
     let introDiv = document.createElement('div');
     introDiv.setAttribute('id', 'intro-div');
 
     let introBox = document.createElement('img');
-    introBox.setAttribute('src', './assets/intro_box/IntroGameBox.png')
+    introBox.setAttribute('src', './assets/intro_box/IntroGameBox.svg')
     introBox.setAttribute('id', 'intro-box');
 
     let introText = document.createElement('p');
     introText.setAttribute('id', 'intro-text');
 
     let nextButton = document.createElement('img');
-    nextButton.setAttribute('src', './assets/intro_box/ContinueButtonUncllicked.png');
+    nextButton.setAttribute('src', './assets/intro_box/ContinueButtonUncllicked.svg');
     nextButton.setAttribute('id', 'next-dialogue-button');
     nextButton.setAttribute('class', 'hidden');
     // Event Listener for the button to prompt the next span of dialogue during introduction
@@ -456,10 +454,10 @@ let introDialogueText = introDialogueArray.shift().split('');
 
 // Main function to run the intro dialogue
 function masterIntroDialogue() {
-    document.getElementById("next-dialogue-button").src = "./assets/intro_box/ContinueButtonCllicked.png"
+    document.getElementById("next-dialogue-button").src = "./assets/intro_box/ContinueButtonCllicked.svg"
     buttonClickOne.play()
     setTimeout(function () {
-        document.getElementById("next-dialogue-button").src = "./assets/intro_box/ContinueButtonUncllicked.png"
+        document.getElementById("next-dialogue-button").src = "./assets/intro_box/ContinueButtonUncllicked.svg"
         if (introDialogueArray.length === 0 && introDialogueText.length === 0) {
             document.getElementById('intro-div').remove()
             setTimeout(firstPrompt, 5000);
@@ -499,7 +497,7 @@ function firstPrompt() {
 
     // Main Dialogue UI Box
     let mainDialogueUI = document.createElement('img');
-    mainDialogueUI.setAttribute('src', 'assets/dialogue_box/MainDialogueUI.png')
+    mainDialogueUI.setAttribute('src', 'assets/dialogue_box/MainDialogueUI.svg')
     mainDialogueUI.setAttribute('id', 'question-prompt')
 
     // Text box for the current question / prompt
@@ -513,7 +511,7 @@ function firstPrompt() {
 
     // Body image for Main Character
     let mainCharacterBody = document.createElement('img')
-    mainCharacterBody.setAttribute('src', 'assets/static_elements/charbody.png')
+    mainCharacterBody.setAttribute('src', 'assets/static_elements/charbody.svg')
     mainCharacterBody.setAttribute('id', 'main-character-body');
 
     // Skin image for Main Character
@@ -540,17 +538,17 @@ function firstPrompt() {
     let NPC = document.createElement('img');
     // change this later because it will not always be assistant
     NPC.setAttribute('id', 'assistant');
-    NPC.setAttribute('src', 'assets/npc/npc4.png');
+    NPC.setAttribute('src', 'assets/npc/npc4.svg');
 
     // Create Yes button
     let yesButton = document.createElement('img');
-    yesButton.setAttribute('src', './assets/dialogue_box/buttons/YesButtonUnclicked.png');
+    yesButton.setAttribute('src', './assets/dialogue_box/buttons/YesButtonUnclicked.svg');
     yesButton.setAttribute('id', 'yes-button');
     yesButton.addEventListener('click', selectYesButton);
 
     // Create No button
     let noButton = document.createElement('img');
-    noButton.setAttribute('src', './assets/dialogue_box/buttons/NoButtonUnclicked.png');
+    noButton.setAttribute('src', './assets/dialogue_box/buttons/NoButtonUnclicked.svg');
     noButton.setAttribute('id', 'no-button');
     noButton.addEventListener('click', selectNoButton);
 
@@ -570,13 +568,13 @@ function firstPrompt() {
 
 
 function selectYesButton() {
-    document.getElementById('yes-button').setAttribute('src', './assets/dialogue_box/buttons/YesButtonClicked.png')
+    document.getElementById('yes-button').setAttribute('src', './assets/dialogue_box/buttons/YesButtonClicked.svg')
     buttonClickOne.play();
     setTimeout(function () {
         document.getElementById('question-prompt-div').setAttribute('class', 'hidden');
         buttonClickOne.play();
         document.getElementById('answerBoxText').textContent = questions[questionCounter]['yes-result']
-        document.getElementById('yes-button').setAttribute('src', './assets/dialogue_box/buttons/YesButtonUnclicked.png')
+        document.getElementById('yes-button').setAttribute('src', './assets/dialogue_box/buttons/YesButtonUnclicked.svg')
         // Reflect on eco score
         ecoScore += questions[questionCounter]['eco-score'];
         if (ecoScore >= 10) {
@@ -594,15 +592,15 @@ function selectYesButton() {
             popularityScore = 0;
         }
 
-        document.getElementById('uiEcoScore').setAttribute('src', './assets/eco_score/eco_score' + ecoScore + '.png');
-        document.getElementById('uiPopScore').setAttribute('src', './assets/pop_score/pop_score' + popularityScore + '.png');
+        document.getElementById('uiEcoScore').setAttribute('src', './assets/eco_score/eco_score' + ecoScore + '.svg');
+        document.getElementById('uiPopScore').setAttribute('src', './assets/pop_score/pop_score' + popularityScore + '.svg');
 
         setTimeout(displayAnswerBox, 1000);
 
         questionCounter += 1
 
         // Change the NPC to next NPC image
-        document.getElementById('assistant').setAttribute('src', "assets/npc/npc" + questions[questionCounter]['NPC-img-num'] + ".png")
+        document.getElementById('assistant').setAttribute('src', "assets/npc/npc" + questions[questionCounter]['NPC-img-num'] + ".svg")
 
         // Change the question text to the next question
         document.getElementById('question-prompt-text').textContent = questions[questionCounter]['question'];
@@ -613,13 +611,13 @@ function selectYesButton() {
 };
 
 function selectNoButton() {
-    document.getElementById('no-button').setAttribute('src', './assets/dialogue_box/buttons/NoButtonClicked.png')
+    document.getElementById('no-button').setAttribute('src', './assets/dialogue_box/buttons/NoButtonClicked.svg')
     setTimeout(function () {
 
         document.getElementById('question-prompt-div').setAttribute('class', 'hidden');
         buttonClickOne.play();
         document.getElementById('answerBoxText').textContent = questions[questionCounter]['no-result']
-        document.getElementById('no-button').setAttribute('src', './assets/dialogue_box/buttons/NoButtonUnclicked.png')
+        document.getElementById('no-button').setAttribute('src', './assets/dialogue_box/buttons/NoButtonUnclicked.svg')
         // Reflect on eco score
         ecoScore -= questions[questionCounter]['eco-score'];
         if (ecoScore >= 10) {
@@ -637,15 +635,15 @@ function selectNoButton() {
             popularityScore = 0;
         }
 
-        document.getElementById('uiEcoScore').setAttribute('src', './assets/eco_score/eco_score' + ecoScore + '.png');
-        document.getElementById('uiPopScore').setAttribute('src', './assets/pop_score/pop_score' + popularityScore + '.png');
+        document.getElementById('uiEcoScore').setAttribute('src', './assets/eco_score/eco_score' + ecoScore + '.svg');
+        document.getElementById('uiPopScore').setAttribute('src', './assets/pop_score/pop_score' + popularityScore + '.svg');
 
         setTimeout(displayAnswerBox, 1000);
 
         questionCounter += 1
 
         // Change the NPC to correct NPC image
-        document.getElementById('assistant').setAttribute('src', "assets/npc/npc" + questions[questionCounter]['NPC-img-num'] + ".png")
+        document.getElementById('assistant').setAttribute('src', "assets/npc/npc" + questions[questionCounter]['NPC-img-num'] + ".svg")
 
         // Change the question to the next question
         document.getElementById('question-prompt-text').textContent = questions[questionCounter]['question'];
@@ -685,11 +683,11 @@ function endGameSequence() {
 
         let endGameBox = document.createElement('img');
         endGameBox.setAttribute('id', 'endGameBox');
-        endGameBox.setAttribute('src', './assets/end_game_box/EndGameBox.png');
+        endGameBox.setAttribute('src', './assets/end_game_box/EndGameBox.svg');
 
         let gameOverText = document.createElement('img');
         gameOverText.setAttribute('id', 'gameOverText');
-        gameOverText.setAttribute('src', './assets/end_game_box/game_over_anim/GameOver1.png')
+        gameOverText.setAttribute('src', './assets/end_game_box/game_over_anim/GameOver1.svg')
 
         let endGameScoreText = document.createElement('p');
         endGameScoreText.textContent = '' + endGameScore;
@@ -697,7 +695,7 @@ function endGameSequence() {
 
         let returnButton = document.createElement('img');
         returnButton.setAttribute('id', 'returnButton');
-        returnButton.setAttribute('src', './assets/intro_box/ContinueButtonUncllicked.png');
+        returnButton.setAttribute('src', './assets/intro_box/ContinueButtonUncllicked.svg');
         returnButton.setAttribute('onclick', 'window.location.assign("index.html")');
 
         document.body.append(endGameBox);
@@ -715,28 +713,28 @@ function endGameSequence() {
 
 // Game Over Animation
 gameOverFrames = {
-    "0": "./assets/end_game_box/game_over_anim/GameOver1.png",
-    "1": "./assets/end_game_box/game_over_anim/GameOver2.png",
-    "2": "./assets/end_game_box/game_over_anim/GameOver3.png",
-    "3": "./assets/end_game_box/game_over_anim/GameOver4.png",
-    "4": "./assets/end_game_box/game_over_anim/GameOver5.png",
-    "5": "./assets/end_game_box/game_over_anim/GameOver6.png",
-    "6": "./assets/end_game_box/game_over_anim/GameOver7.png",
-    "7": "./assets/end_game_box/game_over_anim/GameOver8.png",
-    "8": "./assets/end_game_box/game_over_anim/GameOver9.png",
-    "9": "./assets/end_game_box/game_over_anim/GameOver10.png",
-    "10": "./assets/end_game_box/game_over_anim/GameOver11.png",
-    "11": "./assets/end_game_box/game_over_anim/GameOver12.png",
-    "12": "./assets/end_game_box/game_over_anim/GameOver13.png",
-    "13": "./assets/end_game_box/game_over_anim/GameOver14.png",
-    "14": "./assets/end_game_box/game_over_anim/GameOver15.png",
-    "15": "./assets/end_game_box/game_over_anim/GameOver16.png",
-    "16": "./assets/end_game_box/game_over_anim/GameOver17.png",
-    "17": "./assets/end_game_box/game_over_anim/GameOver18.png",
-    "18": "./assets/end_game_box/game_over_anim/GameOver19.png",
-    "19": "./assets/end_game_box/game_over_anim/GameOver20.png",
-    "20": "./assets/end_game_box/game_over_anim/GameOver21.png",
-    "21": "./assets/end_game_box/game_over_anim/GameOver22.png",
+    "0": "./assets/end_game_box/game_over_anim/GameOver1.svg",
+    "1": "./assets/end_game_box/game_over_anim/GameOver2.svg",
+    "2": "./assets/end_game_box/game_over_anim/GameOver3.svg",
+    "3": "./assets/end_game_box/game_over_anim/GameOver4.svg",
+    "4": "./assets/end_game_box/game_over_anim/GameOver5.svg",
+    "5": "./assets/end_game_box/game_over_anim/GameOver6.svg",
+    "6": "./assets/end_game_box/game_over_anim/GameOver7.svg",
+    "7": "./assets/end_game_box/game_over_anim/GameOver8.svg",
+    "8": "./assets/end_game_box/game_over_anim/GameOver9.svg",
+    "9": "./assets/end_game_box/game_over_anim/GameOver10.svg",
+    "10": "./assets/end_game_box/game_over_anim/GameOver11.svg",
+    "11": "./assets/end_game_box/game_over_anim/GameOver12.svg",
+    "12": "./assets/end_game_box/game_over_anim/GameOver13.svg",
+    "13": "./assets/end_game_box/game_over_anim/GameOver14.svg",
+    "14": "./assets/end_game_box/game_over_anim/GameOver15.svg",
+    "15": "./assets/end_game_box/game_over_anim/GameOver16.svg",
+    "16": "./assets/end_game_box/game_over_anim/GameOver17.svg",
+    "17": "./assets/end_game_box/game_over_anim/GameOver18.svg",
+    "18": "./assets/end_game_box/game_over_anim/GameOver19.svg",
+    "19": "./assets/end_game_box/game_over_anim/GameOver20.svg",
+    "20": "./assets/end_game_box/game_over_anim/GameOver21.svg",
+    "21": "./assets/end_game_box/game_over_anim/GameOver22.svg",
 }
 
 let goanimframe = 0;
