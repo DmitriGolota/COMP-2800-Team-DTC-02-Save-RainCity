@@ -406,6 +406,12 @@ document.getElementById('save-button').addEventListener('click', function () {
     uipopscore.setAttribute('src', './assets/pop_score/pop_score' + popularityScore + '.png');
     uipopscore.setAttribute('id', 'uiPopScore')
 
+    // Insert image of current term
+    let currentTermImage = document.createElement('img');
+    currentTermImage.setAttribute('src', './assets/dialogue_box/TermOne.png');
+    currentTermImage.setAttribute('id', 'currentTermImage');
+
+    // Introduction stuff here
     let introDiv = document.createElement('div');
     introDiv.setAttribute('id', 'intro-div');
 
@@ -435,6 +441,7 @@ document.getElementById('save-button').addEventListener('click', function () {
     mainContainer.append(answerBox);
     mainContainer.append(answerBoxText);
     mainContainer.append(answerBoxButton);
+    mainContainer.append(currentTermImage);
     mainContainer.append(uibarcontainer);
     mainContainer.append(introDiv);
 
@@ -596,10 +603,21 @@ function selectYesButton() {
     document.getElementById('yes-button').setAttribute('src', './assets/dialogue_box/buttons/YesButtonClicked.png')
     buttonClickOne.play();
     setTimeout(function () {
+        // Hide the question prompt box
         document.getElementById('question-prompt-div').setAttribute('class', 'hidden');
+        
+        // Play click noise
         buttonClickOne.play();
+
+        // Reset the text for the answer box
+        document.getElementById('answerBoxText').textContent = '';
+
+        // Set the global variable (for scrolling text) to the correct string
         nextAnswerBoxText = questions[questionCounter]['yes-result'].split('');
+
+        // For click animation's sake
         document.getElementById('yes-button').setAttribute('src', './assets/dialogue_box/buttons/YesButtonUnclicked.png')
+
         // Reflect on eco score
         ecoScore += questions[questionCounter]['eco-score'];
         if (ecoScore >= 10) {
@@ -617,11 +635,14 @@ function selectYesButton() {
             popularityScore = 0;
         }
 
+        // Adjust score bar and popularity hearts to correct scale
         document.getElementById('uiEcoScore').setAttribute('src', './assets/eco_score/eco_score' + ecoScore + '.png');
         document.getElementById('uiPopScore').setAttribute('src', './assets/pop_score/pop_score' + popularityScore + '.png');
 
+        // After 1 second, run function to display the answer box
         setTimeout(displayAnswerBox, 1000);
 
+        // Increment question counter
         questionCounter += 1
 
         // Change the NPC to next NPC image
@@ -636,10 +657,21 @@ function selectNoButton() {
     document.getElementById('no-button').setAttribute('src', './assets/dialogue_box/buttons/NoButtonClicked.png')
     setTimeout(function () {
 
+        // Hide the question prompt box
         document.getElementById('question-prompt-div').setAttribute('class', 'hidden');
+        
+        // Play click noise
         buttonClickOne.play();
+
+        // Reset the text for the answer box
+        document.getElementById('answerBoxText').textContent = '';
+
+        // Set the global variable (for scrolling text) to the correct string
         nextAnswerBoxText = questions[questionCounter]['no-result'].split('');;
+
+        // For click animation's sake
         document.getElementById('no-button').setAttribute('src', './assets/dialogue_box/buttons/NoButtonUnclicked.png')
+        
         // Reflect on eco score
         ecoScore -= questions[questionCounter]['eco-score'];
         if (ecoScore >= 10) {
@@ -657,11 +689,14 @@ function selectNoButton() {
             popularityScore = 0;
         }
 
+        // Adjust score bar and popularity hearts to correct scale
         document.getElementById('uiEcoScore').setAttribute('src', './assets/eco_score/eco_score' + ecoScore + '.png');
         document.getElementById('uiPopScore').setAttribute('src', './assets/pop_score/pop_score' + popularityScore + '.png');
 
+        // After 1 second, run function to display the answer box
         setTimeout(displayAnswerBox, 1000);
 
+        // Increment question counter
         questionCounter += 1
 
         // Change the NPC to correct NPC image
@@ -670,33 +705,46 @@ function selectNoButton() {
         // Change the question to the next question
         document.getElementById('question-prompt-text').textContent = questions[questionCounter]['question'];
     }, 50)
-
 };
 
+// Displays the answer box
 function displayAnswerBox() {
+    // Play box popup audio
     boxPopAudioThree.play();
+    // Begin the scrolling text
     answerBoxTextScroll();
+    // Make the answer box and text visible
     document.getElementById('answerBox').setAttribute('class', 'visible');
     document.getElementById('answerBoxText').setAttribute('class', 'visible')
 };
 
+// Hides the answer box when you click the continue button
 function hideAnswerBox() {
     document.getElementById('answerBox').setAttribute('class', 'hidden');
     document.getElementById('answerBoxText').setAttribute('class', 'hidden')
     document.getElementById('answerBoxButton').setAttribute('class', 'hidden')
 };
 
+// This is the main function to call the next yes/no question
 function nextQuestionPrompt() {
     // temporary change
     if (questionCounter === 1 || popularityScore === 0) {
         // end game
         endGameSequence();
+    } else if (questionCounter === 9) {
+        // put newspaper popup here. show newspaper with headline:
+        // "mayor is re-elected for second term blah blah"
+        // keep newspaper shown for 5 seconds then continue on
+        document.getElementById('currentTermImage').setAttribute('src', './assets/dialogue_box/TermTwo.png');
+        boxPopAudioOne.play();
+        document.getElementById('question-prompt-div').setAttribute('class', 'visible');
     } else {
         boxPopAudioOne.play();
         document.getElementById('question-prompt-div').setAttribute('class', 'visible');
     }
 };
 
+// If you finish all questions, or pop score reaches 0, end game.
 function endGameSequence() {
     // Remove everything
     let endGameScore = (popularityScore + ecoScore) * 69;
