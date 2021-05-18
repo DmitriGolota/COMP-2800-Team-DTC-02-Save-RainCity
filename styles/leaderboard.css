@@ -13,7 +13,18 @@
 }
 
 .title{
-    padding-bottom: 5vh;
+    padding-bottom: 0.5vh;
+    margin: 0 2vw;
+    margin-bottom: 5vh;
     font-size: 5vh;
+    color: white;
 }
 
+.person{
+    width: 60vw;
+}
+
+#list{
+    width: 70vw;
+    margin: 0 15vw;
+}
