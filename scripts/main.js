@@ -756,7 +756,13 @@ function endGameSequence() {
     let endGameScore = (popularityScore + ecoScore) * 69;
 
     // Timestamp of when the game ended
-    let timestamp = firebase.firestore.FieldValue.serverTimestamp();
+    let currentDate = new Date();
+
+    let currentDayOfMonth = currentDate.getDate();
+    let currentMonth = currentDate.getMonth();
+    let currentYear = currentDate.getFullYear();
+
+    let timestamp = currentDayOfMonth + "-" + (currentMonth + 1) + "-" + currentYear;
 
     // Write the user's end game score to firestore
     firebase.auth().onAuthStateChanged(function (user) {
