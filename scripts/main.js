@@ -413,7 +413,7 @@ document.getElementById('save-button').addEventListener('click', function () {
     introDiv.setAttribute('id', 'intro-div');
 
     let introBox = document.createElement('img');
-    introBox.setAttribute('src', './assets/intro_box/IntroGameBox.png')
+    introBox.setAttribute('src', './assets/intro_box/MainBox.png')
     introBox.setAttribute('id', 'intro-box');
 
     let introText = document.createElement('p');
