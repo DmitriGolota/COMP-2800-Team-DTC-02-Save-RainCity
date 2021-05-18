@@ -605,7 +605,7 @@ function selectYesButton() {
     setTimeout(function () {
         // Hide the question prompt box
         document.getElementById('question-prompt-div').setAttribute('class', 'hidden');
-        
+
         // Play click noise
         buttonClickOne.play();
 
@@ -659,7 +659,7 @@ function selectNoButton() {
 
         // Hide the question prompt box
         document.getElementById('question-prompt-div').setAttribute('class', 'hidden');
-        
+
         // Play click noise
         buttonClickOne.play();
 
@@ -671,7 +671,7 @@ function selectNoButton() {
 
         // For click animation's sake
         document.getElementById('no-button').setAttribute('src', './assets/dialogue_box/buttons/NoButtonUnclicked.png')
-        
+
         // Reflect on eco score
         ecoScore -= questions[questionCounter]['eco-score'];
         if (ecoScore >= 10) {
@@ -746,18 +746,43 @@ function nextQuestionPrompt() {
 
 // If you finish all questions, or pop score reaches 0, end game.
 function endGameSequence() {
-    // Remove everything
+    // Calculate user's end game score here
     let endGameScore = (popularityScore + ecoScore) * 69;
+
+    // Timestamp of when the game ended
+    let timestamp = firebase.firestore.FieldValue.serverTimestamp();
+
+    // Write the user's end game score to firestore
+    firebase.auth().onAuthStateChanged(function (user) {
+        if (user) {
+            db.collection('users').doc(user.uid)
+                .collection('game-scores').doc()
+                .set({
+                    score: endGameScore,
+                    timestamp: timestamp
+                })
+                .then(function () {
+                    // if the user scored a perfect score aka 100%
+                    // this will be altered as 100 does no currently mean 100%
+                    if (endGameScore === 100) {
+                        db.collection('scores').doc()
+                            .set({
+                                score: endGameScore,
+                                timestamp: timestamp
+                            })
+                    }
+
+                })
+        }
+    });
+
+    // Remove everything
     setTimeout(() => {
         document.getElementById('container').remove();
 
         let endGameBox = document.createElement('img');
         endGameBox.setAttribute('id', 'endGameBox');
         endGameBox.setAttribute('src', './assets/end_game_box/EndGameBox.png');
-
-        // let gameOverText = document.createElement('img');
-        // gameOverText.setAttribute('id', 'gameOverText');
-        // gameOverText.setAttribute('src', './assets/end_game_box/game_over_anim/GameOver1.png')
 
         let endGameScoreText = document.createElement('p');
         endGameScoreText.textContent = '' + endGameScore;
