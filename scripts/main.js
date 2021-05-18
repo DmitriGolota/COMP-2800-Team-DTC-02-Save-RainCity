@@ -746,6 +746,12 @@ function nextQuestionPrompt() {
 
 // If you finish all questions, or pop score reaches 0, end game.
 function endGameSequence() {
+    // Stop the main theme audio 
+    var audioMain = document.getElementById('mainSoundTrack');
+    audioMain.pause()
+    // Start the end game theme audio
+    var endAudio = document.getElementById('endSoundTrack');
+    endAudio.play()
     // Calculate user's end game score here
     let endGameScore = (popularityScore + ecoScore) * 69;
 
