@@ -375,7 +375,7 @@ document.getElementById('save-button').addEventListener('click', function () {
 
     // Create the answer box for consequences of decisions
     let answerBox = document.createElement('img');
-    answerBox.setAttribute('src', './assets/dialogue_box/AnswerBox.png')
+    answerBox.setAttribute('src', './assets/intro_box/MainBox.png')
     answerBox.setAttribute('id', 'answerBox');
     answerBox.setAttribute('class', 'hidden');
 
@@ -383,6 +383,13 @@ document.getElementById('save-button').addEventListener('click', function () {
     let answerBoxText = document.createElement('p');
     answerBoxText.setAttribute('id', 'answerBoxText');
     answerBoxText.setAttribute('class', 'hidden');
+
+    // Create the continue button for the answer box
+    let answerBoxButton = document.createElement('img');
+    answerBoxButton.setAttribute('src', './assets/intro_box/ContinueButtonUncllicked.png')
+    answerBoxButton.setAttribute('id', 'answerBoxButton');
+    answerBoxButton.setAttribute('class', 'hidden');
+    answerBoxButton.addEventListener('click', continueAnswerBox)
 
     // Create UI Bar and set initial score
     let uibarcontainer = document.createElement('div');
@@ -427,12 +434,37 @@ document.getElementById('save-button').addEventListener('click', function () {
     mainContainer.append(mainMap);
     mainContainer.append(answerBox);
     mainContainer.append(answerBoxText);
+    mainContainer.append(answerBoxButton);
     mainContainer.append(uibarcontainer);
     mainContainer.append(introDiv);
 
     masterIntroDialogue();
 
 });
+
+// GLOBAL VARIABLE  for current answer box text
+let nextAnswerBoxText = '';
+
+// Function to make text slowly appear for answer box
+function answerBoxTextScroll() {
+    if (nextAnswerBoxText.length === 0) {
+        document.getElementById('answerBoxButton').setAttribute('class', 'visible')
+        return false
+    } else if (nextAnswerBoxText.length > 0) {
+        document.getElementById('answerBoxText').innerHTML += nextAnswerBoxText.shift();
+    }
+    setTimeout('answerBoxTextScroll()', 50);
+};
+
+// Function for event listener of the continue button in answer box to continue to next question
+function continueAnswerBox() {
+    setTimeout(() => {
+        buttonClickOne.play();
+        document.getElementById('answerBoxButton').setAttribute('src', './assets/intro_box/ContinueButtonCllicked.png')
+    }, 50);
+    hideAnswerBox();
+    setTimeout(nextQuestionPrompt, 6000);
+};
 
 // Each string in this array is one span of dialogue for the intro
 let introDialogueArray = ['Congratulations on being appointed Mayor! What a long and enduring campaign \
@@ -566,7 +598,7 @@ function selectYesButton() {
     setTimeout(function () {
         document.getElementById('question-prompt-div').setAttribute('class', 'hidden');
         buttonClickOne.play();
-        document.getElementById('answerBoxText').textContent = questions[questionCounter]['yes-result']
+        nextAnswerBoxText = questions[questionCounter]['yes-result'].split('');
         document.getElementById('yes-button').setAttribute('src', './assets/dialogue_box/buttons/YesButtonUnclicked.png')
         // Reflect on eco score
         ecoScore += questions[questionCounter]['eco-score'];
@@ -597,9 +629,6 @@ function selectYesButton() {
 
         // Change the question text to the next question
         document.getElementById('question-prompt-text').textContent = questions[questionCounter]['question'];
-
-
-        setTimeout(nextQuestionPrompt, 11000);
     }, 50)
 };
 
@@ -609,7 +638,7 @@ function selectNoButton() {
 
         document.getElementById('question-prompt-div').setAttribute('class', 'hidden');
         buttonClickOne.play();
-        document.getElementById('answerBoxText').textContent = questions[questionCounter]['no-result']
+        nextAnswerBoxText = questions[questionCounter]['no-result'].split('');;
         document.getElementById('no-button').setAttribute('src', './assets/dialogue_box/buttons/NoButtonUnclicked.png')
         // Reflect on eco score
         ecoScore -= questions[questionCounter]['eco-score'];
@@ -640,22 +669,21 @@ function selectNoButton() {
 
         // Change the question to the next question
         document.getElementById('question-prompt-text').textContent = questions[questionCounter]['question'];
-
-        setTimeout(nextQuestionPrompt, 11000);
     }, 50)
 
 };
 
 function displayAnswerBox() {
     boxPopAudioThree.play();
+    answerBoxTextScroll();
     document.getElementById('answerBox').setAttribute('class', 'visible');
     document.getElementById('answerBoxText').setAttribute('class', 'visible')
-    setTimeout(hideAnswerBox, 5000);
 };
 
 function hideAnswerBox() {
     document.getElementById('answerBox').setAttribute('class', 'hidden');
     document.getElementById('answerBoxText').setAttribute('class', 'hidden')
+    document.getElementById('answerBoxButton').setAttribute('class', 'hidden')
 };
 
 function nextQuestionPrompt() {
