@@ -63,3 +63,20 @@ test.withConverter(scoreConverter).get().then((querySnapshot) => {
         createListItem(score.name, score.timecompleted.seconds);
     })
 })
+
+// firebase.auth().onAuthStateChanged(function() {
+//     if (user) {
+//         db.collection('scores')
+//         .where('percentage', '==', 100)
+//         .orderBy('timestamp', 'desc')
+//         .limit(10)
+//         .get()
+//         .then(function (snap) {
+//             snap.forEach(function (doc) {
+//                 let name = doc.data().name
+//                 let timestamp = doc.data().timestamp
+//                 createListItem(name, timestamp)
+//             })
+//         })
+//     }
+// })
