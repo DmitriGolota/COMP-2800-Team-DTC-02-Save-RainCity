@@ -174,7 +174,6 @@ let questions = {
     }
 };
 
-// hair, skin, and suit assets must named like so: hair1.png, hair2.png, skin1.png, skin2.png etc.
 let hairNum = 0;
 let skinNum = 0;
 let suitNum = 0;
@@ -371,17 +370,8 @@ document.getElementById('save-button').addEventListener('click', function () {
 
     // Create Map and set as background
     let mainMap = document.createElement('img');
-    mainMap.setAttribute('src', './assets/mainmap.gif');
+    mainMap.setAttribute('src', './assets/main_map/mainmap.gif');
     mainMap.setAttribute('id', 'game-map');
-
-
-    // Manual Animation Sequence
-    /*
-    setInterval(function () {
-        animateMainMap();
-    }, 300);
-    */
-
 
     // Create the answer box for consequences of decisions
     let answerBox = document.createElement('img');
@@ -484,7 +474,8 @@ function introDialogue() {
         document.getElementById('next-dialogue-button').setAttribute('class', 'visible')
         return false
     }
-    setTimeout('introDialogue()', 25);
+    // temporary change
+    setTimeout('introDialogue()', 10);
 };
 
 // Function for the first question prompt that appears after the intro
@@ -668,7 +659,8 @@ function hideAnswerBox() {
 };
 
 function nextQuestionPrompt() {
-    if (questionCounter === 6 || popularityScore === 0) {
+    // temporary change
+    if (questionCounter === 1 || popularityScore === 0) {
         // end game
         endGameSequence();
     } else {
@@ -687,9 +679,9 @@ function endGameSequence() {
         endGameBox.setAttribute('id', 'endGameBox');
         endGameBox.setAttribute('src', './assets/end_game_box/EndGameBox.png');
 
-        let gameOverText = document.createElement('img');
-        gameOverText.setAttribute('id', 'gameOverText');
-        gameOverText.setAttribute('src', './assets/end_game_box/game_over_anim/GameOver1.png')
+        // let gameOverText = document.createElement('img');
+        // gameOverText.setAttribute('id', 'gameOverText');
+        // gameOverText.setAttribute('src', './assets/end_game_box/game_over_anim/GameOver1.png')
 
         let endGameScoreText = document.createElement('p');
         endGameScoreText.textContent = '' + endGameScore;
@@ -700,112 +692,13 @@ function endGameSequence() {
         returnButton.setAttribute('src', './assets/intro_box/ContinueButtonUncllicked.png');
         returnButton.setAttribute('onclick', 'window.location.assign("index.html")');
 
+        let gameOverAnimation = document.createElement('img');
+        gameOverAnimation.setAttribute('src', './assets/end_game_box/game_over_anim/EndGameBox.gif');
+        gameOverAnimation.setAttribute('id', 'gameover-anim');
+
         document.body.append(endGameBox);
-        document.body.append(gameOverText);
+        document.body.append(gameOverAnimation);
         document.body.append(endGameScoreText);
         document.body.append(returnButton);
     }, 100);
-
-
-
-    setInterval(function () {
-        animateGameOver();
-    }, 100);
-};
-
-// Main Map Animation
-/*
-mainMapFrames = {
-    "0": "./assets/main_map/mainmap1.png",
-    "1": "./assets/main_map/mainmap2.png",
-    "2": "./assets/main_map/mainmap3.png",
-    "3": "./assets/main_map/mainmap4.png",
-    "4": "./assets/main_map/mainmap5.png",
-    "5": "./assets/main_map/mainmap6.png",
-    "6": "./assets/main_map/mainmap7.png",
-    "7": "./assets/main_map/mainmap8.png",
-    "8": "./assets/main_map/mainmap9.png",
-    "9": "./assets/main_map/mainmap10.png",
-    "10": "./assets/main_map/mainmap11.png",
-    "11": "./assets/main_map/mainmap12.png",
-    "12": "./assets/main_map/mainmap13.png",
-    "13": "./assets/main_map/mainmap14.png",
-    "14": "./assets/main_map/mainmap15.png",
-    "15": "./assets/main_map/mainmap16.png",
-    "16": "./assets/main_map/mainmap17.png",
-    "17": "./assets/main_map/mainmap18.png",
-    "18": "./assets/main_map/mainmap19.png",
-    "19": "./assets/main_map/mainmap20.png",
-    "20": "./assets/main_map/mainmap21.png",
-    "21": "./assets/main_map/mainmap22.png",
-    "22": "./assets/main_map/mainmap23.png",
-    "23": "./assets/main_map/mainmap24.png",
-    "24": "./assets/main_map/mainmap25.png",
-    "25": "./assets/main_map/mainmap26.png",
-    "26": "./assets/main_map/mainmap27.png",
-    "27": "./assets/main_map/mainmap28.png",
-    "28": "./assets/main_map/mainmap29.png",
-    "29": "./assets/main_map/mainmap30.png",
-    "30": "./assets/main_map/mainmap31.png",
-    "31": "./assets/main_map/mainmap32.png",
-    "32": "./assets/main_map/mainmap33.png",
-    "33": "./assets/main_map/mainmap34.png",
-    "34": "./assets/main_map/mainmap35.png",
-    "35": "./assets/main_map/mainmap36.png",
-    "36": "./assets/main_map/mainmap37.png",
-    "37": "./assets/main_map/mainmap38.png",
-    "38": "./assets/main_map/mainmap39.png",
-    "39": "./assets/main_map/mainmap40.png",
-    
-}
-let mainmapframe = 0
-function animateMainMap() {
-    let mainMap = document.getElementById('game-map');
-    if (mainmapframe == 38) {
-        mainmapframe = 0;
-        mainMap.setAttribute('src', mainMapFrames[mainmapframe])
-    } else {
-        mainmapframe += 1
-        mainMap.setAttribute('src', mainMapFrames[mainmapframe])
-    }
-};
-*/
-
-
-// Game Over Animation
-gameOverFrames = {
-    "0": "./assets/end_game_box/game_over_anim/GameOver1.png",
-    "1": "./assets/end_game_box/game_over_anim/GameOver2.png",
-    "2": "./assets/end_game_box/game_over_anim/GameOver3.png",
-    "3": "./assets/end_game_box/game_over_anim/GameOver4.png",
-    "4": "./assets/end_game_box/game_over_anim/GameOver5.png",
-    "5": "./assets/end_game_box/game_over_anim/GameOver6.png",
-    "6": "./assets/end_game_box/game_over_anim/GameOver7.png",
-    "7": "./assets/end_game_box/game_over_anim/GameOver8.png",
-    "8": "./assets/end_game_box/game_over_anim/GameOver9.png",
-    "9": "./assets/end_game_box/game_over_anim/GameOver10.png",
-    "10": "./assets/end_game_box/game_over_anim/GameOver11.png",
-    "11": "./assets/end_game_box/game_over_anim/GameOver12.png",
-    "12": "./assets/end_game_box/game_over_anim/GameOver13.png",
-    "13": "./assets/end_game_box/game_over_anim/GameOver14.png",
-    "14": "./assets/end_game_box/game_over_anim/GameOver15.png",
-    "15": "./assets/end_game_box/game_over_anim/GameOver16.png",
-    "16": "./assets/end_game_box/game_over_anim/GameOver17.png",
-    "17": "./assets/end_game_box/game_over_anim/GameOver18.png",
-    "18": "./assets/end_game_box/game_over_anim/GameOver19.png",
-    "19": "./assets/end_game_box/game_over_anim/GameOver20.png",
-    "20": "./assets/end_game_box/game_over_anim/GameOver21.png",
-    "21": "./assets/end_game_box/game_over_anim/GameOver22.png",
-}
-
-let goanimframe = 0;
-
-function animateGameOver() {
-    if (goanimframe == 21) {
-        goanimframe = 0;
-        gameOverText.setAttribute('src', gameOverFrames[goanimframe])
-    } else {
-        goanimframe += 1
-        gameOverText.setAttribute('src', gameOverFrames[goanimframe])
-    }
 };
