@@ -767,7 +767,12 @@ function endGameSequence() {
     // Write the user's end game score to firestore
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
+            var name = '';
             db.collection('users').doc(user.uid)
+            .get()
+            .then(function (doc){
+                name = doc.data().name.split(' ');
+                db.collection('users').doc(user.uid)
                 .collection('game-scores').doc()
                 .set({
                     score: endGameScore,
@@ -779,12 +784,13 @@ function endGameSequence() {
                     if (endGameScore === 100) {
                         db.collection('scores').doc()
                             .set({
+                                name: name[0],
                                 score: endGameScore,
                                 timestamp: timestamp
                             })
                     }
-
                 })
+            })
         }
     });
 
