@@ -36,6 +36,7 @@
     text-align: center;
     top: 83vh;
     left: 24vw;
+    color: white;
 }
 
 @media (width: 720px) and (height: 540px) {
