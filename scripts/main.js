@@ -11,7 +11,8 @@ document.getElementById('char-customization').addEventListener('click', function
 // Score for player
 let popularityScore = 10;
 let ecoScore = 0;
-
+let prevEcoScore = ecoScore;
+let prevPopularityScore = popularityScore;
 
 let questionCounter = 0;
 
@@ -66,36 +67,32 @@ let questions = {
     },
     6: {
         'question': 'Wow! With such an increase in public transit use, we want to increase the ticket prices for buses and trains from $2 to $4. Do you agree to this plan?',
-        'answer': false,
-        'good-result': 'You made the correct decision!',
-        'bad-result': 'You made the wrong decision!',
+        'yes-result': 'You made the correct decision!',
+        'no-result': 'You made the wrong decision!',
         'eco-score': 1,
         'pop-score': 1,
         'NPC-img-num': 1
     },
     7: {
         'question': 'People are complaining about the lack of parking in Downtown RainCity! Can we pave over a greenspace to build a parkade?',
-        'answer': false,
-        'good-result': 'You made the correct decision!',
-        'bad-result': 'You made the wrong decision!',
+        'yes-result': 'You made the correct decision!',
+        'no-result': 'You made the wrong decision!',
         'eco-score': 1,
         'pop-score': 1,
         'NPC-img-num': 1
     },
     8: {
         'question': "Mayor! Still too many people are driving private vehicles unnecessarily! Should we expand our residential parking permits city-wide?",
-        'answer': true,
-        'good-result': 'You made the correct decision!',
-        'bad-result': 'You made the wrong decision!',
+        'yes-result': 'You made the correct decision!',
+        'no-result': 'You made the wrong decision!',
         'eco-score': 1,
         'pop-score': 1,
         'NPC-img-num': 1
     },
     9: {
         'question': 'Mayor, is it just me or is it hard to breathe downtown? To further discourage non-electric private vehicles, we want to add an additional carbon pollution surcharge to parking permits for non-electric vehicles. Do you agree to this plan?',
-        'answer': true,
-        'good-result': 'You made the correct decision!',
-        'bad-result': 'You made the wrong decision!',
+        'yes-result': 'You made the correct decision!',
+        'no-result': 'You made the wrong decision!',
         'eco-score': 1,
         'pop-score': 1,
         'NPC-img-num': 1
@@ -426,6 +423,17 @@ document.getElementById('save-button').addEventListener('click', function () {
     nextButton.setAttribute('src', './assets/intro_box/ContinueButtonUncllicked.png');
     nextButton.setAttribute('id', 'next-dialogue-button');
     nextButton.setAttribute('class', 'hidden');
+    
+    //Easter Egg Content
+    let whaleClickable = document.createElement('img');
+    whaleClickable.setAttribute('id', 'whaleSoundButton');
+
+    let shipClickable = document.createElement('img');
+    shipClickable.setAttribute('id', 'shipSoundButton');
+
+    let duckClickable = document.createElement('img');
+    duckClickable.setAttribute('id', 'duckSoundButton');
+
     // Event Listener for the button to prompt the next span of dialogue during introduction
     nextButton.addEventListener('click', masterIntroDialogue);
 
@@ -438,6 +446,9 @@ document.getElementById('save-button').addEventListener('click', function () {
     uibarcontainer.appendChild(uiecoscore);
 
     mainContainer.append(mainMap);
+    mainContainer.append(whaleClickable);
+    mainContainer.append(duckClickable);
+    mainContainer.append(shipClickable);
     mainContainer.append(answerBox);
     mainContainer.append(answerBoxText);
     mainContainer.append(answerBoxButton);
@@ -445,11 +456,47 @@ document.getElementById('save-button').addEventListener('click', function () {
     mainContainer.append(uibarcontainer);
     mainContainer.append(introDiv);
 
+    // Easter Eggs
+    document.getElementById('whaleSoundButton').addEventListener('click', function(){
+        let whalenoise = document.getElementById('whaleSound')
+        whalenoise.play();
+        whaleClicked = true;
+        displayEasterEggFinal()
+    })
+
+    document.getElementById('duckSoundButton').addEventListener('click', function(){
+        let ducknoise = document.getElementById('duckSound')
+        ducknoise.play();
+        duckClicked = true;
+        displayEasterEggFinal()
+    })
+
+    document.getElementById('shipSoundButton').addEventListener('click', function(){
+        let shipnoise = document.getElementById('shipHornSound')
+        shipnoise.play();
+        shipClicked = true;
+        displayEasterEggFinal()
+    })
+
     masterIntroDialogue();
 
 });
 
-// GLOBAL VARIABLE  for current answer box text
+// GLOBAL VARIABLES  
+
+//Easter Egg State
+whaleClicked = false;
+duckClicked = false;
+shipClicked = false;
+
+// Master Easter Egg
+function displayEasterEggFinal(){
+    if (whaleClicked == true && duckClicked == true && shipClicked == true){
+        // do something really cool here
+        console.log("easter egg unclocked")
+    }
+}
+// for current answer box text
 let nextAnswerBoxText = '';
 
 // Function to make text slowly appear for answer box
@@ -472,7 +519,6 @@ function continueAnswerBox() {
         document.getElementById('answerBoxButton').setAttribute('src', './assets/intro_box/ContinueButtonUncllicked.png')
     }, 50);
     hideAnswerBox();
-    setTimeout(nextQuestionPrompt, 6000);
 };
 
 // Each string in this array is one span of dialogue for the intro
@@ -621,6 +667,7 @@ function selectYesButton() {
         document.getElementById('yes-button').setAttribute('src', './assets/dialogue_box/buttons/YesButtonUnclicked.png')
 
         // Reflect on eco score
+        prevEcoScore = ecoScore;
         ecoScore += questions[questionCounter]['eco-score'];
         if (ecoScore >= 10) {
             ecoScore = 10;
@@ -629,6 +676,7 @@ function selectYesButton() {
             ecoScore = 0;
         }
         // Reflect popularity score
+        prevPopularityScore = popularityScore;
         popularityScore += questions[questionCounter]['pop-score'];
         if (popularityScore >= 10) {
             popularityScore = 10;
@@ -675,6 +723,7 @@ function selectNoButton() {
         document.getElementById('no-button').setAttribute('src', './assets/dialogue_box/buttons/NoButtonUnclicked.png')
 
         // Reflect on eco score
+        prevEcoScore = ecoScore;
         ecoScore -= questions[questionCounter]['eco-score'];
         if (ecoScore >= 10) {
             ecoScore = 10;
@@ -683,6 +732,7 @@ function selectNoButton() {
             ecoScore = 0;
         }
         // Reflect popularity score
+        prevPopularityScore = popularityScore;
         popularityScore -= questions[questionCounter]['pop-score'];
         if (popularityScore >= 10) {
             popularityScore = 10;
@@ -727,6 +777,9 @@ function hideAnswerBox() {
     document.getElementById('answerBoxText').setAttribute('class', 'hidden')
     document.getElementById('answerBoxButton').setAttribute('class', 'hidden')
     }, 50);
+    if (!createNewspaper("default")){
+        setTimeout(nextQuestionPrompt, 6000);
+    }
 };
 
 // This is the main function to call the next yes/no question
@@ -737,16 +790,149 @@ function nextQuestionPrompt() {
         endGameSequence();
     } else if (questionCounter === 9) {
         // put newspaper popup here. show newspaper with headline:
+        if (popularityScore > 0){
+            createNewspaper("termSwitch");
+            var newspaper = document.getElementById("newspaper");
+            newspaper.onclick = function () {
+                let audio = new Audio("./assets/Audio/newspaperAway.mp3")
+                var newspaper = document.getElementById('newspaper');
+                newspaper.remove();
+                audio.play();
+                document.getElementById('currentTermImage').setAttribute('src', './assets/dialogue_box/TermTwo.png');
+                boxPopAudioOne.play();
+                document.getElementById('question-prompt-div').setAttribute('class', 'visible');
+            }
+        }
         // "mayor is re-elected for second term blah blah"
         // keep newspaper shown for 5 seconds then continue on
-        document.getElementById('currentTermImage').setAttribute('src', './assets/dialogue_box/TermTwo.png');
-        boxPopAudioOne.play();
-        document.getElementById('question-prompt-div').setAttribute('class', 'visible');
     } else {
         boxPopAudioOne.play();
         document.getElementById('question-prompt-div').setAttribute('class', 'visible');
     }
 };
+
+//Create headlines
+let papers = {
+    0 : false,
+    1 : false,
+    2 : false,
+    3 : false,
+    4 : false,
+    5 : false, 
+    6 : false,
+    7 : false,
+    8 : false,
+    9 : false, 
+    10 : false, 
+    11 : false
+}
+
+let defineDefaultHeadline = () => {
+
+    if(popularityScore <= 3 && !papers[2] && prevPopularityScore > popularityScore){
+        papers[2] = true;
+        return document.createTextNode("Protests Begin Due to the Mayor's New Ruling");
+    }
+    else if(popularityScore <= 1 && !papers[1] && prevPopularityScore > popularityScore){
+        papers[1] = true;
+        return document.createTextNode("Riots Breakout as Discontent Increases With the Mayor");
+    }
+    else if(popularityScore <= 0 && !papers[0] && prevPopularityScore > popularityScore){
+        papers[0] = true;
+        return document.createTextNode("RainCity's Tyrant Mayor Ovethrown by the Revolution");
+    }
+    else if(popularityScore >= 7 && !papers[3] && prevPopularityScore < popularityScore){
+        papers[3] = true;
+        return document.createTextNode("Citizens Celebrating the Mayor's Name with New Ruling");
+    }
+    else if (popularityScore >= 9 && !papers[4] && prevPopularityScore < popularityScore){
+        papers[4] = true;
+        return document.createTextNode("RainCity's Mayor One of The Best In The World");
+    }
+    else if (popularityScore >= 10 && !papers[5] && prevPopularityScore < popularityScore){
+        papers[5] = true;
+        return document.createTextNode("RainCity Becomes the Best City In The World");
+    }
+    else if (ecoScore <= 3 && !papers[8] && prevEcoScore > ecoScore){
+        papers[8] = true;
+        return document.createTextNode("Hottest Day Ever Recorded, Scientists Say Due to Pollution")
+    }
+    else if (ecoScore <= 1 && !papers[7] && prevEcoScore > ecoScore){
+        papers[7] = true;
+        return document.createTextNode("Smog creates unbreathable air, WEAR MASKS")
+    }
+    else if (ecoScore <= 0 && !papers[6] && prevEcoScore > ecoScore){
+        papers[6] = true;
+        return document.createTextNode("Massive Tsunami Due to Polution Submerges RainCity ")
+    }
+    else if(ecoScore >= 7 && !papers[9] && prevEcoScore < ecoScore){
+        papers[9] = true;
+        return document.createTextNode("Mayor Improves Quality of Live with Green Initiatives")
+    }
+    else if (ecoScore >= 9 && !papers[10] && prevEcoScore < ecoScore){
+        papers[10] = true;
+        return document.createTextNode("Mayor Leads RainCity to Almost Having a ZERO Carbon Footprint")
+    }
+    else if (ecoScore >= 10 && !papers[11] && prevEcoScore < ecoScore){
+        papers[11] = true;
+        return document.createTextNode("RainCity Becomes the World's Greenest and Most Sustainable City")
+    }
+    else {
+        return document.createTextNode("null");
+    }
+}
+
+let defineCustomHeadline = (headlineDefiner) => {
+    if(headlineDefiner == "termSwitch"){
+        return document.createTextNode("Current Mayor has been relected to run for a second term!")
+    }
+}
+
+//Create newspaper DOM elements
+let createNewspaper = (headlineDefiner) => {
+    var body = document.querySelector("body");
+    var headline = document.createElement("h1");
+    headline.id = "headline"
+    var continueHeader = document.createElement("h1");
+    continueHeader.id = "newspaperContinue";
+    var continueText = document.createTextNode("Tap anywhere to continue...")
+    continueHeader.appendChild(continueText);
+    var paper = document.createElement("img");
+    paper.src = "./assets/static_elements/newspaper.svg"
+    paper.id = "paper"
+    var newspaper = document.createElement("div");
+    newspaper.id = "newspaper";
+    newspaper.onclick = function () {
+        let audio = new Audio("./assets/Audio/newspaperAway.mp3")
+        var newspaper = document.getElementById('newspaper');
+        newspaper.remove();
+        audio.play();
+        setTimeout(nextQuestionPrompt, 6000);
+    }
+    if(headlineDefiner == "default"){
+        headline.appendChild(defineDefaultHeadline());
+    }
+    else{
+        headline.appendChild(defineCustomHeadline(headlineDefiner));
+    }
+
+    if(headline.childNodes[0].textContent == "null"){
+        return false;
+    }
+    newspaper.appendChild(paper);
+    newspaper.appendChild(headline);
+    newspaper.appendChild(continueHeader);
+    body.appendChild(newspaper);
+
+    let audio = new Audio("./assets/Audio/newspaperLoad.mp3")
+    audio.play();
+    return true;
+}
+
+let deletePaper = () => {
+    var newspaper = document.getElementById('newspaper');
+    newspaper.remove();
+}
 
 // If you finish all questions, or pop score reaches 0, end game.
 function endGameSequence() {
@@ -760,12 +946,23 @@ function endGameSequence() {
     let endGameScore = (popularityScore + ecoScore) * 69;
 
     // Timestamp of when the game ended
-    let timestamp = firebase.firestore.FieldValue.serverTimestamp();
+    let currentDate = new Date();
+
+    let currentDayOfMonth = currentDate.getDate();
+    let currentMonth = currentDate.getMonth();
+    let currentYear = currentDate.getFullYear();
+
+    let timestamp = currentDayOfMonth + "-" + (currentMonth + 1) + "-" + currentYear;
 
     // Write the user's end game score to firestore
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
+            var name = '';
             db.collection('users').doc(user.uid)
+            .get()
+            .then(function (doc){
+                name = doc.data().name.split(' ');
+                db.collection('users').doc(user.uid)
                 .collection('game-scores').doc()
                 .set({
                     score: endGameScore,
@@ -777,12 +974,13 @@ function endGameSequence() {
                     if (endGameScore === 100) {
                         db.collection('scores').doc()
                             .set({
+                                name: name[0],
                                 score: endGameScore,
                                 timestamp: timestamp
                             })
                     }
-
                 })
+            })
         }
     });
 
@@ -813,3 +1011,4 @@ function endGameSequence() {
         document.body.append(returnButton);
     }, 100);
 };
+

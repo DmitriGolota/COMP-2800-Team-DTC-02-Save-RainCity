@@ -27,9 +27,37 @@
         height: 100%;
     }
 }
+/* Easter Eggs */
+#whaleSoundButton{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: 10px;
+    bottom: 20px
+
+}
+#duckSoundButton{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: 100px;
+    bottom: 100px;
+    
+}
+#shipSoundButton{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: 10px;
+    top: 20px
+    
+}
+
+
 #answerBoxButton{
     position: absolute;
 }
+
 
 /* For all views */
 #container {
