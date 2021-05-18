@@ -426,6 +426,17 @@ document.getElementById('save-button').addEventListener('click', function () {
     nextButton.setAttribute('src', './assets/intro_box/ContinueButtonUncllicked.png');
     nextButton.setAttribute('id', 'next-dialogue-button');
     nextButton.setAttribute('class', 'hidden');
+    
+    //Easter Egg Content
+    let whaleClickable = document.createElement('img');
+    whaleClickable.setAttribute('id', 'whaleSoundButton');
+
+    let shipClickable = document.createElement('img');
+    shipClickable.setAttribute('id', 'shipSoundButton');
+
+    let duckClickable = document.createElement('img');
+    duckClickable.setAttribute('id', 'duckSoundButton');
+
     // Event Listener for the button to prompt the next span of dialogue during introduction
     nextButton.addEventListener('click', masterIntroDialogue);
 
@@ -438,6 +449,9 @@ document.getElementById('save-button').addEventListener('click', function () {
     uibarcontainer.appendChild(uiecoscore);
 
     mainContainer.append(mainMap);
+    mainContainer.append(whaleClickable);
+    mainContainer.append(duckClickable);
+    mainContainer.append(shipClickable);
     mainContainer.append(answerBox);
     mainContainer.append(answerBoxText);
     mainContainer.append(answerBoxButton);
@@ -445,11 +459,47 @@ document.getElementById('save-button').addEventListener('click', function () {
     mainContainer.append(uibarcontainer);
     mainContainer.append(introDiv);
 
+    // Easter Eggs
+    document.getElementById('whaleSoundButton').addEventListener('click', function(){
+        let whalenoise = document.getElementById('whaleSound')
+        whalenoise.play();
+        whaleClicked = true;
+        displayEasterEggFinal()
+    })
+
+    document.getElementById('duckSoundButton').addEventListener('click', function(){
+        let ducknoise = document.getElementById('duckSound')
+        ducknoise.play();
+        duckClicked = true;
+        displayEasterEggFinal()
+    })
+
+    document.getElementById('shipSoundButton').addEventListener('click', function(){
+        let shipnoise = document.getElementById('shipHornSound')
+        shipnoise.play();
+        shipClicked = true;
+        displayEasterEggFinal()
+    })
+
     masterIntroDialogue();
 
 });
 
-// GLOBAL VARIABLE  for current answer box text
+// GLOBAL VARIABLES  
+
+//Easter Egg State
+whaleClicked = false;
+duckClicked = false;
+shipClicked = false;
+
+// Master Easter Egg
+function displayEasterEggFinal(){
+    if (whaleClicked == true && duckClicked == true && shipClicked == true){
+        // do something really cool here
+        console.log("easter egg unclocked")
+    }
+}
+// for current answer box text
 let nextAnswerBoxText = '';
 
 // Function to make text slowly appear for answer box
@@ -815,3 +865,4 @@ function endGameSequence() {
         document.body.append(returnButton);
     }, 100);
 };
+
