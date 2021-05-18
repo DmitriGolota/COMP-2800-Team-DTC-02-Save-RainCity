@@ -64,12 +64,6 @@ body{
     left: 19vw;
 }
 
-.labels{
-    width: auto;
-    height: 10vh;
-    display: inline;
-}
-
 .switch{
     height: 10vh;
     position: absolute;
@@ -196,7 +190,6 @@ body{
 #game-map{
     position: absolute;
     width: 100%;
-
 }
 
 .main-game-images {
