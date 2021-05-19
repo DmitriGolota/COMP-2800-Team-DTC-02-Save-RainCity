@@ -620,12 +620,15 @@ document.getElementById('save-button').addEventListener('click', function () {
     //Easter Egg Content
     let whaleClickable = document.createElement('img');
     whaleClickable.setAttribute('id', 'whaleSoundButton');
+    whaleClickable.setAttribute('src', './assets/eastereggtransparent.png')
 
     let shipClickable = document.createElement('img');
     shipClickable.setAttribute('id', 'shipSoundButton');
+    shipClickable.setAttribute('src', './assets/eastereggtransparent.png')
 
     let duckClickable = document.createElement('img');
     duckClickable.setAttribute('id', 'duckSoundButton');
+    duckClickable.setAttribute('src', './assets/eastereggtransparent.png')
 
     // Event Listener for the button to prompt the next span of dialogue during introduction
     nextButton.addEventListener('click', masterIntroDialogue);
@@ -685,7 +688,17 @@ shipClicked = false;
 // Master Easter Egg
 function displayEasterEggFinal() {
     if (whaleClicked == true && duckClicked == true && shipClicked == true) {
-        // do something really cool here
+        var body = document.querySelector('body');
+        var div = document.createElement('div');
+        div.id = 'easterEgg';
+        div.onclick = function () {
+            var div = document.getElementById('easterEgg');
+            div.remove();
+        }
+        var img = document.createElement('img');
+        img.setAttribute('src', "./assets/five-young-people-thumbing-up-with-a-smile-X5HCTJ.jpg")
+        div.appendChild(img);
+        body.appendChild(div);
         console.log("easter egg unclocked")
     }
 }
