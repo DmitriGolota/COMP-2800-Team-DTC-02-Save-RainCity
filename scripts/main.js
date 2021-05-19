@@ -1,6 +1,7 @@
 let buttonClickOne = document.getElementById('buttonClickOne');
 let boxPopAudioOne = document.getElementById('boxPopAudioOne');
 let boxPopAudioThree = document.getElementById('boxPopAudioThree');
+var mainTheme = document.getElementById('mainSoundTrack');
 
 /*jshint esversion: 6 */
 document.getElementById('char-customization').addEventListener('click', function () {
@@ -13,6 +14,7 @@ let popularityScore = 10;
 let ecoScore = 0;
 let prevEcoScore = ecoScore;
 let prevPopularityScore = popularityScore;
+let mayoralRating = 0;
 
 let questionCounter = 0;
 let questions = {
@@ -688,11 +690,15 @@ shipClicked = false;
 // Master Easter Egg
 function displayEasterEggFinal() {
     if (whaleClicked == true && duckClicked == true && shipClicked == true) {
+        var audio = document.getElementById('easterEggSound')
+        audio.play();
+        mainTheme.pause();
         var body = document.querySelector('body');
         var div = document.createElement('div');
         div.id = 'easterEgg';
         div.onclick = function () {
             var div = document.getElementById('easterEgg');
+            mainTheme.play();
             div.remove();
         }
         var img = document.createElement('img');
@@ -1136,7 +1142,7 @@ let defineDefaultHeadline = () => {
     }
     else if (ecoScore <= 0 && !papers[6] && prevEcoScore > ecoScore) {
         papers[6] = true;
-        return document.createTextNode("Massive Tsunami Due to Polution Submerges RainCity ")
+        return document.createTextNode("Rising sea levels floods Raincity! Causing major damage")
     }
     else if (ecoScore >= 7 && !papers[9] && prevEcoScore < ecoScore) {
         papers[9] = true;
@@ -1158,6 +1164,11 @@ let defineDefaultHeadline = () => {
 let defineCustomHeadline = (headlineDefiner) => {
     if (headlineDefiner == "termSwitch") {
         return document.createTextNode("Current Mayor has been relected to run for a second term!")
+    }
+    if (headlineDefiner == "endGame"){
+        if(popularityScore == 0){
+            return document.createTextNode("RainCity's Tyrant Mayor Overthrown by the Revolution")
+        }
     }
 }
 
