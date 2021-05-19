@@ -1169,6 +1169,18 @@ let defineCustomHeadline = (headlineDefiner) => {
         if(popularityScore == 0){
             return document.createTextNode("RainCity's Tyrant Mayor Overthrown by the Revolution")
         }
+
+        else if(mayoralRating < 50){
+            return document.createTextNode("Mayor's Terrible Administration Comes to an End")
+        }
+
+        else if (mayoralRating == 100){
+            return document.createTextNode("Citizens Mourn the Retirement of Raincity's Best Mayor")
+        }
+
+        else if (mayoralRating >= 50){
+            return document.createTextNode("Mayor Decides to Retire After Two Fruitful Years")
+        }
     }
 }
 
@@ -1289,9 +1301,17 @@ function endGameSequence() {
         gameOverAnimation.setAttribute('src', './assets/end_game_box/game_over_anim/EndGameBox.gif');
         gameOverAnimation.setAttribute('id', 'gameover-anim');
 
-        document.body.append(endGameBox);
-        document.body.append(gameOverAnimation);
-        document.body.append(endGameScoreText);
-        document.body.append(returnButton);
+        createNewspaper("endGame");
+        var newspaper = document.getElementById("newspaper");
+        newspaper.onclick = function () {
+            let audio = new Audio("./assets/Audio/newspaperAway.mp3")
+            var newspaper = document.getElementById('newspaper');
+            newspaper.remove();
+            audio.play();
+            document.body.append(endGameBox);
+            document.body.append(gameOverAnimation);
+            document.body.append(endGameScoreText);
+            document.body.append(returnButton);
+        }
     }, 100);
 };
