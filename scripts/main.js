@@ -713,7 +713,6 @@ function answerBoxTextScroll() {
     } else if (nextAnswerBoxText.length > 0) {
         document.getElementById('answerBoxText').innerHTML += nextAnswerBoxText.shift();
     }
-    //temporary change
     setTimeout('answerBoxTextScroll()', 30);
 };
 
@@ -1057,8 +1056,7 @@ function hideAnswerBox() {
 
 // This is the main function to call the next yes/no question
 function nextQuestionPrompt() {
-    // temporary change
-    if (questionCounter === 6 || popularityScore === 0) {
+    if (questionCounter === 9 || popularityScore === 0) {
         // end game
         endGameSequence();
     } else if (questionCounter === 9) {
