@@ -507,14 +507,16 @@ function answerBoxTextScroll() {
     } else if (nextAnswerBoxText.length > 0) {
         document.getElementById('answerBoxText').innerHTML += nextAnswerBoxText.shift();
     }
-    setTimeout('answerBoxTextScroll()', 50);
+    //temporary change
+    setTimeout('answerBoxTextScroll()', 10);
 };
 
 // Function for event listener of the continue button in answer box to continue to next question
 function continueAnswerBox() {
+    buttonClickOne.play();
+    document.getElementById('answerBoxButton').setAttribute('src', './assets/intro_box/ContinueButtonCllicked.png')
     setTimeout(() => {
-        buttonClickOne.play();
-        document.getElementById('answerBoxButton').setAttribute('src', './assets/intro_box/ContinueButtonCllicked.png')
+        document.getElementById('answerBoxButton').setAttribute('src', './assets/intro_box/ContinueButtonUncllicked.png')
     }, 50);
     hideAnswerBox();
 };
@@ -770,9 +772,11 @@ function displayAnswerBox() {
 
 // Hides the answer box when you click the continue button
 function hideAnswerBox() {
-    document.getElementById('answerBox').setAttribute('class', 'hidden');
+    setTimeout(() => {
+        document.getElementById('answerBox').setAttribute('class', 'hidden');
     document.getElementById('answerBoxText').setAttribute('class', 'hidden')
     document.getElementById('answerBoxButton').setAttribute('class', 'hidden')
+    }, 50);
     if (!createNewspaper("default")){
         setTimeout(nextQuestionPrompt, 6000);
     }
@@ -780,11 +784,11 @@ function hideAnswerBox() {
 
 // This is the main function to call the next yes/no question
 function nextQuestionPrompt() {
-    // // temporary change
-    // if (questionCounter === 1 || popularityScore === 0) {
-    //     // end game
-    //     endGameSequence();
-     if (questionCounter === 9) {
+    // temporary change
+    if (questionCounter === 6 || popularityScore === 0) {
+        // end game
+        endGameSequence();
+    } else if (questionCounter === 9) {
         // put newspaper popup here. show newspaper with headline:
         if (popularityScore > 0){
             createNewspaper("termSwitch");
