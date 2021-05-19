@@ -64,120 +64,120 @@ let questions = {
     },
     6: {
         'question': 'Wow! With such an increase in public transit use, we want to increase the ticket prices for buses and trains from $2 to $4. Do you agree to this plan?',
-        'good-result': 'You made the correct decision!',
-        'bad-result': 'You made the wrong decision!',
+        'yes-result': 'People are starting to walk more now! The less cars on the road the better! They are thrilled by your first decision as Mayor!',
+        'no-result': 'People are still unmotivated to walk rather than drive. Hopefully your next decisions will be better!',
         'eco-score': 1,
         'pop-score': 1,
         'NPC-img-num': 1
     },
     7: {
         'question': 'People are complaining about the lack of parking in Downtown RainCity! Can we pave over a greenspace to build a parkade?',
-        'good-result': 'You made the correct decision!',
-        'bad-result': 'You made the wrong decision!',
+        'yes-result': 'You made the correct decision!',
+        'no-result': 'You made the wrong decision!',
         'eco-score': 1,
         'pop-score': 1,
         'NPC-img-num': 1
     },
     8: {
         'question': "Mayor! Still too many people are driving private vehicles unnecessarily! Should we expand our residential parking permits city-wide?",
-        'good-result': 'You made the correct decision!',
-        'bad-result': 'You made the wrong decision!',
+        'yes-result': 'You made the correct decision!',
+        'no-result': 'You made the wrong decision!',
         'eco-score': 1,
         'pop-score': 1,
         'NPC-img-num': 1
     },
     9: {
         'question': 'Mayor, is it just me or is it hard to breathe downtown? To further discourage non-electric private vehicles, we want to add an additional carbon pollution surcharge to parking permits for non-electric vehicles. Do you agree to this plan?',
-        'good-result': 'You made the correct decision!',
-        'bad-result': 'You made the wrong decision!',
+        'yes-result': 'You made the correct decision!',
+        'no-result': 'You made the wrong decision!',
         'eco-score': 1,
         'pop-score': 1,
         'NPC-img-num': 1
     },
     10: {
         'question': 'Over 3 quarters of carbon emission from building operations can be eliminated by switching natural gas to electricity or renewable natural gas for space and water heating. Do you think it is feasible to require the majority of new home constructions to use electrical appliances for heating and hot water.',
-        'good-result': 'You made the correct decision!',
-        'bad-result': 'You made the wrong decision!',
+        'yes-result': 'You made the correct decision!',
+        'no-result': 'You made the wrong decision!',
         'eco-score': 1,
         'pop-score': 1,
         'NPC-img-num': 1
     },
     11: {
         'question': 'Do you agree to issue fines to building owners that still operate on unrenweable natural gas?',
-        'good-result': 'You made the correct decision!',
-        'bad-result': 'You made the wrong decision!',
+        'yes-result': 'You made the correct decision!',
+        'no-result': 'You made the wrong decision!',
         'eco-score': 1,
         'pop-score': 1,
         'NPC-img-num': 1
     },
     12: {
         'question': 'The Architechture Association of Raincity hates big windows; they believe it is a faux-pas. Bigger windows allows for improved air flow which allows for reduced energy usage for heating. Do you want to mandate the usage of big windows or appease the powerful architects of Raincity?',
-        'good-result': 'You made the correct decision!',
-        'bad-result': 'You made the wrong decision!',
+        'yes-result': 'You made the correct decision!',
+        'no-result': 'You made the wrong decision!',
         'eco-score': 1,
         'pop-score': 1,
         'NPC-img-num': 1
     },
     13: {
         'question': "Mayor, Tim's Mill just called and they want to increase their wood production. Wood is a great low carbon material, but the citizens really hate deforestation. Should we do it?",
-        'good-result': 'You made the correct decision!',
-        'bad-result': 'You made the wrong decision!',
+        'yes-result': 'You made the correct decision!',
+        'no-result': 'You made the wrong decision!',
         'eco-score': 1,
         'pop-score': 1,
         'NPC-img-num': 1
     },
     14: {
         'question': 'One of our aims to lower embodied emissions is to decrease parking spaces in buildings. Do you agree with this?',
-        'good-result': 'You made the correct decision!',
-        'bad-result': 'You made the wrong decision!',
+        'yes-result': 'You made the correct decision!',
+        'no-result': 'You made the wrong decision!',
         'eco-score': 1,
         'pop-score': 1,
         'NPC-img-num': 1
     },
     15: {
         'question': 'Yooo man... We gotta replant the trees dude, it a real issue man. The trees are gonna save us from the terrible carbon pollution bro. I love trees man. *Kisses Tree*',
-        'good-result': 'You made the correct decision!',
-        'bad-result': 'You made the wrong decision!',
+        'yes-result': 'You made the correct decision!',
+        'no-result': 'You made the wrong decision!',
         'eco-score': 1,
         'pop-score': 1,
         'NPC-img-num': 1
     },
     16: {
         'question': "Bro, exporting out massive amounts of wood is totally not cool man. This totally goes against the grain of the trees dude. Let's export less so we can save our tree brethren. *Kisses you*",
-        'good-result': 'You made the correct decision!',
-        'bad-result': 'You made the wrong decision!',
+        'yes-result': 'You made the correct decision!',
+        'no-result': 'You made the wrong decision!',
         'eco-score': 1,
         'pop-score': 1,
         'NPC-img-num': 1
     },
     17: {
         'question': 'Climate change is not cool at all man. But the changing temperatures and seasons could make the farmining industry innovate more dude... As a vegan, I think the farming industry is hella cool... We should ignore climate change to help save the cows *Kisses cow*',
-        'good-result': 'You made the correct decision!',
-        'bad-result': 'You made the wrong decision!',
+        'yes-result': 'You made the correct decision!',
+        'no-result': 'You made the wrong decision!',
         'eco-score': 1,
         'pop-score': 1,
         'NPC-img-num': 1
     },
     18: {
         'question': 'Climate change is not cool at all man. But the changing temperatures and seasons could make the farmining industry innovate more dude... As a vegan, I think the farming industry is hella cool... We should ignore climate change to help save the cows *Kisses cow*',
-        'good-result': 'You made the correct decision!',
-        'bad-result': 'You made the wrong decision!',
+        'yes-result': 'You made the correct decision!',
+        'no-result': 'You made the wrong decision!',
         'eco-score': 1,
         'pop-score': 1,
         'NPC-img-num': 1
     },
     19: {
         'question': 'Climate change is not cool at all man. But the changing temperatures and seasons could make the farmining industry innovate more dude... As a vegan, I think the farming industry is hella cool... We should ignore climate change to help save the cows *Kisses cow*',
-        'good-result': 'You made the correct decision!',
-        'bad-result': 'You made the wrong decision!',
+        'yes-result': 'You made the correct decision!',
+        'no-result': 'You made the wrong decision!',
         'eco-score': 1,
         'pop-score': 1,
         'NPC-img-num': 1
     },
     20: {
         'question': 'Mayor! People have raised concerns about how boring it is to walk in some neighbourhoods. Should we increase the amount of trees and plants near sidewalks to make them more enjoyable to walk?',
-        'yes-result': 'People are starting to walk more now! The less cars on the road the better! They are thrilled by your first decision as Mayor!',
-        'no-result': 'People are still unmotivated to walk rather than drive. Hopefully your next decisions will be better!',
+        'yes-result': 'You made the correct decision!',
+        'no-result': 'You made the wrong decision!',
         'eco-score': 1,
         'pop-score': 1,
         'NPC-img-num': 4
@@ -224,112 +224,112 @@ let questions = {
     },
     26: {
         'question': 'Wow! With such an increase in public transit use, we want to increase the ticket prices for buses and trains from $2 to $4. Do you agree to this plan?',
-        'good-result': 'You made the correct decision!',
-        'bad-result': 'You made the wrong decision!',
+        'yes-result': 'You made the correct decision!',
+        'no-result': 'You made the wrong decision!',
         'eco-score': 1,
         'pop-score': 1,
         'NPC-img-num': 1
     },
     27: {
         'question': 'People are complaining about the lack of parking in Downtown RainCity! Can we pave over a greenspace to build a parkade?',
-        'good-result': 'You made the correct decision!',
-        'bad-result': 'You made the wrong decision!',
+        'yes-result': 'You made the correct decision!',
+        'no-result': 'You made the wrong decision!',
         'eco-score': 1,
         'pop-score': 1,
         'NPC-img-num': 1
     },
     28: {
         'question': "Mayor! Still too many people are driving private vehicles unnecessarily! Should we expand our residential parking permits city-wide?",
-        'good-result': 'You made the correct decision!',
-        'bad-result': 'You made the wrong decision!',
+        'yes-result': 'You made the correct decision!',
+        'no-result': 'You made the wrong decision!',
         'eco-score': 1,
         'pop-score': 1,
         'NPC-img-num': 1
     },
     29: {
         'question': 'Mayor, is it just me or is it hard to breathe downtown? To further discourage non-electric private vehicles, we want to add an additional carbon pollution surcharge to parking permits for non-electric vehicles. Do you agree to this plan?',
-        'good-result': 'You made the correct decision!',
-        'bad-result': 'You made the wrong decision!',
+        'yes-result': 'You made the correct decision!',
+        'no-result': 'You made the wrong decision!',
         'eco-score': 1,
         'pop-score': 1,
         'NPC-img-num': 1
     },
     30: {
         'question': 'Over 3 quarters of carbon emission from building operations can be eliminated by switching natural gas to electricity or renewable natural gas for space and water heating. Do you think it is feasible to require the majority of new home constructions to use electrical appliances for heating and hot water.',
-        'good-result': 'You made the correct decision!',
-        'bad-result': 'You made the wrong decision!',
+        'yes-result': 'You made the correct decision!',
+        'no-result': 'You made the wrong decision!',
         'eco-score': 1,
         'pop-score': 1,
         'NPC-img-num': 1
     },
     31: {
         'question': 'Do you agree to issue fines to building owners that still operate on unrenweable natural gas?',
-        'good-result': 'You made the correct decision!',
-        'bad-result': 'You made the wrong decision!',
+        'yes-result': 'You made the correct decision!',
+        'no-result': 'You made the wrong decision!',
         'eco-score': 1,
         'pop-score': 1,
         'NPC-img-num': 1
     },
     32: {
         'question': 'The Architechture Association of Raincity hates big windows; they believe it is a faux-pas. Bigger windows allows for improved air flow which allows for reduced energy usage for heating. Do you want to mandate the usage of big windows or appease the powerful architects of Raincity?',
-        'good-result': 'You made the correct decision!',
-        'bad-result': 'You made the wrong decision!',
+        'yes-result': 'You made the correct decision!',
+        'no-result': 'You made the wrong decision!',
         'eco-score': 1,
         'pop-score': 1,
         'NPC-img-num': 1
     },
     33: {
         'question': "Mayor, Tim's Mill just called and they want to increase their wood production. Wood is a great low carbon material, but the citizens really hate deforestation. Should we do it?",
-        'good-result': 'You made the correct decision!',
-        'bad-result': 'You made the wrong decision!',
+        'yes-result': 'You made the correct decision!',
+        'no-result': 'You made the wrong decision!',
         'eco-score': 1,
         'pop-score': 1,
         'NPC-img-num': 1
     },
     34: {
         'question': 'One of our aims to lower embodied emissions is to decrease parking spaces in buildings. Do you agree with this?',
-        'good-result': 'You made the correct decision!',
-        'bad-result': 'You made the wrong decision!',
+        'yes-result': 'You made the correct decision!',
+        'no-result': 'You made the wrong decision!',
         'eco-score': 1,
         'pop-score': 1,
         'NPC-img-num': 1
     },
     35: {
         'question': 'Yooo man... We gotta replant the trees dude, it a real issue man. The trees are gonna save us from the terrible carbon pollution bro. I love trees man. *Kisses Tree*',
-        'good-result': 'You made the correct decision!',
-        'bad-result': 'You made the wrong decision!',
+        'yes-result': 'You made the correct decision!',
+        'no-result': 'You made the wrong decision!',
         'eco-score': 1,
         'pop-score': 1,
         'NPC-img-num': 1
     },
     36: {
         'question': "Bro, exporting out massive amounts of wood is totally not cool man. This totally goes against the grain of the trees dude. Let's export less so we can save our tree brethren. *Kisses you*",
-        'good-result': 'You made the correct decision!',
-        'bad-result': 'You made the wrong decision!',
+        'yes-result': 'You made the correct decision!',
+        'no-result': 'You made the wrong decision!',
         'eco-score': 1,
         'pop-score': 1,
         'NPC-img-num': 1
     },
     37: {
         'question': 'Climate change is not cool at all man. But the changing temperatures and seasons could make the farmining industry innovate more dude... As a vegan, I think the farming industry is hella cool... We should ignore climate change to help save the cows *Kisses cow*',
-        'good-result': 'You made the correct decision!',
-        'bad-result': 'You made the wrong decision!',
+        'yes-result': 'You made the correct decision!',
+        'no-result': 'You made the wrong decision!',
         'eco-score': 1,
         'pop-score': 1,
         'NPC-img-num': 1
     },
     38: {
         'question': 'Climate change is not cool at all man. But the changing temperatures and seasons could make the farmining industry innovate more dude... As a vegan, I think the farming industry is hella cool... We should ignore climate change to help save the cows *Kisses cow*',
-        'good-result': 'You made the correct decision!',
-        'bad-result': 'You made the wrong decision!',
+        'yes-result': 'You made the correct decision!',
+        'no-result': 'You made the wrong decision!',
         'eco-score': 1,
         'pop-score': 1,
         'NPC-img-num': 1
     },
     39: {
         'question': 'Climate change is not cool at all man. But the changing temperatures and seasons could make the farmining industry innovate more dude... As a vegan, I think the farming industry is hella cool... We should ignore climate change to help save the cows *Kisses cow*',
-        'good-result': 'You made the correct decision!',
-        'bad-result': 'You made the wrong decision!',
+        'yes-result': 'You made the correct decision!',
+        'no-result': 'You made the wrong decision!',
         'eco-score': 1,
         'pop-score': 1,
         'NPC-img-num': 1
