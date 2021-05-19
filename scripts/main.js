@@ -889,6 +889,7 @@ function selectYesButton() {
             nextAnswerBoxText = questions[arrOfRandomIntegersEasy[questionCounter]]['yes-result'].split('');
 
             // Reflect on eco score
+            prevEcoScore = ecoScore;
             ecoScore += questions[arrOfRandomIntegersEasy[questionCounter]]['eco-score'];
             if (ecoScore >= 10) {
                 ecoScore = 10;
@@ -898,6 +899,7 @@ function selectYesButton() {
             }
 
             // Reflect popularity score
+            prevPopularityScore = popularityScore;
             popularityScore += questions[arrOfRandomIntegersEasy[questionCounter]]['pop-score'];
             if (popularityScore >= 10) {
                 popularityScore = 10;
@@ -945,6 +947,7 @@ function selectNoButton() {
             nextAnswerBoxText = questions[arrOfRandomIntegersHard[questionCounter - 10]]['no-result'].split('');
 
             // Reflect on eco score
+            prevEcoScore = ecoScore;
             ecoScore -= questions[arrOfRandomIntegersHard[questionCounter - 10]]['eco-score'];
             if (ecoScore >= 10) {
                 ecoScore = 10;
@@ -954,6 +957,7 @@ function selectNoButton() {
             }
 
             // Reflect popularity score
+            prevPopularityScore = popularityScore;
             popularityScore -= questions[arrOfRandomIntegersHard[questionCounter - 10]]['pop-score'];
             if (popularityScore >= 10) {
                 popularityScore = 10;
