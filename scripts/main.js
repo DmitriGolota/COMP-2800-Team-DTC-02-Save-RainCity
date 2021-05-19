@@ -1147,7 +1147,7 @@ let defineDefaultHeadline = () => {
     }
     else if (popularityScore <= 0 && !papers[0] && prevPopularityScore > popularityScore) {
         papers[0] = true;
-        return document.createTextNode("RainCity's Tyrant Mayor Ovethrown by the Revolution");
+        return document.createTextNode("RainCity's Tyrant Mayor Overthrown by the Revolution");
     }
     else if (popularityScore >= 7 && !papers[3] && prevPopularityScore < popularityScore) {
         papers[3] = true;
@@ -1175,7 +1175,7 @@ let defineDefaultHeadline = () => {
     }
     else if (ecoScore >= 7 && !papers[9] && prevEcoScore < ecoScore) {
         papers[9] = true;
-        return document.createTextNode("Mayor Improves Quality of Live with Green Initiatives")
+        return document.createTextNode("Mayor Improves Quality of Life with Green Initiatives")
     }
     else if (ecoScore >= 9 && !papers[10] && prevEcoScore < ecoScore) {
         papers[10] = true;
