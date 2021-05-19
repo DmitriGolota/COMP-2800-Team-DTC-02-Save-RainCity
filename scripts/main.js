@@ -11,6 +11,8 @@ document.getElementById('char-customization').addEventListener('click', function
 // Score for player
 let popularityScore = 10;
 let ecoScore = 0;
+let prevEcoScore = ecoScore;
+let prevPopularityScore = popularityScore;
 
 let questionCounter = 0;
 let questions = {
@@ -368,23 +370,23 @@ let skinImage = document.getElementById('skinImage');
 let suitImage = document.getElementById('suitImage');
 
 let hairAssets = {
-    0: "./assets/hair/charhair1.svg",
-    1: "./assets/hair/charhair2.svg",
-    2: "./assets/hair/charhair3.svg",
+    0: "./assets/hair/charhair1.png",
+    1: "./assets/hair/charhair2.png",
+    2: "./assets/hair/charhair3.png",
 };
 let hairAssetsLength = Object.keys(hairAssets).length - 1;
 
 let skinAssets = {
-    0: "./assets/skin/charskin1.svg",
-    1: "./assets/skin/charskin2.svg",
-    2: "./assets/skin/charskin3.svg",
+    0: "./assets/skin/charskin1.png",
+    1: "./assets/skin/charskin2.png",
+    2: "./assets/skin/charskin3.png",
 };
 let skinAssetsLength = Object.keys(skinAssets).length - 1;
 
 let suitAssets = {
-    0: "./assets/suit/charsuit1.svg",
-    1: "./assets/suit/charsuit2.svg",
-    2: "./assets/suit/charsuit3.svg",
+    0: "./assets/suit/charsuit1.png",
+    1: "./assets/suit/charsuit2.png",
+    2: "./assets/suit/charsuit3.png",
 };
 let suitAssetsLength = Object.keys(suitAssets).length - 1;
 
@@ -394,9 +396,9 @@ function test() {
 
 function hairPrev() {
     //button movement
-    document.getElementById("hairPrev").src = "./assets/buttons/arrowleftclicked.svg"
+    document.getElementById("hairPrev").src = "./assets/buttons/arrowleftclicked.png"
     setTimeout(function () {
-        document.getElementById("hairPrev").src = "./assets/buttons/arrowleftunclicked.svg"
+        document.getElementById("hairPrev").src = "./assets/buttons/arrowleftunclicked.png"
     }, 50)
 
     //button sound
@@ -415,9 +417,9 @@ function hairPrev() {
 
 function hairNext() {
     //button movement
-    document.getElementById("hairNext").src = "./assets/buttons/arrowrightclicked.svg"
+    document.getElementById("hairNext").src = "./assets/buttons/arrowrightclicked.png"
     setTimeout(function () {
-        document.getElementById("hairNext").src = "./assets/buttons/arrowrightsunclicked.svg"
+        document.getElementById("hairNext").src = "./assets/buttons/arrowrightsunclicked.png"
     }, 50)
 
     //button sound
@@ -438,9 +440,9 @@ function hairNext() {
 function skinPrev() {
 
     //button movement
-    document.getElementById("skinPrev").src = "./assets/buttons/arrowleftclicked.svg"
+    document.getElementById("skinPrev").src = "./assets/buttons/arrowleftclicked.png"
     setTimeout(function () {
-        document.getElementById("skinPrev").src = "./assets/buttons/arrowleftunclicked.svg"
+        document.getElementById("skinPrev").src = "./assets/buttons/arrowleftunclicked.png"
     }, 50)
 
     //button sound
@@ -458,9 +460,9 @@ function skinPrev() {
 
 function skinNext() {
     //button movement
-    document.getElementById("skinNext").src = "./assets/buttons/arrowrightclicked.svg"
+    document.getElementById("skinNext").src = "./assets/buttons/arrowrightclicked.png"
     setTimeout(function () {
-        document.getElementById("skinNext").src = "./assets/buttons/arrowrightsunclicked.svg"
+        document.getElementById("skinNext").src = "./assets/buttons/arrowrightsunclicked.png"
     }, 50)
 
     //button sound
@@ -479,9 +481,9 @@ function skinNext() {
 
 function suitPrev() {
     //button movement
-    document.getElementById("suitPrev").src = "./assets/buttons/arrowleftclicked.svg"
+    document.getElementById("suitPrev").src = "./assets/buttons/arrowleftclicked.png"
     setTimeout(function () {
-        document.getElementById("suitPrev").src = "./assets/buttons/arrowleftunclicked.svg"
+        document.getElementById("suitPrev").src = "./assets/buttons/arrowleftunclicked.png"
     }, 50)
 
     //button sound
@@ -500,9 +502,9 @@ function suitPrev() {
 
 function suitNext() {
     //button movement
-    document.getElementById("suitNext").src = "./assets/buttons/arrowrightclicked.svg"
+    document.getElementById("suitNext").src = "./assets/buttons/arrowrightclicked.png"
     setTimeout(function () {
-        document.getElementById("suitNext").src = "./assets/buttons/arrowrightsunclicked.svg"
+        document.getElementById("suitNext").src = "./assets/buttons/arrowrightsunclicked.png"
     }, 50)
 
     //button sound
@@ -556,21 +558,12 @@ document.getElementById('save-button').addEventListener('click', function () {
 
     // Create Map and set as background
     let mainMap = document.createElement('img');
-    mainMap.setAttribute('src', './assets/mainmap.gif');
+    mainMap.setAttribute('src', './assets/main_map/mainmap.gif');
     mainMap.setAttribute('id', 'game-map');
-
-
-    // Manual Animation Sequence
-    /*
-    setInterval(function () {
-        animateMainMap();
-    }, 300);
-    */
-
 
     // Create the answer box for consequences of decisions
     let answerBox = document.createElement('img');
-    answerBox.setAttribute('src', './assets/dialogue_box/AnswerBox.svg')
+    answerBox.setAttribute('src', './assets/intro_box/MainBox.png')
     answerBox.setAttribute('id', 'answerBox');
     answerBox.setAttribute('class', 'hidden');
 
@@ -579,35 +572,59 @@ document.getElementById('save-button').addEventListener('click', function () {
     answerBoxText.setAttribute('id', 'answerBoxText');
     answerBoxText.setAttribute('class', 'hidden');
 
+    // Create the continue button for the answer box
+    let answerBoxButton = document.createElement('img');
+    answerBoxButton.setAttribute('src', './assets/intro_box/ContinueButtonUncllicked.png')
+    answerBoxButton.setAttribute('id', 'answerBoxButton');
+    answerBoxButton.setAttribute('class', 'hidden');
+    answerBoxButton.addEventListener('click', continueAnswerBox)
+
     // Create UI Bar and set initial score
     let uibarcontainer = document.createElement('div');
     uibarcontainer.setAttribute('id', 'ui-container');
 
     let uibar = document.createElement('img');
-    uibar.setAttribute('src', './assets/status_bar/ui_bar.svg');
+    uibar.setAttribute('src', './assets/status_bar/ui_bar.png');
 
     let uiecoscore = document.createElement('img');
-    uiecoscore.setAttribute('src', './assets/pop_score/pop_score' + popularityScore + '.svg');
+    uiecoscore.setAttribute('src', './assets/pop_score/pop_score' + popularityScore + '.png');
     uiecoscore.setAttribute('id', 'uiEcoScore');
 
     let uipopscore = document.createElement('img');
-    uipopscore.setAttribute('src', './assets/pop_score/pop_score' + popularityScore + '.svg');
+    uipopscore.setAttribute('src', './assets/pop_score/pop_score' + popularityScore + '.png');
     uipopscore.setAttribute('id', 'uiPopScore')
 
+    // Insert image of current term
+    let currentTermImage = document.createElement('img');
+    currentTermImage.setAttribute('src', './assets/dialogue_box/TermOne.png');
+    currentTermImage.setAttribute('id', 'currentTermImage');
+
+    // Introduction stuff here
     let introDiv = document.createElement('div');
     introDiv.setAttribute('id', 'intro-div');
 
     let introBox = document.createElement('img');
-    introBox.setAttribute('src', './assets/intro_box/IntroGameBox.svg')
+    introBox.setAttribute('src', './assets/intro_box/MainBox.png')
     introBox.setAttribute('id', 'intro-box');
 
     let introText = document.createElement('p');
     introText.setAttribute('id', 'intro-text');
 
     let nextButton = document.createElement('img');
-    nextButton.setAttribute('src', './assets/intro_box/ContinueButtonUncllicked.svg');
+    nextButton.setAttribute('src', './assets/intro_box/ContinueButtonUncllicked.png');
     nextButton.setAttribute('id', 'next-dialogue-button');
     nextButton.setAttribute('class', 'hidden');
+    
+    //Easter Egg Content
+    let whaleClickable = document.createElement('img');
+    whaleClickable.setAttribute('id', 'whaleSoundButton');
+
+    let shipClickable = document.createElement('img');
+    shipClickable.setAttribute('id', 'shipSoundButton');
+
+    let duckClickable = document.createElement('img');
+    duckClickable.setAttribute('id', 'duckSoundButton');
+
     // Event Listener for the button to prompt the next span of dialogue during introduction
     nextButton.addEventListener('click', masterIntroDialogue);
 
@@ -620,14 +637,80 @@ document.getElementById('save-button').addEventListener('click', function () {
     uibarcontainer.appendChild(uiecoscore);
 
     mainContainer.append(mainMap);
+    mainContainer.append(whaleClickable);
+    mainContainer.append(duckClickable);
+    mainContainer.append(shipClickable);
     mainContainer.append(answerBox);
     mainContainer.append(answerBoxText);
+    mainContainer.append(answerBoxButton);
+    mainContainer.append(currentTermImage);
     mainContainer.append(uibarcontainer);
     mainContainer.append(introDiv);
+
+    // Easter Eggs
+    document.getElementById('whaleSoundButton').addEventListener('click', function(){
+        let whalenoise = document.getElementById('whaleSound')
+        whalenoise.play();
+        whaleClicked = true;
+        displayEasterEggFinal()
+    })
+
+    document.getElementById('duckSoundButton').addEventListener('click', function(){
+        let ducknoise = document.getElementById('duckSound')
+        ducknoise.play();
+        duckClicked = true;
+        displayEasterEggFinal()
+    })
+
+    document.getElementById('shipSoundButton').addEventListener('click', function(){
+        let shipnoise = document.getElementById('shipHornSound')
+        shipnoise.play();
+        shipClicked = true;
+        displayEasterEggFinal()
+    })
 
     masterIntroDialogue();
 
 });
+
+// GLOBAL VARIABLES  
+
+//Easter Egg State
+whaleClicked = false;
+duckClicked = false;
+shipClicked = false;
+
+// Master Easter Egg
+function displayEasterEggFinal(){
+    if (whaleClicked == true && duckClicked == true && shipClicked == true){
+        // do something really cool here
+        console.log("easter egg unclocked")
+    }
+}
+// for current answer box text
+let nextAnswerBoxText = '';
+
+// Function to make text slowly appear for answer box
+function answerBoxTextScroll() {
+    if (nextAnswerBoxText.length === 0) {
+        document.getElementById('answerBoxButton').setAttribute('class', 'visible')
+        return false
+    } else if (nextAnswerBoxText.length > 0) {
+        document.getElementById('answerBoxText').innerHTML += nextAnswerBoxText.shift();
+    }
+    //temporary change
+    setTimeout('answerBoxTextScroll()', 50);
+};
+
+// Function for event listener of the continue button in answer box to continue to next question
+function continueAnswerBox() {
+    buttonClickOne.play();
+    document.getElementById('answerBoxButton').setAttribute('src', './assets/intro_box/ContinueButtonCllicked.png')
+    setTimeout(() => {
+        document.getElementById('answerBoxButton').setAttribute('src', './assets/intro_box/ContinueButtonUncllicked.png')
+    }, 50);
+    hideAnswerBox();
+};
 
 // Each string in this array is one span of dialogue for the intro
 let introDialogueArray = ['Congratulations on being appointed Mayor! What a long and enduring campaign \
@@ -641,10 +724,10 @@ let introDialogueText = introDialogueArray.shift().split('');
 
 // Main function to run the intro dialogue
 function masterIntroDialogue() {
-    document.getElementById("next-dialogue-button").src = "./assets/intro_box/ContinueButtonCllicked.svg"
+    document.getElementById("next-dialogue-button").src = "./assets/intro_box/ContinueButtonCllicked.png"
     buttonClickOne.play()
     setTimeout(function () {
-        document.getElementById("next-dialogue-button").src = "./assets/intro_box/ContinueButtonUncllicked.svg"
+        document.getElementById("next-dialogue-button").src = "./assets/intro_box/ContinueButtonUncllicked.png"
         if (introDialogueArray.length === 0 && introDialogueText.length === 0) {
             document.getElementById('intro-div').remove()
             setTimeout(firstPrompt, 5000);
@@ -669,7 +752,7 @@ function introDialogue() {
         document.getElementById('next-dialogue-button').setAttribute('class', 'visible')
         return false
     }
-    setTimeout('introDialogue()', .25);
+    setTimeout('introDialogue()', 50);
 };
 
 // Function for the first question prompt that appears after the intro
@@ -684,7 +767,7 @@ function firstPrompt() {
 
     // Main Dialogue UI Box
     let mainDialogueUI = document.createElement('img');
-    mainDialogueUI.setAttribute('src', 'assets/dialogue_box/MainDialogueUI.svg')
+    mainDialogueUI.setAttribute('src', 'assets/dialogue_box/MainDialogueUI.png')
     mainDialogueUI.setAttribute('id', 'question-prompt')
 
     // Text box for the current question / prompt
@@ -698,7 +781,7 @@ function firstPrompt() {
 
     // Body image for Main Character
     let mainCharacterBody = document.createElement('img')
-    mainCharacterBody.setAttribute('src', 'assets/static_elements/charbody.svg')
+    mainCharacterBody.setAttribute('src', 'assets/static_elements/charbody.png')
     mainCharacterBody.setAttribute('id', 'main-character-body');
 
     // Skin image for Main Character
@@ -725,17 +808,17 @@ function firstPrompt() {
     let NPC = document.createElement('img');
     // change this later because it will not always be assistant
     NPC.setAttribute('id', 'assistant');
-    NPC.setAttribute('src', 'assets/npc/npc4.svg');
+    NPC.setAttribute('src', 'assets/npc/npc4.png');
 
     // Create Yes button
     let yesButton = document.createElement('img');
-    yesButton.setAttribute('src', './assets/dialogue_box/buttons/YesButtonUnclicked.svg');
+    yesButton.setAttribute('src', './assets/dialogue_box/buttons/YesButtonUnclicked.png');
     yesButton.setAttribute('id', 'yes-button');
     yesButton.addEventListener('click', selectYesButton);
 
     // Create No button
     let noButton = document.createElement('img');
-    noButton.setAttribute('src', './assets/dialogue_box/buttons/NoButtonUnclicked.svg');
+    noButton.setAttribute('src', './assets/dialogue_box/buttons/NoButtonUnclicked.png');
     noButton.setAttribute('id', 'no-button');
     noButton.addEventListener('click', selectNoButton);
 
@@ -755,15 +838,51 @@ function firstPrompt() {
 
 
 function selectYesButton() {
-    document.getElementById('yes-button').setAttribute('src', './assets/dialogue_box/buttons/YesButtonClicked.svg')
+    document.getElementById('yes-button').setAttribute('src', './assets/dialogue_box/buttons/YesButtonClicked.png')
     buttonClickOne.play();
     setTimeout(function () {
+        // Hide the question prompt box
         document.getElementById('question-prompt-div').setAttribute('class', 'hidden');
-        buttonClickOne.play();
-        document.getElementById('yes-button').setAttribute('src', './assets/dialogue_box/buttons/YesButtonUnclicked.svg')
 
+        // Play click noise
+        buttonClickOne.play();
+
+        // Reset the text for the answer box
+        document.getElementById('answerBoxText').textContent = '';
+
+        // Set the global variable (for scrolling text) to the correct string
+        nextAnswerBoxText = questions[questionCounter]['yes-result'].split('');
+
+        // For click animation's sake
+        document.getElementById('yes-button').setAttribute('src', './assets/dialogue_box/buttons/YesButtonUnclicked.png')
+
+        // Reflect on eco score
+        prevEcoScore = ecoScore;
+        ecoScore += questions[questionCounter]['eco-score'];
+        if (ecoScore >= 10) {
+            ecoScore = 10;
+        }
+        if (ecoScore <= 0) {
+            ecoScore = 0;
+        }
+        // Reflect popularity score
+        prevPopularityScore = popularityScore;
+        popularityScore += questions[questionCounter]['pop-score'];
+        if (popularityScore >= 10) {
+            popularityScore = 10;
+        }
+        if (popularityScore <= 0) {
+            popularityScore = 0;
+        }
+
+        // Adjust score bar and popularity hearts to correct scale
+        document.getElementById('uiEcoScore').setAttribute('src', './assets/eco_score/eco_score' + ecoScore + '.png');
+        document.getElementById('uiPopScore').setAttribute('src', './assets/pop_score/pop_score' + popularityScore + '.png');
+
+        // After 1 second, run function to display the answer box
         setTimeout(displayAnswerBox, 1000);
 
+        // Increment question counter
         questionCounter += 1
 
          //Hard questions, "level 2"
@@ -834,15 +953,51 @@ function selectYesButton() {
 };
 
 function selectNoButton() {
-    document.getElementById('no-button').setAttribute('src', './assets/dialogue_box/buttons/NoButtonClicked.svg')
+    document.getElementById('no-button').setAttribute('src', './assets/dialogue_box/buttons/NoButtonClicked.png')
     setTimeout(function () {
 
+        // Hide the question prompt box
         document.getElementById('question-prompt-div').setAttribute('class', 'hidden');
-        buttonClickOne.play();
-        document.getElementById('no-button').setAttribute('src', './assets/dialogue_box/buttons/NoButtonUnclicked.svg')
 
+        // Play click noise
+        buttonClickOne.play();
+
+        // Reset the text for the answer box
+        document.getElementById('answerBoxText').textContent = '';
+
+        // Set the global variable (for scrolling text) to the correct string
+        nextAnswerBoxText = questions[questionCounter]['no-result'].split('');;
+
+        // For click animation's sake
+        document.getElementById('no-button').setAttribute('src', './assets/dialogue_box/buttons/NoButtonUnclicked.png')
+
+        // Reflect on eco score
+        prevEcoScore = ecoScore;
+        ecoScore -= questions[questionCounter]['eco-score'];
+        if (ecoScore >= 10) {
+            ecoScore = 10;
+        }
+        if (ecoScore <= 0) {
+            ecoScore = 0;
+        }
+        // Reflect popularity score
+        prevPopularityScore = popularityScore;
+        popularityScore -= questions[questionCounter]['pop-score'];
+        if (popularityScore >= 10) {
+            popularityScore = 10;
+        }
+        if (popularityScore <= 0) {
+            popularityScore = 0;
+        }
+
+        // Adjust score bar and popularity hearts to correct scale
+        document.getElementById('uiEcoScore').setAttribute('src', './assets/eco_score/eco_score' + ecoScore + '.png');
+        document.getElementById('uiPopScore').setAttribute('src', './assets/pop_score/pop_score' + popularityScore + '.png');
+
+        // After 1 second, run function to display the answer box
         setTimeout(displayAnswerBox, 1000);
 
+        // Increment question counter
         questionCounter += 1
 
         //Hard questions, "level 2"
@@ -910,44 +1065,240 @@ function selectNoButton() {
 
         setTimeout(nextQuestionPrompt, 11000);
     }, 50)
-
 };
 
+// Displays the answer box
 function displayAnswerBox() {
+    // Play box popup audio
     boxPopAudioThree.play();
+    // Begin the scrolling text
+    answerBoxTextScroll();
+    // Make the answer box and text visible
     document.getElementById('answerBox').setAttribute('class', 'visible');
     document.getElementById('answerBoxText').setAttribute('class', 'visible')
-    setTimeout(hideAnswerBox, 5000);
 };
 
+// Hides the answer box when you click the continue button
 function hideAnswerBox() {
-    document.getElementById('answerBox').setAttribute('class', 'hidden');
+    setTimeout(() => {
+        document.getElementById('answerBox').setAttribute('class', 'hidden');
     document.getElementById('answerBoxText').setAttribute('class', 'hidden')
+    document.getElementById('answerBoxButton').setAttribute('class', 'hidden')
+    }, 50);
+    if (!createNewspaper("default")){
+        setTimeout(nextQuestionPrompt, 6000);
+    }
 };
 
+// This is the main function to call the next yes/no question
 function nextQuestionPrompt() {
+    // temporary change
     if (questionCounter === 6 || popularityScore === 0) {
         // end game
         endGameSequence();
+    } else if (questionCounter === 9) {
+        // put newspaper popup here. show newspaper with headline:
+        if (popularityScore > 0){
+            createNewspaper("termSwitch");
+            var newspaper = document.getElementById("newspaper");
+            newspaper.onclick = function () {
+                let audio = new Audio("./assets/Audio/newspaperAway.mp3")
+                var newspaper = document.getElementById('newspaper');
+                newspaper.remove();
+                audio.play();
+                document.getElementById('currentTermImage').setAttribute('src', './assets/dialogue_box/TermTwo.png');
+                boxPopAudioOne.play();
+                document.getElementById('question-prompt-div').setAttribute('class', 'visible');
+            }
+        }
+        // "mayor is re-elected for second term blah blah"
+        // keep newspaper shown for 5 seconds then continue on
     } else {
         boxPopAudioOne.play();
         document.getElementById('question-prompt-div').setAttribute('class', 'visible');
     }
 };
 
+//Create headlines
+let papers = {
+    0 : false,
+    1 : false,
+    2 : false,
+    3 : false,
+    4 : false,
+    5 : false, 
+    6 : false,
+    7 : false,
+    8 : false,
+    9 : false, 
+    10 : false, 
+    11 : false
+}
+
+let defineDefaultHeadline = () => {
+
+    if(popularityScore <= 3 && !papers[2] && prevPopularityScore > popularityScore){
+        papers[2] = true;
+        return document.createTextNode("Protests Begin Due to the Mayor's New Ruling");
+    }
+    else if(popularityScore <= 1 && !papers[1] && prevPopularityScore > popularityScore){
+        papers[1] = true;
+        return document.createTextNode("Riots Breakout as Discontent Increases With the Mayor");
+    }
+    else if(popularityScore <= 0 && !papers[0] && prevPopularityScore > popularityScore){
+        papers[0] = true;
+        return document.createTextNode("RainCity's Tyrant Mayor Ovethrown by the Revolution");
+    }
+    else if(popularityScore >= 7 && !papers[3] && prevPopularityScore < popularityScore){
+        papers[3] = true;
+        return document.createTextNode("Citizens Celebrating the Mayor's Name with New Ruling");
+    }
+    else if (popularityScore >= 9 && !papers[4] && prevPopularityScore < popularityScore){
+        papers[4] = true;
+        return document.createTextNode("RainCity's Mayor One of The Best In The World");
+    }
+    else if (popularityScore >= 10 && !papers[5] && prevPopularityScore < popularityScore){
+        papers[5] = true;
+        return document.createTextNode("RainCity Becomes the Best City In The World");
+    }
+    else if (ecoScore <= 3 && !papers[8] && prevEcoScore > ecoScore){
+        papers[8] = true;
+        return document.createTextNode("Hottest Day Ever Recorded, Scientists Say Due to Pollution")
+    }
+    else if (ecoScore <= 1 && !papers[7] && prevEcoScore > ecoScore){
+        papers[7] = true;
+        return document.createTextNode("Smog creates unbreathable air, WEAR MASKS")
+    }
+    else if (ecoScore <= 0 && !papers[6] && prevEcoScore > ecoScore){
+        papers[6] = true;
+        return document.createTextNode("Massive Tsunami Due to Polution Submerges RainCity ")
+    }
+    else if(ecoScore >= 7 && !papers[9] && prevEcoScore < ecoScore){
+        papers[9] = true;
+        return document.createTextNode("Mayor Improves Quality of Live with Green Initiatives")
+    }
+    else if (ecoScore >= 9 && !papers[10] && prevEcoScore < ecoScore){
+        papers[10] = true;
+        return document.createTextNode("Mayor Leads RainCity to Almost Having a ZERO Carbon Footprint")
+    }
+    else if (ecoScore >= 10 && !papers[11] && prevEcoScore < ecoScore){
+        papers[11] = true;
+        return document.createTextNode("RainCity Becomes the World's Greenest and Most Sustainable City")
+    }
+    else {
+        return document.createTextNode("null");
+    }
+}
+
+let defineCustomHeadline = (headlineDefiner) => {
+    if(headlineDefiner == "termSwitch"){
+        return document.createTextNode("Current Mayor has been relected to run for a second term!")
+    }
+}
+
+//Create newspaper DOM elements
+let createNewspaper = (headlineDefiner) => {
+    var body = document.querySelector("body");
+    var headline = document.createElement("h1");
+    headline.id = "headline"
+    var continueHeader = document.createElement("h1");
+    continueHeader.id = "newspaperContinue";
+    var continueText = document.createTextNode("Tap anywhere to continue...")
+    continueHeader.appendChild(continueText);
+    var paper = document.createElement("img");
+    paper.src = "./assets/static_elements/newspaper.png"
+    paper.id = "paper"
+    var newspaper = document.createElement("div");
+    newspaper.id = "newspaper";
+    newspaper.onclick = function () {
+        let audio = new Audio("./assets/Audio/newspaperAway.mp3")
+        var newspaper = document.getElementById('newspaper');
+        newspaper.remove();
+        audio.play();
+        setTimeout(nextQuestionPrompt, 6000);
+    }
+    if(headlineDefiner == "default"){
+        headline.appendChild(defineDefaultHeadline());
+    }
+    else{
+        headline.appendChild(defineCustomHeadline(headlineDefiner));
+    }
+
+    if(headline.childNodes[0].textContent == "null"){
+        return false;
+    }
+    newspaper.appendChild(paper);
+    newspaper.appendChild(headline);
+    newspaper.appendChild(continueHeader);
+    body.appendChild(newspaper);
+
+    let audio = new Audio("./assets/Audio/newspaperLoad.mp3")
+    audio.play();
+    return true;
+}
+
+let deletePaper = () => {
+    var newspaper = document.getElementById('newspaper');
+    newspaper.remove();
+}
+
+// If you finish all questions, or pop score reaches 0, end game.
 function endGameSequence() {
-    // Remove everything
+    // Stop the main theme audio 
+    var audioMain = document.getElementById('mainSoundTrack');
+    audioMain.pause()
+    // Start the end game theme audio
+    var endAudio = document.getElementById('endSoundTrack');
+    endAudio.play()
+    // Calculate user's end game score here
     let endGameScore = (popularityScore + ecoScore) * 69;
+
+    // Timestamp of when the game ended
+    let currentDate = new Date();
+
+    let currentDayOfMonth = currentDate.getDate();
+    let currentMonth = currentDate.getMonth();
+    let currentYear = currentDate.getFullYear();
+
+    let timestamp = currentDayOfMonth + "-" + (currentMonth + 1) + "-" + currentYear;
+
+    // Write the user's end game score to firestore
+    firebase.auth().onAuthStateChanged(function (user) {
+        if (user) {
+            var name = '';
+            db.collection('users').doc(user.uid)
+            .get()
+            .then(function (doc){
+                name = doc.data().name.split(' ');
+                db.collection('users').doc(user.uid)
+                .collection('game-scores').doc()
+                .set({
+                    score: endGameScore,
+                    timestamp: timestamp
+                })
+                .then(function () {
+                    // if the user scored a perfect score aka 100%
+                    // this will be altered as 100 does no currently mean 100%
+                    if (endGameScore === 100) {
+                        db.collection('scores').doc()
+                            .set({
+                                name: name[0],
+                                score: endGameScore,
+                                timestamp: timestamp
+                            })
+                    }
+                })
+            })
+        }
+    });
+
+    // Remove everything
     setTimeout(() => {
         document.getElementById('container').remove();
 
         let endGameBox = document.createElement('img');
         endGameBox.setAttribute('id', 'endGameBox');
-        endGameBox.setAttribute('src', './assets/end_game_box/EndGameBox.svg');
-
-        let gameOverText = document.createElement('img');
-        gameOverText.setAttribute('id', 'gameOverText');
-        gameOverText.setAttribute('src', './assets/end_game_box/game_over_anim/GameOver1.svg')
+        endGameBox.setAttribute('src', './assets/end_game_box/EndGameBox.png');
 
         let endGameScoreText = document.createElement('p');
         endGameScoreText.textContent = '' + endGameScore;
@@ -955,56 +1306,16 @@ function endGameSequence() {
 
         let returnButton = document.createElement('img');
         returnButton.setAttribute('id', 'returnButton');
-        returnButton.setAttribute('src', './assets/intro_box/ContinueButtonUncllicked.svg');
+        returnButton.setAttribute('src', './assets/intro_box/ContinueButtonUncllicked.png');
         returnButton.setAttribute('onclick', 'window.location.assign("index.html")');
 
+        let gameOverAnimation = document.createElement('img');
+        gameOverAnimation.setAttribute('src', './assets/end_game_box/game_over_anim/EndGameBox.gif');
+        gameOverAnimation.setAttribute('id', 'gameover-anim');
+
         document.body.append(endGameBox);
-        document.body.append(gameOverText);
+        document.body.append(gameOverAnimation);
         document.body.append(endGameScoreText);
         document.body.append(returnButton);
     }, 100);
-
-
-
-    setInterval(function () {
-        animateGameOver();
-    }, 100);
-};
-
-// Game Over Animation
-gameOverFrames = {
-    "0": "./assets/end_game_box/game_over_anim/GameOver1.svg",
-    "1": "./assets/end_game_box/game_over_anim/GameOver2.svg",
-    "2": "./assets/end_game_box/game_over_anim/GameOver3.svg",
-    "3": "./assets/end_game_box/game_over_anim/GameOver4.svg",
-    "4": "./assets/end_game_box/game_over_anim/GameOver5.svg",
-    "5": "./assets/end_game_box/game_over_anim/GameOver6.svg",
-    "6": "./assets/end_game_box/game_over_anim/GameOver7.svg",
-    "7": "./assets/end_game_box/game_over_anim/GameOver8.svg",
-    "8": "./assets/end_game_box/game_over_anim/GameOver9.svg",
-    "9": "./assets/end_game_box/game_over_anim/GameOver10.svg",
-    "10": "./assets/end_game_box/game_over_anim/GameOver11.svg",
-    "11": "./assets/end_game_box/game_over_anim/GameOver12.svg",
-    "12": "./assets/end_game_box/game_over_anim/GameOver13.svg",
-    "13": "./assets/end_game_box/game_over_anim/GameOver14.svg",
-    "14": "./assets/end_game_box/game_over_anim/GameOver15.svg",
-    "15": "./assets/end_game_box/game_over_anim/GameOver16.svg",
-    "16": "./assets/end_game_box/game_over_anim/GameOver17.svg",
-    "17": "./assets/end_game_box/game_over_anim/GameOver18.svg",
-    "18": "./assets/end_game_box/game_over_anim/GameOver19.svg",
-    "19": "./assets/end_game_box/game_over_anim/GameOver20.svg",
-    "20": "./assets/end_game_box/game_over_anim/GameOver21.svg",
-    "21": "./assets/end_game_box/game_over_anim/GameOver22.svg",
-}
-
-let goanimframe = 0;
-
-function animateGameOver() {
-    if (goanimframe == 21) {
-        goanimframe = 0;
-        gameOverText.setAttribute('src', gameOverFrames[goanimframe])
-    } else {
-        goanimframe += 1
-        gameOverText.setAttribute('src', gameOverFrames[goanimframe])
-    }
 };
