@@ -147,6 +147,7 @@ div {
     width: 30vw;
     height: 25vh;
     left: 70vw;
+    z-index: -1;
 }
 
 #ui-container img {
