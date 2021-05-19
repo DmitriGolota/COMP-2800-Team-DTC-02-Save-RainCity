@@ -164,18 +164,18 @@ div {
 }
 
 #paper {
-    width: 94vw;
+    width: 54vw;
     height: 94vh;
-    left: 3vw;
+    left: 23vw;
     top: 3vh;
 }
 
 #headline {
     position: absolute;
     color: #807468;
-    width: 43vw;
-    left: 26vw;
-    top: 12.5vh;
+    width: 46vw;
+    left: 24.5vw;
+    top: 10vh;
 }
 
 #newspaperContinue {
@@ -186,7 +186,6 @@ div {
     left: 18vw;
     top: 75vh;
 }
-
 /* End of throughout whole game */
 
 /* Game intro */
