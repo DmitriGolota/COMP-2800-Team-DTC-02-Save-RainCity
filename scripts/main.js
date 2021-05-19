@@ -894,7 +894,7 @@ let createNewspaper = (headlineDefiner) => {
     var continueText = document.createTextNode("Tap anywhere to continue...")
     continueHeader.appendChild(continueText);
     var paper = document.createElement("img");
-    paper.src = "./assets/static_elements/newspaper.svg"
+    paper.src = "./assets/static_elements/newspaper.png"
     paper.id = "paper"
     var newspaper = document.createElement("div");
     newspaper.id = "newspaper";
