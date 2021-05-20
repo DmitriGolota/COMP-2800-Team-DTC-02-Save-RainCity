@@ -547,7 +547,9 @@ function displayEasterEggFinal() {
         img.id = 'easterEggPhoto'
         div.appendChild(img);
         body.appendChild(div);
-        console.log("easter egg unclocked")
+        whaleClicked = false;
+        duckClicked = false;
+        shipClicked = false;
     }
 }
 // for current answer box text
