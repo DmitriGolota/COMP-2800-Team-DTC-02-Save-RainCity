@@ -543,8 +543,7 @@ function displayEasterEggFinal() {
             div.remove();
         }
         var img = document.createElement('img');
-        img.setAttribute('src', "./assets/easterEgg.png")
-        img.id = 'easterEggPhoto'
+        img.setAttribute('src', "./assets/five-young-people-thumbing-up-with-a-smile-X5HCTJ.jpg")
         div.appendChild(img);
         body.appendChild(div);
         console.log("easter egg unclocked")
@@ -562,7 +561,7 @@ function answerBoxTextScroll() {
         document.getElementById('answerBoxText').innerHTML += nextAnswerBoxText.shift();
     }
     //temporary change
-    setTimeout('answerBoxTextScroll()', 0.1);
+    setTimeout('answerBoxTextScroll()', 30);
 };
 
 // Function for event listener of the continue button in answer box to continue to next question
@@ -615,7 +614,7 @@ function introDialogue() {
         document.getElementById('next-dialogue-button').setAttribute('class', 'visible')
         return false
     }
-    setTimeout('introDialogue()', 0.1);
+    setTimeout('introDialogue()', 30);
 };
 
 // Function for the first question prompt that appears after the intro
