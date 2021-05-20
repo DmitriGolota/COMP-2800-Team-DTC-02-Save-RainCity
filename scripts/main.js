@@ -1056,7 +1056,7 @@ function hideAnswerBox() {
 
 // This is the main function to call the next yes/no question
 function nextQuestionPrompt() {
-    if (questionCounter === 9 || popularityScore === 0) {
+    if (questionCounter === 1 || popularityScore === 0) {
         // end game
         endGameSequence();
     } else if (questionCounter === 9) {

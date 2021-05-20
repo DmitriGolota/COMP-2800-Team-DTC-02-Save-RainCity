@@ -27,7 +27,7 @@ img {
     position: absolute;
 }
 
-div {
+main div {
     position: absolute;
     top: 0;
 }
@@ -343,6 +343,38 @@ div {
     height: 12vh;
     left: 45vw;
     top: 65vh;
+}
+
+a {
+    position: absolute !important;
+    left: 2vw !important;
+}
+
+.shareaholic-service-facebook {
+    top: 8vh !important;
+}
+
+.shareaholic-service-twitter {
+    top: 28vh !important;
+}
+
+.shareaholic-service-linkedin {
+    top: 48vh !important;
+}
+
+.shareaholic-service-email_this {
+    top: 68vh !important;
+}
+
+a.shareaholic-service-icon.shareaholic-service-default {
+    height: 15vh !important; 
+    width: 15vh !important;
+}
+
+a.shareaholic-service-icon:before {
+    font-size: 10vh;
+    top: 2.5vh !important;
+    left: 2.5vh !important;
 }
 /* End of game over screen */
 
