@@ -580,9 +580,9 @@ let introDialogueArray = ['Congratulations on being appointed Mayor! What a long
 season that was! The world is in a state of climate emergency, and that includes RainCity!',
     "As you know, the citizens of RainCity revolted and threw the last Mayor out of office. The \
 citizens were furious at the Mayor's lack of action to reduce RainCity's carbon pollution!",
-    "Let's hope that you can make more green decisions during your term as Mayor, and avoid getting \
-thrown out of office!", "Remeber...If your popularity meter reaches 0, the people might overthrow you! Try to keep your \
-ecoscore and popularity score as high as possible! Make wise choices!"]
+    "Let's hope that you can make more green decisions during your term as Mayor, and maybe even get elected for a second term!", 
+    "Remember...If you run out of popularity hearts, the people might overthrow you! Try to keep your \
+ecoscore and popularity score as high as possible! Make wise choices to Save RainCity!"]
 // Global variable for the first span of dialogue from introDialogueArray
 let introDialogueText = introDialogueArray.shift().split('');
 
