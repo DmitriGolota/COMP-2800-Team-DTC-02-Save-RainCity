@@ -178,186 +178,27 @@ let questions = {
         'pop-score': 1,
         'NPC-img-num': 1
     },
-    20: {
-        'question': 'Mayor! People have raised concerns about how boring it is to walk in some neighbourhoods. Should we increase the amount of trees and plants near sidewalks to make them more enjoyable to walk?',
-        'yes-result': 'You made the correct decision!',
-        'no-result': 'You made the wrong decision!',
-        'eco-score': 1,
-        'pop-score': 1,
-        'NPC-img-num': 4
-    },
-    21: {
-        'question': "These bikers never look where they're going.. but I guess it's better than driving... Should we build more bike-only paths to help encourage cycling as a form of transportation?",
-        'yes-result': 'Some of the driving population are angry to see more bikers on the road! At least there are less cars on the road!',
-        'no-result': 'The driving population is pleased with your decision, however; you did not help the environment.',
-        'eco-score': 1,
-        'pop-score': -1,
-        'NPC-img-num': 5
-    },
-    22: {
-        'question': 'Traffic in Downtown RainCity is at an all time high and that means lots of vehicle carbon emissions! Should we charge a fee for private vehicles entering the Metro Core?',
-        'yes-result': 'Drivers are not happy with your decision, but this is definitely going to reduce carbon emissions! Good work!',
-        'no-result': 'Drivers are happy to continue driving wherever they please, but your decision has not reduced any carbon emissions!',
-        'eco-score': 2,
-        'pop-score': -3,
-        'NPC-img-num': 3
-    },
-    23: {
-        'question': 'The bus system is getting expensive with the new eco-friendly policies! Should we reduce the schedule and frequency of buses to save money?',
-        'yes-result': 'Citizens of RainCity are now further discouraged to consider public transit! That was not a good move!',
-        'no-result': 'Commuters are glad to keep the regular bus schedules! The budget department can kick rocks!',
-        'eco-score': 1,
-        'pop-score': -4,
-        'NPC-img-num': 1
-    },
-    24: {
-        'question': 'Yooo man... We gotta replant the trees dude, it is a real issue man. I love trees man. *kisses tree* Should we enforce a law that requires people to plant a tree for every tree they chop down?',
-        'yes-result': 'Totally tubular, man! The more trees the better!',
-        'no-result': 'That is so bogus! We are gonna run out of trees, at this rate!',
-        'pop-score': 2,
-        'eco-score': 2,
-        'NPC-img-num': 6
-    },
-    25: {
-        'question': 'We just got a call from Elon Musk! He is paying cities lots of DogeCoin to add more electric vehicle charging stations! Should we add more EV chargers around RainCity?',
-        'yes-result': 'Woohoo, that is a lot of DogeCoin! We are starting to see more electric vehicles across the city! Nicely done!',
-        'no-result': "Uh-oh, you do not want to get on Elon's bad side. It would have been a good idea to make electric vehicles more accessible too!",
-        'eco-score': 2,
-        'pop-score': 1,
-        'NPC-img-num': 2
-    },
-    26: {
-        'question': 'Wow! With such an increase in public transit use, we want to increase the ticket prices for buses and trains from $2 to $4. Do you agree to this plan?',
-        'yes-result': 'You made the correct decision!',
-        'no-result': 'You made the wrong decision!',
-        'eco-score': 1,
-        'pop-score': 1,
-        'NPC-img-num': 1
-    },
-    27: {
-        'question': 'People are complaining about the lack of parking in Downtown RainCity! Can we pave over a greenspace to build a parkade?',
-        'yes-result': 'You made the correct decision!',
-        'no-result': 'You made the wrong decision!',
-        'eco-score': 1,
-        'pop-score': 1,
-        'NPC-img-num': 1
-    },
-    28: {
-        'question': "Mayor! Still too many people are driving private vehicles unnecessarily! Should we expand our residential parking permits city-wide?",
-        'yes-result': 'You made the correct decision!',
-        'no-result': 'You made the wrong decision!',
-        'eco-score': 1,
-        'pop-score': 1,
-        'NPC-img-num': 1
-    },
-    29: {
-        'question': 'Mayor, is it just me or is it hard to breathe downtown? To further discourage non-electric private vehicles, we want to add an additional carbon pollution surcharge to parking permits for non-electric vehicles. Do you agree to this plan?',
-        'yes-result': 'You made the correct decision!',
-        'no-result': 'You made the wrong decision!',
-        'eco-score': 1,
-        'pop-score': 1,
-        'NPC-img-num': 1
-    },
-    30: {
-        'question': 'Over 3 quarters of carbon emission from building operations can be eliminated by switching natural gas to electricity or renewable natural gas for space and water heating. Do you think it is feasible to require the majority of new home constructions to use electrical appliances for heating and hot water.',
-        'yes-result': 'You made the correct decision!',
-        'no-result': 'You made the wrong decision!',
-        'eco-score': 1,
-        'pop-score': 1,
-        'NPC-img-num': 1
-    },
-    31: {
-        'question': 'Do you agree to issue fines to building owners that still operate on unrenweable natural gas?',
-        'yes-result': 'You made the correct decision!',
-        'no-result': 'You made the wrong decision!',
-        'eco-score': 1,
-        'pop-score': 1,
-        'NPC-img-num': 1
-    },
-    32: {
-        'question': 'The Architechture Association of Raincity hates big windows; they believe it is a faux-pas. Bigger windows allows for improved air flow which allows for reduced energy usage for heating. Do you want to mandate the usage of big windows or appease the powerful architects of Raincity?',
-        'yes-result': 'You made the correct decision!',
-        'no-result': 'You made the wrong decision!',
-        'eco-score': 1,
-        'pop-score': 1,
-        'NPC-img-num': 1
-    },
-    33: {
-        'question': "Mayor, Tim's Mill just called and they want to increase their wood production. Wood is a great low carbon material, but the citizens really hate deforestation. Should we do it?",
-        'yes-result': 'You made the correct decision!',
-        'no-result': 'You made the wrong decision!',
-        'eco-score': 1,
-        'pop-score': 1,
-        'NPC-img-num': 1
-    },
-    34: {
-        'question': 'One of our aims to lower embodied emissions is to decrease parking spaces in buildings. Do you agree with this?',
-        'yes-result': 'You made the correct decision!',
-        'no-result': 'You made the wrong decision!',
-        'eco-score': 1,
-        'pop-score': 1,
-        'NPC-img-num': 1
-    },
-    35: {
-        'question': 'Yooo man... We gotta replant the trees dude, it a real issue man. The trees are gonna save us from the terrible carbon pollution bro. I love trees man. *Kisses Tree*',
-        'yes-result': 'You made the correct decision!',
-        'no-result': 'You made the wrong decision!',
-        'eco-score': 1,
-        'pop-score': 1,
-        'NPC-img-num': 1
-    },
-    36: {
-        'question': "Bro, exporting out massive amounts of wood is totally not cool man. This totally goes against the grain of the trees dude. Let's export less so we can save our tree brethren. *Kisses you*",
-        'yes-result': 'You made the correct decision!',
-        'no-result': 'You made the wrong decision!',
-        'eco-score': 1,
-        'pop-score': 1,
-        'NPC-img-num': 1
-    },
-    37: {
-        'question': 'Climate change is not cool at all man. But the changing temperatures and seasons could make the farmining industry innovate more dude... As a vegan, I think the farming industry is hella cool... We should ignore climate change to help save the cows *Kisses cow*',
-        'yes-result': 'You made the correct decision!',
-        'no-result': 'You made the wrong decision!',
-        'eco-score': 1,
-        'pop-score': 1,
-        'NPC-img-num': 1
-    },
-    38: {
-        'question': 'Climate change is not cool at all man. But the changing temperatures and seasons could make the farmining industry innovate more dude... As a vegan, I think the farming industry is hella cool... We should ignore climate change to help save the cows *Kisses cow*',
-        'yes-result': 'You made the correct decision!',
-        'no-result': 'You made the wrong decision!',
-        'eco-score': 1,
-        'pop-score': 1,
-        'NPC-img-num': 1
-    },
-    39: {
-        'question': 'Climate change is not cool at all man. But the changing temperatures and seasons could make the farmining industry innovate more dude... As a vegan, I think the farming industry is hella cool... We should ignore climate change to help save the cows *Kisses cow*',
-        'yes-result': 'You made the correct decision!',
-        'no-result': 'You made the wrong decision!',
-        'eco-score': 1,
-        'pop-score': 1,
-        'NPC-img-num': 1
-    },
+
 };
 
-//Creates an array of random integers from 1-19
+//Creates an array of random integers from 0-9
 //For easy questions
 function getRandomIntegersEasy() {
     var arr = [];
     while (arr.length < 10) {
-        var randInt = Math.floor(Math.random() * 20);
+        var randInt = Math.floor(Math.random() * 10);
         if (arr.indexOf(randInt) === -1) arr.push(randInt);
     }
     return arr;
 }
 var arrOfRandomIntegersEasy = getRandomIntegersEasy();
 
-//Creates an array of random integers from 20-39
+//Creates an array of random integers from 10-19
 //For hard questions
 function getRandomIntegersHard() {
     var arr = [];
     while (arr.length < 10) {
-        var randInt = Math.floor(Math.random() * 20) + 20;
+        var randInt = Math.floor(Math.random() * 10) + 10;
         if (arr.indexOf(randInt) === -1) arr.push(randInt);
     }
     return arr;
@@ -720,7 +561,7 @@ function answerBoxTextScroll() {
         document.getElementById('answerBoxText').innerHTML += nextAnswerBoxText.shift();
     }
     //temporary change
-    setTimeout('answerBoxTextScroll()', 30);
+    setTimeout('answerBoxTextScroll()', 0.1);
 };
 
 // Function for event listener of the continue button in answer box to continue to next question
@@ -773,7 +614,7 @@ function introDialogue() {
         document.getElementById('next-dialogue-button').setAttribute('class', 'visible')
         return false
     }
-    setTimeout('introDialogue()', 30);
+    setTimeout('introDialogue()', 0.1);
 };
 
 // Function for the first question prompt that appears after the intro
