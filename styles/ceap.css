@@ -11,14 +11,21 @@ hr {
 }
 .content{
     color: whitesmoke;
-    background-color: rgb(151, 151, 151);
+    background-color: rgb(112, 112, 112);
     margin: 2%;
     padding: 2%;
     text-align: center;
     border: 4px solid rgb(37, 37, 37);
 }
+section{
+    border-radius: 30px;
+}
 
-#red{
+h1{
+    font-size: 2.5rem;
+    background-color: rgb(73, 73, 73);
+    border-radius: 20px ;
+}red{
     color: rgb(255, 6, 6);
     border: 1px;
 }
@@ -33,7 +40,7 @@ hr {
     color: rgb(229, 255, 0);
 }
 #purple{
-    color:rgb(128, 0, 128);
+    color:rgb(187, 0, 187);
 }
 
 
