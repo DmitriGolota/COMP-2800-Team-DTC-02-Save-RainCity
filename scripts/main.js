@@ -360,6 +360,9 @@ function getRandomIntegersHard() {
 }
 var arrOfRandomIntegersHard = getRandomIntegersHard();
 
+console.log(arrOfRandomIntegersEasy);
+console.log(arrOfRandomIntegersHard);
+
 let hairNum = 0;
 let skinNum = 0;
 let suitNum = 0;
@@ -723,9 +726,8 @@ function firstPrompt() {
 
     // Create NPC image
     let NPC = document.createElement('img');
-    // change this later because it will not always be assistant
     NPC.setAttribute('id', 'assistant');
-    NPC.setAttribute('src', 'assets/npc/npc4.svg');
+    NPC.setAttribute('src', 'assets/npc/npc' + questions[arrOfRandomIntegersEasy[questionCounter]]['NPC-img-num'] + '.svg');
 
     // Create Yes button
     let yesButton = document.createElement('img');
@@ -764,8 +766,6 @@ function selectYesButton() {
 
         setTimeout(displayAnswerBox, 1000);
 
-        questionCounter += 1
-
          //Hard questions, "level 2"
         if (questionCounter > 9) {
             document.getElementById('answerBoxText').textContent = questions[arrOfRandomIntegersHard[questionCounter - 10]]['yes-result']
@@ -788,6 +788,7 @@ function selectYesButton() {
                 popularityScore = 0;
             }
 
+            questionCounter += 1;
 
             // Change the NPC to next NPC image
             document.getElementById('assistant').setAttribute('src', "assets/npc/npc" + questions[arrOfRandomIntegersHard[questionCounter - 10]]['NPC-img-num'] + ".svg")
@@ -801,7 +802,7 @@ function selectYesButton() {
             document.getElementById('answerBoxText').textContent = questions[arrOfRandomIntegersEasy[questionCounter]]['yes-result']
 
             // Reflect on eco score
-            ecoScore -= questions[arrOfRandomIntegersEasy[questionCounter]]['eco-score'];
+            ecoScore += questions[arrOfRandomIntegersEasy[questionCounter]]['eco-score'];
             if (ecoScore >= 10) {
                 ecoScore = 10;
             }
@@ -810,7 +811,7 @@ function selectYesButton() {
             }
 
             // Reflect popularity score
-            popularityScore -= questions[arrOfRandomIntegersEasy[questionCounter]]['pop-score'];
+            popularityScore += questions[arrOfRandomIntegersEasy[questionCounter]]['pop-score'];
             if (popularityScore >= 10) {
                 popularityScore = 10;
             }
@@ -818,8 +819,10 @@ function selectYesButton() {
                 popularityScore = 0;
             }
 
+            questionCounter += 1;
+
             // Change the NPC to next NPC image
-            document.getElementById('assistant').setAttribute('src', "assets/npc/npc" + questions[arrOfRandomIntegersEasy[questionCounter]]['NPC-img-num'] + ".svg")
+            document.getElementById('assistant').setAttribute('src', 'assets/npc/npc' + questions[arrOfRandomIntegersEasy[questionCounter]]['NPC-img-num'] + '.svg');
 
             // Change the question text to the next question
             document.getElementById('question-prompt-text').textContent = questions[arrOfRandomIntegersEasy[questionCounter]]['question'];
@@ -843,14 +846,12 @@ function selectNoButton() {
 
         setTimeout(displayAnswerBox, 1000);
 
-        questionCounter += 1
-
         //Hard questions, "level 2"
         if (questionCounter > 9) {
-            document.getElementById('answerBoxText').textContent = questions[arrOfRandomIntegersHard[questionCounter - 10]]['yes-result']
+            document.getElementById('answerBoxText').textContent = questions[arrOfRandomIntegersHard[questionCounter - 10]]['no-result']
 
             // Reflect on eco score
-            ecoScore += questions[arrOfRandomIntegersHard[questionCounter - 10]]['eco-score'];
+            ecoScore -= questions[arrOfRandomIntegersHard[questionCounter - 10]]['eco-score'];
             if (ecoScore >= 10) {
                 ecoScore = 10;
             }
@@ -859,7 +860,7 @@ function selectNoButton() {
             }
 
             // Reflect popularity score
-            popularityScore += questions[arrOfRandomIntegersHard[questionCounter - 10]]['pop-score'];
+            popularityScore -= questions[arrOfRandomIntegersHard[questionCounter - 10]]['pop-score'];
             if (popularityScore >= 10) {
                 popularityScore = 10;
             }
@@ -867,6 +868,7 @@ function selectNoButton() {
                 popularityScore = 0;
             }
 
+            questionCounter += 1;
 
             // Change the NPC to next NPC image
             document.getElementById('assistant').setAttribute('src', "assets/npc/npc" + questions[arrOfRandomIntegersHard[questionCounter - 10]]['NPC-img-num'] + ".svg")
@@ -877,7 +879,7 @@ function selectNoButton() {
 
         //Easy questions, "level 1"
         else {
-            document.getElementById('answerBoxText').textContent = questions[arrOfRandomIntegersEasy[questionCounter]]['yes-result']
+            document.getElementById('answerBoxText').textContent = questions[arrOfRandomIntegersEasy[questionCounter]]['no-result']
 
             // Reflect on eco score
             ecoScore -= questions[arrOfRandomIntegersEasy[questionCounter]]['eco-score'];
@@ -897,8 +899,10 @@ function selectNoButton() {
                 popularityScore = 0;
             }
 
+            questionCounter += 1;
+
             // Change the NPC to next NPC image
-            document.getElementById('assistant').setAttribute('src', "assets/npc/npc" + questions[arrOfRandomIntegersEasy[questionCounter]]['NPC-img-num'] + ".svg")
+            document.getElementById('assistant').setAttribute('src', 'assets/npc/npc' + questions[arrOfRandomIntegersEasy[questionCounter]]['NPC-img-num'] + '.svg');
 
             // Change the question text to the next question
             document.getElementById('question-prompt-text').textContent = questions[arrOfRandomIntegersEasy[questionCounter]]['question'];
