@@ -380,17 +380,48 @@ function suitNext() {
 //     console.log("Save Success")
 // };
 
+// Door Animation Function
+
+function doorAnimate1(){
+    document.getElementById('char-customization').remove();
+
+    setTimeout (function(){
+        document.getElementById('mayorbg').setAttribute('src', './assets/mayorsofficebg/mayorsoffice2.png')
+        var doorsound = document.getElementById('doorsound');
+        var audio = document.getElementById('myaudio');
+        audio.pause();
+        doorsound.play();
+        setTimeout(doorAnimate2, 2000)
+    , 10000})
+
+}
+function doorAnimate2(){
+    document.getElementById('mayorbg').setAttribute('src', './assets/mayorsofficebg/mayorsoffice3.png')
+    var footstep = document.getElementById('footstep');
+    footstep.play();
+    setTimeout(intro, 2000)
+}
+
 
 // Finish char customization and move onto intro
 document.getElementById('save-button').addEventListener('click', function () {
 
+    setTimeout(doorAnimate1, 100)
+    
+});
+
+
+function intro(){
+    
+
+
     // Delete char customization
-    document.getElementById('char-customization').remove();
     var audio = document.getElementById('myaudio');
     audio.pause();
 
     buttonClickOne.play()
     // Populate introduction scene
+
 
     // Play boxPopAudio
     boxPopAudioOne.play()
@@ -494,6 +525,9 @@ document.getElementById('save-button').addEventListener('click', function () {
     mainContainer.append(currentTermImage);
     mainContainer.append(uibarcontainer);
     mainContainer.append(introDiv);
+    
+    // remove mayor background here for smooth transition
+    document.getElementById('mayorbg').remove();
 
     // Easter Eggs
     document.getElementById('whaleSoundButton').addEventListener('click', function () {
@@ -518,8 +552,7 @@ document.getElementById('save-button').addEventListener('click', function () {
     })
 
     masterIntroDialogue();
-
-});
+}
 
 // GLOBAL VARIABLES  
 
