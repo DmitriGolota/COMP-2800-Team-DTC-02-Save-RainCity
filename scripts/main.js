@@ -543,7 +543,8 @@ function displayEasterEggFinal() {
             div.remove();
         }
         var img = document.createElement('img');
-        img.setAttribute('src', "./assets/five-young-people-thumbing-up-with-a-smile-X5HCTJ.jpg")
+        img.setAttribute('src', "./assets/easterEgg.png")
+        img.id = 'easterEggPhoto'
         div.appendChild(img);
         body.appendChild(div);
         console.log("easter egg unclocked")
