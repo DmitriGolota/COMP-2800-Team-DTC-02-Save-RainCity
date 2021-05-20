@@ -29,17 +29,17 @@ h1{
     color: rgb(255, 6, 6);
     border: 1px;
 }
-#green{
+.green{
     color: rgb(0, 236, 0);
 }
-#blue{
+.blue{
     color: rgb(0, 217, 255);
 }
 
-#orange{
+.orange{
     color: rgb(229, 255, 0);
 }
-#purple{
+.purple{
     color:rgb(187, 0, 187);
 }
 

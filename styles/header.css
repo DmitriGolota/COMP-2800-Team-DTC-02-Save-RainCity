@@ -26,22 +26,25 @@ body{
 .navbar-toggler-icon{
     color: white !important;
 }
-#red{
+.red{
     color: rgb(255, 6, 6)!important;
     border: 1px;
 }
-#green{
+.green{
     color: rgb(0, 236, 0)!important;
 }
-#blue{
+.blue{
     color: rgb(0, 217, 255) !important;
 }
 
-#orange{
+.orange{
     color: rgb(229, 255, 0)!important;
 }
-#grey{
+.grey{
     color:rgb(167, 167, 167)!important;
+}
+.purple{
+    color: rgb(175, 0, 175);
 }
 .main-link{
     width: 40%;

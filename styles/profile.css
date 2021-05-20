@@ -58,17 +58,3 @@ footer{
     font-size: 2em;
 }
 
-.red{
-    color: rgb(206, 24, 24);
-    border: 1px;
-}
-.green{
-    color: rgb(0, 236, 0);
-}
-.blue{
-    color: rgb(0, 217, 255);
-}
-
-.orange{
-    color: rgb(229, 255, 0);
-}
