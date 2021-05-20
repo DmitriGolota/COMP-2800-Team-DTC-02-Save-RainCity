@@ -22,7 +22,13 @@ let questions = {
         'question': 'Mayor! People have raised concerns about how boring it is to walk in some neighbourhoods. Should we increase the amount of trees and plants near sidewalks to make them more enjoyable to walk?',
         'yes-result': 'People are starting to walk more now! The less cars on the road the better! They are thrilled by your first decision as Mayor!',
         'no-result': 'People are still unmotivated to walk rather than drive. Hopefully your next decisions will be better!',
-        'eco-score': 1,
+        'airQualityRating': 1,
+        'emissionsRating': 1,
+        'energyRating': 1,
+        'transportRating': 1,
+        'walkabilityRating': 1,
+        'governmentActionRating': 1,
+        'environmentRestorationRating': 1,
         'pop-score': 1,
         'NPC-img-num': 4
     },
@@ -30,119 +36,209 @@ let questions = {
         'question': "These bikers never look where they're going.. but I guess it's better than driving... Should we build more bike-only paths to help encourage cycling as a form of transportation?",
         'yes-result': 'Some of the driving population are angry to see more bikers on the road! At least there are less cars on the road!',
         'no-result': 'The driving population is pleased with your decision, however; you did not help the environment.',
-        'eco-score': 1,
-        'pop-score': -1,
+        'airQualityRating': 1,
+        'emissionsRating': 1,
+        'energyRating': 1,
+        'transportRating': 1,
+        'walkabilityRating': 1,
+        'governmentActionRating': 1,
+        'environmentRestorationRating': 1,
+        'pop-score': 1,
         'NPC-img-num': 5
     },
     2: {
-        'question': 'Traffic in Downtown RainCity is at an all time high and that means lots of vehicle carbon emissions! Should we charge a fee for private vehicles entering the Metro Core?',
-        'yes-result': 'Drivers are not happy with your decision, but this is definitely going to reduce carbon emissions! Good work!',
-        'no-result': 'Drivers are happy to continue driving wherever they please, but your decision has not reduced any carbon emissions!',
-        'eco-score': 2,
-        'pop-score': -3,
-        'NPC-img-num': 3
-    },
-    3: {
-        'question': 'The bus system is getting expensive with the new eco-friendly policies! Should we reduce the schedule and frequency of buses to save money?',
-        'yes-result': 'Citizens of RainCity are now further discouraged to consider public transit! That was not a good move!',
-        'no-result': 'Commuters are glad to keep the regular bus schedules! The budget department can kick rocks!',
-        'eco-score': 1,
-        'pop-score': -4,
-        'NPC-img-num': 1
-    },
-    4: {
         'question': 'Yooo man... We gotta replant the trees dude, it is a real issue man. I love trees man. *kisses tree* Should we enforce a law that requires people to plant a tree for every tree they chop down?',
         'yes-result': 'Totally tubular, man! The more trees the better!',
         'no-result': 'That is so bogus! We are gonna run out of trees, at this rate!',
-        'pop-score': 2,
-        'eco-score': 2,
+        'airQualityRating': 1,
+        'emissionsRating': 1,
+        'energyRating': 1,
+        'transportRating': 1,
+        'walkabilityRating': 1,
+        'governmentActionRating': 1,
+        'environmentRestorationRating': 1,
+        'pop-score': 1,
         'NPC-img-num': 6
     },
-    5: {
+    3: {
         'question': 'We just got a call from Elon Musk! He is paying cities lots of DogeCoin to add more electric vehicle charging stations! Should we add more EV chargers around RainCity?',
         'yes-result': 'Woohoo, that is a lot of DogeCoin! We are starting to see more electric vehicles across the city! Nicely done!',
         'no-result': "Uh-oh, you do not want to get on Elon's bad side. It would have been a good idea to make electric vehicles more accessible too!",
-        'eco-score': 2,
+        'airQualityRating': 1,
+        'emissionsRating': 1,
+        'energyRating': 1,
+        'transportRating': 1,
+        'walkabilityRating': 1,
+        'governmentActionRating': 1,
+        'environmentRestorationRating': 1,
         'pop-score': 1,
         'NPC-img-num': 2
     },
-    6: {
+    4: {
         'question': 'Wow! With such an increase in public transit use, we want to increase the ticket prices for buses and trains from $2 to $4. Do you agree to this plan?',
         'yes-result': 'People are starting to walk more now! The less cars on the road the better! They are thrilled by your first decision as Mayor!',
         'no-result': 'People are still unmotivated to walk rather than drive. Hopefully your next decisions will be better!',
-        'eco-score': 1,
+        'airQualityRating': 1,
+        'emissionsRating': 1,
+        'energyRating': 1,
+        'transportRating': 1,
+        'walkabilityRating': 1,
+        'governmentActionRating': 1,
+        'environmentRestorationRating': 1,
+        'pop-score': 1,
+        'NPC-img-num': 1
+    },
+    5: {
+        'question': 'People are complaining about the lack of parking in Downtown RainCity! Can we pave over a greenspace to build a parkade?',
+        'yes-result': 'You made the correct decision!',
+        'no-result': 'You made the wrong decision!',
+        'airQualityRating': 1,
+        'emissionsRating': 1,
+        'energyRating': 1,
+        'transportRating': 1,
+        'walkabilityRating': 1,
+        'governmentActionRating': 1,
+        'environmentRestorationRating': 1,
+        'pop-score': 1,
+        'NPC-img-num': 1
+    },
+    6: {
+        'question': "Mayor! Still too many people are driving private vehicles unnecessarily! Should we expand our residential parking permits city-wide?",
+        'yes-result': 'You made the correct decision!',
+        'no-result': 'You made the wrong decision!',
+        'airQualityRating': 1,
+        'emissionsRating': 1,
+        'energyRating': 1,
+        'transportRating': 1,
+        'walkabilityRating': 1,
+        'governmentActionRating': 1,
+        'environmentRestorationRating': 1,
         'pop-score': 1,
         'NPC-img-num': 1
     },
     7: {
-        'question': 'People are complaining about the lack of parking in Downtown RainCity! Can we pave over a greenspace to build a parkade?',
+        'question': 'Do you agree to issue fines to building owners that still operate on unrenweable natural gas?',
         'yes-result': 'You made the correct decision!',
         'no-result': 'You made the wrong decision!',
-        'eco-score': 1,
+        'airQualityRating': 1,
+        'emissionsRating': 1,
+        'energyRating': 1,
+        'transportRating': 1,
+        'walkabilityRating': 1,
+        'governmentActionRating': 1,
+        'environmentRestorationRating': 1,
         'pop-score': 1,
         'NPC-img-num': 1
     },
     8: {
-        'question': "Mayor! Still too many people are driving private vehicles unnecessarily! Should we expand our residential parking permits city-wide?",
+        'question': 'The Architechture Association of Raincity hates big windows; they believe it is a faux-pas. Bigger windows allows for improved air flow which allows for reduced energy usage for heating. Do you want to mandate the usage of big windows or appease the powerful architects of Raincity?',
         'yes-result': 'You made the correct decision!',
         'no-result': 'You made the wrong decision!',
-        'eco-score': 1,
+        'airQualityRating': 1,
+        'emissionsRating': 1,
+        'energyRating': 1,
+        'transportRating': 1,
+        'walkabilityRating': 1,
+        'governmentActionRating': 1,
+        'environmentRestorationRating': 1,
         'pop-score': 1,
         'NPC-img-num': 1
     },
     9: {
-        'question': 'Mayor, is it just me or is it hard to breathe downtown? To further discourage non-electric private vehicles, we want to add an additional carbon pollution surcharge to parking permits for non-electric vehicles. Do you agree to this plan?',
+        'question': 'Yooo man... We gotta replant the trees dude, it a real issue man. The trees are gonna save us from the terrible carbon pollution bro. I love trees man. *Kisses Tree*',
         'yes-result': 'You made the correct decision!',
         'no-result': 'You made the wrong decision!',
-        'eco-score': 1,
+        'airQualityRating': 1,
+        'emissionsRating': 1,
+        'energyRating': 1,
+        'transportRating': 1,
+        'walkabilityRating': 1,
+        'governmentActionRating': 1,
+        'environmentRestorationRating': 1,
         'pop-score': 1,
         'NPC-img-num': 1
     },
     10: {
-        'question': 'Over 3 quarters of carbon emission from building operations can be eliminated by switching natural gas to electricity or renewable natural gas for space and water heating. Do you think it is feasible to require the majority of new home constructions to use electrical appliances for heating and hot water.',
+        'question': 'Mayor, is it just me or is it hard to breathe downtown? To further discourage non-electric private vehicles, we want to add an additional carbon pollution surcharge to parking permits for non-electric vehicles. Do you agree to this plan?',
         'yes-result': 'You made the correct decision!',
         'no-result': 'You made the wrong decision!',
-        'eco-score': 1,
+        'airQualityRating': 1,
+        'emissionsRating': 1,
+        'energyRating': 1,
+        'transportRating': 1,
+        'walkabilityRating': 1,
+        'governmentActionRating': 1,
+        'environmentRestorationRating': 1,
         'pop-score': 1,
         'NPC-img-num': 1
     },
     11: {
-        'question': 'Do you agree to issue fines to building owners that still operate on unrenweable natural gas?',
-        'yes-result': 'You made the correct decision!',
-        'no-result': 'You made the wrong decision!',
-        'eco-score': 1,
+        'question': 'The bus system is getting expensive with the new eco-friendly policies! Should we reduce the schedule and frequency of buses to save money?',
+        'yes-result': 'Citizens of RainCity are now further discouraged to consider public transit! That was not a good move!',
+        'no-result': 'Commuters are glad to keep the regular bus schedules! The budget department can kick rocks!',
+        'airQualityRating': 1,
+        'emissionsRating': 1,
+        'energyRating': 1,
+        'transportRating': 1,
+        'walkabilityRating': 1,
+        'governmentActionRating': 1,
+        'environmentRestorationRating': 1,
         'pop-score': 1,
         'NPC-img-num': 1
     },
     12: {
-        'question': 'The Architechture Association of Raincity hates big windows; they believe it is a faux-pas. Bigger windows allows for improved air flow which allows for reduced energy usage for heating. Do you want to mandate the usage of big windows or appease the powerful architects of Raincity?',
-        'yes-result': 'You made the correct decision!',
-        'no-result': 'You made the wrong decision!',
-        'eco-score': 1,
+        'question': 'Traffic in Downtown RainCity is at an all time high and that means lots of vehicle carbon emissions! Should we charge a fee for private vehicles entering the Metro Core?',
+        'yes-result': 'Drivers are not happy with your decision, but this is definitely going to reduce carbon emissions! Good work!',
+        'no-result': 'Drivers are happy to continue driving wherever they please, but your decision has not reduced any carbon emissions!',
+        'airQualityRating': 1,
+        'emissionsRating': 1,
+        'energyRating': 1,
+        'transportRating': 1,
+        'walkabilityRating': 1,
+        'governmentActionRating': 1,
+        'environmentRestorationRating': 1,
         'pop-score': 1,
-        'NPC-img-num': 1
+        'NPC-img-num': 3
     },
     13: {
-        'question': "Mayor, Tim's Mill just called and they want to increase their wood production. Wood is a great low carbon material, but the citizens really hate deforestation. Should we do it?",
+        'question': 'Over 3 quarters of carbon emission from building operations can be eliminated by switching natural gas to electricity or renewable natural gas for space and water heating. Do you think it is feasible to require the majority of new home constructions to use electrical appliances for heating and hot water.',
         'yes-result': 'You made the correct decision!',
         'no-result': 'You made the wrong decision!',
-        'eco-score': 1,
+        'airQualityRating': 1,
+        'emissionsRating': 1,
+        'energyRating': 1,
+        'transportRating': 1,
+        'walkabilityRating': 1,
+        'governmentActionRating': 1,
+        'environmentRestorationRating': 1,
         'pop-score': 1,
         'NPC-img-num': 1
     },
     14: {
-        'question': 'One of our aims to lower embodied emissions is to decrease parking spaces in buildings. Do you agree with this?',
+        'question': "Mayor, Tim's Mill just called and they want to increase their wood production. Wood is a great low carbon material, but the citizens really hate deforestation. Should we do it?",
         'yes-result': 'You made the correct decision!',
         'no-result': 'You made the wrong decision!',
-        'eco-score': 1,
+        'airQualityRating': 1,
+        'emissionsRating': 1,
+        'energyRating': 1,
+        'transportRating': 1,
+        'walkabilityRating': 1,
+        'governmentActionRating': 1,
+        'environmentRestorationRating': 1,
         'pop-score': 1,
         'NPC-img-num': 1
     },
     15: {
-        'question': 'Yooo man... We gotta replant the trees dude, it a real issue man. The trees are gonna save us from the terrible carbon pollution bro. I love trees man. *Kisses Tree*',
+        'question': 'One of our aims to lower embodied emissions is to decrease parking spaces in buildings. Do you agree with this?',
         'yes-result': 'You made the correct decision!',
         'no-result': 'You made the wrong decision!',
-        'eco-score': 1,
+        'airQualityRating': 1,
+        'emissionsRating': 1,
+        'energyRating': 1,
+        'transportRating': 1,
+        'walkabilityRating': 1,
+        'governmentActionRating': 1,
+        'environmentRestorationRating': 1,
         'pop-score': 1,
         'NPC-img-num': 1
     },
@@ -150,7 +246,13 @@ let questions = {
         'question': "Bro, exporting out massive amounts of wood is totally not cool man. This totally goes against the grain of the trees dude. Let's export less so we can save our tree brethren. *Kisses you*",
         'yes-result': 'You made the correct decision!',
         'no-result': 'You made the wrong decision!',
-        'eco-score': 1,
+        'airQualityRating': 1,
+        'emissionsRating': 1,
+        'energyRating': 1,
+        'transportRating': 1,
+        'walkabilityRating': 1,
+        'governmentActionRating': 1,
+        'environmentRestorationRating': 1,
         'pop-score': 1,
         'NPC-img-num': 1
     },
@@ -158,28 +260,55 @@ let questions = {
         'question': 'Climate change is not cool at all man. But the changing temperatures and seasons could make the farmining industry innovate more dude... As a vegan, I think the farming industry is hella cool... We should ignore climate change to help save the cows *Kisses cow*',
         'yes-result': 'You made the correct decision!',
         'no-result': 'You made the wrong decision!',
-        'eco-score': 1,
+        'airQualityRating': 1,
+        'emissionsRating': 1,
+        'energyRating': 1,
+        'transportRating': 1,
+        'walkabilityRating': 1,
+        'governmentActionRating': 1,
+        'environmentRestorationRating': 1,
         'pop-score': 1,
         'NPC-img-num': 1
     },
     18: {
-        'question': 'Climate change is not cool at all man. But the changing temperatures and seasons could make the farmining industry innovate more dude... As a vegan, I think the farming industry is hella cool... We should ignore climate change to help save the cows *Kisses cow*',
+        'question': 'Pedestrians feel unsafe at night due to inadequate street lighting. Should we install more street lamps to increase the city\'s walkability and pedestrian safety?',
         'yes-result': 'You made the correct decision!',
         'no-result': 'You made the wrong decision!',
-        'eco-score': 1,
+        'airQualityRating': 1,
+        'emissionsRating': 1,
+        'energyRating': 1,
+        'transportRating': 1,
+        'walkabilityRating': 1,
+        'governmentActionRating': 1,
+        'environmentRestorationRating': 1,
         'pop-score': 1,
         'NPC-img-num': 1
     },
     19: {
-        'question': 'Climate change is not cool at all man. But the changing temperatures and seasons could make the farmining industry innovate more dude... As a vegan, I think the farming industry is hella cool... We should ignore climate change to help save the cows *Kisses cow*',
+        'question': 'Cars on the streets are zooming past pedestrians on the sidwalks! Should we force stricter speed limits to ensure pedestrian safety? ',
         'yes-result': 'You made the correct decision!',
         'no-result': 'You made the wrong decision!',
-        'eco-score': 1,
+        'airQualityRating': 1,
+        'emissionsRating': 1,
+        'energyRating': 1,
+        'transportRating': 1,
+        'walkabilityRating': 1,
+        'governmentActionRating': 1,
+        'environmentRestorationRating': 1,
         'pop-score': 1,
         'NPC-img-num': 1
     },
 
 };
+
+//Eco score factors
+let airQualityRating, emissionsRating, energyRating, transportRating, walkabilityRating, governmentActionRating, environmentRestorationRating;
+//keeps track of individual ratings
+let airQualityRatingCount = 0, emissionsRatingCount = 0, energyRatingCount = 0, transportRatingCount = 0, walkabilityRatingCount = 0, governmentActionRatingCount = 0, environmentRestorationRatingCount = 0;
+//Overall rating scaled out of 10, used to calculate ecoScore
+let ecoRating;
+//Sum of all ratings after every question, used to calculate endGameScore
+let overallRating = 0;
 
 //Creates an array of random integers from 0-9
 //For easy questions
@@ -562,7 +691,7 @@ function answerBoxTextScroll() {
         document.getElementById('answerBoxText').innerHTML += nextAnswerBoxText.shift();
     }
     //temporary change
-    setTimeout('answerBoxTextScroll()', 30);
+    setTimeout('answerBoxTextScroll()', 0.1);
 };
 
 // Function for event listener of the continue button in answer box to continue to next question
@@ -616,7 +745,7 @@ function introDialogue() {
         document.getElementById('next-dialogue-button').setAttribute('class', 'visible')
         return false
     }
-    setTimeout('introDialogue()', 30);
+    setTimeout('introDialogue()', 0.1);
 };
 
 // Function for the first question prompt that appears after the intro
@@ -700,7 +829,6 @@ function firstPrompt() {
     boxPopAudioOne.play();
 };
 
-
 function selectYesButton() {
     document.getElementById('yes-button').setAttribute('src', './assets/dialogue_box/buttons/YesButtonClicked.png')
     buttonClickOne.play();
@@ -718,8 +846,19 @@ function selectYesButton() {
         if (questionCounter > 9) {
             nextAnswerBoxText = questions[arrOfRandomIntegersHard[questionCounter - 10]]['yes-result'].split('');
 
+            //Eco score factors
+            airQualityRating = questions[arrOfRandomIntegersHard[questionCounter - 10]]['airQualityRating'];
+            emissionsRating = questions[arrOfRandomIntegersHard[questionCounter - 10]]['emissionsRating'];
+            energyRating = questions[arrOfRandomIntegersHard[questionCounter - 10]]['energyRating'];
+            transportRating = questions[arrOfRandomIntegersHard[questionCounter - 10]]['transportRating'];
+            walkabilityRating = questions[arrOfRandomIntegersHard[questionCounter - 10]]['walkabilityRating'];
+            governmentActionRating = questions[arrOfRandomIntegersHard[questionCounter - 10]]['governmentActionRating'];
+            environmentRestorationRating = questions[arrOfRandomIntegersHard[questionCounter - 10]]['environmentRestorationRating'];
+
             // Reflect on eco score
-            ecoScore += questions[arrOfRandomIntegersHard[questionCounter - 10]]['eco-score'];
+            ecoRating = airQualityRating + emissionsRating + energyRating + transportRating + walkabilityRating + governmentActionRating + environmentRestorationRating;
+            ecoRating /= 7;
+            ecoScore += ecoRating;
             if (ecoScore >= 10) {
                 ecoScore = 10;
             }
@@ -750,9 +889,20 @@ function selectYesButton() {
             // Set the global variable (for scrolling text) to the correct string
             nextAnswerBoxText = questions[arrOfRandomIntegersEasy[questionCounter]]['yes-result'].split('');
 
+            //Eco score factors
+            airQualityRating = questions[arrOfRandomIntegersEasy[questionCounter]]['airQualityRating'];
+            emissionsRating = questions[arrOfRandomIntegersEasy[questionCounter]]['emissionsRating'];
+            energyRating = questions[arrOfRandomIntegersEasy[questionCounter]]['energyRating'];
+            transportRating = questions[arrOfRandomIntegersEasy[questionCounter]]['transportRating'];
+            walkabilityRating = questions[arrOfRandomIntegersEasy[questionCounter]]['walkabilityRating'];
+            governmentActionRating = questions[arrOfRandomIntegersEasy[questionCounter]]['governmentActionRating'];
+            environmentRestorationRating = questions[arrOfRandomIntegersEasy[questionCounter]]['environmentRestorationRating'];
+
             // Reflect on eco score
             prevEcoScore = ecoScore;
-            ecoScore += questions[arrOfRandomIntegersEasy[questionCounter]]['eco-score'];
+            ecoRating = airQualityRating + emissionsRating + energyRating + transportRating + walkabilityRating + governmentActionRating + environmentRestorationRating;
+            ecoRating /= 7;
+            ecoScore += ecoRating;
             if (ecoScore >= 10) {
                 ecoScore = 10;
             }
@@ -782,11 +932,22 @@ function selectYesButton() {
         document.getElementById('yes-button').setAttribute('src', './assets/dialogue_box/buttons/YesButtonUnclicked.png')
 
         // Adjust score bar and popularity hearts to correct scale
-        document.getElementById('uiEcoScore').setAttribute('src', './assets/eco_score/eco_score' + ecoScore + '.png');
+        document.getElementById('uiEcoScore').setAttribute('src', './assets/eco_score/eco_score' + Math.round(ecoScore) + '.png');
         document.getElementById('uiPopScore').setAttribute('src', './assets/pop_score/pop_score' + popularityScore + '.png');
 
         // After 1 second, run function to display the answer box
         setTimeout(displayAnswerBox, 1000);
+
+        //Keeps track of individual ratings and overall ratings
+        airQualityRatingCount += airQualityRating
+        emissionsRatingCount += emissionsRating
+        energyRatingCount += energyRating
+        transportRatingCount += transportRating
+        walkabilityRatingCount += walkabilityRating
+        governmentActionRatingCount += governmentActionRating
+        environmentRestorationRatingCount += environmentRestorationRating
+        console.log(environmentRestorationRatingCount);
+        overallRating += airQualityRating + emissionsRating + energyRating + transportRating + walkabilityRating + governmentActionRating + environmentRestorationRating;
 
     }, 50)
 };
@@ -806,11 +967,22 @@ function selectNoButton() {
 
         //Hard questions, "level 2"
         if (questionCounter > 9) {
-            nextAnswerBoxText = questions[arrOfRandomIntegersHard[questionCounter - 10]]['no-result'].split('');
+            nextAnswerBoxText = questions[arrOfRandomIntegersHard[questionCounter - 10]]['no-result'].split('')
+
+            //Eco score factors
+            airQualityRating = questions[arrOfRandomIntegersHard[questionCounter - 10]]['airQualityRating'];
+            emissionsRating = questions[arrOfRandomIntegersHard[questionCounter - 10]]['emissionsRating'];
+            energyRating = questions[arrOfRandomIntegersHard[questionCounter - 10]]['energyRating'];
+            transportRating = questions[arrOfRandomIntegersHard[questionCounter - 10]]['transportRating'];
+            walkabilityRating = questions[arrOfRandomIntegersHard[questionCounter - 10]]['walkabilityRating'];
+            governmentActionRating = questions[arrOfRandomIntege6rsHard[questionCounter - 10]]['governmentActionRating'];
+            environmentRestorationRating = questions[arrOfRandomIntegersHard[questionCounter - 10]]['environmentRestorationRating'];
 
             // Reflect on eco score
             prevEcoScore = ecoScore;
-            ecoScore -= questions[arrOfRandomIntegersHard[questionCounter - 10]]['eco-score'];
+            ecoRating = airQualityRating + emissionsRating + energyRating + transportRating + walkabilityRating + governmentActionRating + environmentRestorationRating;
+            ecoRating /= 7;
+            ecoScore -= ecoRating;
             if (ecoScore >= 10) {
                 ecoScore = 10;
             }
@@ -841,8 +1013,19 @@ function selectNoButton() {
         else {
             nextAnswerBoxText = questions[arrOfRandomIntegersEasy[questionCounter]]['no-result'].split('');
 
+            //Eco score factors
+            airQualityRating = questions[arrOfRandomIntegersEasy[questionCounter]]['airQualityRating'];
+            emissionsRating = questions[arrOfRandomIntegersEasy[questionCounter]]['emissionsRating'];
+            energyRating = questions[arrOfRandomIntegersEasy[questionCounter]]['energyRating'];
+            transportRating = questions[arrOfRandomIntegersEasy[questionCounter]]['transportRating'];
+            walkabilityRating = questions[arrOfRandomIntegersEasy[questionCounter]]['walkabilityRating'];
+            governmentActionRating = questions[arrOfRandomIntegersEasy[questionCounter]]['governmentActionRating'];
+            environmentRestorationRating = questions[arrOfRandomIntegersEasy[questionCounter]]['environmentRestorationRating'];
+
             // Reflect on eco score
-            ecoScore -= questions[arrOfRandomIntegersEasy[questionCounter]]['eco-score'];
+            ecoRating = airQualityRating + emissionsRating + energyRating + transportRating + walkabilityRating + governmentActionRating + environmentRestorationRating;
+            ecoRating /= 7;
+            ecoScore -= ecoRating;
             if (ecoScore >= 10) {
                 ecoScore = 10;
             }
@@ -872,14 +1055,26 @@ function selectNoButton() {
         document.getElementById('no-button').setAttribute('src', './assets/dialogue_box/buttons/NoButtonUnclicked.png')
 
         // Adjust score bar and popularity hearts to correct scale
-        document.getElementById('uiEcoScore').setAttribute('src', './assets/eco_score/eco_score' + ecoScore + '.png');
+        document.getElementById('uiEcoScore').setAttribute('src', './assets/eco_score/eco_score' + Math.round(ecoScore) + '.png');
         document.getElementById('uiPopScore').setAttribute('src', './assets/pop_score/pop_score' + popularityScore + '.png');
 
         // After 1 second, run function to display the answer box
         setTimeout(displayAnswerBox, 1000);
 
+        //Keeps track of individual ratings and overall ratings
+        airQualityRatingCount += airQualityRating
+        emissionsRatingCount += emissionsRating
+        energyRatingCount += energyRating
+        transportRatingCount += transportRating
+        walkabilityRatingCount += walkabilityRating
+        governmentActionRatingCount += governmentActionRating
+        environmentRestorationRatingCount += environmentRestorationRating
+        console.log(environmentRestorationRating);
+        overallRating += airQualityRating + emissionsRating + energyRating + transportRating + walkabilityRating + governmentActionRating + environmentRestorationRating;
+
     }, 50)
 };
+
 
 // Displays the answer box
 function displayAnswerBox() {
@@ -907,9 +1102,9 @@ function hideAnswerBox() {
 // This is the main function to call the next yes/no question
 function nextQuestionPrompt() {
     // temporary change
-    if (questionCounter === 6 || popularityScore === 0) {
+    if (questionCounter === 1 || popularityScore === 0) {
         // end game
-        endGameSequence();
+        ratingSequence();
     } else if (questionCounter === 9) {
         // put newspaper popup here. show newspaper with headline:
         if (popularityScore > 0) {
@@ -1073,8 +1268,40 @@ let deletePaper = () => {
     newspaper.remove();
 }
 
+function ratingSequence() {
+
+    mayoralRating = (popularityScore * 7.5) + (ecoScore * 2.5)
+
+    setTimeout(() => {
+
+        //Create box that contains all ratings
+        document.getElementById('answerBox').setAttribute('class', 'visible');
+        document.getElementById('answerBoxText').setAttribute('class', 'visible');
+        document.getElementById('answerBoxText').setAttribute('style', 'white-space: pre;');
+
+
+        document.getElementById('answerBoxText').textContent = 'These are your end game stats:\r\n' +
+            'Air quality rating - ' + Math.round(airQualityRating/2) + '%\r\n' +
+            'Carbon emissions rating - ' + Math.round(emissionsRating/2) + '%\r\n' +
+            'Energy consumption rating - ' + Math.round(energyRating/2) + '%\r\n' +
+            'Transportation rating - ' + Math.round(transportRating/2) + '%\r\n' +
+            'Walkability rating - ' + Math.round(walkabilityRating/2) + '%\r\n' +
+            'Government action rating - ' + Math.round(governmentActionRating/2) + '%\r\n' +
+            'Environment restoration rating - ' + Math.round(environmentRestorationRating/2) + '%\r\n' +
+            'Approval rating - ' + mayoralRating + '%\r\n';
+
+
+    }, 100);
+
+    setTimeout(endGameSequence, 20000)
+
+
+}
+
 // If you finish all questions, or pop score reaches 0, end game.
 function endGameSequence() {
+    //Remove everything
+    document.getElementById('container').remove();
     // Stop the main theme audio 
     var audioMain = document.getElementById('mainSoundTrack');
     audioMain.pause()
@@ -1082,7 +1309,7 @@ function endGameSequence() {
     var endAudio = document.getElementById('endSoundTrack');
     endAudio.play()
     // Calculate user's end game score here
-    let endGameScore = (popularityScore + ecoScore) * 69;
+    let endGameScore = Math.round(overallRating * (9999/140));
 
     // Timestamp of when the game ended
     let currentDate = new Date();
@@ -1125,7 +1352,6 @@ function endGameSequence() {
 
     // Remove everything
     setTimeout(() => {
-        document.getElementById('container').remove();
 
         let endGameBox = document.createElement('img');
         endGameBox.setAttribute('id', 'endGameBox');
