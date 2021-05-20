@@ -136,8 +136,8 @@ div {
 }
 
 #currentTermImage {
-    width: 25vw;
-    height: 20vh;
+    width: 20vw;
+    height: 15vh;
     left: 0vw;
     top: 1vh;
     z-index: -1;
