@@ -382,17 +382,21 @@ function suitNext() {
 
 // Door Animation Function
 
+function updateMayorbg(){
+    document.getElementById('mayorbg').setAttribute('src', './assets/mayorsofficebg/mayorsoffice2.png')
+}
+
 function doorAnimate1(){
     document.getElementById('char-customization').remove();
 
     setTimeout (function(){
-        document.getElementById('mayorbg').setAttribute('src', './assets/mayorsofficebg/mayorsoffice2.png')
+        setTimeout(updateMayorbg, 1000)
         var doorsound = document.getElementById('doorsound');
         var audio = document.getElementById('myaudio');
         audio.pause();
         doorsound.play();
         setTimeout(doorAnimate2, 2000)
-    , 10000})
+    , 1000})
 
 }
 function doorAnimate2(){
