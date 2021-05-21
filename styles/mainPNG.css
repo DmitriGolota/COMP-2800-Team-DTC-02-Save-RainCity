@@ -27,7 +27,7 @@ img {
     position: absolute;
 }
 
-div {
+main div {
     position: absolute;
     top: 0;
 }
@@ -189,7 +189,7 @@ div {
     color: #807468;
     width: 46vw;
     left: 24.5vw;
-    top: 10vh;
+    top: 12vh;
 }
 
 #newspaperContinue {
@@ -256,11 +256,11 @@ div {
     position: absolute;
     color: rgb(235, 226, 226);
     font-family: Pixel;
-    font-size: 2.5vw;
+    font-size: 2vw;
     text-align: center;
-    width: 60vw;
-    left: 20vw;
-    top: 15vh;
+    width: 62vw;
+    left: 19vw;
+    top: 13vh;
 }
 
 #main-character {
@@ -346,8 +346,9 @@ div {
     font-family: Pixel;
     text-align: right;
     font-size: 7vw;
-    top: 35vh;
-    left: 64vw;
+    margin: 0;
+    top: 45vh;
+    left: 63vw;
 }
 
 #returnButton {
@@ -355,6 +356,38 @@ div {
     height: 12vh;
     left: 45vw;
     top: 65vh;
+}
+
+a {
+    position: absolute !important;
+    left: 2vw !important;
+}
+
+.shareaholic-service-facebook {
+    top: 8vh !important;
+}
+
+.shareaholic-service-twitter {
+    top: 28vh !important;
+}
+
+.shareaholic-service-linkedin {
+    top: 48vh !important;
+}
+
+.shareaholic-service-email_this {
+    top: 68vh !important;
+}
+
+a.shareaholic-service-icon.shareaholic-service-default {
+    height: 15vh !important; 
+    width: 15vh !important;
+}
+
+a.shareaholic-service-icon:before {
+    font-size: 10vh;
+    top: 2.5vh !important;
+    left: 2.5vh !important;
 }
 /* End of game over screen */
 
@@ -420,3 +453,39 @@ div {
     0% {opacity:0;}
     100% {opacity:1;}
   }
+/* End of easter egg button positions */
+
+/* Text-size media queries */
+@media (max-aspect-ratio: 19/9) {
+    #endGameScoreText {
+        top: 46vh;
+    }
+}
+
+@media (max-aspect-ratio: 17/9) {
+    #endGameScoreText {
+        top: 47vh;
+    }
+}
+
+
+@media (max-aspect-ratio: 14/9) {
+    #endGameScoreText {
+        font-size: 8vw;
+        top: 47vh;
+    }
+}
+
+@media (max-aspect-ratio: 17/12) {
+    #endGameScoreText {
+        font-size: 8vw;
+        top: 48vh;
+    }
+}
+
+@media (max-aspect-ratio: 3/2) {
+    #question-prompt-text {
+        font-size: 2.5vw;   
+    }
+}
+/* End of text-size media queries */
