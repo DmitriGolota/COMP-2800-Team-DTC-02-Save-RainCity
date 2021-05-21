@@ -21,16 +21,17 @@ let questionCounter = 0;
 //If correct-point is 1, the yes-result is correct. If correct-point is 0, the no-result is correct.
 let questions = {
     0: {
-        'question': 'Mayor! People have raised concerns about how boring it is to walk in some neighbourhoods. Should we increase the amount of trees and plants near sidewalks to make them more enjoyable to walk?',
-        'yes-result': 'People are starting to walk more now! The less cars on the road the better! They are thrilled by your first decision as Mayor!',
+        'question': 'Mayor! People have raised concerns about how boring it is to walk in some neighbourhoods. \
+        Should we increase the amount of trees and plants near sidewalks to make them more enjoyable to walk?',
+        'yes-result': 'People are starting to walk more now! The less cars on the road the better!',
         'no-result': 'People are still unmotivated to walk rather than drive. Hopefully your next decisions will be better!',
-        'airQualityRating': 1,
-        'emissionsRating': 1,
-        'energyRating': 1,
-        'transportRating': 1,
-        'walkabilityRating': 1,
-        'governmentActionRating': 1,
-        'environmentRestorationRating': 1,
+        'airQualityRating': 6,
+        'emissionsRating': 2,
+        'energyRating': 0,
+        'transportRating': 2,
+        'walkabilityRating': 7,
+        'governmentActionRating': 4,
+        'environmentRestorationRating': 5,
         'eco-score': 1,
         'pop-score': 1,
         'correct-point': 1,
@@ -38,24 +39,26 @@ let questions = {
     },
     1: {
         'question': "These bikers never look where they're going.. but I guess it's better than driving... Should we build more bike-only paths to encourage more cycling?",
-        'yes-result': 'Some of the driving population are angry to see more bikers on the road! At least there are less cars on the road!',
-        'no-result': 'The driving population is pleased with your decision, however; you did not help the environment.',
-        'airQualityRating': 1,
-        'emissionsRating': 1,
-        'energyRating': 1,
-        'transportRating': 1,
-        'walkabilityRating': 1,
-        'governmentActionRating': 1,
-        'environmentRestorationRating': 1,
-        'eco-score': 1,
-        'pop-score': 1,
+        'yes-result': 'One of Vancouver\'s Climate Emergency Action Plan\'s targets is to ensure two-thirds of trips to be taken by active transportation by 2030. More bike paths will definitely help us meet this target!',
+        'no-result': 'One of Vancouver\'s Climate Emergency Action Plan\'s targets is to ensure two-thirds of trips to be taken by active transportation by 2030. More bike paths would have helped us meet this target!',
+        'airQualityRating': 7,
+        'emissionsRating': 3,
+        'energyRating': 0,
+        'transportRating': 0,
+        'walkabilityRating': 0,
+        'governmentActionRating': 0,
+        'environmentRestorationRating': 0,
+        'eco-score-yes': 1,
+        'pop-score-yes': 1,
+        'eco-score-no': -1,
+        'pop-score-no': -1,
         'correct-point': 1,
         'NPC-img-num': 5
     },
     2: {
         'question': 'Traffic in Downtown RainCity is at an all time high and that means lots of vehicle carbon emissions! Should we charge a fee for private vehicles entering the Metro Core?',
-        'yes-result': 'Drivers are not happy with your decision, but this is definitely going to reduce carbon emissions! Good work!',
-        'no-result': 'Drivers are happy to continue driving wherever they please, but your decision has not reduced any carbon emissions!',
+        'yes-result': "Great decision! The Vancouver CEAP is planning to implement transportation pricing within the Vancouver Metro Core. This will help with reducing traffic congestion and carbon emissions!",
+        'no-result': 'Drivers are happy to drive with no additional fees, but this would have helped to reduce traffic congestion and carbon emissions. The Vancouver CEAP is planning to implement transportation pricing within the Vancouver Metro Core.',
         'airQualityRating': 1,
         'emissionsRating': 1,
         'energyRating': 1,
@@ -63,8 +66,10 @@ let questions = {
         'walkabilityRating': 1,
         'governmentActionRating': 1,
         'environmentRestorationRating': 1,
-        'eco-score': 1,
-        'pop-score': 1,
+        'eco-score-yes': 1,
+        'pop-score-yes': -2,
+        'eco-score-no': -1,
+        'pop-score-no': 1,
         'correct-point': 1,
         'NPC-img-num': 3
     },
@@ -79,15 +84,17 @@ let questions = {
         'walkabilityRating': 1,
         'governmentActionRating': 1,
         'environmentRestorationRating': 1,
-        'eco-score': 1,
-        'pop-score': 1,
-        'correct-point': 1,
+        'eco-score-yes': -1,
+        'pop-score-yes': -2,
+        'eco-score-no': 0,
+        'pop-score-no': 0,
+        'correct-point': 0,
         'NPC-img-num': 1
     },
     4: {
         'question': 'Yooo man... We gotta replant the trees dude. Should we enforce a law that requires people to plant a tree for every tree they chop down?',
-        'yes-result': 'Totally tubular, man! The more trees the better!',
-        'no-result': 'That is so bogus! We are gonna run out of trees, at this rate!',
+        'yes-result': 'Vancouver\'s CEAP is aiming to restore forests and coastal eco-systems by 2030. This is a totally tubular decision, man! The more trees the better!',
+        'no-result': 'Vancouver\'s CEAP is aiming to restore forests and coastal eco-systems by 2030. That was a bogus decision, bro! We are gonna run out of trees at this rate!',
         'airQualityRating': 1,
         'emissionsRating': 1,
         'energyRating': 1,
@@ -95,8 +102,10 @@ let questions = {
         'walkabilityRating': 1,
         'governmentActionRating': 1,
         'environmentRestorationRating': 1,
-        'eco-score': 1,
-        'pop-score': 1,
+        'eco-score-yes': 2,
+        'pop-score-yes': 1,
+        'eco-score-no': -1,
+        'pop-score-no': -1,
         'correct-point': 1,
         'NPC-img-num': 6
     },
@@ -111,15 +120,17 @@ let questions = {
         'walkabilityRating': 1,
         'governmentActionRating': 1,
         'environmentRestorationRating': 1,
-        'eco-score': 1,
-        'pop-score': 1,
+        'eco-score-yes': 2,
+        'pop-score-yes': 2,
+        'eco-score-no': -1,
+        'pop-score-no': -2,
         'correct-point': 1,
         'NPC-img-num': 2
     },
     6: {
-        'question': 'Wow! So many people have started using public transit for their commutes! Should we increase the ticket price for buses and trains from $2 to $4?',
-        'yes-result': 'People are starting to walk more now! The less cars on the road the better! They are thrilled by your first decision as Mayor!',
-        'no-result': 'People are still unmotivated to walk rather than drive. Hopefully your next decisions will be better!',
+        'question': 'Wow! So many people have started using public transit for their commutes! Should we increase the ticket price for buses and trains from $3 to $3.75?',
+        'yes-result': 'Citizens are furious at the new price spike! They are starting to consider driving rather than public transit! Bad idea, you capitalist pig!',
+        'no-result': 'Good thinking! Raising the price would not have been good for the environment! The budget department can kick rocks!',
         'airQualityRating': 1,
         'emissionsRating': 1,
         'energyRating': 1,
@@ -127,15 +138,17 @@ let questions = {
         'walkabilityRating': 1,
         'governmentActionRating': 1,
         'environmentRestorationRating': 1,
-        'eco-score': 1,
-        'pop-score': 1,
-        'correct-point': 1,
+        'eco-score-yes': -2,
+        'pop-score-yes': -4,
+        'eco-score-no': 0,
+        'pop-score-no': 1,
+        'correct-point': 0,
         'NPC-img-num': 1
     },
     7: {
-        'question': 'People are complaining about the lack of parking in Downtown RainCity! Can we pave over a greenspace to build a parkade?',
-        'yes-result': 'You made the correct decision!',
-        'no-result': 'You made the wrong decision!',
+        'question': 'People are complaining about the lack of parking in Downtown RainCity! Can we pave over a disabled-dog-park to build a parkade?',
+        'yes-result': 'What is wrong with you?! Think of those poor dogs! The citizens will have your head for this!',
+        'no-result': 'Phew! The people would have been furious if you paved over that dog-park!',
         'airQualityRating': 1,
         'emissionsRating': 1,
         'energyRating': 1,
@@ -143,15 +156,17 @@ let questions = {
         'walkabilityRating': 1,
         'governmentActionRating': 1,
         'environmentRestorationRating': 1,
-        'eco-score': 1,
-        'pop-score': 1,
-        'correct-point': 1,
+        'eco-score-yes': -2,
+        'pop-score-yes': -5,
+        'eco-score-no': 1,
+        'pop-score-no': 2,
+        'correct-point': 0,
         'NPC-img-num': 1
     },
     8: {
         'question': "Mayor! Still too many people are driving private vehicles unnecessarily! Should we expand our residential parking permits city-wide?",
-        'yes-result': 'You made the correct decision!',
-        'no-result': 'You made the wrong decision!',
+        'yes-result': 'The Vancouver CEAP is planning to expand the residential parking permits city-wide to discourage private vehicle ownership. While the citizens will not be happy, this will definitely reduce the amount of cars on the streets!',
+        'no-result': 'The Vancouver CEAP is planning to expand the residential parking permits city-wide to discourage private vehicle ownership. While the citizens are happy for now, this does not help reduce the amount of cars on the streets!',
         'airQualityRating': 1,
         'emissionsRating': 1,
         'energyRating': 1,
@@ -159,15 +174,17 @@ let questions = {
         'walkabilityRating': 1,
         'governmentActionRating': 1,
         'environmentRestorationRating': 1,
-        'eco-score': 1,
-        'pop-score': 1,
+        'eco-score-yes': 3,
+        'pop-score-yes': -1,
+        'eco-score-no': -2,
+        'pop-score-no': 1,
         'correct-point': 1,
         'NPC-img-num': 1
     },
     9: {
         'question': 'Mayor, is it just me or is it hard to breathe downtown? Should we add an additional carbon pollution surcharge to parking permits for non-electric vehicles?',
-        'yes-result': 'You made the correct decision!',
-        'no-result': 'You made the wrong decision!',
+        'yes-result': 'Good idea! The citizens are not happy about the extra fees, but this will help us meet the Vancouver CEAP targets for 50% of the kms driven on Vancouver roads to be by zero emissions vehicles.',
+        'no-result': 'Uh oh! The citizens are happy to avoid extra fees, but this will not help us meet the Vancouver CEAP targets for 50% of the kms driven on Vancouver roads to be by zero emissions vehicles.',
         'airQualityRating': 1,
         'emissionsRating': 1,
         'energyRating': 1,
@@ -175,15 +192,17 @@ let questions = {
         'walkabilityRating': 1,
         'governmentActionRating': 1,
         'environmentRestorationRating': 1,
-        'eco-score': 1,
-        'pop-score': 1,
+        'eco-score-yes': 2,
+        'pop-score-yes': -2,
+        'eco-score-no': -2,
+        'pop-score-no': 0,
         'correct-point': 1,
         'NPC-img-num': 1
     },
     10: {
         'question': 'A lot of carbon emissions can be eliminated by switching from natural gas to electricity for household heating. Should we require new home constructions to use electrical appliances for heating and hot water?',
-        'yes-result': 'You made the correct decision!',
-        'no-result': 'You made the wrong decision!',
+        'yes-result': 'Excellent choice! By January 1st, 2022, the city of Vancouver plans to require the majority of new home constructions to use electrical appliances for heating and hot water.',
+        'no-result': 'Bad choice! The smog produced by burning natural gas is getting worse! By January 1st, 2022, the city of Vancouver plans to require the majority of new home constructions to use electrical appliances for heating and hot water.',
         'airQualityRating': 1,
         'emissionsRating': 1,
         'energyRating': 1,
@@ -191,15 +210,17 @@ let questions = {
         'walkabilityRating': 1,
         'governmentActionRating': 1,
         'environmentRestorationRating': 1,
-        'eco-score': 1,
-        'pop-score': 1,
+        'eco-score-yes': 2,
+        'pop-score-yes': -1,
+        'eco-score-no': -2,
+        'pop-score-no': 1,
         'correct-point': 1,
         'NPC-img-num': 1
     },
     11: {
         'question': 'We need to do something drastic to reduce our building carbon emissions. Should we begin issuing fines to building owners that still operate with non-renewable natural gas?',
-        'yes-result': 'You made the correct decision!',
-        'no-result': 'You made the wrong decision!',
+        'yes-result': 'While this is not an idea proposed by the Vancouver CEAP, this could help to reduce embodied emissions in new buildings and construction projects by 40% by 2030.',
+        'no-result': 'While this is not an idea proposed by the Vancouver CEAP, this could have helped to reduce embodied emissions in new buildings and construction projects by 40% by 2030.',
         'airQualityRating': 1,
         'emissionsRating': 1,
         'energyRating': 1,
@@ -207,15 +228,17 @@ let questions = {
         'walkabilityRating': 1,
         'governmentActionRating': 1,
         'environmentRestorationRating': 1,
-        'eco-score': 1,
-        'pop-score': 1,
+        'eco-score-yes': 3,
+        'pop-score-yes': -2,
+        'eco-score-no': -2,
+        'pop-score-no': 1,
         'correct-point': 1,
         'NPC-img-num': 1
     },
     12: {
-        'question': 'The Landlords Association of Raincity hates big windows; they believe they are too expensive! Bigger windows allows for improved air flow which reduces energy used for household heating. Do you want to mandate the usage of big windows or appease the landlords of Raincity?',
-        'yes-result': 'Let there be light! Citizens are breathing a breathe of fresh air!',
-        'no-result': 'You made the wrong decision!',
+        'question': 'The Architects of Raincity think windows are a faux-pas! However, bigger windows allow for improved air flow which reduce energy used for household heating. Do you want to mandate the usage of big windows?',
+        'yes-result': 'Let there be light! Citizens are breathing a breathe of fresh air! Although, the architects are definitely not happy!',
+        'no-result': 'A great cloud of darkness descends upon the citizens of RainCity! Everyone is sadder and lacking Vitamin D!',
         'airQualityRating': 1,
         'emissionsRating': 1,
         'energyRating': 1,
@@ -223,15 +246,17 @@ let questions = {
         'walkabilityRating': 1,
         'governmentActionRating': 1,
         'environmentRestorationRating': 1,
-        'eco-score': 1,
-        'pop-score': 1,
+        'eco-score-yes': 2,
+        'pop-score-yes': -1,
+        'eco-score-no': -2,
+        'pop-score-no': -1,
         'correct-point': 1,
         'NPC-img-num': 1
     },
     13: {
-        'question': "Mayor, Tim's Mill just called and they want to expand into old-growth forests. This could make us a lot of money! Should we start chopping?",
-        'yes-result': 'You made the correct decision!',
-        'no-result': 'You made the wrong decision!',
+        'question': "Mayor! Should we expand our logging into the old-growth forests to make way for solar energy farms?",
+        'yes-result': 'While we have paved more space for a form of renewable energy, we wiped out thousands of habitats in the process! Not a good move!',
+        'no-result': 'The citizens of RainCity would have been furious if they found out about more deforestation! We can build solar energy farms elsewhere instead and keep the beautiful trees!',
         'airQualityRating': 1,
         'emissionsRating': 1,
         'energyRating': 1,
@@ -239,14 +264,16 @@ let questions = {
         'walkabilityRating': 1,
         'governmentActionRating': 1,
         'environmentRestorationRating': 1,
-        'eco-score': 1,
-        'pop-score': 1,
-        'correct-point': 1,
+        'eco-score-yes': -4,
+        'pop-score-yes': -3,
+        'eco-score-no': 1,
+        'pop-score-no': 1,
+        'correct-point': 0,
         'NPC-img-num': 1
     },
     14: {
         'question': 'Apartment dwellers in RainCity are asking for more parking spots within building parkades. Should we increase the maximum parking limit for residential buildings?',
-        'yes-result': 'You made the correct decision!',
+        'yes-result': 'Citizens love quick and easy parking! However, introducing a parking maximum would have been a good idea! We should focus on reducing the need for cars overall!',
         'no-result': 'The citizens are not happy with their lack of parking. However, introducing a parking maximum is a good idea! We should focus on reducing the need for cars overall!',
         'airQualityRating': 1,
         'emissionsRating': 1,
@@ -255,15 +282,17 @@ let questions = {
         'walkabilityRating': 1,
         'governmentActionRating': 1,
         'environmentRestorationRating': 1,
-        'eco-score': 1,
-        'pop-score': 1,
-        'correct-point': 1,
+        'eco-score-yes': -2,
+        'pop-score-yes': 1,
+        'eco-score-no': 3,
+        'pop-score-no': -1,
+        'correct-point': 0,
         'NPC-img-num': 1
     },
     15: {
         'question': 'Drivers are complaining about the bright streetlamps! Should we get rid of some streetlamps to accommodate late-night drivers?',
-        'yes-result': 'You made the correct decision!',
-        'no-result': 'Residents no longer feel safe walking at night! Removing streetlamps is taking a step backward in our plan for creating more walkable neighborhoods.',
+        'yes-result': 'Residents no longer feel safe walking at night! Removing streetlamps is taking a step backward in our plan for creating more walkable neighborhoods.!',
+        'no-result': 'Good thinking! We should keep as many streetlamps as possible to promote walkable neighborhoods and the safety of pedestrians!',
         'airQualityRating': 1,
         'emissionsRating': 1,
         'energyRating': 1,
@@ -271,15 +300,17 @@ let questions = {
         'walkabilityRating': 1,
         'governmentActionRating': 1,
         'environmentRestorationRating': 1,
-        'eco-score': 1,
-        'pop-score': 1,
-        'correct-point': 1,
+        'eco-score-yes': -1,
+        'pop-score-yes': -2,
+        'eco-score-no': 1,
+        'pop-score-no': 0,
+        'correct-point': 0,
         'NPC-img-num': 1
     },
     16: {
         'question': "Exporting out massive amounts of wood is totally not the vibe, man. This goes against the grain of the trees, dude. Should we reduce the amount of trees we export?",
-        'yes-result': 'You made the correct decision!',
-        'no-result': 'You made the wrong decision!',
+        'yes-result': 'The forests are flourishing, but a large part of RainCity\'s economy is built around our forestry industry. This was a good environmental decision, but some citizens are losing their jobs.',
+        'no-result': 'Not a good call! Reducing the amount of trees we export would have allowed for more trees to capture even more carbon. The logging industry continues unchecked!',
         'airQualityRating': 1,
         'emissionsRating': 1,
         'energyRating': 1,
@@ -287,15 +318,17 @@ let questions = {
         'walkabilityRating': 1,
         'governmentActionRating': 1,
         'environmentRestorationRating': 1,
-        'eco-score': 1,
-        'pop-score': 1,
+        'eco-score-yes': 1,
+        'pop-score-yes': 2,
+        'eco-score-no': -1,
+        'pop-score-no': -1,
         'correct-point': 1,
         'NPC-img-num': 1
     },
     17: {
         'question': 'Climate change is so not cool, man! But the warmer weather is really helping my tan! Should we ignore climate change so I can lay on the beach more often?',
-        'yes-result': 'You made the correct decision!',
-        'no-result': 'You made the wrong decision!',
+        'yes-result': 'Cowabunga! Catch me in my speedo at Catsilano Beach this weekend!',
+        'no-result': 'Total bummer, less beach time for me!',
         'airQualityRating': 1,
         'emissionsRating': 1,
         'energyRating': 1,
@@ -303,15 +336,17 @@ let questions = {
         'walkabilityRating': 1,
         'governmentActionRating': 1,
         'environmentRestorationRating': 1,
-        'eco-score': 1,
-        'pop-score': 1,
-        'correct-point': 1,
+        'eco-score-yes': -4,
+        'pop-score-yes': -2,
+        'eco-score-no': 2,
+        'pop-score-no': 1,
+        'correct-point': 0,
         'NPC-img-num': 1
     },
     18: {
         'question': 'Mayor, this is a marketing disaster! Only 7% of RainCity citizens know what our biggest carbon impact really is! Should we increase our marketing budget to spread awareness about carbon footprints?',
-        'yes-result': 'You made the correct decision!',
-        'no-result': 'You made the wrong decision!',
+        'yes-result': 'Excellent! We can hire some junior software developers to make a game to raise awareness! Hmm... I think we should call it "Save RainCity"!',
+        'no-result': 'You are right! What a waste of money! The budget department is going to throw an office party in your honor!',
         'airQualityRating': 1,
         'emissionsRating': 1,
         'energyRating': 1,
@@ -319,15 +354,17 @@ let questions = {
         'walkabilityRating': 1,
         'governmentActionRating': 1,
         'environmentRestorationRating': 1,
-        'eco-score': 1,
-        'pop-score': 1,
+        'eco-score-yes': 3,
+        'pop-score-yes': 2,
+        'eco-score-no': -1,
+        'pop-score-no': -1,
         'correct-point': 1,
         'NPC-img-num': 1
     },
     19: {
         'question': 'Recent studies have shown that people who do not depend on a car are healthier and happier! Should we increase funding and promote Walk/Bike-To-Work programs for businesses?',
-        'yes-result': 'You made the correct decision!',
-        'no-result': 'You made the wrong decision!',
+        'yes-result': 'RainCity citizens are thriving! They have found a new passion for walking and cycling and starting to ditch their cars! Good work!',
+        'no-result': 'People are still relying on their cars to commute and are complaining about traffic congestion. Try better next time!',
         'airQualityRating': 1,
         'emissionsRating': 1,
         'energyRating': 1,
@@ -335,8 +372,10 @@ let questions = {
         'walkabilityRating': 1,
         'governmentActionRating': 1,
         'environmentRestorationRating': 1,
-        'eco-score': 1,
-        'pop-score': 1,
+        'eco-score-yes': 2,
+        'pop-score-yes': 2,
+        'eco-score-no': -2,
+        'pop-score-no': -2,
         'correct-point': 1,
         'NPC-img-num': 1
     }
@@ -978,6 +1017,15 @@ function selectYesButton() {
 
             // Count number of correct answers made by players
             if (questions[arrOfRandomIntegersHard[questionCounter - 10]]['correct-point'] === 1) {
+                //Keeps track of accumulated ratings
+                airQualityRating += questions[arrOfRandomIntegersHard[questionCounter - 10]]['airQualityRating'];
+                emissionsRating += questions[arrOfRandomIntegersHard[questionCounter - 10]]['emissionsRating'];
+                energyRating += questions[arrOfRandomIntegersHard[questionCounter - 10]]['energyRating'];
+                transportRating += questions[arrOfRandomIntegersHard[questionCounter - 10]]['transportRating'];
+                walkabilityRating += questions[arrOfRandomIntegersHard[questionCounter - 10]]['walkabilityRating'];
+                governmentActionRating += questions[arrOfRandomIntegersHard[questionCounter - 10]]['governmentActionRating'];
+                environmentRestorationRating += questions[arrOfRandomIntegersHard[questionCounter - 10]]['environmentRestorationRating'];
+                // Count number of correct answers made by players
                 mayoralRating += 1;
             }
         }
@@ -987,14 +1035,6 @@ function selectYesButton() {
             // Set the global variable (for scrolling text) to the correct string
             nextAnswerBoxText = questions[arrOfRandomIntegersEasy[questionCounter]]['yes-result'].split('');
 
-            //Keeps track of accumulated ratings
-            airQualityRating += questions[arrOfRandomIntegersEasy[questionCounter]]['airQualityRating'];
-            emissionsRating += questions[arrOfRandomIntegersEasy[questionCounter]]['emissionsRating'];
-            energyRating += questions[arrOfRandomIntegersEasy[questionCounter]]['energyRating'];
-            transportRating += questions[arrOfRandomIntegersEasy[questionCounter]]['transportRating'];
-            walkabilityRating += questions[arrOfRandomIntegersEasy[questionCounter]]['walkabilityRating'];
-            governmentActionRating += questions[arrOfRandomIntegersEasy[questionCounter]]['governmentActionRating'];
-            environmentRestorationRating += questions[arrOfRandomIntegersEasy[questionCounter]]['environmentRestorationRating'];
 
             // Reflect on eco score
             prevEcoScore = ecoScore;
@@ -1024,8 +1064,16 @@ function selectYesButton() {
             // Change the question text to the next question
             document.getElementById('question-prompt-text').textContent = questions[arrOfRandomIntegersEasy[questionCounter]]['question'];
 
-            // Count number of correct answers made by players
             if (questions[arrOfRandomIntegersEasy[questionCounter]]['correct-point'] === 1) {
+                //Keeps track of accumulated ratings
+                airQualityRating += questions[arrOfRandomIntegersEasy[questionCounter]]['airQualityRating'];
+                emissionsRating += questions[arrOfRandomIntegersEasy[questionCounter]]['emissionsRating'];
+                energyRating += questions[arrOfRandomIntegersEasy[questionCounter]]['energyRating'];
+                transportRating += questions[arrOfRandomIntegersEasy[questionCounter]]['transportRating'];
+                walkabilityRating += questions[arrOfRandomIntegersEasy[questionCounter]]['walkabilityRating'];
+                governmentActionRating += questions[arrOfRandomIntegersEasy[questionCounter]]['governmentActionRating'];
+                environmentRestorationRating += questions[arrOfRandomIntegersEasy[questionCounter]]['environmentRestorationRating'];
+                // Count number of correct answers made by players
                 mayoralRating += 1;
             }
         }
@@ -1061,14 +1109,6 @@ function selectNoButton() {
         if (questionCounter > 9) {
             nextAnswerBoxText = questions[arrOfRandomIntegersHard[questionCounter - 10]]['no-result'].split('')
 
-            //Eco score factors
-            airQualityRating = questions[arrOfRandomIntegersHard[questionCounter - 10]]['airQualityRating'];
-            emissionsRating = questions[arrOfRandomIntegersHard[questionCounter - 10]]['emissionsRating'];
-            energyRating = questions[arrOfRandomIntegersHard[questionCounter - 10]]['energyRating'];
-            transportRating = questions[arrOfRandomIntegersHard[questionCounter - 10]]['transportRating'];
-            walkabilityRating = questions[arrOfRandomIntegersHard[questionCounter - 10]]['walkabilityRating'];
-            governmentActionRating = questions[arrOfRandomIntege6rsHard[questionCounter - 10]]['governmentActionRating'];
-            environmentRestorationRating = questions[arrOfRandomIntegersHard[questionCounter - 10]]['environmentRestorationRating'];
 
             // Reflect on eco score
             prevEcoScore = ecoScore;
@@ -1098,8 +1138,16 @@ function selectNoButton() {
             // Change the question text to the next question
             document.getElementById('question-prompt-text').textContent = questions[arrOfRandomIntegersHard[questionCounter - 10]]['question'];
 
-            // Count number of correct answers made by players
             if (questions[arrOfRandomIntegersHard[questionCounter - 10]]['correct-point'] === 0) {
+                //Keeps track of accumulated ratings
+                airQualityRating += questions[arrOfRandomIntegersHard[questionCounter - 10]]['airQualityRating'];
+                emissionsRating += questions[arrOfRandomIntegersHard[questionCounter - 10]]['emissionsRating'];
+                energyRating += questions[arrOfRandomIntegersHard[questionCounter - 10]]['energyRating'];
+                transportRating += questions[arrOfRandomIntegersHard[questionCounter - 10]]['transportRating'];
+                walkabilityRating += questions[arrOfRandomIntegersHard[questionCounter - 10]]['walkabilityRating'];
+                governmentActionRating += questions[arrOfRandomIntegersHard[questionCounter - 10]]['governmentActionRating'];
+                environmentRestorationRating += questions[arrOfRandomIntegersHard[questionCounter - 10]]['environmentRestorationRating'];
+                // Count number of correct answers made by players
                 mayoralRating += 1;
             }
         }
@@ -1108,14 +1156,14 @@ function selectNoButton() {
         else {
             nextAnswerBoxText = questions[arrOfRandomIntegersEasy[questionCounter]]['no-result'].split('');
 
-            //Eco score factors
-            airQualityRating = questions[arrOfRandomIntegersEasy[questionCounter]]['airQualityRating'];
-            emissionsRating = questions[arrOfRandomIntegersEasy[questionCounter]]['emissionsRating'];
-            energyRating = questions[arrOfRandomIntegersEasy[questionCounter]]['energyRating'];
-            transportRating = questions[arrOfRandomIntegersEasy[questionCounter]]['transportRating'];
-            walkabilityRating = questions[arrOfRandomIntegersEasy[questionCounter]]['walkabilityRating'];
-            governmentActionRating = questions[arrOfRandomIntegersEasy[questionCounter]]['governmentActionRating'];
-            environmentRestorationRating = questions[arrOfRandomIntegersEasy[questionCounter]]['environmentRestorationRating'];
+            //Keeps track of accumulated ratings
+            airQualityRating += questions[arrOfRandomIntegersEasy[questionCounter]]['airQualityRating'];
+            emissionsRating += questions[arrOfRandomIntegersEasy[questionCounter]]['emissionsRating'];
+            energyRating += questions[arrOfRandomIntegersEasy[questionCounter]]['energyRating'];
+            transportRating += questions[arrOfRandomIntegersEasy[questionCounter]]['transportRating'];
+            walkabilityRating += questions[arrOfRandomIntegersEasy[questionCounter]]['walkabilityRating'];
+            governmentActionRating += questions[arrOfRandomIntegersEasy[questionCounter]]['governmentActionRating'];
+            environmentRestorationRating += questions[arrOfRandomIntegersEasy[questionCounter]]['environmentRestorationRating'];
 
             // Reflect on eco score
             prevEcoScore = ecoScore;
@@ -1147,6 +1195,15 @@ function selectNoButton() {
 
             // Count number of correct answers made by players
             if (questions[arrOfRandomIntegersEasy[questionCounter]]['correct-point'] === 0) {
+                //Keeps track of accumulated ratings
+                airQualityRating += questions[arrOfRandomIntegersEasy[questionCounter]]['airQualityRating'];
+                emissionsRating += questions[arrOfRandomIntegersEasy[questionCounter]]['emissionsRating'];
+                energyRating += questions[arrOfRandomIntegersEasy[questionCounter]]['energyRating'];
+                transportRating += questions[arrOfRandomIntegersEasy[questionCounter]]['transportRating'];
+                walkabilityRating += questions[arrOfRandomIntegersEasy[questionCounter]]['walkabilityRating'];
+                governmentActionRating += questions[arrOfRandomIntegersEasy[questionCounter]]['governmentActionRating'];
+                environmentRestorationRating += questions[arrOfRandomIntegersEasy[questionCounter]]['environmentRestorationRating'];
+                // Count number of correct answers made by players
                 mayoralRating += 1;
             }
         }
