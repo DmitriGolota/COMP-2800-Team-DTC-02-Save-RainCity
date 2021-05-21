@@ -446,10 +446,6 @@ let suitAssets = {
 };
 let suitAssetsLength = Object.keys(suitAssets).length - 1;
 
-function test() {
-    console.log(hairNum)
-}
-
 function hairPrev() {
     //button movement
     document.getElementById("hairPrev").src = "./assets/buttons/arrowleftclicked.png"
@@ -1245,6 +1241,11 @@ function hideAnswerBox() {
 
 // This is the main function to call the next yes/no question
 function nextQuestionPrompt() {
+    // keep playing music
+    document.querySelector('body').addEventListener('click',function(){
+        mainTheme.play()
+    } )
+
     // temporary change
     if (questionCounter === 19 || popularityScore === 0) {
         // end game
@@ -1546,7 +1547,6 @@ function endGameSequence() {
                 firebase.auth().onAuthStateChanged(function (user) {
                     if (user) {
                         scoreSaved = true;
-                        console.log("Save Success");
                         var name = '';
                         db.collection('users').doc(user.uid)
                             .get()
@@ -1572,7 +1572,6 @@ function endGameSequence() {
                                     })
                             })
                     } else{
-                        console.log("Login please")
                         window.open('./saveScore.html');
                     }
                 });
