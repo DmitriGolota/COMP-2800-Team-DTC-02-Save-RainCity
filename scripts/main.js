@@ -1243,6 +1243,11 @@ function hideAnswerBox() {
 
 // This is the main function to call the next yes/no question
 function nextQuestionPrompt() {
+    // keep playing music
+    document.querySelector('body').addEventListener('click',function(){
+        mainTheme.play()
+    } )
+
     // temporary change
     if (questionCounter === 19 || popularityScore === 0) {
         // end game
