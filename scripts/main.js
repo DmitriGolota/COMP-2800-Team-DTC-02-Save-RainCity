@@ -1,4 +1,4 @@
- let buttonClickOne = document.getElementById('buttonClickOne');
+let buttonClickOne = document.getElementById('buttonClickOne');
 let boxPopAudioOne = document.getElementById('boxPopAudioOne');
 let boxPopAudioThree = document.getElementById('boxPopAudioThree');
 var mainTheme = document.getElementById('mainSoundTrack');
@@ -417,7 +417,7 @@ function getRandomIntegersHard() {
     return arr;
 }
 var arrOfRandomIntegersHard = getRandomIntegersHard();
-
+var grandArrayOfRandomIntegers = arrOfRandomIntegersEasy.concat(arrOfRandomIntegersHard);
 let hairNum = 0;
 let skinNum = 0;
 let suitNum = 0;
@@ -575,32 +575,31 @@ function suitNext() {
 
 
 // Door Animation Function
-function updateMayorbg(){
+function updateMayorbg() {
     document.getElementById('mayorbg').setAttribute('src', './assets/mayorsofficebg/mayorsoffice2.png')
 }
 
-function doorAnimate1(){
+function doorAnimate1() {
     document.getElementById('char-customization').remove();
 
-    setTimeout (function(){
+    setTimeout(function () {
         setTimeout(updateMayorbg, 1000)
         var doorsound = document.getElementById('doorsound');
         var audio = document.getElementById('myaudio');
         audio.pause();
         doorsound.play();
         setTimeout(doorAnimate2, 2000)
-        setTimeout(doorAnimate3, 2700)
-    , 1000})
-
+        setTimeout(doorAnimate3, 2700), 1000
+    })
 }
-function doorAnimate2(){
+function doorAnimate2() {
     document.getElementById('mayorbg').setAttribute('src', './assets/mayorsofficebg/mayorsoffice3.png')
     var footstep = document.getElementById('footstep');
     footstep.play();
     setTimeout(intro, 2000)
 }
 
-function doorAnimate3(){
+function doorAnimate3() {
     document.getElementById('mayorbg').setAttribute('src', './assets/mayorsofficebg/mayorsoffice4.png')
 }
 
@@ -610,16 +609,16 @@ document.getElementById('save-button').addEventListener('click', function () {
 
     buttonClickOne.play();
     let button = document.getElementById('save-button');
-    setTimeout(function() {
+    setTimeout(function () {
         button.src = './assets/intro_box/ContinueButtonCllicked.png'
     }, 50)
     setTimeout(doorAnimate1, 100)
-    
+
 });
 
 // Show art work easter egg
 
-document.getElementById('artbutton').addEventListener('click', function(){
+document.getElementById('artbutton').addEventListener('click', function () {
     let art = document.createElement('img');
     art.setAttribute('src', "./assets/end_game_box/gameoverscreenart.png");
     art.setAttribute('id', 'bcartwork');
@@ -628,15 +627,15 @@ document.getElementById('artbutton').addEventListener('click', function(){
     let container = document.getElementById('container')
     container.appendChild(art);
 
-    art.addEventListener('click', function(){
+    art.addEventListener('click', function () {
         art.remove()
     })
 
 })
 
 
-function intro(){
-    
+function intro() {
+
 
 
     // Delete char customization
@@ -750,7 +749,7 @@ function intro(){
     mainContainer.append(currentTermImage);
     mainContainer.append(uibarcontainer);
     mainContainer.append(introDiv);
-    
+
     // remove mayor background here for smooth transition
     document.getElementById('mayorbg').remove();
 
@@ -839,7 +838,7 @@ let introDialogueArray = ['Congratulations on being appointed Mayor! What a long
 season that was! The world is in a state of climate emergency, and that includes RainCity!',
     "As you know, the citizens of RainCity revolted and threw the last Mayor out of office. The \
 citizens were furious at the Mayor's lack of action to reduce RainCity's carbon pollution!",
-    "The City of Vancouver has worked tirelessly on their Climate Emergency Action Plan to reduce our carbon emissions. Do your best as Mayor to follow this plan, and maybe even get elected for a second term!", 
+    "The City of Vancouver has worked tirelessly on their Climate Emergency Action Plan to reduce our carbon emissions. Do your best as Mayor to follow this plan, and maybe even get elected for a second term!",
     "Keep an eye on your eco-score and popularity hearts in the top-right corner! If you make too many unpopular decisions, and run out of hearts, the citizens will demand your resignation! Make wise, environmentally friendly decisions to Save RainCity!"]
 // Global variable for the first span of dialogue from introDialogueArray
 let introDialogueText = introDialogueArray.shift().split('');
@@ -896,7 +895,7 @@ function firstPrompt() {
     // Text box for the current question / prompt
     let questionPromptText = document.createElement('p');
     questionPromptText.setAttribute('id', 'question-prompt-text');
-    questionPromptText.textContent = questions[arrOfRandomIntegersEasy[questionCounter]]['question'];
+    questionPromptText.textContent = questions[grandArrayOfRandomIntegers[questionCounter]]['question'];
 
     // Div for Main Character
     let mainCharacterDiv = document.createElement('div');
@@ -931,7 +930,7 @@ function firstPrompt() {
     let NPC = document.createElement('img');
     // change this later because it will not always be assistant
     NPC.setAttribute('id', 'assistant');
-    NPC.setAttribute('src', 'assets/npc/npc' + questions[arrOfRandomIntegersEasy[questionCounter]]['NPC-img-num'] + '.png');
+    NPC.setAttribute('src', 'assets/npc/npc' + questions[grandArrayOfRandomIntegers[questionCounter]]['NPC-img-num'] + '.png');
 
     // Create Yes button
     let yesButton = document.createElement('img');
@@ -972,108 +971,56 @@ function selectYesButton() {
         // Play click noise
         buttonClickOne.play();
 
-        //Hard questions, "level 2"
-        if (questionCounter > 9) {
-            nextAnswerBoxText = questions[arrOfRandomIntegersHard[questionCounter - 10]]['yes-result'].split('');
+        // Set the global variable (for scrolling text) to the correct string
+        nextAnswerBoxText = questions[grandArrayOfRandomIntegers[questionCounter]]['yes-result'].split('');
 
-            // Reflect on eco score
-            prevEcoScore = ecoScore;
-            ecoScore += questions[arrOfRandomIntegersHard[questionCounter - 10]]['eco-score-yes'];
-            if (ecoScore >= 10) {
-                ecoScore = 10;
-            }
-            if (ecoScore <= 0) {
-                ecoScore = 0;
-            }
+        // Reflect on eco score
+        prevEcoScore = ecoScore;
+        ecoScore += questions[grandArrayOfRandomIntegers[questionCounter]]['eco-score-yes'];
+        if (ecoScore >= 10) {
+            ecoScore = 10;
+        }
+        if (ecoScore <= 0) {
+            ecoScore = 0;
+        }
 
-            // Reflect popularity score
-            prevPopularityScore = popularityScore;
-            popularityScore += questions[arrOfRandomIntegersHard[questionCounter - 10]]['pop-score-yes'];
-            if (popularityScore >= 10) {
-                popularityScore = 10;
-            }
-            if (popularityScore <= 0) {
-                popularityScore = 0;
-            }
+        // Reflect popularity score
+        prevPopularityScore = popularityScore;
+        popularityScore += questions[grandArrayOfRandomIntegers[questionCounter]]['pop-score-yes'];
+        if (popularityScore >= 10) {
+            popularityScore = 10;
+        }
+        if (popularityScore <= 0) {
+            popularityScore = 0;
+        }
 
+        if (questions[grandArrayOfRandomIntegers[questionCounter]]['correct-point'] === 1) {
+            //Keeps track of accumulated ratings
+            airQualityRating += questions[grandArrayOfRandomIntegers[questionCounter]]['airQualityRating'];
+            emissionsRating += questions[grandArrayOfRandomIntegers[questionCounter]]['emissionsRating'];
+            energyRating += questions[grandArrayOfRandomIntegers[questionCounter]]['energyRating'];
+            transportRating += questions[grandArrayOfRandomIntegers[questionCounter]]['transportRating'];
+            walkabilityRating += questions[grandArrayOfRandomIntegers[questionCounter]]['walkabilityRating'];
+            governmentActionRating += questions[grandArrayOfRandomIntegers[questionCounter]]['governmentActionRating'];
+            environmentRestorationRating += questions[grandArrayOfRandomIntegers[questionCounter]]['environmentRestorationRating'];
 
             // Count number of correct answers made by players
-            if (questions[arrOfRandomIntegersHard[questionCounter - 10]]['correct-point'] === 1) {
-
-                //Keeps track of accumulated ratings
-                airQualityRating += questions[arrOfRandomIntegersHard[questionCounter - 10]]['airQualityRating'];
-                emissionsRating += questions[arrOfRandomIntegersHard[questionCounter - 10]]['emissionsRating'];
-                energyRating += questions[arrOfRandomIntegersHard[questionCounter - 10]]['energyRating'];
-                transportRating += questions[arrOfRandomIntegersHard[questionCounter - 10]]['transportRating'];
-                walkabilityRating += questions[arrOfRandomIntegersHard[questionCounter - 10]]['walkabilityRating'];
-                governmentActionRating += questions[arrOfRandomIntegersHard[questionCounter - 10]]['governmentActionRating'];
-                environmentRestorationRating += questions[arrOfRandomIntegersHard[questionCounter - 10]]['environmentRestorationRating'];
-
-                // Count number of correct answers made by players
-                mayoralRating += 1;
-
-            }
-
-            // Increment question counter
-            questionCounter += 1;
-
-            // Change the NPC to next NPC image
-            document.getElementById('assistant').setAttribute('src', "assets/npc/npc" + questions[arrOfRandomIntegersHard[questionCounter - 10]]['NPC-img-num'] + ".png");
-
-            // Change the question text to the next question
-            document.getElementById('question-prompt-text').textContent = questions[arrOfRandomIntegersHard[questionCounter - 10]]['question'];
-
+            mayoralRating += 1;
         }
 
-        //Easy questions, "level 1"
-        else {
-            // Set the global variable (for scrolling text) to the correct string
-            nextAnswerBoxText = questions[arrOfRandomIntegersEasy[questionCounter]]['yes-result'].split('');
+        // Increment question counter
+        questionCounter += 1;
 
-            // Reflect on eco score
-            prevEcoScore = ecoScore;
-            ecoScore += questions[arrOfRandomIntegersEasy[questionCounter]]['eco-score-yes'];
-            if (ecoScore >= 10) {
-                ecoScore = 10;
-            }
-            if (ecoScore <= 0) {
-                ecoScore = 0;
-            }
-
-            // Reflect popularity score
-            prevPopularityScore = popularityScore;
-            popularityScore += questions[arrOfRandomIntegersEasy[questionCounter]]['pop-score-yes'];
-            if (popularityScore >= 10) {
-                popularityScore = 10;
-            }
-            if (popularityScore <= 0) {
-                popularityScore = 0;
-            }
-
-            if (questions[arrOfRandomIntegersEasy[questionCounter]]['correct-point'] === 1) {
-                //Keeps track of accumulated ratings
-                airQualityRating += questions[arrOfRandomIntegersEasy[questionCounter]]['airQualityRating'];
-                emissionsRating += questions[arrOfRandomIntegersEasy[questionCounter]]['emissionsRating'];
-                energyRating += questions[arrOfRandomIntegersEasy[questionCounter]]['energyRating'];
-                transportRating += questions[arrOfRandomIntegersEasy[questionCounter]]['transportRating'];
-                walkabilityRating += questions[arrOfRandomIntegersEasy[questionCounter]]['walkabilityRating'];
-                governmentActionRating += questions[arrOfRandomIntegersEasy[questionCounter]]['governmentActionRating'];
-                environmentRestorationRating += questions[arrOfRandomIntegersEasy[questionCounter]]['environmentRestorationRating'];
-
-                // Count number of correct answers made by players
-                mayoralRating += 1;
-            }
-
-            // Increment question counter
-            questionCounter += 1;
-
-            // Change the NPC to next NPC image
-            document.getElementById('assistant').setAttribute('src', "assets/npc/npc" + questions[arrOfRandomIntegersEasy[questionCounter]]['NPC-img-num'] + ".png");
-
-            // Change the question text to the next question
-            document.getElementById('question-prompt-text').textContent = questions[arrOfRandomIntegersEasy[questionCounter]]['question'];
-
+        if (questionCounter === 20) {
+            setTimeout(displayAnswerBox, 1000);
+            return false;
         }
+        // Change the NPC to next NPC image
+        document.getElementById('assistant').setAttribute('src', "assets/npc/npc" + questions[grandArrayOfRandomIntegers[questionCounter]]['NPC-img-num'] + ".png");
+
+        // Change the question text to the next question
+        document.getElementById('question-prompt-text').textContent = questions[grandArrayOfRandomIntegers[questionCounter]]['question'];
+
         // For click animation's sake
         document.getElementById('yes-button').setAttribute('src', './assets/dialogue_box/buttons/YesButtonUnclicked.png');
 
@@ -1083,9 +1030,6 @@ function selectYesButton() {
 
         // After 1 second, run function to display the answer box
         setTimeout(displayAnswerBox, 1000);
-
-        // Count number of correct answers made by players
-
     }, 50)
 };
 
@@ -1102,105 +1046,56 @@ function selectNoButton() {
         // Reset the text for the answer box
         document.getElementById('answerBoxText').textContent = '';
 
-        //Hard questions, "level 2"
-        if (questionCounter > 9) {
-            nextAnswerBoxText = questions[arrOfRandomIntegersHard[questionCounter - 10]]['no-result'].split('')
 
-            // Reflect on eco score
-            prevEcoScore = ecoScore;
-            ecoScore += questions[arrOfRandomIntegersHard[questionCounter - 10]]['eco-score-no'];
-            if (ecoScore >= 10) {
-                ecoScore = 10;
-            }
-            if (ecoScore <= 0) {
-                ecoScore = 0;
-            }
+        nextAnswerBoxText = questions[grandArrayOfRandomIntegers[questionCounter]]['no-result'].split('');
 
-            // Reflect popularity score
-            prevPopularityScore = popularityScore;
-            popularityScore += questions[arrOfRandomIntegersHard[questionCounter - 10]]['pop-score-no'];
-            if (popularityScore >= 10) {
-                popularityScore = 10;
-            }
-            if (popularityScore <= 0) {
-                popularityScore = 0;
-            }
-
-            if (questions[arrOfRandomIntegersHard[questionCounter - 10]]['correct-point'] === 0) {
-                //Keeps track of accumulated ratings
-                airQualityRating += questions[arrOfRandomIntegersHard[questionCounter - 10]]['airQualityRating'];
-                emissionsRating += questions[arrOfRandomIntegersHard[questionCounter - 10]]['emissionsRating'];
-                energyRating += questions[arrOfRandomIntegersHard[questionCounter - 10]]['energyRating'];
-                transportRating += questions[arrOfRandomIntegersHard[questionCounter - 10]]['transportRating'];
-                walkabilityRating += questions[arrOfRandomIntegersHard[questionCounter - 10]]['walkabilityRating'];
-                governmentActionRating += questions[arrOfRandomIntegersHard[questionCounter - 10]]['governmentActionRating'];
-                environmentRestorationRating += questions[arrOfRandomIntegersHard[questionCounter - 10]]['environmentRestorationRating'];
-
-                // Count number of correct answers made by players
-                mayoralRating += 1;
-
-            }
-
-            // Increment question counter
-            questionCounter += 1;
-
-            // Change the NPC to next NPC image
-            document.getElementById('assistant').setAttribute('src', "assets/npc/npc" + questions[arrOfRandomIntegersHard[questionCounter - 10]]['NPC-img-num'] + ".png");
-
-            // Change the question text to the next question
-            document.getElementById('question-prompt-text').textContent = questions[arrOfRandomIntegersHard[questionCounter - 10]]['question'];
-
+        // Reflect on eco score
+        prevEcoScore = ecoScore;
+        ecoScore += questions[grandArrayOfRandomIntegers[questionCounter]]['eco-score-no'];
+        if (ecoScore >= 10) {
+            ecoScore = 10;
+        }
+        if (ecoScore <= 0) {
+            ecoScore = 0;
         }
 
-        //Easy questions, "level 1"
-        else {
-            nextAnswerBoxText = questions[arrOfRandomIntegersEasy[questionCounter]]['no-result'].split('');
+        // Reflect popularity score
+        prevPopularityScore = popularityScore;
+        popularityScore += questions[grandArrayOfRandomIntegers[questionCounter]]['pop-score-no'];
+        if (popularityScore >= 10) {
+            popularityScore = 10;
+        }
+        if (popularityScore <= 0) {
+            popularityScore = 0;
+        }
 
-            // Reflect on eco score
-            prevEcoScore = ecoScore;
-            ecoScore += questions[arrOfRandomIntegersEasy[questionCounter]]['eco-score-no'];
-            if (ecoScore >= 10) {
-                ecoScore = 10;
-            }
-            if (ecoScore <= 0) {
-                ecoScore = 0;
-            }
-
-            // Reflect popularity score
-            prevPopularityScore = popularityScore;
-            popularityScore += questions[arrOfRandomIntegersEasy[questionCounter]]['pop-score-no'];
-            if (popularityScore >= 10) {
-                popularityScore = 10;
-            }
-            if (popularityScore <= 0) {
-                popularityScore = 0;
-            }
+        // Count number of correct answers made by players
+        if (questions[grandArrayOfRandomIntegers[questionCounter]]['correct-point'] === 0) {
+            //Keeps track of accumulated ratings
+            airQualityRating += questions[grandArrayOfRandomIntegers[questionCounter]]['airQualityRating'];
+            emissionsRating += questions[grandArrayOfRandomIntegers[questionCounter]]['emissionsRating'];
+            energyRating += questions[grandArrayOfRandomIntegers[questionCounter]]['energyRating'];
+            transportRating += questions[grandArrayOfRandomIntegers[questionCounter]]['transportRating'];
+            walkabilityRating += questions[grandArrayOfRandomIntegers[questionCounter]]['walkabilityRating'];
+            governmentActionRating += questions[grandArrayOfRandomIntegers[questionCounter]]['governmentActionRating'];
+            environmentRestorationRating += questions[grandArrayOfRandomIntegers[questionCounter]]['environmentRestorationRating'];
 
             // Count number of correct answers made by players
-            if (questions[arrOfRandomIntegersEasy[questionCounter]]['correct-point'] === 0) {
-                //Keeps track of accumulated ratings
-                airQualityRating += questions[arrOfRandomIntegersEasy[questionCounter]]['airQualityRating'];
-                emissionsRating += questions[arrOfRandomIntegersEasy[questionCounter]]['emissionsRating'];
-                energyRating += questions[arrOfRandomIntegersEasy[questionCounter]]['energyRating'];
-                transportRating += questions[arrOfRandomIntegersEasy[questionCounter]]['transportRating'];
-                walkabilityRating += questions[arrOfRandomIntegersEasy[questionCounter]]['walkabilityRating'];
-                governmentActionRating += questions[arrOfRandomIntegersEasy[questionCounter]]['governmentActionRating'];
-                environmentRestorationRating += questions[arrOfRandomIntegersEasy[questionCounter]]['environmentRestorationRating'];
-
-                // Count number of correct answers made by players
-                mayoralRating += 1;
-            }
-
-            // Increment question counter
-            questionCounter += 1;
-
-            // Change the NPC to next NPC image
-            document.getElementById('assistant').setAttribute('src', "assets/npc/npc" + questions[arrOfRandomIntegersEasy[questionCounter]]['NPC-img-num'] + ".png");
-
-            // Change the question text to the next question
-            document.getElementById('question-prompt-text').textContent = questions[arrOfRandomIntegersEasy[questionCounter]]['question'];
-
+            mayoralRating += 1;
         }
+
+        // Increment question counter
+        questionCounter += 1;
+        if (questionCounter === 20) {
+            setTimeout(displayAnswerBox, 1000);
+            return false;
+        }
+        // Change the NPC to next NPC image
+        document.getElementById('assistant').setAttribute('src', "assets/npc/npc" + questions[grandArrayOfRandomIntegers[questionCounter]]['NPC-img-num'] + ".png");
+
+        // Change the question text to the next question
+        document.getElementById('question-prompt-text').textContent = questions[grandArrayOfRandomIntegers[questionCounter]]['question'];
+
 
         // For click animation's sake
         document.getElementById('no-button').setAttribute('src', './assets/dialogue_box/buttons/NoButtonUnclicked.png');
@@ -1242,15 +1137,15 @@ function hideAnswerBox() {
 // This is the main function to call the next yes/no question
 function nextQuestionPrompt() {
     // keep playing music
-    document.querySelector('body').addEventListener('click',function(){
+    document.querySelector('body').addEventListener('click', function () {
         mainTheme.play()
-    } )
+    })
 
     // temporary change
-    if (questionCounter === 19 || popularityScore === 0) {
+    if (questionCounter === 20 || popularityScore === 0) {
         // end game
         endGameSequence();
-    } else if (questionCounter === 9) {
+    } else if (questionCounter === 10) {
         // put newspaper popup here. show newspaper with headline:
         if (popularityScore > 0) {
             // If player has made it through half the questions, advance to term 2
@@ -1262,7 +1157,7 @@ function nextQuestionPrompt() {
                 newspaper.remove();
                 audio.play();
                 document.getElementById('currentTermImage').setAttribute('src', './assets/dialogue_box/TermTwo.png');
-                setTimeout(function() {
+                setTimeout(function () {
                     boxPopAudioOne.play();
                     document.getElementById('question-prompt-div').setAttribute('class', 'visible');
                 }, 3000)
@@ -1349,22 +1244,22 @@ let defineDefaultHeadline = () => {
 
 let defineCustomHeadline = (headlineDefiner) => {
     if (headlineDefiner == "termSwitch") {
-        return document.createTextNode("Current Mayor has been relected to run for a second term!")
+        return document.createTextNode("Current Mayor Has Been Re-elected to Run for a Second Term!")
     }
-    if (headlineDefiner == "endGame"){
-        if(popularityScore == 0){
+    if (headlineDefiner == "endGame") {
+        if (popularityScore == 0) {
             return document.createTextNode("RainCity's Tyrant Mayor Overthrown by the Revolution")
         }
 
-        else if(mayoralRating < 50){
+        else if (mayoralRating < 10) {
             return document.createTextNode("Mayor's Terrible Administration Comes to an End")
         }
 
-        else if (mayoralRating == 100){
+        else if (mayoralRating == 20) {
             return document.createTextNode("Citizens Mourn the Retirement of Raincity's Best Mayor")
         }
 
-        else if (mayoralRating >= 50){
+        else if (mayoralRating >= 10) {
             return document.createTextNode("Mayor Decides to Retire After Two Fruitful Years")
         }
     }
@@ -1425,13 +1320,12 @@ function endGameSequence() {
     //Remove everything
     document.getElementById('container').remove();
     // Stop the main theme audio 
-    var audioMain = document.getElementById('mainSoundTrack');
-    audioMain.pause()
+    mainTheme.pause()
     // Start the end game theme audio
     var endAudio = document.getElementById('endSoundTrack');
     endAudio.play()
     // Calculate user's end game score here
-    let endGameScore = mayoralRating/20;
+    let endGameScore = (mayoralRating / 20) * 100;
 
     // Timestamp of when the game ended
     let currentDate = new Date();
@@ -1506,30 +1400,30 @@ function endGameSequence() {
         let advancedButton = document.createElement('img');
         advancedButton.id = 'advancedButton';
         advancedButton.setAttribute('src', './assets/end_game_box/buttons/advancedUnclicked.png');
-        advancedButton.onclick = function(){
+        advancedButton.onclick = function () {
             buttonClickOne.play();
             document.getElementById("advancedButton").src = "./assets/end_game_box/buttons/advancedClicked.png"
             setTimeout(function () {
-                advancedButton.src =  './assets/end_game_box/buttons/advancedUnclicked.png';
+                advancedButton.src = './assets/end_game_box/buttons/advancedUnclicked.png';
             }, 50)
 
             //Flip card
             flipcardInner.classList.add('flip-card-activate');
-                //Hide buttons
-                advancedButton.setAttribute('class', 'hidden');
-                share.setAttribute('class', 'hidden');
-                returnButton.setAttribute('class', 'hidden');
-                saveScore.setAttribute('class', 'hidden');
+            //Hide buttons
+            advancedButton.setAttribute('class', 'hidden');
+            share.setAttribute('class', 'hidden');
+            returnButton.setAttribute('class', 'hidden');
+            saveScore.setAttribute('class', 'hidden');
 
-                //Populate advanceBoxText
-                document.getElementById('answerBoxText').textContent = 'You improved Rain City\'s:\r\n' +
-                    'Air quality rating - +' + Math.round(airQualityRating/2) + '%\r\n' +
-                    'Carbon emissions rating - +' + Math.round(emissionsRating/2) + '%\r\n' +
-                    'Energy consumption rating - +' + Math.round(energyRating/2) + '%\r\n' +
-                    'Transportation rating - +' + Math.round(transportRating/2) + '%\r\n' +
-                    'Walkability rating - +' + Math.round(walkabilityRating/2) + '%\r\n' +
-                    'Government action rating - +' + Math.round(governmentActionRating/2) + '%\r\n' +
-                    'Environment restoration rating - +' + Math.round(environmentRestorationRating/2) + '%\r\n';
+            //Populate advanceBoxText
+            document.getElementById('answerBoxText').textContent = 'You improved Rain City\'s:\r\n' +
+                'Air quality rating - +' + Math.round(airQualityRating / 2) + '%\r\n' +
+                'Carbon emissions rating - +' + Math.round(emissionsRating / 2) + '%\r\n' +
+                'Energy consumption rating - +' + Math.round(energyRating / 2) + '%\r\n' +
+                'Transportation rating - +' + Math.round(transportRating / 2) + '%\r\n' +
+                'Walkability rating - +' + Math.round(walkabilityRating / 2) + '%\r\n' +
+                'Government action rating - +' + Math.round(governmentActionRating / 2) + '%\r\n' +
+                'Environment restoration rating - +' + Math.round(environmentRestorationRating / 2) + '%\r\n';
         }
 
         let saveScore = document.createElement('img');
@@ -1541,9 +1435,9 @@ function endGameSequence() {
             setTimeout(function () {
                 saveScore.src = './assets/end_game_box/buttons/saveScoreUnclicked.png';
             }, 50)
-            
+
             // Write the user's end game score to firestore
-            if (!scoreSaved){
+            if (!scoreSaved) {
                 firebase.auth().onAuthStateChanged(function (user) {
                     if (user) {
                         scoreSaved = true;
@@ -1561,7 +1455,7 @@ function endGameSequence() {
                                     .then(function () {
                                         // if the user scored a perfect score aka 100%
                                         // this will be altered as 100 does no currently mean 100%
-                                        if (endGameScore === 100) {
+                                        if (mayoralRating === 20) {
                                             db.collection('scores').doc()
                                                 .set({
                                                     name: name[0],
@@ -1571,7 +1465,7 @@ function endGameSequence() {
                                         }
                                     })
                             })
-                    } else{
+                    } else {
                         window.open('./saveScore.html');
                     }
                 });
@@ -1591,7 +1485,7 @@ function endGameSequence() {
             // 
             let links = document.getElementById("share-div");
 
-            if(!sharing){
+            if (!sharing) {
                 sharing = true;
                 links.setAttribute('style', 'visibility: visible !important');
             } else {
@@ -1599,7 +1493,7 @@ function endGameSequence() {
                 links.setAttribute('style', 'visibility: hidden !important');
             }
         }
-    
+
 
         //Create gameOver div
         gameOver.append(endGameBox);
@@ -1630,7 +1524,7 @@ function endGameSequence() {
             //Create endgame screen
             document.body.append(endgamebg);
             document.body.append(flipcard);
-            
+
         }
     }, 100);
 };
