@@ -395,6 +395,7 @@ function doorAnimate1(){
         audio.pause();
         doorsound.play();
         setTimeout(doorAnimate2, 2000)
+        setTimeout(doorAnimate3, 3500)
     , 1000})
 
 }
@@ -403,6 +404,10 @@ function doorAnimate2(){
     var footstep = document.getElementById('footstep');
     footstep.play();
     setTimeout(intro, 2000)
+}
+
+function doorAnimate3(){
+    document.getElementById('mayorbg').setAttribute('src', './assets/mayorsofficebg/mayorsoffice4.png')
 }
 
 
