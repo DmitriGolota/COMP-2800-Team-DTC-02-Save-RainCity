@@ -1,4 +1,4 @@
-let buttonClickOne = document.getElementById('buttonClickOne');
+ let buttonClickOne = document.getElementById('buttonClickOne');
 let boxPopAudioOne = document.getElementById('boxPopAudioOne');
 let boxPopAudioThree = document.getElementById('boxPopAudioThree');
 var mainTheme = document.getElementById('mainSoundTrack');
@@ -14,9 +14,11 @@ let popularityScore = 10;
 let ecoScore = 0;
 let prevEcoScore = ecoScore;
 let prevPopularityScore = popularityScore;
+// Percentage of correct answers out of 20 questions
 let mayoralRating = 0;
 
 let questionCounter = 0;
+//If correct-point is 1, the yes-result is correct. If correct-point is 0, the no-result is correct.
 let questions = {
     0: {
         'question': 'Mayor! People have raised concerns about how boring it is to walk in some neighbourhoods. Should we increase the amount of trees and plants near sidewalks to make them more enjoyable to walk?',
@@ -29,7 +31,9 @@ let questions = {
         'walkabilityRating': 1,
         'governmentActionRating': 1,
         'environmentRestorationRating': 1,
+        'eco-score': 1,
         'pop-score': 1,
+        'correct-point': 1,
         'NPC-img-num': 4
     },
     1: {
@@ -43,23 +47,41 @@ let questions = {
         'walkabilityRating': 1,
         'governmentActionRating': 1,
         'environmentRestorationRating': 1,
+        'eco-score': 1,
         'pop-score': 1,
+        'correct-point': 1,
         'NPC-img-num': 5
     },
     2: {
         'question': 'Traffic in Downtown RainCity is at an all time high and that means lots of vehicle carbon emissions! Should we charge a fee for private vehicles entering the Metro Core?',
         'yes-result': 'Drivers are not happy with your decision, but this is definitely going to reduce carbon emissions! Good work!',
         'no-result': 'Drivers are happy to continue driving wherever they please, but your decision has not reduced any carbon emissions!',
-        'eco-score': 2,
-        'pop-score': -3,
+        'airQualityRating': 1,
+        'emissionsRating': 1,
+        'energyRating': 1,
+        'transportRating': 1,
+        'walkabilityRating': 1,
+        'governmentActionRating': 1,
+        'environmentRestorationRating': 1,
+        'eco-score': 1,
+        'pop-score': 1,
+        'correct-point': 1,
         'NPC-img-num': 3
     },
     3: {
         'question': 'The bus system is getting expensive with the new eco-friendly policies! Should we reduce the schedule and frequency of buses to save money?',
         'yes-result': 'Citizens of RainCity are now further discouraged to consider public transit! That was not a good move!',
         'no-result': 'Commuters are glad to keep the regular bus schedules! The budget department can kick rocks!',
+        'airQualityRating': 1,
+        'emissionsRating': 1,
+        'energyRating': 1,
+        'transportRating': 1,
+        'walkabilityRating': 1,
+        'governmentActionRating': 1,
+        'environmentRestorationRating': 1,
         'eco-score': 1,
-        'pop-score': -4,
+        'pop-score': 1,
+        'correct-point': 1,
         'NPC-img-num': 1
     },
     4: {
@@ -73,7 +95,9 @@ let questions = {
         'walkabilityRating': 1,
         'governmentActionRating': 1,
         'environmentRestorationRating': 1,
+        'eco-score': 1,
         'pop-score': 1,
+        'correct-point': 1,
         'NPC-img-num': 6
     },
     5: {
@@ -87,7 +111,9 @@ let questions = {
         'walkabilityRating': 1,
         'governmentActionRating': 1,
         'environmentRestorationRating': 1,
+        'eco-score': 1,
         'pop-score': 1,
+        'correct-point': 1,
         'NPC-img-num': 2
     },
     6: {
@@ -101,7 +127,9 @@ let questions = {
         'walkabilityRating': 1,
         'governmentActionRating': 1,
         'environmentRestorationRating': 1,
+        'eco-score': 1,
         'pop-score': 1,
+        'correct-point': 1,
         'NPC-img-num': 1
     },
     7: {
@@ -115,7 +143,9 @@ let questions = {
         'walkabilityRating': 1,
         'governmentActionRating': 1,
         'environmentRestorationRating': 1,
+        'eco-score': 1,
         'pop-score': 1,
+        'correct-point': 1,
         'NPC-img-num': 1
     },
     8: {
@@ -129,7 +159,9 @@ let questions = {
         'walkabilityRating': 1,
         'governmentActionRating': 1,
         'environmentRestorationRating': 1,
+        'eco-score': 1,
         'pop-score': 1,
+        'correct-point': 1,
         'NPC-img-num': 1
     },
     9: {
@@ -143,7 +175,9 @@ let questions = {
         'walkabilityRating': 1,
         'governmentActionRating': 1,
         'environmentRestorationRating': 1,
+        'eco-score': 1,
         'pop-score': 1,
+        'correct-point': 1,
         'NPC-img-num': 1
     },
     10: {
@@ -157,7 +191,9 @@ let questions = {
         'walkabilityRating': 1,
         'governmentActionRating': 1,
         'environmentRestorationRating': 1,
+        'eco-score': 1,
         'pop-score': 1,
+        'correct-point': 1,
         'NPC-img-num': 1
     },
     11: {
@@ -171,7 +207,9 @@ let questions = {
         'walkabilityRating': 1,
         'governmentActionRating': 1,
         'environmentRestorationRating': 1,
+        'eco-score': 1,
         'pop-score': 1,
+        'correct-point': 1,
         'NPC-img-num': 1
     },
     12: {
@@ -185,38 +223,12 @@ let questions = {
         'walkabilityRating': 1,
         'governmentActionRating': 1,
         'environmentRestorationRating': 1,
+        'eco-score': 1,
         'pop-score': 1,
+        'correct-point': 1,
         'NPC-img-num': 1
     },
     13: {
-        'question': 'The bus system is getting expensive with the new eco-friendly policies! Should we reduce the schedule and frequency of buses to save money?',
-        'yes-result': 'Citizens of RainCity are now further discouraged to consider public transit! That was not a good move!',
-        'no-result': 'Commuters are glad to keep the regular bus schedules! The budget department can kick rocks!',
-        'airQualityRating': 1,
-        'emissionsRating': 1,
-        'energyRating': 1,
-        'transportRating': 1,
-        'walkabilityRating': 1,
-        'governmentActionRating': 1,
-        'environmentRestorationRating': 1,
-        'pop-score': 1,
-        'NPC-img-num': 1
-    },
-    14: {
-        'question': 'Traffic in Downtown RainCity is at an all time high and that means lots of vehicle carbon emissions! Should we charge a fee for private vehicles entering the Metro Core?',
-        'yes-result': 'Drivers are not happy with your decision, but this is definitely going to reduce carbon emissions! Good work!',
-        'no-result': 'Drivers are happy to continue driving wherever they please, but your decision has not reduced any carbon emissions!',
-        'airQualityRating': 1,
-        'emissionsRating': 1,
-        'energyRating': 1,
-        'transportRating': 1,
-        'walkabilityRating': 1,
-        'governmentActionRating': 1,
-        'environmentRestorationRating': 1,
-        'pop-score': 1,
-        'NPC-img-num': 3
-    },
-    15: {
         'question': "Mayor, Tim's Mill just called and they want to expand into old-growth forests. This could make us a lot of money! Should we start chopping?",
         'yes-result': 'You made the correct decision!',
         'no-result': 'You made the wrong decision!',
@@ -227,14 +239,15 @@ let questions = {
         'walkabilityRating': 1,
         'governmentActionRating': 1,
         'environmentRestorationRating': 1,
+        'eco-score': 1,
         'pop-score': 1,
+        'correct-point': 1,
         'NPC-img-num': 1
     },
-    16: {
+    14: {
         'question': 'Apartment dwellers in RainCity are asking for more parking spots within building parkades. Should we increase the maximum parking limit for residential buildings?',
         'yes-result': 'You made the correct decision!',
         'no-result': 'The citizens are not happy with their lack of parking. However, introducing a parking maximum is a good idea! We should focus on reducing the need for cars overall!',
-        'eco-score': 1,
         'airQualityRating': 1,
         'emissionsRating': 1,
         'energyRating': 1,
@@ -242,14 +255,15 @@ let questions = {
         'walkabilityRating': 1,
         'governmentActionRating': 1,
         'environmentRestorationRating': 1,
+        'eco-score': 1,
         'pop-score': 1,
+        'correct-point': 1,
         'NPC-img-num': 1
     },
-    17: {
+    15: {
         'question': 'Drivers are complaining about the bright streetlamps! Should we get rid of some streetlamps to accommodate late-night drivers?',
         'yes-result': 'You made the correct decision!',
         'no-result': 'Residents no longer feel safe walking at night! Removing streetlamps is taking a step backward in our plan for creating more walkable neighborhoods.',
-        'eco-score': 1,
         'airQualityRating': 1,
         'emissionsRating': 1,
         'energyRating': 1,
@@ -257,10 +271,12 @@ let questions = {
         'walkabilityRating': 1,
         'governmentActionRating': 1,
         'environmentRestorationRating': 1,
+        'eco-score': 1,
         'pop-score': 1,
+        'correct-point': 1,
         'NPC-img-num': 1
     },
-    18: {
+    16: {
         'question': "Exporting out massive amounts of wood is totally not the vibe, man. This goes against the grain of the trees, dude. Should we reduce the amount of trees we export?",
         'yes-result': 'You made the correct decision!',
         'no-result': 'You made the wrong decision!',
@@ -271,10 +287,12 @@ let questions = {
         'walkabilityRating': 1,
         'governmentActionRating': 1,
         'environmentRestorationRating': 1,
+        'eco-score': 1,
         'pop-score': 1,
+        'correct-point': 1,
         'NPC-img-num': 1
     },
-    19: {
+    17: {
         'question': 'Climate change is so not cool, man! But the warmer weather is really helping my tan! Should we ignore climate change so I can lay on the beach more often?',
         'yes-result': 'You made the correct decision!',
         'no-result': 'You made the wrong decision!',
@@ -285,7 +303,9 @@ let questions = {
         'walkabilityRating': 1,
         'governmentActionRating': 1,
         'environmentRestorationRating': 1,
+        'eco-score': 1,
         'pop-score': 1,
+        'correct-point': 1,
         'NPC-img-num': 1
     },
     18: {
@@ -299,7 +319,9 @@ let questions = {
         'walkabilityRating': 1,
         'governmentActionRating': 1,
         'environmentRestorationRating': 1,
+        'eco-score': 1,
         'pop-score': 1,
+        'correct-point': 1,
         'NPC-img-num': 1
     },
     19: {
@@ -313,19 +335,23 @@ let questions = {
         'walkabilityRating': 1,
         'governmentActionRating': 1,
         'environmentRestorationRating': 1,
+        'eco-score': 1,
         'pop-score': 1,
+        'correct-point': 1,
         'NPC-img-num': 1
     }
 };
 
-//Eco score factors
-let airQualityRating, emissionsRating, energyRating, transportRating, walkabilityRating, governmentActionRating, environmentRestorationRating;
-//keeps track of individual ratings
-let airQualityRatingCount = 0, emissionsRatingCount = 0, energyRatingCount = 0, transportRatingCount = 0, walkabilityRatingCount = 0, governmentActionRatingCount = 0, environmentRestorationRatingCount = 0;
-//Overall rating scaled out of 10, used to calculate ecoScore
-let ecoRating;
-//Sum of all ratings after every question, used to calculate endGameScore
-let overallRating = 0;
+//Extra metrics that show players end game stats
+//Shows how much they improved a quality of the city's greenness as a rating
+//Example - A player at the end game screen can see that they increased the city's airQualityRating by 30% during their time as mayor
+let airQualityRating = 0;
+let emissionsRating = 0;
+let energyRating = 0;
+let transportRating = 0;
+let walkabilityRating = 0;
+let governmentActionRating = 0;
+let environmentRestorationRating = 0;
 
 //Creates an array of random integers from 0-9
 //For easy questions
@@ -350,8 +376,6 @@ function getRandomIntegersHard() {
     return arr;
 }
 var arrOfRandomIntegersHard = getRandomIntegersHard();
-console.log(arrOfRandomIntegersEasy)
-console.log(arrOfRandomIntegersHard)
 
 let hairNum = 0;
 let skinNum = 0;
@@ -891,7 +915,7 @@ function firstPrompt() {
 };
 
 function selectYesButton() {
-    document.getElementById('yes-button').setAttribute('src', './assets/dialogue_box/buttons/YesButtonClicked.png')
+    document.getElementById('yes-button').setAttribute('src', './assets/dialogue_box/buttons/YesButtonClicked.png');
     buttonClickOne.play();
     setTimeout(function () {
         // Hide the question prompt box
@@ -907,19 +931,18 @@ function selectYesButton() {
         if (questionCounter > 9) {
             nextAnswerBoxText = questions[arrOfRandomIntegersHard[questionCounter - 10]]['yes-result'].split('');
 
-            //Eco score factors
-            airQualityRating = questions[arrOfRandomIntegersHard[questionCounter - 10]]['airQualityRating'];
-            emissionsRating = questions[arrOfRandomIntegersHard[questionCounter - 10]]['emissionsRating'];
-            energyRating = questions[arrOfRandomIntegersHard[questionCounter - 10]]['energyRating'];
-            transportRating = questions[arrOfRandomIntegersHard[questionCounter - 10]]['transportRating'];
-            walkabilityRating = questions[arrOfRandomIntegersHard[questionCounter - 10]]['walkabilityRating'];
-            governmentActionRating = questions[arrOfRandomIntegersHard[questionCounter - 10]]['governmentActionRating'];
-            environmentRestorationRating = questions[arrOfRandomIntegersHard[questionCounter - 10]]['environmentRestorationRating'];
+            //Keeps track of accumulated ratings
+            airQualityRating += questions[arrOfRandomIntegersHard[questionCounter - 10]]['airQualityRating'];
+            emissionsRating += questions[arrOfRandomIntegersHard[questionCounter - 10]]['emissionsRating'];
+            energyRating += questions[arrOfRandomIntegersHard[questionCounter - 10]]['energyRating'];
+            transportRating += questions[arrOfRandomIntegersHard[questionCounter - 10]]['transportRating'];
+            walkabilityRating += questions[arrOfRandomIntegersHard[questionCounter - 10]]['walkabilityRating'];
+            governmentActionRating += questions[arrOfRandomIntegersHard[questionCounter - 10]]['governmentActionRating'];
+            environmentRestorationRating += questions[arrOfRandomIntegersHard[questionCounter - 10]]['environmentRestorationRating'];
 
             // Reflect on eco score
-            ecoRating = airQualityRating + emissionsRating + energyRating + transportRating + walkabilityRating + governmentActionRating + environmentRestorationRating;
-            ecoRating /= 7;
-            ecoScore += ecoRating;
+            prevEcoScore = ecoScore;
+            ecoScore += questions[arrOfRandomIntegersHard[questionCounter - 10]]['eco-score'];
             if (ecoScore >= 10) {
                 ecoScore = 10;
             }
@@ -928,6 +951,7 @@ function selectYesButton() {
             }
 
             // Reflect popularity score
+            prevPopularityScore = popularityScore;
             popularityScore += questions[arrOfRandomIntegersHard[questionCounter - 10]]['pop-score'];
             if (popularityScore >= 10) {
                 popularityScore = 10;
@@ -936,13 +960,18 @@ function selectYesButton() {
                 popularityScore = 0;
             }
             // Increment question counter
-            questionCounter += 1
+            questionCounter += 1;
 
             // Change the NPC to next NPC image
-            document.getElementById('assistant').setAttribute('src', "assets/npc/npc" + questions[arrOfRandomIntegersHard[questionCounter - 10]]['NPC-img-num'] + ".png")
+            document.getElementById('assistant').setAttribute('src', "assets/npc/npc" + questions[arrOfRandomIntegersHard[questionCounter - 10]]['NPC-img-num'] + ".png");
 
             // Change the question text to the next question
             document.getElementById('question-prompt-text').textContent = questions[arrOfRandomIntegersHard[questionCounter - 10]]['question'];
+
+            // Count number of correct answers made by players
+            if (questions[arrOfRandomIntegersHard[questionCounter - 10]]['correct-point'] === 1) {
+                mayoralRating += 1;
+            }
         }
 
         //Easy questions, "level 1"
@@ -950,20 +979,18 @@ function selectYesButton() {
             // Set the global variable (for scrolling text) to the correct string
             nextAnswerBoxText = questions[arrOfRandomIntegersEasy[questionCounter]]['yes-result'].split('');
 
-            //Eco score factors
-            airQualityRating = questions[arrOfRandomIntegersEasy[questionCounter]]['airQualityRating'];
-            emissionsRating = questions[arrOfRandomIntegersEasy[questionCounter]]['emissionsRating'];
-            energyRating = questions[arrOfRandomIntegersEasy[questionCounter]]['energyRating'];
-            transportRating = questions[arrOfRandomIntegersEasy[questionCounter]]['transportRating'];
-            walkabilityRating = questions[arrOfRandomIntegersEasy[questionCounter]]['walkabilityRating'];
-            governmentActionRating = questions[arrOfRandomIntegersEasy[questionCounter]]['governmentActionRating'];
-            environmentRestorationRating = questions[arrOfRandomIntegersEasy[questionCounter]]['environmentRestorationRating'];
+            //Keeps track of accumulated ratings
+            airQualityRating += questions[arrOfRandomIntegersEasy[questionCounter]]['airQualityRating'];
+            emissionsRating += questions[arrOfRandomIntegersEasy[questionCounter]]['emissionsRating'];
+            energyRating += questions[arrOfRandomIntegersEasy[questionCounter]]['energyRating'];
+            transportRating += questions[arrOfRandomIntegersEasy[questionCounter]]['transportRating'];
+            walkabilityRating += questions[arrOfRandomIntegersEasy[questionCounter]]['walkabilityRating'];
+            governmentActionRating += questions[arrOfRandomIntegersEasy[questionCounter]]['governmentActionRating'];
+            environmentRestorationRating += questions[arrOfRandomIntegersEasy[questionCounter]]['environmentRestorationRating'];
 
             // Reflect on eco score
             prevEcoScore = ecoScore;
-            ecoRating = airQualityRating + emissionsRating + energyRating + transportRating + walkabilityRating + governmentActionRating + environmentRestorationRating;
-            ecoRating /= 7;
-            ecoScore += ecoRating;
+            ecoScore += questions[arrOfRandomIntegersEasy[questionCounter]]['eco-score'];
             if (ecoScore >= 10) {
                 ecoScore = 10;
             }
@@ -981,39 +1008,36 @@ function selectYesButton() {
                 popularityScore = 0;
             }
             // Increment question counter
-            questionCounter += 1
+            questionCounter += 1;
 
             // Change the NPC to next NPC image
-            document.getElementById('assistant').setAttribute('src', "assets/npc/npc" + questions[arrOfRandomIntegersEasy[questionCounter]]['NPC-img-num'] + ".png")
+            document.getElementById('assistant').setAttribute('src', "assets/npc/npc" + questions[arrOfRandomIntegersEasy[questionCounter]]['NPC-img-num'] + ".png");
 
             // Change the question text to the next question
             document.getElementById('question-prompt-text').textContent = questions[arrOfRandomIntegersEasy[questionCounter]]['question'];
+
+            // Count number of correct answers made by players
+            if (questions[arrOfRandomIntegersEasy[questionCounter]]['correct-point'] === 1) {
+                mayoralRating += 1;
+            }
         }
         // For click animation's sake
-        document.getElementById('yes-button').setAttribute('src', './assets/dialogue_box/buttons/YesButtonUnclicked.png')
+        document.getElementById('yes-button').setAttribute('src', './assets/dialogue_box/buttons/YesButtonUnclicked.png');
 
         // Adjust score bar and popularity hearts to correct scale
-        document.getElementById('uiEcoScore').setAttribute('src', './assets/eco_score/eco_score' + Math.round(ecoScore) + '.png');
+        document.getElementById('uiEcoScore').setAttribute('src', './assets/eco_score/eco_score' + ecoScore + '.png');
         document.getElementById('uiPopScore').setAttribute('src', './assets/pop_score/pop_score' + popularityScore + '.png');
 
         // After 1 second, run function to display the answer box
         setTimeout(displayAnswerBox, 1000);
 
-        //Keeps track of individual ratings and overall ratings
-        airQualityRatingCount += airQualityRating
-        emissionsRatingCount += emissionsRating
-        energyRatingCount += energyRating
-        transportRatingCount += transportRating
-        walkabilityRatingCount += walkabilityRating
-        governmentActionRatingCount += governmentActionRating
-        environmentRestorationRatingCount += environmentRestorationRating
-        overallRating += airQualityRating + emissionsRating + energyRating + transportRating + walkabilityRating + governmentActionRating + environmentRestorationRating;
+        // Count number of correct answers made by players
 
     }, 50)
 };
 
 function selectNoButton() {
-    document.getElementById('no-button').setAttribute('src', './assets/dialogue_box/buttons/NoButtonClicked.png')
+    document.getElementById('no-button').setAttribute('src', './assets/dialogue_box/buttons/NoButtonClicked.png');
     setTimeout(function () {
 
         // Hide the question prompt box
@@ -1040,9 +1064,7 @@ function selectNoButton() {
 
             // Reflect on eco score
             prevEcoScore = ecoScore;
-            ecoRating = airQualityRating + emissionsRating + energyRating + transportRating + walkabilityRating + governmentActionRating + environmentRestorationRating;
-            ecoRating /= 7;
-            ecoScore -= ecoRating;
+            ecoScore += questions[arrOfRandomIntegersHard[questionCounter - 10]]['eco-score'];
             if (ecoScore >= 10) {
                 ecoScore = 10;
             }
@@ -1060,13 +1082,18 @@ function selectNoButton() {
                 popularityScore = 0;
             }
             // Increment question counter
-            questionCounter += 1
+            questionCounter += 1;
 
             // Change the NPC to next NPC image
-            document.getElementById('assistant').setAttribute('src', "assets/npc/npc" + questions[arrOfRandomIntegersHard[questionCounter - 10]]['NPC-img-num'] + ".png")
+            document.getElementById('assistant').setAttribute('src', "assets/npc/npc" + questions[arrOfRandomIntegersHard[questionCounter - 10]]['NPC-img-num'] + ".png");
 
             // Change the question text to the next question
             document.getElementById('question-prompt-text').textContent = questions[arrOfRandomIntegersHard[questionCounter - 10]]['question'];
+
+            // Count number of correct answers made by players
+            if (questions[arrOfRandomIntegersHard[questionCounter - 10]]['correct-point'] === 0) {
+                mayoralRating += 1;
+            }
         }
 
         //Easy questions, "level 1"
@@ -1083,9 +1110,8 @@ function selectNoButton() {
             environmentRestorationRating = questions[arrOfRandomIntegersEasy[questionCounter]]['environmentRestorationRating'];
 
             // Reflect on eco score
-            ecoRating = airQualityRating + emissionsRating + energyRating + transportRating + walkabilityRating + governmentActionRating + environmentRestorationRating;
-            ecoRating /= 7;
-            ecoScore -= ecoRating;
+            prevEcoScore = ecoScore;
+            ecoScore += questions[arrOfRandomIntegersEasy[questionCounter]]['eco-score'];
             if (ecoScore >= 10) {
                 ecoScore = 10;
             }
@@ -1094,6 +1120,7 @@ function selectNoButton() {
             }
 
             // Reflect popularity score
+            prevPopularityScore = popularityScore;
             popularityScore -= questions[arrOfRandomIntegersEasy[questionCounter]]['pop-score'];
             if (popularityScore >= 10) {
                 popularityScore = 10;
@@ -1102,35 +1129,29 @@ function selectNoButton() {
                 popularityScore = 0;
             }
             // Increment question counter
-            questionCounter += 1
+            questionCounter += 1;
 
             // Change the NPC to next NPC image
-            document.getElementById('assistant').setAttribute('src', "assets/npc/npc" + questions[arrOfRandomIntegersEasy[questionCounter]]['NPC-img-num'] + ".png")
+            document.getElementById('assistant').setAttribute('src', "assets/npc/npc" + questions[arrOfRandomIntegersEasy[questionCounter]]['NPC-img-num'] + ".png");
 
             // Change the question text to the next question
             document.getElementById('question-prompt-text').textContent = questions[arrOfRandomIntegersEasy[questionCounter]]['question'];
+
+            // Count number of correct answers made by players
+            if (questions[arrOfRandomIntegersEasy[questionCounter]]['correct-point'] === 0) {
+                mayoralRating += 1;
+            }
         }
 
         // For click animation's sake
-        document.getElementById('no-button').setAttribute('src', './assets/dialogue_box/buttons/NoButtonUnclicked.png')
+        document.getElementById('no-button').setAttribute('src', './assets/dialogue_box/buttons/NoButtonUnclicked.png');
 
         // Adjust score bar and popularity hearts to correct scale
-        document.getElementById('uiEcoScore').setAttribute('src', './assets/eco_score/eco_score' + Math.round(ecoScore) + '.png');
+        document.getElementById('uiEcoScore').setAttribute('src', './assets/eco_score/eco_score' + ecoScore + '.png');
         document.getElementById('uiPopScore').setAttribute('src', './assets/pop_score/pop_score' + popularityScore + '.png');
 
         // After 1 second, run function to display the answer box
         setTimeout(displayAnswerBox, 1000);
-
-        //Keeps track of individual ratings and overall ratings
-        airQualityRatingCount += airQualityRating
-        emissionsRatingCount += emissionsRating
-        energyRatingCount += energyRating
-        transportRatingCount += transportRating
-        walkabilityRatingCount += walkabilityRating
-        governmentActionRatingCount += governmentActionRating
-        environmentRestorationRatingCount += environmentRestorationRating
-        console.log(environmentRestorationRating);
-        overallRating += airQualityRating + emissionsRating + energyRating + transportRating + walkabilityRating + governmentActionRating + environmentRestorationRating;
 
     }, 50)
 };
@@ -1346,7 +1367,7 @@ function endGameSequence() {
     var endAudio = document.getElementById('endSoundTrack');
     endAudio.play()
     // Calculate user's end game score here
-    let endGameScore = Math.round(overallRating * (9999/140));
+    let endGameScore = mayoralRating/20;
 
     // Timestamp of when the game ended
     let currentDate = new Date();
@@ -1366,7 +1387,7 @@ function endGameSequence() {
         endGameBox.setAttribute('src', './assets/end_game_box/EndGameBox.png');
 
         let endGameScoreText = document.createElement('p');
-        endGameScoreText.textContent = '' + endGameScore;
+        endGameScoreText.textContent = '' + endGameScore + "%";
         endGameScoreText.setAttribute('id', 'endGameScoreText');
 
         let returnButton = document.createElement('img');
@@ -1422,8 +1443,7 @@ function endGameSequence() {
             setTimeout(function () {
                 advancedButton.src =  './assets/end_game_box/buttons/advancedUnclicked.png';
             }, 50)
-            
-            mayoralRating = (popularityScore * 7.5) + (ecoScore * 2.5)
+
             //Flip card
             flipcardInner.classList.add('flip-card-activate');
                 //Hide buttons
@@ -1433,15 +1453,14 @@ function endGameSequence() {
                 saveScore.setAttribute('class', 'hidden');
 
                 //Populate advanceBoxText
-                document.getElementById('answerBoxText').textContent = 'These are your end game stats:\r\n' +
-                    'Air quality rating - ' + Math.round(airQualityRating/2) + '%\r\n' +
-                    'Carbon emissions rating - ' + Math.round(emissionsRating/2) + '%\r\n' +
-                    'Energy consumption rating - ' + Math.round(energyRating/2) + '%\r\n' +
-                    'Transportation rating - ' + Math.round(transportRating/2) + '%\r\n' +
-                    'Walkability rating - ' + Math.round(walkabilityRating/2) + '%\r\n' +
-                    'Government action rating - ' + Math.round(governmentActionRating/2) + '%\r\n' +
-                    'Environment restoration rating - ' + Math.round(environmentRestorationRating/2) + '%\r\n' +
-                    'Approval rating - ' + mayoralRating + '%\r\n';
+                document.getElementById('answerBoxText').textContent = 'You improved Rain City\'s:\r\n' +
+                    'Air quality rating - +' + Math.round(airQualityRating/2) + '%\r\n' +
+                    'Carbon emissions rating - +' + Math.round(emissionsRating/2) + '%\r\n' +
+                    'Energy consumption rating - +' + Math.round(energyRating/2) + '%\r\n' +
+                    'Transportation rating - +' + Math.round(transportRating/2) + '%\r\n' +
+                    'Walkability rating - +' + Math.round(walkabilityRating/2) + '%\r\n' +
+                    'Government action rating - +' + Math.round(governmentActionRating/2) + '%\r\n' +
+                    'Environment restoration rating - +' + Math.round(environmentRestorationRating/2) + '%\r\n';
         }
 
         let saveScore = document.createElement('img');
