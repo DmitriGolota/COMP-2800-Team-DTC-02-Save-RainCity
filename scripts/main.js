@@ -571,6 +571,11 @@ function doorAnimate3(){
 // Finish char customization and move onto intro
 document.getElementById('save-button').addEventListener('click', function () {
 
+    buttonClickOne.play();
+    let button = document.getElementById('save-button');
+    setTimeout(function() {
+        button.src = './assets/intro_box/ContinueButtonCllicked.png'
+    }, 50)
     setTimeout(doorAnimate1, 100)
     
 });
@@ -601,7 +606,6 @@ function intro(){
     var audio = document.getElementById('myaudio');
     audio.pause();
 
-    buttonClickOne.play()
     // Populate introduction scene
 
 
