@@ -586,6 +586,10 @@ document.getElementById('artbutton').addEventListener('click', function(){
     let container = document.getElementById('container')
     container.appendChild(art);
 
+    art.addEventListener('click', function(){
+        art.remove()
+    })
+
 })
 
 
