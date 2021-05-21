@@ -1303,7 +1303,8 @@ function endGameSequence() {
 
     //Disable sharing feature
     let links = document.getElementById("shr_canvas1")
-    links.classList.add('hidden');
+    //TEMP COMMENT
+    //links.classList.add('hidden');
 
     setTimeout(() => {
 
