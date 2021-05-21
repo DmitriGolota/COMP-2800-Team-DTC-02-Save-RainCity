@@ -1334,8 +1334,14 @@ function endGameSequence() {
     let timestamp = currentDayOfMonth + "-" + (currentMonth + 1) + "-" + currentYear;
 
     //Disable sharing feature
+<<<<<<< HEAD
     let links = document.getElementById("shr_canvas1");
     links.classList.add('hidden');
+=======
+    let links = document.getElementById("shr_canvas1")
+    //TEMP COMMENT
+    //links.classList.add('hidden');
+>>>>>>> 10121b12f0a329a5c5cc937b9c6220c0ed1c0307
 
     setTimeout(() => {
 

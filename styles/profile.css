@@ -1,50 +1,79 @@
 @import "header.css";
 
 html{
-    position: relative; 
-    height: 100%;
-    width: 100%;
+    position: absolute; 
+    height: 100vh;
+    width: 100vw;
 }
 
 body{
     background-color: rgb(73, 73, 73);
+    font-size: 4vw;
 }
 .content{
     color: whitesmoke;
     background-color: rgb(151, 151, 151);
-    margin: 2%;
-    padding: 2%;
+    margin: 1vh 2vw;
+    padding: 2vh 2vw;
     text-align: center;
-    border: 4px solid rgb(37, 37, 37);
+    border: 1vh solid rgb(37, 37, 37);
 }
 #table {
     display: grid;
+    height: 33vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#delete{
+    height: 15vh;
+
+}
+
+#name{
+    height: 19vh;
+    padding: 0;
 }
 
 footer{
-    display: grid;
-    grid-template-areas:
-    "about aside";
-    background-color: rgb(160, 160, 160);
     bottom: 0;
     position: fixed;
 }
 
+#deleteAccountButton{
+    height: 5vh;
+    font-size: 4vw;
+}
+
+
 #usersName, tr > td {
     font-size: 1.25em;
+    margin-bottom: 0;
 }
 
 .red{
     color: rgb(206, 24, 24);
-    border: 1px;
+    margin-bottom: 0;
 }
 .green{
     color: rgb(0, 236, 0);
 }
 .blue{
     color: rgb(0, 217, 255);
+    margin-bottom: 0;
 }
 
 .orange{
     color: rgb(229, 255, 0);
+}
+
+@media (orientation: landscape) {
+    footer{
+        position: static;
+        height: auto;
+    }
+    #deleteAccountButton{
+        height: auto;
+
+    }
 }
