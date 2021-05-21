@@ -469,9 +469,16 @@ a.shareaholic-service-icon:before {
 }
 
 #easterEggPhoto{
+    position: absolute;
     width: 100vw;
     height: 100vh;
 }
+
+#easterEgg {
+    top: 0;
+    position: absolute;
+}
+
 /* End of easter egg button positions */
 
 .fade-in-image {
@@ -540,3 +547,8 @@ a.shareaholic-service-icon:before {
     }
 }
 /* End of text-size media queries */
+
+#share-div {
+    position: absolute !important;
+    visibility: hidden !important;
+}

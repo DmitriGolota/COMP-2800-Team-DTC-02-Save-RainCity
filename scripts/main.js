@@ -76,7 +76,7 @@ let questions = {
         'pop-score': 1,
         'NPC-img-num': 6
     },
-    3: {
+    5: {
         'question': 'We just got a call from Elon Musk! He is paying cities lots of DogeCoin to add more electric vehicle charging stations! Should we add more EV chargers around RainCity?',
         'yes-result': 'Woohoo, that is a lot of DogeCoin! We are starting to see more electric vehicles across the city! Nicely done!',
         'no-result': "Uh-oh, you do not want to get on Elon's bad side. It would have been a good idea to make electric vehicles more accessible too!",
@@ -104,7 +104,7 @@ let questions = {
         'pop-score': 1,
         'NPC-img-num': 1
     },
-    5: {
+    7: {
         'question': 'People are complaining about the lack of parking in Downtown RainCity! Can we pave over a greenspace to build a parkade?',
         'yes-result': 'You made the correct decision!',
         'no-result': 'You made the wrong decision!',
@@ -118,7 +118,7 @@ let questions = {
         'pop-score': 1,
         'NPC-img-num': 1
     },
-    6: {
+    8: {
         'question': "Mayor! Still too many people are driving private vehicles unnecessarily! Should we expand our residential parking permits city-wide?",
         'yes-result': 'You made the correct decision!',
         'no-result': 'You made the wrong decision!',
@@ -188,7 +188,7 @@ let questions = {
         'pop-score': 1,
         'NPC-img-num': 1
     },
-    11: {
+    13: {
         'question': 'The bus system is getting expensive with the new eco-friendly policies! Should we reduce the schedule and frequency of buses to save money?',
         'yes-result': 'Citizens of RainCity are now further discouraged to consider public transit! That was not a good move!',
         'no-result': 'Commuters are glad to keep the regular bus schedules! The budget department can kick rocks!',
@@ -202,7 +202,7 @@ let questions = {
         'pop-score': 1,
         'NPC-img-num': 1
     },
-    12: {
+    14: {
         'question': 'Traffic in Downtown RainCity is at an all time high and that means lots of vehicle carbon emissions! Should we charge a fee for private vehicles entering the Metro Core?',
         'yes-result': 'Drivers are not happy with your decision, but this is definitely going to reduce carbon emissions! Good work!',
         'no-result': 'Drivers are happy to continue driving wherever they please, but your decision has not reduced any carbon emissions!',
@@ -216,7 +216,7 @@ let questions = {
         'pop-score': 1,
         'NPC-img-num': 3
     },
-    13: {
+    15: {
         'question': "Mayor, Tim's Mill just called and they want to expand into old-growth forests. This could make us a lot of money! Should we start chopping?",
         'yes-result': 'You made the correct decision!',
         'no-result': 'You made the wrong decision!',
@@ -230,7 +230,7 @@ let questions = {
         'pop-score': 1,
         'NPC-img-num': 1
     },
-    14: {
+    16: {
         'question': 'Apartment dwellers in RainCity are asking for more parking spots within building parkades. Should we increase the maximum parking limit for residential buildings?',
         'yes-result': 'You made the correct decision!',
         'no-result': 'The citizens are not happy with their lack of parking. However, introducing a parking maximum is a good idea! We should focus on reducing the need for cars overall!',
@@ -245,7 +245,7 @@ let questions = {
         'pop-score': 1,
         'NPC-img-num': 1
     },
-    15: {
+    17: {
         'question': 'Drivers are complaining about the bright streetlamps! Should we get rid of some streetlamps to accommodate late-night drivers?',
         'yes-result': 'You made the correct decision!',
         'no-result': 'Residents no longer feel safe walking at night! Removing streetlamps is taking a step backward in our plan for creating more walkable neighborhoods.',
@@ -260,7 +260,7 @@ let questions = {
         'pop-score': 1,
         'NPC-img-num': 1
     },
-    16: {
+    18: {
         'question': "Exporting out massive amounts of wood is totally not the vibe, man. This goes against the grain of the trees, dude. Should we reduce the amount of trees we export?",
         'yes-result': 'You made the correct decision!',
         'no-result': 'You made the wrong decision!',
@@ -274,7 +274,7 @@ let questions = {
         'pop-score': 1,
         'NPC-img-num': 1
     },
-    17: {
+    19: {
         'question': 'Climate change is so not cool, man! But the warmer weather is really helping my tan! Should we ignore climate change so I can lay on the beach more often?',
         'yes-result': 'You made the correct decision!',
         'no-result': 'You made the wrong decision!',
@@ -1007,7 +1007,6 @@ function selectYesButton() {
         walkabilityRatingCount += walkabilityRating
         governmentActionRatingCount += governmentActionRating
         environmentRestorationRatingCount += environmentRestorationRating
-        console.log(environmentRestorationRatingCount);
         overallRating += airQualityRating + emissionsRating + energyRating + transportRating + walkabilityRating + governmentActionRating + environmentRestorationRating;
 
     }, 50)
@@ -1163,7 +1162,7 @@ function hideAnswerBox() {
 // This is the main function to call the next yes/no question
 function nextQuestionPrompt() {
     // temporary change
-    if (questionCounter === 1 || popularityScore === 0) {
+    if (questionCounter === 6 || popularityScore === 0) {
         // end game
         endGameSequence();
     } else if (questionCounter === 9) {
@@ -1334,6 +1333,7 @@ let deletePaper = () => {
 
 //Check if the user Saved their score yet
 let scoreSaved = false;
+let sharing = false;
 
 // If you finish all questions, or pop score reaches 0, end game.
 function endGameSequence() {
@@ -1357,8 +1357,6 @@ function endGameSequence() {
 
     let timestamp = currentDayOfMonth + "-" + (currentMonth + 1) + "-" + currentYear;
 
-    let links = document.getElementById("shr_canvas1");
-    links.classList.add('hidden');
 
     // Remove everything
     setTimeout(() => {
@@ -1503,10 +1501,16 @@ function endGameSequence() {
             setTimeout(function () {
                 share.src = './assets/end_game_box/buttons/shareUnclicked.png';
             }, 50)
+
+            // 
+            let links = document.getElementById("share-div");
+
             if(!sharing){
-                links.classList.remove('hidden');
+                sharing = true;
+                links.setAttribute('style', 'visibility: visible !important');
             } else {
-                links.classList.add('hidden');
+                sharing = false;
+                links.setAttribute('style', 'visibility: hidden !important');
             }
         }
 
