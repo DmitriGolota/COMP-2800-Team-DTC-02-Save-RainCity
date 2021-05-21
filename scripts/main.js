@@ -1605,7 +1605,6 @@ function endGameSequence() {
     
 
         //Create gameOver div
-        gameOver.append(endgamebg);
         gameOver.append(endGameBox);
         gameOver.append(gameOverAnimation);
         gameOver.append(endGameScoreText);
@@ -1632,7 +1631,9 @@ function endGameSequence() {
             newspaper.remove();
             audio.play();
             //Create endgame screen
+            document.body.append(endgamebg);
             document.body.append(flipcard);
+            
         }
     }, 100);
 };

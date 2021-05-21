@@ -557,6 +557,7 @@ a.shareaholic-service-icon:before {
 /* End of text-size media queries */
 
 #share-div {
+    z-index: 50;
     position: absolute !important;
     visibility: hidden !important;
 }
