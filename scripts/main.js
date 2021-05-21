@@ -27,7 +27,7 @@ let questions = {
         'NPC-img-num': 4
     },
     1: {
-        'question': "These bikers never look where they're going.. but I guess it's better than driving... Should we build more bike-only paths to help encourage cycling as a form of transportation?",
+        'question': "These bikers never look where they're going.. but I guess it's better than driving... Should we build more bike-only paths to encourage more cycling?",
         'yes-result': 'Some of the driving population are angry to see more bikers on the road! At least there are less cars on the road!',
         'no-result': 'The driving population is pleased with your decision, however; you did not help the environment.',
         'eco-score': 1,
@@ -51,7 +51,7 @@ let questions = {
         'NPC-img-num': 1
     },
     4: {
-        'question': 'Yooo man... We gotta replant the trees dude, it is a real issue man. I love trees man. *kisses tree* Should we enforce a law that requires people to plant a tree for every tree they chop down?',
+        'question': 'Yooo man... We gotta replant the trees dude. Should we enforce a law that requires people to plant a tree for every tree they chop down?',
         'yes-result': 'Totally tubular, man! The more trees the better!',
         'no-result': 'That is so bogus! We are gonna run out of trees, at this rate!',
         'pop-score': 2,
@@ -67,7 +67,7 @@ let questions = {
         'NPC-img-num': 2
     },
     6: {
-        'question': 'Wow! With such an increase in public transit use, we want to increase the ticket prices for buses and trains from $2 to $4. Do you agree to this plan?',
+        'question': 'Wow! So many people have started using public transit for their commutes! Should we increase the ticket price for buses and trains from $2 to $4?',
         'yes-result': 'People are starting to walk more now! The less cars on the road the better! They are thrilled by your first decision as Mayor!',
         'no-result': 'People are still unmotivated to walk rather than drive. Hopefully your next decisions will be better!',
         'eco-score': 1,
@@ -91,7 +91,7 @@ let questions = {
         'NPC-img-num': 1
     },
     9: {
-        'question': 'Mayor, is it just me or is it hard to breathe downtown? To further discourage non-electric private vehicles, we want to add an additional carbon pollution surcharge to parking permits for non-electric vehicles. Do you agree to this plan?',
+        'question': 'Mayor, is it just me or is it hard to breathe downtown? Should we add an additional carbon pollution surcharge to parking permits for non-electric vehicles?',
         'yes-result': 'You made the correct decision!',
         'no-result': 'You made the wrong decision!',
         'eco-score': 1,
@@ -99,7 +99,7 @@ let questions = {
         'NPC-img-num': 1
     },
     10: {
-        'question': 'Over 3 quarters of carbon emission from building operations can be eliminated by switching natural gas to electricity or renewable natural gas for space and water heating. Do you think it is feasible to require the majority of new home constructions to use electrical appliances for heating and hot water.',
+        'question': 'A lot of carbon emissions can be eliminated by switching from natural gas to electricity for household heating. Should we require new home constructions to use electrical appliances for heating and hot water?',
         'yes-result': 'You made the correct decision!',
         'no-result': 'You made the wrong decision!',
         'eco-score': 1,
@@ -107,7 +107,7 @@ let questions = {
         'NPC-img-num': 1
     },
     11: {
-        'question': 'Do you agree to issue fines to building owners that still operate on unrenweable natural gas?',
+        'question': 'We need to do something drastic to reduce our building carbon emissions. Should we begin issuing fines to building owners that still operate with non-renewable natural gas?',
         'yes-result': 'You made the correct decision!',
         'no-result': 'You made the wrong decision!',
         'eco-score': 1,
@@ -115,15 +115,15 @@ let questions = {
         'NPC-img-num': 1
     },
     12: {
-        'question': 'The Architechture Association of Raincity hates big windows; they believe it is a faux-pas. Bigger windows allows for improved air flow which allows for reduced energy usage for heating. Do you want to mandate the usage of big windows or appease the powerful architects of Raincity?',
-        'yes-result': 'You made the correct decision!',
+        'question': 'The Landlords Association of Raincity hates big windows; they believe they are too expensive! Bigger windows allows for improved air flow which reduces energy used for household heating. Do you want to mandate the usage of big windows or appease the landlords of Raincity?',
+        'yes-result': 'Let there be light! Citizens are breathing a breathe of fresh air!',
         'no-result': 'You made the wrong decision!',
         'eco-score': 1,
         'pop-score': 1,
         'NPC-img-num': 1
     },
     13: {
-        'question': "Mayor, Tim's Mill just called and they want to increase their wood production. Wood is a great low carbon material, but the citizens really hate deforestation. Should we do it?",
+        'question': "Mayor, Tim's Mill just called and they want to expand into old-growth forests. This could make us a lot of money! Should we start chopping?",
         'yes-result': 'You made the correct decision!',
         'no-result': 'You made the wrong decision!',
         'eco-score': 1,
@@ -131,23 +131,23 @@ let questions = {
         'NPC-img-num': 1
     },
     14: {
-        'question': 'One of our aims to lower embodied emissions is to decrease parking spaces in buildings. Do you agree with this?',
+        'question': 'Apartment dwellers in RainCity are asking for more parking spots within building parkades. Should we increase the maximum parking limit for residential buildings?',
         'yes-result': 'You made the correct decision!',
-        'no-result': 'You made the wrong decision!',
+        'no-result': 'The citizens are not happy with their lack of parking. However, introducing a parking maximum is a good idea! We should focus on reducing the need for cars overall!',
         'eco-score': 1,
         'pop-score': 1,
         'NPC-img-num': 1
     },
     15: {
-        'question': 'Yooo man... We gotta replant the trees dude, it a real issue man. The trees are gonna save us from the terrible carbon pollution bro. I love trees man. *Kisses Tree*',
+        'question': 'Drivers are complaining about the bright streetlamps! Should we get rid of some streetlamps to accommodate late-night drivers?',
         'yes-result': 'You made the correct decision!',
-        'no-result': 'You made the wrong decision!',
+        'no-result': 'Residents no longer feel safe walking at night! Removing streetlamps is taking a step backward in our plan for creating more walkable neighborhoods.',
         'eco-score': 1,
         'pop-score': 1,
         'NPC-img-num': 1
     },
     16: {
-        'question': "Bro, exporting out massive amounts of wood is totally not cool man. This totally goes against the grain of the trees dude. Let's export less so we can save our tree brethren. *Kisses you*",
+        'question': "Exporting out massive amounts of wood is totally not the vibe, man. This goes against the grain of the trees, dude. Should we reduce the amount of trees we export?",
         'yes-result': 'You made the correct decision!',
         'no-result': 'You made the wrong decision!',
         'eco-score': 1,
@@ -155,7 +155,7 @@ let questions = {
         'NPC-img-num': 1
     },
     17: {
-        'question': 'Climate change is not cool at all man. But the changing temperatures and seasons could make the farmining industry innovate more dude... As a vegan, I think the farming industry is hella cool... We should ignore climate change to help save the cows *Kisses cow*',
+        'question': 'Climate change is so not cool, man! But the warmer weather is really helping my tan! Should we ignore climate change so I can lay on the beach more often?',
         'yes-result': 'You made the correct decision!',
         'no-result': 'You made the wrong decision!',
         'eco-score': 1,
@@ -163,7 +163,7 @@ let questions = {
         'NPC-img-num': 1
     },
     18: {
-        'question': 'Climate change is not cool at all man. But the changing temperatures and seasons could make the farmining industry innovate more dude... As a vegan, I think the farming industry is hella cool... We should ignore climate change to help save the cows *Kisses cow*',
+        'question': 'Mayor, this is a marketing disaster! Only 7% of RainCity citizens know what our biggest carbon impact really is! Should we increase our marketing budget to spread awareness about carbon footprints?',
         'yes-result': 'You made the correct decision!',
         'no-result': 'You made the wrong decision!',
         'eco-score': 1,
@@ -171,14 +171,13 @@ let questions = {
         'NPC-img-num': 1
     },
     19: {
-        'question': 'Climate change is not cool at all man. But the changing temperatures and seasons could make the farmining industry innovate more dude... As a vegan, I think the farming industry is hella cool... We should ignore climate change to help save the cows *Kisses cow*',
+        'question': 'Recent studies have shown that people who do not depend on a car are healthier and happier! Should we increase funding and promote Walk/Bike-To-Work programs for businesses?',
         'yes-result': 'You made the correct decision!',
         'no-result': 'You made the wrong decision!',
         'eco-score': 1,
         'pop-score': 1,
         'NPC-img-num': 1
-    },
-
+    }
 };
 
 //Creates an array of random integers from 0-9
