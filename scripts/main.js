@@ -365,22 +365,8 @@ function suitNext() {
     suitImage.setAttribute("src", suitAssets[suitNum]);
 }
 
-// // Writes user's customized character to Firestore
-// function writeCustomizedCharacter (hair, skin, suit) {
-//     firebase.auth().onAuthStateChanged(function (user) {
-//         db.collection('users').doc(user.uid)
-//         .collection('character').doc('character')
-//         .set({
-//             'hair': hair,
-//             'skin': skin,
-//             'suit': suit
-//         })
-//     })
-//     console.log("Save Success")
-// };
 
 // Door Animation Function
-
 function updateMayorbg(){
     document.getElementById('mayorbg').setAttribute('src', './assets/mayorsofficebg/mayorsoffice2.png')
 }
@@ -395,7 +381,7 @@ function doorAnimate1(){
         audio.pause();
         doorsound.play();
         setTimeout(doorAnimate2, 2000)
-        setTimeout(doorAnimate3, 3500)
+        setTimeout(doorAnimate3, 2700)
     , 1000})
 
 }
