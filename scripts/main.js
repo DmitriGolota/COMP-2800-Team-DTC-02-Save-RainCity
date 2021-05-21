@@ -877,7 +877,7 @@ function introDialogue() {
         document.getElementById('next-dialogue-button').setAttribute('class', 'visible')
         return false
     }
-    setTimeout('introDialogue()', 0.1);
+    setTimeout('introDialogue()', 30);
 };
 
 // Function for the first question prompt that appears after the intro
@@ -1248,7 +1248,7 @@ function hideAnswerBox() {
 // This is the main function to call the next yes/no question
 function nextQuestionPrompt() {
     // temporary change
-    if (questionCounter === 1 || popularityScore === 0) {
+    if (questionCounter === 19 || popularityScore === 0) {
         // end game
         endGameSequence();
     } else if (questionCounter === 9) {
