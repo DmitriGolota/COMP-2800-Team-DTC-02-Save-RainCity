@@ -444,10 +444,6 @@ let suitAssets = {
 };
 let suitAssetsLength = Object.keys(suitAssets).length - 1;
 
-function test() {
-    console.log(hairNum)
-}
-
 function hairPrev() {
     //button movement
     document.getElementById("hairPrev").src = "./assets/buttons/arrowleftclicked.png"
@@ -1544,7 +1540,6 @@ function endGameSequence() {
                 firebase.auth().onAuthStateChanged(function (user) {
                     if (user) {
                         scoreSaved = true;
-                        console.log("Save Success");
                         var name = '';
                         db.collection('users').doc(user.uid)
                             .get()
@@ -1570,7 +1565,6 @@ function endGameSequence() {
                                     })
                             })
                     } else{
-                        console.log("Login please")
                         window.open('./saveScore.html');
                     }
                 });
