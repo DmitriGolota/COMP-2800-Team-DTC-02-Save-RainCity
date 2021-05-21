@@ -645,7 +645,6 @@ document.getElementById('save-button').addEventListener('click', function () {
         shipClicked = true;
         displayEasterEggFinal()
     })
-
     masterIntroDialogue();
 
 });
@@ -1104,7 +1103,7 @@ function nextQuestionPrompt() {
     // temporary change
     if (questionCounter === 1 || popularityScore === 0) {
         // end game
-        ratingSequence();
+        endGameSequence();
     } else if (questionCounter === 9) {
         // put newspaper popup here. show newspaper with headline:
         if (popularityScore > 0) {
@@ -1270,33 +1269,14 @@ let deletePaper = () => {
 
 function ratingSequence() {
 
-    mayoralRating = (popularityScore * 7.5) + (ecoScore * 2.5)
 
-    setTimeout(() => {
-
-        //Create box that contains all ratings
-        document.getElementById('answerBox').setAttribute('class', 'visible');
-        document.getElementById('answerBoxText').setAttribute('class', 'visible');
-        document.getElementById('answerBoxText').setAttribute('style', 'white-space: pre;');
-
-
-        document.getElementById('answerBoxText').textContent = 'These are your end game stats:\r\n' +
-            'Air quality rating - ' + Math.round(airQualityRating/2) + '%\r\n' +
-            'Carbon emissions rating - ' + Math.round(emissionsRating/2) + '%\r\n' +
-            'Energy consumption rating - ' + Math.round(energyRating/2) + '%\r\n' +
-            'Transportation rating - ' + Math.round(transportRating/2) + '%\r\n' +
-            'Walkability rating - ' + Math.round(walkabilityRating/2) + '%\r\n' +
-            'Government action rating - ' + Math.round(governmentActionRating/2) + '%\r\n' +
-            'Environment restoration rating - ' + Math.round(environmentRestorationRating/2) + '%\r\n' +
-            'Approval rating - ' + mayoralRating + '%\r\n';
-
-
-    }, 100);
 
     setTimeout(endGameSequence, 20000)
 
 
 }
+//Check if the user Saved their score yet
+let scoreSaved = false;
 
 // If you finish all questions, or pop score reaches 0, end game.
 function endGameSequence() {
@@ -1320,36 +1300,6 @@ function endGameSequence() {
 
     let timestamp = currentDayOfMonth + "-" + (currentMonth + 1) + "-" + currentYear;
 
-    // Write the user's end game score to firestore
-    firebase.auth().onAuthStateChanged(function (user) {
-        if (user) {
-            var name = '';
-            db.collection('users').doc(user.uid)
-                .get()
-                .then(function (doc) {
-                    name = doc.data().name.split(' ');
-                    db.collection('users').doc(user.uid)
-                        .collection('game-scores').doc()
-                        .set({
-                            score: endGameScore,
-                            timestamp: timestamp
-                        })
-                        .then(function () {
-                            // if the user scored a perfect score aka 100%
-                            // this will be altered as 100 does no currently mean 100%
-                            if (endGameScore === 100) {
-                                db.collection('scores').doc()
-                                    .set({
-                                        name: name[0],
-                                        score: endGameScore,
-                                        timestamp: timestamp
-                                    })
-                            }
-                        })
-                })
-        }
-    });
-
     // Remove everything
     setTimeout(() => {
 
@@ -1363,12 +1313,156 @@ function endGameSequence() {
 
         let returnButton = document.createElement('img');
         returnButton.setAttribute('id', 'returnButton');
-        returnButton.setAttribute('src', './assets/intro_box/ContinueButtonUncllicked.png');
-        returnButton.setAttribute('onclick', 'window.location.assign("index.html")');
+        returnButton.setAttribute('src', './assets/end_game_box/buttons/quitUnclicked.png');
+        returnButton.onclick = () => {
+            buttonClickOne.play();
+            returnButton.src = "./assets/end_game_box/buttons/quitClicked.png"
+            window.location.assign("index.html")
+        }
 
         let gameOverAnimation = document.createElement('img');
         gameOverAnimation.setAttribute('src', './assets/end_game_box/game_over_anim/EndGameBox.gif');
         gameOverAnimation.setAttribute('id', 'gameover-anim');
+
+        let gameOver = document.createElement('div');
+        gameOver.id = 'gameOver';
+        gameOver.setAttribute('class', 'visible');
+
+        // Create the advanved statistics box
+        let answerBox = document.createElement('img');
+        answerBox.setAttribute('src', './assets/end_game_box/EndGameBoxBack.png')
+        answerBox.setAttribute('id', 'answerBox');
+
+        // Create the text box for the advanced statistics box
+        let answerBoxText = document.createElement('p');
+        answerBoxText.setAttribute('id', 'answerBoxText');
+        answerBoxText.setAttribute('style', 'white-space: pre;');
+
+        //Create advanced div
+        let advanced = document.createElement('div');
+        advanced.setAttribute('class', 'visible');
+        advanced.id = 'advanced';
+        advanced.onclick = () => {
+            //Flip card
+            flipcardInner.classList.remove('flip-card-activate');
+            //Show Button
+            advancedButton.setAttribute('class', 'visible');
+            share.setAttribute('class', 'visible');
+            returnButton.setAttribute('class', 'visible');
+            saveScore.setAttribute('class', 'visible');
+        }
+
+        advanced.append(answerBox);
+        advanced.append(answerBoxText);
+
+        let advancedButton = document.createElement('img');
+        advancedButton.id = 'advancedButton';
+        advancedButton.setAttribute('src', './assets/end_game_box/buttons/advancedUnclicked.png');
+        advancedButton.onclick = function(){
+            buttonClickOne.play();
+            document.getElementById("advancedButton").src = "./assets/end_game_box/buttons/advancedClicked.png"
+            setTimeout(function () {
+                advancedButton.src =  './assets/end_game_box/buttons/advancedUnclicked.png';
+            }, 50)
+            
+            mayoralRating = (popularityScore * 7.5) + (ecoScore * 2.5)
+            //Flip card
+            flipcardInner.classList.add('flip-card-activate');
+                //Hide buttons
+                advancedButton.setAttribute('class', 'hidden');
+                share.setAttribute('class', 'hidden');
+                returnButton.setAttribute('class', 'hidden');
+                saveScore.setAttribute('class', 'hidden');
+
+                //Populate advanceBoxText
+                document.getElementById('answerBoxText').textContent = 'These are your end game stats:\r\n' +
+                    'Air quality rating - ' + Math.round(airQualityRating/2) + '%\r\n' +
+                    'Carbon emissions rating - ' + Math.round(emissionsRating/2) + '%\r\n' +
+                    'Energy consumption rating - ' + Math.round(energyRating/2) + '%\r\n' +
+                    'Transportation rating - ' + Math.round(transportRating/2) + '%\r\n' +
+                    'Walkability rating - ' + Math.round(walkabilityRating/2) + '%\r\n' +
+                    'Government action rating - ' + Math.round(governmentActionRating/2) + '%\r\n' +
+                    'Environment restoration rating - ' + Math.round(environmentRestorationRating/2) + '%\r\n' +
+                    'Approval rating - ' + mayoralRating + '%\r\n';
+        }
+
+        let saveScore = document.createElement('img');
+        saveScore.setAttribute('src', './assets/end_game_box/buttons/saveScoreUnclicked.png')
+        saveScore.id = 'saveScore';
+        saveScore.onclick = () => {
+            buttonClickOne.play();
+            saveScore.src = "./assets/end_game_box/buttons/saveScoreClicked.png"
+            setTimeout(function () {
+                saveScore.src = './assets/end_game_box/buttons/saveScoreUnclicked.png';
+            }, 50)
+            
+            // Write the user's end game score to firestore
+            if (!scoreSaved){
+                firebase.auth().onAuthStateChanged(function (user) {
+                    if (user) {
+                        scoreSaved = true;
+                        console.log("Save Success");
+                        var name = '';
+                        db.collection('users').doc(user.uid)
+                            .get()
+                            .then(function (doc) {
+                                name = doc.data().name.split(' ');
+                                db.collection('users').doc(user.uid)
+                                    .collection('game-scores').doc()
+                                    .set({
+                                        score: endGameScore,
+                                        timestamp: timestamp
+                                    })
+                                    .then(function () {
+                                        // if the user scored a perfect score aka 100%
+                                        // this will be altered as 100 does no currently mean 100%
+                                        if (endGameScore === 100) {
+                                            db.collection('scores').doc()
+                                                .set({
+                                                    name: name[0],
+                                                    score: endGameScore,
+                                                    timestamp: timestamp
+                                                })
+                                        }
+                                    })
+                            })
+                    } else{
+                        console.log("Login please")
+                        window.open('./saveScore.html');
+                    }
+                });
+            }
+        }
+
+        let share = document.createElement('img');
+        share.setAttribute('src', './assets/end_game_box/buttons/shareUnclicked.png')
+        share.id = 'share';
+        share.onclick = () => {
+            buttonClickOne.play();
+            share.src = "./assets/end_game_box/buttons/shareClicked.png"
+            setTimeout(function () {
+                share.src = './assets/end_game_box/buttons/shareUnclicked.png';
+            }, 50)
+        }
+
+        //Create gameOver div
+        gameOver.append(endGameBox);
+        gameOver.append(gameOverAnimation);
+        gameOver.append(endGameScoreText);
+        gameOver.append(returnButton);
+        gameOver.append(advancedButton);
+        gameOver.append(saveScore);
+        gameOver.append(share);
+
+        //Create flipcard div
+        let flipcard = document.createElement('div');
+        flipcard.id = 'flipcard';
+        let flipcardInner = document.createElement('div');
+        flipcardInner.id = 'flipcard-Inner';
+        flipcardInner.append(gameOver);
+        flipcardInner.append(advanced);
+        flipcard.append(flipcardInner);
+        //Create newspaper Element
 
         createNewspaper("endGame");
         var newspaper = document.getElementById("newspaper");
@@ -1377,10 +1471,8 @@ function endGameSequence() {
             var newspaper = document.getElementById('newspaper');
             newspaper.remove();
             audio.play();
-            document.body.append(endGameBox);
-            document.body.append(gameOverAnimation);
-            document.body.append(endGameScoreText);
-            document.body.append(returnButton);
+            //Create endgame screen
+            document.body.append(flipcard);
         }
     }, 100);
 };
