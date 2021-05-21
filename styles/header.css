@@ -44,7 +44,7 @@ body{
     color:rgb(167, 167, 167)!important;
 }
 .purple{
-    color: rgb(175, 0, 175);
+    color: rgb(175, 0, 175)!important;
 }
 .main-link{
     width: 40%;
