@@ -3,13 +3,22 @@
     src: url("../assets/VT323-Regular.ttf");
 }
 
+html{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+}
+
 .leaderboard{
     font-family: Pixel;
     background-color: rgb(161, 161, 161);
     /* border: 4px solid rgb(37, 37, 37); */
     text-align: center;
     color: whitesmoke;
-    margin: 1%;
+    margin: 1vh 2vw;
+    height: 70vh;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .title{
@@ -26,7 +35,12 @@
 
 #list{
     width: 70vw;
-    margin: 0 15vw;
+    margin: 0 12vw;
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
 }
 
 .red{
@@ -46,4 +60,15 @@
 }
 .grey{
     color:rgb(167, 167, 167);
+}
+
+@media (orientation: landscape) {
+    footer{
+        position: static;
+        height: auto;
+    }
+
+    .leaderboard{
+        margin: 2vh 2vw;
+    }
 }

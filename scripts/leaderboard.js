@@ -1,10 +1,10 @@
 //Create DOM elements
 var list = document.getElementById("list");
 
-var createListItem = (name, timecompleted) => {
+var createListItem = (name, timestamp) => {
     //seconds to date solution found on stackoverflow
     var date = new Date(1970, 0, 1); //Epoch time
-    date.setSeconds(timecompleted);
+    date.setSeconds(timestamp);
 
     //Create DOM element
     var listItem = document.createElement('li');
@@ -27,13 +27,12 @@ var createListItem = (name, timecompleted) => {
 
 //Custom score class
 class Score {
-    constructor (name, percentage, timecompleted) {
+    constructor (name, timestamp) {
         this.name = name;
-        this.percentage = percentage;
-        this.timecompleted = timecompleted;
+        this.timestamp = timestamp;
     }
     toString() {
-        return this.name + ', ' + this.percentage + ', ' + this.timecompleted;
+        return this.name + ', ' + this.timestamp;
     }
 }
 
@@ -42,25 +41,24 @@ var scoreConverter = {
     toFirestore: function(score) {
         return {
             name: score.name,
-            percentage: score.percentage,
-            timecompleted: score.timecompleted
+            timestamp: score.timestamp
             };
     },
     fromFirestore: function(snapshot, options){
         const data = snapshot.data(options);
-        return new Score(data.name, data.percentage, data.timecompleted);
+        return new Score(data.name, data.timestamp);
     }
 };
 
 //Call for 'scores' collection from Firestore
-var test = db.collectionGroup("scores").where('percentage', '==', 100).orderBy("timecompleted", "desc").limit(10);
+var users = db.collection("scores").orderBy("timestamp", "desc").limit(10);
 
-test.withConverter(scoreConverter).get().then((querySnapshot) => {
+users.withConverter(scoreConverter).get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
         var score = doc.data();
         //append retrived data to html page
-        console.log(score.name + " " + score.percentage + " " + score.timecompleted.seconds);
-        createListItem(score.name, score.timecompleted.seconds);
+        console.log(score.name + " " + score.timestamp.seconds);
+        createListItem(score.name, score.timestamp.seconds);
     })
 })
 
