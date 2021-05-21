@@ -22,7 +22,13 @@ let questions = {
         'question': 'Mayor! People have raised concerns about how boring it is to walk in some neighbourhoods. Should we increase the amount of trees and plants near sidewalks to make them more enjoyable to walk?',
         'yes-result': 'People are starting to walk more now! The less cars on the road the better! They are thrilled by your first decision as Mayor!',
         'no-result': 'People are still unmotivated to walk rather than drive. Hopefully your next decisions will be better!',
-        'eco-score': 1,
+        'airQualityRating': 1,
+        'emissionsRating': 1,
+        'energyRating': 1,
+        'transportRating': 1,
+        'walkabilityRating': 1,
+        'governmentActionRating': 1,
+        'environmentRestorationRating': 1,
         'pop-score': 1,
         'NPC-img-num': 4
     },
@@ -30,8 +36,14 @@ let questions = {
         'question': "These bikers never look where they're going.. but I guess it's better than driving... Should we build more bike-only paths to encourage more cycling?",
         'yes-result': 'Some of the driving population are angry to see more bikers on the road! At least there are less cars on the road!',
         'no-result': 'The driving population is pleased with your decision, however; you did not help the environment.',
-        'eco-score': 1,
-        'pop-score': -1,
+        'airQualityRating': 1,
+        'emissionsRating': 1,
+        'energyRating': 1,
+        'transportRating': 1,
+        'walkabilityRating': 1,
+        'governmentActionRating': 1,
+        'environmentRestorationRating': 1,
+        'pop-score': 1,
         'NPC-img-num': 5
     },
     2: {
@@ -54,15 +66,27 @@ let questions = {
         'question': 'Yooo man... We gotta replant the trees dude. Should we enforce a law that requires people to plant a tree for every tree they chop down?',
         'yes-result': 'Totally tubular, man! The more trees the better!',
         'no-result': 'That is so bogus! We are gonna run out of trees, at this rate!',
-        'pop-score': 2,
-        'eco-score': 2,
+        'airQualityRating': 1,
+        'emissionsRating': 1,
+        'energyRating': 1,
+        'transportRating': 1,
+        'walkabilityRating': 1,
+        'governmentActionRating': 1,
+        'environmentRestorationRating': 1,
+        'pop-score': 1,
         'NPC-img-num': 6
     },
-    5: {
+    3: {
         'question': 'We just got a call from Elon Musk! He is paying cities lots of DogeCoin to add more electric vehicle charging stations! Should we add more EV chargers around RainCity?',
         'yes-result': 'Woohoo, that is a lot of DogeCoin! We are starting to see more electric vehicles across the city! Nicely done!',
         'no-result': "Uh-oh, you do not want to get on Elon's bad side. It would have been a good idea to make electric vehicles more accessible too!",
-        'eco-score': 2,
+        'airQualityRating': 1,
+        'emissionsRating': 1,
+        'energyRating': 1,
+        'transportRating': 1,
+        'walkabilityRating': 1,
+        'governmentActionRating': 1,
+        'environmentRestorationRating': 1,
         'pop-score': 1,
         'NPC-img-num': 2
     },
@@ -70,23 +94,41 @@ let questions = {
         'question': 'Wow! So many people have started using public transit for their commutes! Should we increase the ticket price for buses and trains from $2 to $4?',
         'yes-result': 'People are starting to walk more now! The less cars on the road the better! They are thrilled by your first decision as Mayor!',
         'no-result': 'People are still unmotivated to walk rather than drive. Hopefully your next decisions will be better!',
-        'eco-score': 1,
+        'airQualityRating': 1,
+        'emissionsRating': 1,
+        'energyRating': 1,
+        'transportRating': 1,
+        'walkabilityRating': 1,
+        'governmentActionRating': 1,
+        'environmentRestorationRating': 1,
         'pop-score': 1,
         'NPC-img-num': 1
     },
-    7: {
+    5: {
         'question': 'People are complaining about the lack of parking in Downtown RainCity! Can we pave over a greenspace to build a parkade?',
         'yes-result': 'You made the correct decision!',
         'no-result': 'You made the wrong decision!',
-        'eco-score': 1,
+        'airQualityRating': 1,
+        'emissionsRating': 1,
+        'energyRating': 1,
+        'transportRating': 1,
+        'walkabilityRating': 1,
+        'governmentActionRating': 1,
+        'environmentRestorationRating': 1,
         'pop-score': 1,
         'NPC-img-num': 1
     },
-    8: {
+    6: {
         'question': "Mayor! Still too many people are driving private vehicles unnecessarily! Should we expand our residential parking permits city-wide?",
         'yes-result': 'You made the correct decision!',
         'no-result': 'You made the wrong decision!',
-        'eco-score': 1,
+        'airQualityRating': 1,
+        'emissionsRating': 1,
+        'energyRating': 1,
+        'transportRating': 1,
+        'walkabilityRating': 1,
+        'governmentActionRating': 1,
+        'environmentRestorationRating': 1,
         'pop-score': 1,
         'NPC-img-num': 1
     },
@@ -94,7 +136,13 @@ let questions = {
         'question': 'Mayor, is it just me or is it hard to breathe downtown? Should we add an additional carbon pollution surcharge to parking permits for non-electric vehicles?',
         'yes-result': 'You made the correct decision!',
         'no-result': 'You made the wrong decision!',
-        'eco-score': 1,
+        'airQualityRating': 1,
+        'emissionsRating': 1,
+        'energyRating': 1,
+        'transportRating': 1,
+        'walkabilityRating': 1,
+        'governmentActionRating': 1,
+        'environmentRestorationRating': 1,
         'pop-score': 1,
         'NPC-img-num': 1
     },
@@ -102,7 +150,13 @@ let questions = {
         'question': 'A lot of carbon emissions can be eliminated by switching from natural gas to electricity for household heating. Should we require new home constructions to use electrical appliances for heating and hot water?',
         'yes-result': 'You made the correct decision!',
         'no-result': 'You made the wrong decision!',
-        'eco-score': 1,
+        'airQualityRating': 1,
+        'emissionsRating': 1,
+        'energyRating': 1,
+        'transportRating': 1,
+        'walkabilityRating': 1,
+        'governmentActionRating': 1,
+        'environmentRestorationRating': 1,
         'pop-score': 1,
         'NPC-img-num': 1
     },
@@ -110,7 +164,13 @@ let questions = {
         'question': 'We need to do something drastic to reduce our building carbon emissions. Should we begin issuing fines to building owners that still operate with non-renewable natural gas?',
         'yes-result': 'You made the correct decision!',
         'no-result': 'You made the wrong decision!',
-        'eco-score': 1,
+        'airQualityRating': 1,
+        'emissionsRating': 1,
+        'energyRating': 1,
+        'transportRating': 1,
+        'walkabilityRating': 1,
+        'governmentActionRating': 1,
+        'environmentRestorationRating': 1,
         'pop-score': 1,
         'NPC-img-num': 1
     },
@@ -118,15 +178,55 @@ let questions = {
         'question': 'The Landlords Association of Raincity hates big windows; they believe they are too expensive! Bigger windows allows for improved air flow which reduces energy used for household heating. Do you want to mandate the usage of big windows or appease the landlords of Raincity?',
         'yes-result': 'Let there be light! Citizens are breathing a breathe of fresh air!',
         'no-result': 'You made the wrong decision!',
-        'eco-score': 1,
+        'airQualityRating': 1,
+        'emissionsRating': 1,
+        'energyRating': 1,
+        'transportRating': 1,
+        'walkabilityRating': 1,
+        'governmentActionRating': 1,
+        'environmentRestorationRating': 1,
         'pop-score': 1,
         'NPC-img-num': 1
+    },
+    11: {
+        'question': 'The bus system is getting expensive with the new eco-friendly policies! Should we reduce the schedule and frequency of buses to save money?',
+        'yes-result': 'Citizens of RainCity are now further discouraged to consider public transit! That was not a good move!',
+        'no-result': 'Commuters are glad to keep the regular bus schedules! The budget department can kick rocks!',
+        'airQualityRating': 1,
+        'emissionsRating': 1,
+        'energyRating': 1,
+        'transportRating': 1,
+        'walkabilityRating': 1,
+        'governmentActionRating': 1,
+        'environmentRestorationRating': 1,
+        'pop-score': 1,
+        'NPC-img-num': 1
+    },
+    12: {
+        'question': 'Traffic in Downtown RainCity is at an all time high and that means lots of vehicle carbon emissions! Should we charge a fee for private vehicles entering the Metro Core?',
+        'yes-result': 'Drivers are not happy with your decision, but this is definitely going to reduce carbon emissions! Good work!',
+        'no-result': 'Drivers are happy to continue driving wherever they please, but your decision has not reduced any carbon emissions!',
+        'airQualityRating': 1,
+        'emissionsRating': 1,
+        'energyRating': 1,
+        'transportRating': 1,
+        'walkabilityRating': 1,
+        'governmentActionRating': 1,
+        'environmentRestorationRating': 1,
+        'pop-score': 1,
+        'NPC-img-num': 3
     },
     13: {
         'question': "Mayor, Tim's Mill just called and they want to expand into old-growth forests. This could make us a lot of money! Should we start chopping?",
         'yes-result': 'You made the correct decision!',
         'no-result': 'You made the wrong decision!',
-        'eco-score': 1,
+        'airQualityRating': 1,
+        'emissionsRating': 1,
+        'energyRating': 1,
+        'transportRating': 1,
+        'walkabilityRating': 1,
+        'governmentActionRating': 1,
+        'environmentRestorationRating': 1,
         'pop-score': 1,
         'NPC-img-num': 1
     },
@@ -135,6 +235,13 @@ let questions = {
         'yes-result': 'You made the correct decision!',
         'no-result': 'The citizens are not happy with their lack of parking. However, introducing a parking maximum is a good idea! We should focus on reducing the need for cars overall!',
         'eco-score': 1,
+        'airQualityRating': 1,
+        'emissionsRating': 1,
+        'energyRating': 1,
+        'transportRating': 1,
+        'walkabilityRating': 1,
+        'governmentActionRating': 1,
+        'environmentRestorationRating': 1,
         'pop-score': 1,
         'NPC-img-num': 1
     },
@@ -143,6 +250,13 @@ let questions = {
         'yes-result': 'You made the correct decision!',
         'no-result': 'Residents no longer feel safe walking at night! Removing streetlamps is taking a step backward in our plan for creating more walkable neighborhoods.',
         'eco-score': 1,
+        'airQualityRating': 1,
+        'emissionsRating': 1,
+        'energyRating': 1,
+        'transportRating': 1,
+        'walkabilityRating': 1,
+        'governmentActionRating': 1,
+        'environmentRestorationRating': 1,
         'pop-score': 1,
         'NPC-img-num': 1
     },
@@ -150,7 +264,13 @@ let questions = {
         'question': "Exporting out massive amounts of wood is totally not the vibe, man. This goes against the grain of the trees, dude. Should we reduce the amount of trees we export?",
         'yes-result': 'You made the correct decision!',
         'no-result': 'You made the wrong decision!',
-        'eco-score': 1,
+        'airQualityRating': 1,
+        'emissionsRating': 1,
+        'energyRating': 1,
+        'transportRating': 1,
+        'walkabilityRating': 1,
+        'governmentActionRating': 1,
+        'environmentRestorationRating': 1,
         'pop-score': 1,
         'NPC-img-num': 1
     },
@@ -158,7 +278,13 @@ let questions = {
         'question': 'Climate change is so not cool, man! But the warmer weather is really helping my tan! Should we ignore climate change so I can lay on the beach more often?',
         'yes-result': 'You made the correct decision!',
         'no-result': 'You made the wrong decision!',
-        'eco-score': 1,
+        'airQualityRating': 1,
+        'emissionsRating': 1,
+        'energyRating': 1,
+        'transportRating': 1,
+        'walkabilityRating': 1,
+        'governmentActionRating': 1,
+        'environmentRestorationRating': 1,
         'pop-score': 1,
         'NPC-img-num': 1
     },
@@ -166,7 +292,13 @@ let questions = {
         'question': 'Mayor, this is a marketing disaster! Only 7% of RainCity citizens know what our biggest carbon impact really is! Should we increase our marketing budget to spread awareness about carbon footprints?',
         'yes-result': 'You made the correct decision!',
         'no-result': 'You made the wrong decision!',
-        'eco-score': 1,
+        'airQualityRating': 1,
+        'emissionsRating': 1,
+        'energyRating': 1,
+        'transportRating': 1,
+        'walkabilityRating': 1,
+        'governmentActionRating': 1,
+        'environmentRestorationRating': 1,
         'pop-score': 1,
         'NPC-img-num': 1
     },
@@ -174,11 +306,26 @@ let questions = {
         'question': 'Recent studies have shown that people who do not depend on a car are healthier and happier! Should we increase funding and promote Walk/Bike-To-Work programs for businesses?',
         'yes-result': 'You made the correct decision!',
         'no-result': 'You made the wrong decision!',
-        'eco-score': 1,
+        'airQualityRating': 1,
+        'emissionsRating': 1,
+        'energyRating': 1,
+        'transportRating': 1,
+        'walkabilityRating': 1,
+        'governmentActionRating': 1,
+        'environmentRestorationRating': 1,
         'pop-score': 1,
         'NPC-img-num': 1
     }
 };
+
+//Eco score factors
+let airQualityRating, emissionsRating, energyRating, transportRating, walkabilityRating, governmentActionRating, environmentRestorationRating;
+//keeps track of individual ratings
+let airQualityRatingCount = 0, emissionsRatingCount = 0, energyRatingCount = 0, transportRatingCount = 0, walkabilityRatingCount = 0, governmentActionRatingCount = 0, environmentRestorationRatingCount = 0;
+//Overall rating scaled out of 10, used to calculate ecoScore
+let ecoRating;
+//Sum of all ratings after every question, used to calculate endGameScore
+let overallRating = 0;
 
 //Creates an array of random integers from 0-9
 //For easy questions
@@ -659,7 +806,7 @@ function introDialogue() {
         document.getElementById('next-dialogue-button').setAttribute('class', 'visible')
         return false
     }
-    setTimeout('introDialogue()', 30);
+    setTimeout('introDialogue()', 0.1);
 };
 
 // Function for the first question prompt that appears after the intro
@@ -743,7 +890,6 @@ function firstPrompt() {
     boxPopAudioOne.play();
 };
 
-
 function selectYesButton() {
     document.getElementById('yes-button').setAttribute('src', './assets/dialogue_box/buttons/YesButtonClicked.png')
     buttonClickOne.play();
@@ -761,8 +907,19 @@ function selectYesButton() {
         if (questionCounter > 9) {
             nextAnswerBoxText = questions[arrOfRandomIntegersHard[questionCounter - 10]]['yes-result'].split('');
 
+            //Eco score factors
+            airQualityRating = questions[arrOfRandomIntegersHard[questionCounter - 10]]['airQualityRating'];
+            emissionsRating = questions[arrOfRandomIntegersHard[questionCounter - 10]]['emissionsRating'];
+            energyRating = questions[arrOfRandomIntegersHard[questionCounter - 10]]['energyRating'];
+            transportRating = questions[arrOfRandomIntegersHard[questionCounter - 10]]['transportRating'];
+            walkabilityRating = questions[arrOfRandomIntegersHard[questionCounter - 10]]['walkabilityRating'];
+            governmentActionRating = questions[arrOfRandomIntegersHard[questionCounter - 10]]['governmentActionRating'];
+            environmentRestorationRating = questions[arrOfRandomIntegersHard[questionCounter - 10]]['environmentRestorationRating'];
+
             // Reflect on eco score
-            ecoScore += questions[arrOfRandomIntegersHard[questionCounter - 10]]['eco-score'];
+            ecoRating = airQualityRating + emissionsRating + energyRating + transportRating + walkabilityRating + governmentActionRating + environmentRestorationRating;
+            ecoRating /= 7;
+            ecoScore += ecoRating;
             if (ecoScore >= 10) {
                 ecoScore = 10;
             }
@@ -793,9 +950,20 @@ function selectYesButton() {
             // Set the global variable (for scrolling text) to the correct string
             nextAnswerBoxText = questions[arrOfRandomIntegersEasy[questionCounter]]['yes-result'].split('');
 
+            //Eco score factors
+            airQualityRating = questions[arrOfRandomIntegersEasy[questionCounter]]['airQualityRating'];
+            emissionsRating = questions[arrOfRandomIntegersEasy[questionCounter]]['emissionsRating'];
+            energyRating = questions[arrOfRandomIntegersEasy[questionCounter]]['energyRating'];
+            transportRating = questions[arrOfRandomIntegersEasy[questionCounter]]['transportRating'];
+            walkabilityRating = questions[arrOfRandomIntegersEasy[questionCounter]]['walkabilityRating'];
+            governmentActionRating = questions[arrOfRandomIntegersEasy[questionCounter]]['governmentActionRating'];
+            environmentRestorationRating = questions[arrOfRandomIntegersEasy[questionCounter]]['environmentRestorationRating'];
+
             // Reflect on eco score
             prevEcoScore = ecoScore;
-            ecoScore += questions[arrOfRandomIntegersEasy[questionCounter]]['eco-score'];
+            ecoRating = airQualityRating + emissionsRating + energyRating + transportRating + walkabilityRating + governmentActionRating + environmentRestorationRating;
+            ecoRating /= 7;
+            ecoScore += ecoRating;
             if (ecoScore >= 10) {
                 ecoScore = 10;
             }
@@ -825,11 +993,22 @@ function selectYesButton() {
         document.getElementById('yes-button').setAttribute('src', './assets/dialogue_box/buttons/YesButtonUnclicked.png')
 
         // Adjust score bar and popularity hearts to correct scale
-        document.getElementById('uiEcoScore').setAttribute('src', './assets/eco_score/eco_score' + ecoScore + '.png');
+        document.getElementById('uiEcoScore').setAttribute('src', './assets/eco_score/eco_score' + Math.round(ecoScore) + '.png');
         document.getElementById('uiPopScore').setAttribute('src', './assets/pop_score/pop_score' + popularityScore + '.png');
 
         // After 1 second, run function to display the answer box
         setTimeout(displayAnswerBox, 1000);
+
+        //Keeps track of individual ratings and overall ratings
+        airQualityRatingCount += airQualityRating
+        emissionsRatingCount += emissionsRating
+        energyRatingCount += energyRating
+        transportRatingCount += transportRating
+        walkabilityRatingCount += walkabilityRating
+        governmentActionRatingCount += governmentActionRating
+        environmentRestorationRatingCount += environmentRestorationRating
+        console.log(environmentRestorationRatingCount);
+        overallRating += airQualityRating + emissionsRating + energyRating + transportRating + walkabilityRating + governmentActionRating + environmentRestorationRating;
 
     }, 50)
 };
@@ -849,11 +1028,22 @@ function selectNoButton() {
 
         //Hard questions, "level 2"
         if (questionCounter > 9) {
-            nextAnswerBoxText = questions[arrOfRandomIntegersHard[questionCounter - 10]]['no-result'].split('');
+            nextAnswerBoxText = questions[arrOfRandomIntegersHard[questionCounter - 10]]['no-result'].split('')
+
+            //Eco score factors
+            airQualityRating = questions[arrOfRandomIntegersHard[questionCounter - 10]]['airQualityRating'];
+            emissionsRating = questions[arrOfRandomIntegersHard[questionCounter - 10]]['emissionsRating'];
+            energyRating = questions[arrOfRandomIntegersHard[questionCounter - 10]]['energyRating'];
+            transportRating = questions[arrOfRandomIntegersHard[questionCounter - 10]]['transportRating'];
+            walkabilityRating = questions[arrOfRandomIntegersHard[questionCounter - 10]]['walkabilityRating'];
+            governmentActionRating = questions[arrOfRandomIntege6rsHard[questionCounter - 10]]['governmentActionRating'];
+            environmentRestorationRating = questions[arrOfRandomIntegersHard[questionCounter - 10]]['environmentRestorationRating'];
 
             // Reflect on eco score
             prevEcoScore = ecoScore;
-            ecoScore -= questions[arrOfRandomIntegersHard[questionCounter - 10]]['eco-score'];
+            ecoRating = airQualityRating + emissionsRating + energyRating + transportRating + walkabilityRating + governmentActionRating + environmentRestorationRating;
+            ecoRating /= 7;
+            ecoScore -= ecoRating;
             if (ecoScore >= 10) {
                 ecoScore = 10;
             }
@@ -884,8 +1074,19 @@ function selectNoButton() {
         else {
             nextAnswerBoxText = questions[arrOfRandomIntegersEasy[questionCounter]]['no-result'].split('');
 
+            //Eco score factors
+            airQualityRating = questions[arrOfRandomIntegersEasy[questionCounter]]['airQualityRating'];
+            emissionsRating = questions[arrOfRandomIntegersEasy[questionCounter]]['emissionsRating'];
+            energyRating = questions[arrOfRandomIntegersEasy[questionCounter]]['energyRating'];
+            transportRating = questions[arrOfRandomIntegersEasy[questionCounter]]['transportRating'];
+            walkabilityRating = questions[arrOfRandomIntegersEasy[questionCounter]]['walkabilityRating'];
+            governmentActionRating = questions[arrOfRandomIntegersEasy[questionCounter]]['governmentActionRating'];
+            environmentRestorationRating = questions[arrOfRandomIntegersEasy[questionCounter]]['environmentRestorationRating'];
+
             // Reflect on eco score
-            ecoScore -= questions[arrOfRandomIntegersEasy[questionCounter]]['eco-score'];
+            ecoRating = airQualityRating + emissionsRating + energyRating + transportRating + walkabilityRating + governmentActionRating + environmentRestorationRating;
+            ecoRating /= 7;
+            ecoScore -= ecoRating;
             if (ecoScore >= 10) {
                 ecoScore = 10;
             }
@@ -915,14 +1116,26 @@ function selectNoButton() {
         document.getElementById('no-button').setAttribute('src', './assets/dialogue_box/buttons/NoButtonUnclicked.png')
 
         // Adjust score bar and popularity hearts to correct scale
-        document.getElementById('uiEcoScore').setAttribute('src', './assets/eco_score/eco_score' + ecoScore + '.png');
+        document.getElementById('uiEcoScore').setAttribute('src', './assets/eco_score/eco_score' + Math.round(ecoScore) + '.png');
         document.getElementById('uiPopScore').setAttribute('src', './assets/pop_score/pop_score' + popularityScore + '.png');
 
         // After 1 second, run function to display the answer box
         setTimeout(displayAnswerBox, 1000);
 
+        //Keeps track of individual ratings and overall ratings
+        airQualityRatingCount += airQualityRating
+        emissionsRatingCount += emissionsRating
+        energyRatingCount += energyRating
+        transportRatingCount += transportRating
+        walkabilityRatingCount += walkabilityRating
+        governmentActionRatingCount += governmentActionRating
+        environmentRestorationRatingCount += environmentRestorationRating
+        console.log(environmentRestorationRating);
+        overallRating += airQualityRating + emissionsRating + energyRating + transportRating + walkabilityRating + governmentActionRating + environmentRestorationRating;
+
     }, 50)
 };
+
 
 // Displays the answer box
 function displayAnswerBox() {
@@ -949,6 +1162,7 @@ function hideAnswerBox() {
 
 // This is the main function to call the next yes/no question
 function nextQuestionPrompt() {
+    // temporary change
     if (questionCounter === 1 || popularityScore === 0) {
         // end game
         endGameSequence();
@@ -1118,8 +1332,13 @@ let deletePaper = () => {
     newspaper.remove();
 }
 
+//Check if the user Saved their score yet
+let scoreSaved = false;
+
 // If you finish all questions, or pop score reaches 0, end game.
 function endGameSequence() {
+    //Remove everything
+    document.getElementById('container').remove();
     // Stop the main theme audio 
     var audioMain = document.getElementById('mainSoundTrack');
     audioMain.pause()
@@ -1127,7 +1346,7 @@ function endGameSequence() {
     var endAudio = document.getElementById('endSoundTrack');
     endAudio.play()
     // Calculate user's end game score here
-    let endGameScore = (popularityScore + ecoScore) * 69;
+    let endGameScore = Math.round(overallRating * (9999/140));
 
     // Timestamp of when the game ended
     let currentDate = new Date();
@@ -1138,39 +1357,11 @@ function endGameSequence() {
 
     let timestamp = currentDayOfMonth + "-" + (currentMonth + 1) + "-" + currentYear;
 
-    // Write the user's end game score to firestore
-    firebase.auth().onAuthStateChanged(function (user) {
-        if (user) {
-            var name = '';
-            db.collection('users').doc(user.uid)
-                .get()
-                .then(function (doc) {
-                    name = doc.data().name.split(' ');
-                    db.collection('users').doc(user.uid)
-                        .collection('game-scores').doc()
-                        .set({
-                            score: endGameScore,
-                            timestamp: timestamp
-                        })
-                        .then(function () {
-                            // if the user scored a perfect score aka 100%
-                            // this will be altered as 100 does no currently mean 100%
-                            if (endGameScore === 100) {
-                                db.collection('scores').doc()
-                                    .set({
-                                        name: name[0],
-                                        score: endGameScore,
-                                        timestamp: timestamp
-                                    })
-                            }
-                        })
-                })
-        }
-    });
+    let links = document.getElementById("shr_canvas1");
+    links.classList.add('hidden');
 
     // Remove everything
     setTimeout(() => {
-        document.getElementById('container').remove();
 
         let endGameBox = document.createElement('img');
         endGameBox.setAttribute('id', 'endGameBox');
@@ -1182,12 +1373,161 @@ function endGameSequence() {
 
         let returnButton = document.createElement('img');
         returnButton.setAttribute('id', 'returnButton');
-        returnButton.setAttribute('src', './assets/intro_box/ContinueButtonUncllicked.png');
-        returnButton.setAttribute('onclick', 'window.location.assign("index.html")');
+        returnButton.setAttribute('src', './assets/end_game_box/buttons/quitUnclicked.png');
+        returnButton.onclick = () => {
+            buttonClickOne.play();
+            returnButton.src = "./assets/end_game_box/buttons/quitClicked.png"
+            window.location.assign("index.html")
+        }
 
         let gameOverAnimation = document.createElement('img');
         gameOverAnimation.setAttribute('src', './assets/end_game_box/game_over_anim/EndGameBox.gif');
         gameOverAnimation.setAttribute('id', 'gameover-anim');
+
+        let gameOver = document.createElement('div');
+        gameOver.id = 'gameOver';
+        gameOver.setAttribute('class', 'visible');
+
+        // Create the advanved statistics box
+        let answerBox = document.createElement('img');
+        answerBox.setAttribute('src', './assets/end_game_box/EndGameBoxBack.png')
+        answerBox.setAttribute('id', 'answerBox');
+
+        // Create the text box for the advanced statistics box
+        let answerBoxText = document.createElement('p');
+        answerBoxText.setAttribute('id', 'answerBoxText');
+        answerBoxText.setAttribute('style', 'white-space: pre;');
+
+        //Create advanced div
+        let advanced = document.createElement('div');
+        advanced.setAttribute('class', 'visible');
+        advanced.id = 'advanced';
+        advanced.onclick = () => {
+            //Flip card
+            flipcardInner.classList.remove('flip-card-activate');
+            //Show Button
+            advancedButton.setAttribute('class', 'visible');
+            share.setAttribute('class', 'visible');
+            returnButton.setAttribute('class', 'visible');
+            saveScore.setAttribute('class', 'visible');
+        }
+
+        advanced.append(answerBox);
+        advanced.append(answerBoxText);
+
+        let advancedButton = document.createElement('img');
+        advancedButton.id = 'advancedButton';
+        advancedButton.setAttribute('src', './assets/end_game_box/buttons/advancedUnclicked.png');
+        advancedButton.onclick = function(){
+            buttonClickOne.play();
+            document.getElementById("advancedButton").src = "./assets/end_game_box/buttons/advancedClicked.png"
+            setTimeout(function () {
+                advancedButton.src =  './assets/end_game_box/buttons/advancedUnclicked.png';
+            }, 50)
+            
+            mayoralRating = (popularityScore * 7.5) + (ecoScore * 2.5)
+            //Flip card
+            flipcardInner.classList.add('flip-card-activate');
+                //Hide buttons
+                advancedButton.setAttribute('class', 'hidden');
+                share.setAttribute('class', 'hidden');
+                returnButton.setAttribute('class', 'hidden');
+                saveScore.setAttribute('class', 'hidden');
+
+                //Populate advanceBoxText
+                document.getElementById('answerBoxText').textContent = 'These are your end game stats:\r\n' +
+                    'Air quality rating - ' + Math.round(airQualityRating/2) + '%\r\n' +
+                    'Carbon emissions rating - ' + Math.round(emissionsRating/2) + '%\r\n' +
+                    'Energy consumption rating - ' + Math.round(energyRating/2) + '%\r\n' +
+                    'Transportation rating - ' + Math.round(transportRating/2) + '%\r\n' +
+                    'Walkability rating - ' + Math.round(walkabilityRating/2) + '%\r\n' +
+                    'Government action rating - ' + Math.round(governmentActionRating/2) + '%\r\n' +
+                    'Environment restoration rating - ' + Math.round(environmentRestorationRating/2) + '%\r\n' +
+                    'Approval rating - ' + mayoralRating + '%\r\n';
+        }
+
+        let saveScore = document.createElement('img');
+        saveScore.setAttribute('src', './assets/end_game_box/buttons/saveScoreUnclicked.png')
+        saveScore.id = 'saveScore';
+        saveScore.onclick = () => {
+            buttonClickOne.play();
+            saveScore.src = "./assets/end_game_box/buttons/saveScoreClicked.png"
+            setTimeout(function () {
+                saveScore.src = './assets/end_game_box/buttons/saveScoreUnclicked.png';
+            }, 50)
+            
+            // Write the user's end game score to firestore
+            if (!scoreSaved){
+                firebase.auth().onAuthStateChanged(function (user) {
+                    if (user) {
+                        scoreSaved = true;
+                        console.log("Save Success");
+                        var name = '';
+                        db.collection('users').doc(user.uid)
+                            .get()
+                            .then(function (doc) {
+                                name = doc.data().name.split(' ');
+                                db.collection('users').doc(user.uid)
+                                    .collection('game-scores').doc()
+                                    .set({
+                                        score: endGameScore,
+                                        timestamp: timestamp
+                                    })
+                                    .then(function () {
+                                        // if the user scored a perfect score aka 100%
+                                        // this will be altered as 100 does no currently mean 100%
+                                        if (endGameScore === 100) {
+                                            db.collection('scores').doc()
+                                                .set({
+                                                    name: name[0],
+                                                    score: endGameScore,
+                                                    timestamp: timestamp
+                                                })
+                                        }
+                                    })
+                            })
+                    } else{
+                        console.log("Login please")
+                        window.open('./saveScore.html');
+                    }
+                });
+            }
+        }
+
+        let share = document.createElement('img');
+        share.setAttribute('src', './assets/end_game_box/buttons/shareUnclicked.png')
+        share.id = 'share';
+        share.onclick = () => {
+            buttonClickOne.play();
+            share.src = "./assets/end_game_box/buttons/shareClicked.png"
+            setTimeout(function () {
+                share.src = './assets/end_game_box/buttons/shareUnclicked.png';
+            }, 50)
+            if(!sharing){
+                links.classList.remove('hidden');
+            } else {
+                links.classList.add('hidden');
+            }
+        }
+
+        //Create gameOver div
+        gameOver.append(endGameBox);
+        gameOver.append(gameOverAnimation);
+        gameOver.append(endGameScoreText);
+        gameOver.append(returnButton);
+        gameOver.append(advancedButton);
+        gameOver.append(saveScore);
+        gameOver.append(share);
+
+        //Create flipcard div
+        let flipcard = document.createElement('div');
+        flipcard.id = 'flipcard';
+        let flipcardInner = document.createElement('div');
+        flipcardInner.id = 'flipcard-Inner';
+        flipcardInner.append(gameOver);
+        flipcardInner.append(advanced);
+        flipcard.append(flipcardInner);
+        //Create newspaper Element
 
         createNewspaper("endGame");
         var newspaper = document.getElementById("newspaper");
@@ -1196,10 +1536,8 @@ function endGameSequence() {
             var newspaper = document.getElementById('newspaper');
             newspaper.remove();
             audio.play();
-            document.body.append(endGameBox);
-            document.body.append(gameOverAnimation);
-            document.body.append(endGameScoreText);
-            document.body.append(returnButton);
+            //Create endgame screen
+            document.body.append(flipcard);
         }
     }, 100);
 };
