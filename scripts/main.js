@@ -957,6 +957,7 @@ function nextQuestionPrompt() {
     } else if (questionCounter === 9) {
         // put newspaper popup here. show newspaper with headline:
         if (popularityScore > 0) {
+            // If player has made it through half the questions, advance to term 2
             createNewspaper("termSwitch");
             var newspaper = document.getElementById("newspaper");
             newspaper.onclick = function () {
@@ -965,14 +966,16 @@ function nextQuestionPrompt() {
                 newspaper.remove();
                 audio.play();
                 document.getElementById('currentTermImage').setAttribute('src', './assets/dialogue_box/TermTwo.png');
-                boxPopAudioOne.play();
-                document.getElementById('question-prompt-div').setAttribute('class', 'visible');
+                setTimeout(function() {
+                    boxPopAudioOne.play();
+                    document.getElementById('question-prompt-div').setAttribute('class', 'visible');
+                }, 3000)
             }
         }
-        // "mayor is re-elected for second term blah blah"
-        // keep newspaper shown for 5 seconds then continue on
     } else {
         boxPopAudioOne.play();
+        // Else, make the question prompt appear (the npc image and text content was 
+        // already changed within the selectYesButton or selectNoButton functions)
         document.getElementById('question-prompt-div').setAttribute('class', 'visible');
     }
 };
