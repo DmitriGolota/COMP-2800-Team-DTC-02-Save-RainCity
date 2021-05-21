@@ -404,6 +404,19 @@ document.getElementById('save-button').addEventListener('click', function () {
     
 });
 
+// Show art work easter egg
+
+document.getElementById('artbutton').addEventListener('click', function(){
+    let art = document.createElement('img');
+    art.setAttribute('src', "./assets/end_game_box/gameoverscreenart.png");
+    art.setAttribute('id', 'bcartwork');
+
+    boxPopAudioOne.play()
+    let container = document.getElementById('container')
+    container.appendChild(art);
+
+})
+
 
 function intro(){
     
