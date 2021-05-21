@@ -978,18 +978,9 @@ function selectYesButton() {
         if (questionCounter > 9) {
             nextAnswerBoxText = questions[arrOfRandomIntegersHard[questionCounter - 10]]['yes-result'].split('');
 
-            //Keeps track of accumulated ratings
-            airQualityRating += questions[arrOfRandomIntegersHard[questionCounter - 10]]['airQualityRating'];
-            emissionsRating += questions[arrOfRandomIntegersHard[questionCounter - 10]]['emissionsRating'];
-            energyRating += questions[arrOfRandomIntegersHard[questionCounter - 10]]['energyRating'];
-            transportRating += questions[arrOfRandomIntegersHard[questionCounter - 10]]['transportRating'];
-            walkabilityRating += questions[arrOfRandomIntegersHard[questionCounter - 10]]['walkabilityRating'];
-            governmentActionRating += questions[arrOfRandomIntegersHard[questionCounter - 10]]['governmentActionRating'];
-            environmentRestorationRating += questions[arrOfRandomIntegersHard[questionCounter - 10]]['environmentRestorationRating'];
-
             // Reflect on eco score
             prevEcoScore = ecoScore;
-            ecoScore += questions[arrOfRandomIntegersHard[questionCounter - 10]]['eco-score'];
+            ecoScore += questions[arrOfRandomIntegersHard[questionCounter - 10]]['eco-score-yes'];
             if (ecoScore >= 10) {
                 ecoScore = 10;
             }
@@ -999,13 +990,32 @@ function selectYesButton() {
 
             // Reflect popularity score
             prevPopularityScore = popularityScore;
-            popularityScore += questions[arrOfRandomIntegersHard[questionCounter - 10]]['pop-score'];
+            popularityScore += questions[arrOfRandomIntegersHard[questionCounter - 10]]['pop-score-yes'];
             if (popularityScore >= 10) {
                 popularityScore = 10;
             }
             if (popularityScore <= 0) {
                 popularityScore = 0;
             }
+
+
+            // Count number of correct answers made by players
+            if (questions[arrOfRandomIntegersHard[questionCounter - 10]]['correct-point'] === 1) {
+
+                //Keeps track of accumulated ratings
+                airQualityRating += questions[arrOfRandomIntegersHard[questionCounter - 10]]['airQualityRating'];
+                emissionsRating += questions[arrOfRandomIntegersHard[questionCounter - 10]]['emissionsRating'];
+                energyRating += questions[arrOfRandomIntegersHard[questionCounter - 10]]['energyRating'];
+                transportRating += questions[arrOfRandomIntegersHard[questionCounter - 10]]['transportRating'];
+                walkabilityRating += questions[arrOfRandomIntegersHard[questionCounter - 10]]['walkabilityRating'];
+                governmentActionRating += questions[arrOfRandomIntegersHard[questionCounter - 10]]['governmentActionRating'];
+                environmentRestorationRating += questions[arrOfRandomIntegersHard[questionCounter - 10]]['environmentRestorationRating'];
+
+                // Count number of correct answers made by players
+                mayoralRating += 1;
+
+            }
+
             // Increment question counter
             questionCounter += 1;
 
@@ -1015,19 +1025,6 @@ function selectYesButton() {
             // Change the question text to the next question
             document.getElementById('question-prompt-text').textContent = questions[arrOfRandomIntegersHard[questionCounter - 10]]['question'];
 
-            // Count number of correct answers made by players
-            if (questions[arrOfRandomIntegersHard[questionCounter - 10]]['correct-point'] === 1) {
-                //Keeps track of accumulated ratings
-                airQualityRating += questions[arrOfRandomIntegersHard[questionCounter - 10]]['airQualityRating'];
-                emissionsRating += questions[arrOfRandomIntegersHard[questionCounter - 10]]['emissionsRating'];
-                energyRating += questions[arrOfRandomIntegersHard[questionCounter - 10]]['energyRating'];
-                transportRating += questions[arrOfRandomIntegersHard[questionCounter - 10]]['transportRating'];
-                walkabilityRating += questions[arrOfRandomIntegersHard[questionCounter - 10]]['walkabilityRating'];
-                governmentActionRating += questions[arrOfRandomIntegersHard[questionCounter - 10]]['governmentActionRating'];
-                environmentRestorationRating += questions[arrOfRandomIntegersHard[questionCounter - 10]]['environmentRestorationRating'];
-                // Count number of correct answers made by players
-                mayoralRating += 1;
-            }
         }
 
         //Easy questions, "level 1"
@@ -1035,10 +1032,9 @@ function selectYesButton() {
             // Set the global variable (for scrolling text) to the correct string
             nextAnswerBoxText = questions[arrOfRandomIntegersEasy[questionCounter]]['yes-result'].split('');
 
-
             // Reflect on eco score
             prevEcoScore = ecoScore;
-            ecoScore += questions[arrOfRandomIntegersEasy[questionCounter]]['eco-score'];
+            ecoScore += questions[arrOfRandomIntegersEasy[questionCounter]]['eco-score-yes'];
             if (ecoScore >= 10) {
                 ecoScore = 10;
             }
@@ -1048,21 +1044,13 @@ function selectYesButton() {
 
             // Reflect popularity score
             prevPopularityScore = popularityScore;
-            popularityScore += questions[arrOfRandomIntegersEasy[questionCounter]]['pop-score'];
+            popularityScore += questions[arrOfRandomIntegersEasy[questionCounter]]['pop-score-yes'];
             if (popularityScore >= 10) {
                 popularityScore = 10;
             }
             if (popularityScore <= 0) {
                 popularityScore = 0;
             }
-            // Increment question counter
-            questionCounter += 1;
-
-            // Change the NPC to next NPC image
-            document.getElementById('assistant').setAttribute('src', "assets/npc/npc" + questions[arrOfRandomIntegersEasy[questionCounter]]['NPC-img-num'] + ".png");
-
-            // Change the question text to the next question
-            document.getElementById('question-prompt-text').textContent = questions[arrOfRandomIntegersEasy[questionCounter]]['question'];
 
             if (questions[arrOfRandomIntegersEasy[questionCounter]]['correct-point'] === 1) {
                 //Keeps track of accumulated ratings
@@ -1073,9 +1061,20 @@ function selectYesButton() {
                 walkabilityRating += questions[arrOfRandomIntegersEasy[questionCounter]]['walkabilityRating'];
                 governmentActionRating += questions[arrOfRandomIntegersEasy[questionCounter]]['governmentActionRating'];
                 environmentRestorationRating += questions[arrOfRandomIntegersEasy[questionCounter]]['environmentRestorationRating'];
+
                 // Count number of correct answers made by players
                 mayoralRating += 1;
             }
+
+            // Increment question counter
+            questionCounter += 1;
+
+            // Change the NPC to next NPC image
+            document.getElementById('assistant').setAttribute('src', "assets/npc/npc" + questions[arrOfRandomIntegersEasy[questionCounter]]['NPC-img-num'] + ".png");
+
+            // Change the question text to the next question
+            document.getElementById('question-prompt-text').textContent = questions[arrOfRandomIntegersEasy[questionCounter]]['question'];
+
         }
         // For click animation's sake
         document.getElementById('yes-button').setAttribute('src', './assets/dialogue_box/buttons/YesButtonUnclicked.png');
@@ -1109,10 +1108,9 @@ function selectNoButton() {
         if (questionCounter > 9) {
             nextAnswerBoxText = questions[arrOfRandomIntegersHard[questionCounter - 10]]['no-result'].split('')
 
-
             // Reflect on eco score
             prevEcoScore = ecoScore;
-            ecoScore += questions[arrOfRandomIntegersHard[questionCounter - 10]]['eco-score'];
+            ecoScore += questions[arrOfRandomIntegersHard[questionCounter - 10]]['eco-score-no'];
             if (ecoScore >= 10) {
                 ecoScore = 10;
             }
@@ -1122,21 +1120,13 @@ function selectNoButton() {
 
             // Reflect popularity score
             prevPopularityScore = popularityScore;
-            popularityScore -= questions[arrOfRandomIntegersHard[questionCounter - 10]]['pop-score'];
+            popularityScore += questions[arrOfRandomIntegersHard[questionCounter - 10]]['pop-score-no'];
             if (popularityScore >= 10) {
                 popularityScore = 10;
             }
             if (popularityScore <= 0) {
                 popularityScore = 0;
             }
-            // Increment question counter
-            questionCounter += 1;
-
-            // Change the NPC to next NPC image
-            document.getElementById('assistant').setAttribute('src', "assets/npc/npc" + questions[arrOfRandomIntegersHard[questionCounter - 10]]['NPC-img-num'] + ".png");
-
-            // Change the question text to the next question
-            document.getElementById('question-prompt-text').textContent = questions[arrOfRandomIntegersHard[questionCounter - 10]]['question'];
 
             if (questions[arrOfRandomIntegersHard[questionCounter - 10]]['correct-point'] === 0) {
                 //Keeps track of accumulated ratings
@@ -1147,27 +1137,30 @@ function selectNoButton() {
                 walkabilityRating += questions[arrOfRandomIntegersHard[questionCounter - 10]]['walkabilityRating'];
                 governmentActionRating += questions[arrOfRandomIntegersHard[questionCounter - 10]]['governmentActionRating'];
                 environmentRestorationRating += questions[arrOfRandomIntegersHard[questionCounter - 10]]['environmentRestorationRating'];
+
                 // Count number of correct answers made by players
                 mayoralRating += 1;
+
             }
+
+            // Increment question counter
+            questionCounter += 1;
+
+            // Change the NPC to next NPC image
+            document.getElementById('assistant').setAttribute('src', "assets/npc/npc" + questions[arrOfRandomIntegersHard[questionCounter - 10]]['NPC-img-num'] + ".png");
+
+            // Change the question text to the next question
+            document.getElementById('question-prompt-text').textContent = questions[arrOfRandomIntegersHard[questionCounter - 10]]['question'];
+
         }
 
         //Easy questions, "level 1"
         else {
             nextAnswerBoxText = questions[arrOfRandomIntegersEasy[questionCounter]]['no-result'].split('');
 
-            //Keeps track of accumulated ratings
-            airQualityRating += questions[arrOfRandomIntegersEasy[questionCounter]]['airQualityRating'];
-            emissionsRating += questions[arrOfRandomIntegersEasy[questionCounter]]['emissionsRating'];
-            energyRating += questions[arrOfRandomIntegersEasy[questionCounter]]['energyRating'];
-            transportRating += questions[arrOfRandomIntegersEasy[questionCounter]]['transportRating'];
-            walkabilityRating += questions[arrOfRandomIntegersEasy[questionCounter]]['walkabilityRating'];
-            governmentActionRating += questions[arrOfRandomIntegersEasy[questionCounter]]['governmentActionRating'];
-            environmentRestorationRating += questions[arrOfRandomIntegersEasy[questionCounter]]['environmentRestorationRating'];
-
             // Reflect on eco score
             prevEcoScore = ecoScore;
-            ecoScore += questions[arrOfRandomIntegersEasy[questionCounter]]['eco-score'];
+            ecoScore += questions[arrOfRandomIntegersEasy[questionCounter]]['eco-score-no'];
             if (ecoScore >= 10) {
                 ecoScore = 10;
             }
@@ -1177,21 +1170,13 @@ function selectNoButton() {
 
             // Reflect popularity score
             prevPopularityScore = popularityScore;
-            popularityScore -= questions[arrOfRandomIntegersEasy[questionCounter]]['pop-score'];
+            popularityScore += questions[arrOfRandomIntegersEasy[questionCounter]]['pop-score-no'];
             if (popularityScore >= 10) {
                 popularityScore = 10;
             }
             if (popularityScore <= 0) {
                 popularityScore = 0;
             }
-            // Increment question counter
-            questionCounter += 1;
-
-            // Change the NPC to next NPC image
-            document.getElementById('assistant').setAttribute('src', "assets/npc/npc" + questions[arrOfRandomIntegersEasy[questionCounter]]['NPC-img-num'] + ".png");
-
-            // Change the question text to the next question
-            document.getElementById('question-prompt-text').textContent = questions[arrOfRandomIntegersEasy[questionCounter]]['question'];
 
             // Count number of correct answers made by players
             if (questions[arrOfRandomIntegersEasy[questionCounter]]['correct-point'] === 0) {
@@ -1203,9 +1188,20 @@ function selectNoButton() {
                 walkabilityRating += questions[arrOfRandomIntegersEasy[questionCounter]]['walkabilityRating'];
                 governmentActionRating += questions[arrOfRandomIntegersEasy[questionCounter]]['governmentActionRating'];
                 environmentRestorationRating += questions[arrOfRandomIntegersEasy[questionCounter]]['environmentRestorationRating'];
+
                 // Count number of correct answers made by players
                 mayoralRating += 1;
             }
+
+            // Increment question counter
+            questionCounter += 1;
+
+            // Change the NPC to next NPC image
+            document.getElementById('assistant').setAttribute('src', "assets/npc/npc" + questions[arrOfRandomIntegersEasy[questionCounter]]['NPC-img-num'] + ".png");
+
+            // Change the question text to the next question
+            document.getElementById('question-prompt-text').textContent = questions[arrOfRandomIntegersEasy[questionCounter]]['question'];
+
         }
 
         // For click animation's sake
