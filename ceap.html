@@ -14,8 +14,13 @@
     <link rel="stylesheet" href="./styles/ceap.css">
     <link rel="stylesheet" href="./styles/footer.css">
 
-        <!--Favicon-->
-        <link rel="icon" href="./assets/SRC-Favicon.png">
+    <!--Favicon-->
+    <link rel="icon" href="./assets/SRC-Favicon.png">
+    <!-- BEGIN SHAREAHOLIC CODE -->
+    <link rel="preload" href="https://cdn.shareaholic.net/assets/pub/shareaholic.js" as="script" />
+    <meta name="shareaholic:site_id" content="6d3c6d0a608ad5d8a637d8890316f3e5" />
+    <script data-cfasync="false" async src="https://cdn.shareaholic.net/assets/pub/shareaholic.js"></script>
+    <!-- END SHAREAHOLIC CODE -->
 </head>
 <body>
     <header>
@@ -29,10 +34,13 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                  <a class="nav-link main-link" href="login.html" id="profileAnchor">Profile</a>
+                  <a class="nav-link main-link orange" href="login.html" id="profileAnchor">Profile</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link main-link" href="ceap.html">CEAP Information</a>
+                  <a class="nav-link main-link blue" href="ceap.html">CEAP Information</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link main-link" href="./leaderboard.html">Leaderboards</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link main-link" href="aboutUs.html">About the Devs</a>
@@ -54,8 +62,8 @@
             </div>
         </section>
          <section class="content">
-            <div class="information-section" id="info-sec-2">
-                <h1 id="green">CEAP Goals</h1>
+            <div class="information-section "  id="info-sec-2">
+                <h1 class="green">CEAP Goals</h1>
                 <p>• Have 90% of people living within an easy walk or roll of their daily needs</p>
                 <p>• Ensure two-thirds of trips in Vancouver to be by active transportation and transit</p>
                 <p>• Cut our carbon pollution from buildings in half by 2030, compared to what we had in 2007</p>
@@ -67,7 +75,7 @@
         </section>
         <section class="content">
             <div class="information-section" id="info-sec-3">
-                <h1 id="red">Proposed Benefits</h1>
+                <h1 class="red">Proposed Benefits</h1>
                 <p>• Increased savings from using electricity rather than fossil fuels</p>
                 <p>• Improved health from reduced carbon pollution</p>
                 <p>• Reduced climate change impacts and inevitably the costs to weather them</p>
@@ -76,7 +84,7 @@
         </section>
         <section class="content">
             <div class="information-section" id="info-sec-4">
-                <h1 id="purple">What if we do not follow the CEAP?</h1>
+                <h1 class="purple">What if we do not follow the CEAP?</h1>
                 <p>• Rising sea levels</p>
                 <p>• Coral Bleaching</p>
                 <p>• Arctic sea ice melting</p>
@@ -87,7 +95,7 @@
         </section>
         <section class="content">
             <div class="information-section" id="info-sec-5">
-                <h1>Things you can do</h1>
+                <h1 class="green">Things you can do</h1>
                 <p>• Walk or roll (bicycles, scooters, skateboards, etc.) as much as possible</p>
                 <p>• Bus or carpool if needed</p>
                 <p>• Invest in an electric vehicle</p>
@@ -96,7 +104,7 @@
         </section>
         <section class="content">
             <div class="information-section" id="info-sec-6">
-                <h1 id="blue">Fun Facts</h1>
+                <h1 class="blue">Fun Facts</h1>
                 <p>• Only 7% of Vancouverites know what Vancouvers' biggest carbon impact actually is</p>
                 <p>• The world is on track for warming by 3-4 celsius by the end of the century.</p>
                 <p>• Over 3 quarters of carbon emission from building operations can be eliminated by switching electric.</p>
@@ -112,26 +120,6 @@
             </div>
         </section>
     </div>
-     <footer>
-        <section class="about">
-          <h4>About the project</h4>
-          <p class="footerDescription"> A group of developers come together to create a fun and interactive game to teach Vancouverites about the Climate Emergency Action Plan.</p>
-        </section>
-        <aside>
-          <h4>Navigation</h4>
-          <ul>
-              <li>
-              <a href="./index.html">Home</a>
-            </li>
-            <li>
-              <a href="./ceap.html">CEAP info</a>
-            </li>
-            <li>
-              <a href="./aboutUs.html">About the devs</a>
-            </li>
-          </ul>
-        </aside>
-      </footer>
 
     <!----------------------------------------------->
     <!-- JS: Boostrap, JQuery, Firebase, API related    -->

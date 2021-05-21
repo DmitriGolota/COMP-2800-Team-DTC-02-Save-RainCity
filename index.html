@@ -1,49 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Save Raincity - Home</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!--BootStrap StyleSheets-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>Save Raincity - Home</title>
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!--BootStrap StyleSheets-->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
-        <!-- Page StyleSheets-->
-        <link rel="stylesheet" href="./styles/index.css">
-        <link rel="stylesheet" href="./styles/header.css">
-        <link rel="stylesheet" href="./styles/footer.css">
+      <!-- Page StyleSheets-->
+      <link rel="stylesheet" href="./styles/index.css">
+      <link rel="stylesheet" href="./styles/header.css">
+      <link rel="stylesheet" href="./styles/footer.css">
 
-            <!--Favicon-->
-    <link rel="icon" href="./assets/SRC-Favicon.png">
+      <!--Favicon-->
+      <link rel="icon" href="./assets/SRC-Favicon.png"> 
+      
+      <!-- BEGIN SHAREAHOLIC CODE -->
+      <link rel="preload" href="https://cdn.shareaholic.net/assets/pub/shareaholic.js" as="script" />
+      <meta name="shareaholic:site_id" content="6d3c6d0a608ad5d8a637d8890316f3e5" />
+      <script data-cfasync="false" async src="https://cdn.shareaholic.net/assets/pub/shareaholic.js"></script>
+      <!-- END SHAREAHOLIC CODE -->
     </head>
 
         <body>
           <!--Page NavBar-->
-          <nav class="navbar navbar-dark bg-dark main-background">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="index.html"> <div class="logo"></div></a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link main-link" href="login.html" id="profileAnchor">Profile</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link main-link" href="./ceap.html">CEAP Information</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link main-link" href="./aboutUs.html">About the Devs</a>
-                  </li>
-                </ul>
+          <header>
+            <nav class="navbar navbar-dark bg-dark main-background">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="index.html"> <div class="logo"></div></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                  aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                      <a class="nav-link main-link orange" href="login.html" id="profileAnchor">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link main-link blue" href="./ceap.html">CEAP Information</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link main-link purple" href="./leaderboard.html">Leaderboards</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link main-link green" href="./aboutUs.html">About the Devs</a>
+                    </li>
+                  </ul>
+                </div>
               </div>
-            </div>
-          </nav>
-          
+            </nav>
+          </header>
           <!--Page Content-->
           <div id="outer" class="bottom-box">
               <div id="Synopsis">
@@ -60,50 +70,28 @@
               </div>
               <div id="features">
                   <section>                    
-                      <h1 id="green">Explore</h1>
+                      <h1 class="green">Explore</h1>
                       <img src="./assets/mapproto.png" alt="">
                       <p>Find your way around the city and make some positive changes for your community</p>
                   </section>
                   <section>
-                      <h1 id="blue">Contribute</h1>
+                      <h1 class="blue">Contribute</h1>
                   <img src="./assets/icon2.png" alt="">
                   <p>Make big changes to RainCity and determine your fate as Mayor! Find hidden easter eggs and trouble within the dynamic and ever changing RainCity</p>
                   </section>
                   <section>
-                    <h1 id="orange">Change</h1>
+                    <h1 class="orange">Change</h1>
                     <img src="./assets/icon3.png" alt="">
                     <p>On your journey as Mayor, you can turn RainCity into the greenest place on earth! Cut down on natural gas, create electric vehicle initiatives, and implement many more possible changes! </p>
                   </section>
                   <section>
-                    <h1 id="red">Learn</h1>
+                    <h1 class="red">Learn</h1>
                     <img src="./assets/icon4.png" alt="">
                     <p>Dive into RainCity to learn about eco-friendly choices you can make right now to help your own real life city! Learn all about Vancouver's Climate Emergency Action Plan through fun and interactive gameplay</p>
                   </section>
               </div>
           </div>
           
-    <!--Footer-->
-    <footer>
-        <section class="about">
-          <h4>About the project</h4>
-          <p class="footerDescription"> A group of developers come together to create a fun and interactive game to teach Vancouverites about the Climate Emergency Action Plan.</p>
-        </section>
-        <aside>
-          <h4>Navigation</h4>
-          <ul>
-              <li>
-              <a href="./index.html">Home</a>
-            </li>
-            <li>
-              <a href="./ceap.html">CEAP info</a>
-            </li>
-            <li>
-              <a href="./aboutUs.html">About the devs</a>
-            </li>
-          </ul>
-        </aside>
-      </footer>
-        
     <!----------------------------------------------->
     <!-- JS: Boostrap, JQuery, Firebase, API related    -->
     <!----------------------------------------------->

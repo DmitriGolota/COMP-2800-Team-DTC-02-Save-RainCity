@@ -6,11 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Save Raincity</title>
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/mainPNG.css">
 
-        <!--Favicon-->
-        <link rel="icon" href="./assets/SRC-Favicon.png">
-
+    <!--Favicon-->
+    <link rel="icon" href="./assets/SRC-Favicon.png">
+    
+    <!-- BEGIN SHAREAHOLIC CODE -->
+    <link rel="preload" href="https://cdn.shareaholic.net/assets/pub/shareaholic.js" as="script" />
+    <meta name="shareaholic:site_id" content="6d3c6d0a608ad5d8a637d8890316f3e5" />
+    <script data-cfasync="false" async src="https://cdn.shareaholic.net/assets/pub/shareaholic.js"></script>
+    <!-- END SHAREAHOLIC CODE -->
 </head>
 
 <body>
@@ -21,6 +26,12 @@
     <audio id="buttonClickOne" src="./assets/Audio/buttonclick1.mp3"></audio>
     <audio id="boxPopAudioOne" src="./assets/Audio/boxpop1.mp3"></audio>
     <audio id="boxPopAudioThree" src="./assets/Audio/boxpop3.mp3"></audio>
+    <audio id="whaleSound" src="assets/Audio/WhaleSound.mp3"></audio>
+    <audio id="shipHornSound" src="assets/Audio/ShipHorn.mp3"></audio>
+    <audio id="duckSound" src="assets/Audio/DuckQuack.mp3"></audio>
+    <audio id="easterEggSound" src="assets/Audio/easteregg.mp3"></audio>
+    <audio id="doorsound" src="./assets/Audio/doorsound.mp3"></audio>
+    <audio id="footstep" src="./assets/Audio/footstepsound.mp3"></audio>
 
     <!-- Customization Section -->
     <div class="orientation">
@@ -28,25 +39,28 @@
     </div>
 
     <main id="container">
+        <img src="./assets/mayorsofficebg/mayorsoffice1.png" id="mayorbg">
+        <img src="./assets/eastereggtransparent.png" id="artbutton">
         <div id="char-customization">
-            <img src="./assets/static_elements/charcustomscreenUI-export.svg" alt="" class="notebook">
+            <img src="./assets/static_elements/charcustomscreenUI.png" alt="" class="notebook">
             <div class="character">
-                <img src="./assets/skin/charskin1.svg" alt="skin" class="skin custom pixelArt" id="skinImage">
-                <img src="./assets/hair/charhair1.svg" alt="hair" class="hair custom pixelArt" id="hairImage">
-                <img src="./assets/suit/charsuit1.svg" alt="suit" class="suit custom pixelArt" id="suitImage">
-                <img src="./assets/static_elements/charbody.svg" alt="body" class="custom pix">
+                <img src="./assets/skin/charskin1.png" alt="skin" class="skin custom pixelArt" id="skinImage">
+                <img src="./assets/hair/charhair1.png" alt="hair" class="hair custom pixelArt" id="hairImage">
+                <img src="./assets/suit/charsuit1.png" alt="suit" class="suit custom pixelArt" id="suitImage">
+                <img src="./assets/static_elements/charbody.png" alt="body" class="custom pix">
             </div>
+            
         
-            <img class="hairPrev prev pixelArt switch hairButton" id="hairPrev" src="./assets/buttons/arrowleftunclicked.svg" onclick="hairPrev()">
-            <img class="hairNext next pixelArt switch hairButton" id="hairNext" src="./assets/buttons/arrowrightsunclicked.svg" onclick="hairNext()">
-            <img class="skinPrev prev pixelArt switch skinButton" id="skinPrev" src="./assets/buttons/arrowleftunclicked.svg" onclick="skinPrev()">
-            <img class="skinNext next pixelArt switch skinButton" id="skinNext" src="./assets/buttons/arrowrightsunclicked.svg" onclick="skinNext()">
-            <img class="suitPrev prev pixelArt switch suitButton" id="suitPrev" src="./assets/buttons/arrowleftunclicked.svg" onclick="suitPrev()">
-            <img class="suitNext next pixelArt switch suitButton" id="suitNext" src="./assets/buttons/arrowrightsunclicked.svg" onclick="suitNext()">
-            <img alt="play" id="save-button" class="pixelArt" src="./assets/intro_box/ContinueButtonUncllicked.svg">
+            <img class="hairPrev prev pixelArt switch hairButton" id="hairPrev" src="./assets/buttons/arrowleftunclicked.png" onclick="hairPrev()">
+            <img class="hairNext next pixelArt switch hairButton" id="hairNext" src="./assets/buttons/arrowrightsunclicked.png" onclick="hairNext()">
+            <img class="skinPrev prev pixelArt switch skinButton" id="skinPrev" src="./assets/buttons/arrowleftunclicked.png" onclick="skinPrev()">
+            <img class="skinNext next pixelArt switch skinButton" id="skinNext" src="./assets/buttons/arrowrightsunclicked.png" onclick="skinNext()">
+            <img class="suitPrev prev pixelArt switch suitButton" id="suitPrev" src="./assets/buttons/arrowleftunclicked.png" onclick="suitPrev()">
+            <img class="suitNext next pixelArt switch suitButton" id="suitNext" src="./assets/buttons/arrowrightsunclicked.png" onclick="suitNext()">
+            <img alt="play" id="save-button" class="pixelArt" src="./assets/intro_box/ContinueButtonUncllicked.png">
         </div>
     </main>
-
+    <div class="shareaholic-canvas" id="share-div" data-app="share_buttons" data-app-id="29733769"></div>
     <!----------------------------------------------->
     <!-- JS: Boostrap, JQuery, Firebase, API related    -->
     <!----------------------------------------------->
