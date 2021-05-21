@@ -32,8 +32,10 @@ let questions = {
         'walkabilityRating': 7,
         'governmentActionRating': 4,
         'environmentRestorationRating': 5,
-        'eco-score': 1,
-        'pop-score': 1,
+        'eco-score-yes': 1,
+        'pop-score-yes': 1,
+        'eco-score-no': -1,
+        'pop-score-no': -1,
         'correct-point': 1,
         'NPC-img-num': 4
     },
@@ -161,7 +163,7 @@ let questions = {
         'eco-score-no': 1,
         'pop-score-no': 2,
         'correct-point': 0,
-        'NPC-img-num': 1
+        'NPC-img-num': 3
     },
     8: {
         'question': "Mayor! Still too many people are driving private vehicles unnecessarily! Should we expand our residential parking permits city-wide?",
@@ -179,7 +181,7 @@ let questions = {
         'eco-score-no': -2,
         'pop-score-no': 1,
         'correct-point': 1,
-        'NPC-img-num': 1
+        'NPC-img-num': 5
     },
     9: {
         'question': 'Mayor, is it just me or is it hard to breathe downtown? Should we add an additional carbon pollution surcharge to parking permits for non-electric vehicles?',
@@ -197,7 +199,7 @@ let questions = {
         'eco-score-no': -2,
         'pop-score-no': 0,
         'correct-point': 1,
-        'NPC-img-num': 1
+        'NPC-img-num': 2
     },
     10: {
         'question': 'A lot of carbon emissions can be eliminated by switching from natural gas to electricity for household heating. Should we require new home constructions to use electrical appliances for heating and hot water?',
@@ -215,7 +217,7 @@ let questions = {
         'eco-score-no': -2,
         'pop-score-no': 1,
         'correct-point': 1,
-        'NPC-img-num': 1
+        'NPC-img-num': 3
     },
     11: {
         'question': 'We need to do something drastic to reduce our building carbon emissions. Should we begin issuing fines to building owners that still operate with non-renewable natural gas?',
@@ -233,7 +235,7 @@ let questions = {
         'eco-score-no': -2,
         'pop-score-no': 1,
         'correct-point': 1,
-        'NPC-img-num': 1
+        'NPC-img-num': 5
     },
     12: {
         'question': 'The Architects of Raincity think windows are a faux-pas! However, bigger windows allow for improved air flow which reduce energy used for household heating. Do you want to mandate the usage of big windows?',
@@ -251,7 +253,7 @@ let questions = {
         'eco-score-no': -2,
         'pop-score-no': -1,
         'correct-point': 1,
-        'NPC-img-num': 1
+        'NPC-img-num': 2
     },
     13: {
         'question': "Mayor! Should we expand our logging into the old-growth forests to make way for solar energy farms?",
@@ -269,7 +271,7 @@ let questions = {
         'eco-score-no': 1,
         'pop-score-no': 1,
         'correct-point': 0,
-        'NPC-img-num': 1
+        'NPC-img-num': 3
     },
     14: {
         'question': 'Apartment dwellers in RainCity are asking for more parking spots within building parkades. Should we increase the maximum parking limit for residential buildings?',
@@ -305,7 +307,7 @@ let questions = {
         'eco-score-no': 1,
         'pop-score-no': 0,
         'correct-point': 0,
-        'NPC-img-num': 1
+        'NPC-img-num': 3
     },
     16: {
         'question': "Exporting out massive amounts of wood is totally not the vibe, man. This goes against the grain of the trees, dude. Should we reduce the amount of trees we export?",
@@ -323,7 +325,7 @@ let questions = {
         'eco-score-no': -1,
         'pop-score-no': -1,
         'correct-point': 1,
-        'NPC-img-num': 1
+        'NPC-img-num': 6
     },
     17: {
         'question': 'Climate change is so not cool, man! But the warmer weather is really helping my tan! Should we ignore climate change so I can lay on the beach more often?',
@@ -341,7 +343,7 @@ let questions = {
         'eco-score-no': 2,
         'pop-score-no': 1,
         'correct-point': 0,
-        'NPC-img-num': 1
+        'NPC-img-num': 6
     },
     18: {
         'question': 'Mayor, this is a marketing disaster! Only 7% of RainCity citizens know what our biggest carbon impact really is! Should we increase our marketing budget to spread awareness about carbon footprints?',
@@ -359,7 +361,7 @@ let questions = {
         'eco-score-no': -1,
         'pop-score-no': -1,
         'correct-point': 1,
-        'NPC-img-num': 1
+        'NPC-img-num': 4
     },
     19: {
         'question': 'Recent studies have shown that people who do not depend on a car are healthier and happier! Should we increase funding and promote Walk/Bike-To-Work programs for businesses?',
@@ -377,7 +379,7 @@ let questions = {
         'eco-score-no': -2,
         'pop-score-no': -2,
         'correct-point': 1,
-        'NPC-img-num': 1
+        'NPC-img-num': 4
     }
 };
 
@@ -841,7 +843,7 @@ let introDialogueArray = ['Congratulations on being appointed Mayor! What a long
 season that was! The world is in a state of climate emergency, and that includes RainCity!',
     "As you know, the citizens of RainCity revolted and threw the last Mayor out of office. The \
 citizens were furious at the Mayor's lack of action to reduce RainCity's carbon pollution!",
-    "Let's hope that you can make more green decisions during your term as Mayor, and maybe even get elected for a second term!", 
+    "The City of Vancouver has worked tirelessly on their Climate Emergency Action Plan to reduce our carbon emissions. Do your best as Mayor to follow this plan, and maybe even get elected for a second term!", 
     "Keep an eye on your eco-score and popularity hearts in the top-right corner! If you make too many unpopular decisions, and run out of hearts, the citizens will demand your resignation! Make wise, environmentally friendly decisions to Save RainCity!"]
 // Global variable for the first span of dialogue from introDialogueArray
 let introDialogueText = introDialogueArray.shift().split('');
