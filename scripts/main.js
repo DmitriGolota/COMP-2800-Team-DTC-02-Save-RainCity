@@ -439,6 +439,7 @@ function intro(){
     let mainMap = document.createElement('img');
     mainMap.setAttribute('src', './assets/main_map/mainmap.gif');
     mainMap.setAttribute('id', 'game-map');
+    mainMap.setAttribute('class', 'fade-in-image');
 
     // Create the answer box for consequences of decisions
     let answerBox = document.createElement('img');
@@ -481,6 +482,7 @@ function intro(){
     // Introduction stuff here
     let introDiv = document.createElement('div');
     introDiv.setAttribute('id', 'intro-div');
+    introDiv.setAttribute('class', 'hidden');
 
     let introBox = document.createElement('img');
     introBox.setAttribute('src', './assets/intro_box/MainBox.png')
@@ -554,7 +556,7 @@ function intro(){
         displayEasterEggFinal()
     })
 
-    masterIntroDialogue();
+    setTimeout(masterIntroDialogue, 3000)
 }
 
 // GLOBAL VARIABLES  
@@ -625,6 +627,7 @@ let introDialogueText = introDialogueArray.shift().split('');
 
 // Main function to run the intro dialogue
 function masterIntroDialogue() {
+    document.getElementById('intro-div').setAttribute('class', 'visible');
     document.getElementById("next-dialogue-button").src = "./assets/intro_box/ContinueButtonCllicked.png"
     buttonClickOne.play()
     setTimeout(function () {
