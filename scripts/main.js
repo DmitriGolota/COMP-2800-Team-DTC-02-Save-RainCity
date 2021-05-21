@@ -1277,6 +1277,7 @@ function ratingSequence() {
 }
 //Check if the user Saved their score yet
 let scoreSaved = false;
+let sharing = false;
 
 // If you finish all questions, or pop score reaches 0, end game.
 function endGameSequence() {
@@ -1300,7 +1301,10 @@ function endGameSequence() {
 
     let timestamp = currentDayOfMonth + "-" + (currentMonth + 1) + "-" + currentYear;
 
-    // Remove everything
+    //Disable sharing feature
+    let links = document.getElementById("shr_canvas1")
+    links.classList.add('hidden');
+
     setTimeout(() => {
 
         let endGameBox = document.createElement('img');
@@ -1443,6 +1447,11 @@ function endGameSequence() {
             setTimeout(function () {
                 share.src = './assets/end_game_box/buttons/shareUnclicked.png';
             }, 50)
+            if(!sharing){
+                links.classList.remove('hidden');
+            } else {
+                links.classList.add('hidden');
+            }
         }
 
         //Create gameOver div
