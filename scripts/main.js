@@ -1248,7 +1248,7 @@ function hideAnswerBox() {
 // This is the main function to call the next yes/no question
 function nextQuestionPrompt() {
     // temporary change
-    if (questionCounter === 6 || popularityScore === 0) {
+    if (questionCounter === 1 || popularityScore === 0) {
         // end game
         endGameSequence();
     } else if (questionCounter === 9) {
@@ -1482,6 +1482,11 @@ function endGameSequence() {
         answerBoxText.setAttribute('id', 'answerBoxText');
         answerBoxText.setAttribute('style', 'white-space: pre;');
 
+        // Create End Game Background
+        let endgamebg = document.createElement('img');
+        endgamebg.setAttribute('src', './assets/end_game_box/gameoverscreenart.png')
+        endgamebg.setAttribute('id', "endgamebg")
+
         //Create advanced div
         let advanced = document.createElement('div');
         advanced.setAttribute('class', 'visible');
@@ -1597,8 +1602,10 @@ function endGameSequence() {
                 links.setAttribute('style', 'visibility: hidden !important');
             }
         }
+    
 
         //Create gameOver div
+        gameOver.append(endgamebg);
         gameOver.append(endGameBox);
         gameOver.append(gameOverAnimation);
         gameOver.append(endGameScoreText);

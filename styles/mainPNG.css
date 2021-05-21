@@ -148,6 +148,14 @@ main div {
     z-index: -2;
 }
 
+#endgamebg{
+    left:0;
+    top:0;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+}
+
 #currentTermImage {
     width: 20vw;
     height: 15vh;
