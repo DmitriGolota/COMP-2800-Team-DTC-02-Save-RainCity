@@ -132,7 +132,7 @@ let questions = {
     6: {
         'question': 'Wow! So many people have started using public transit for their commutes! Should we increase the ticket price for buses and trains from $3 to $3.75?',
         'yes-result': 'Citizens are furious at the new price spike! They are starting to consider driving rather than public transit! Bad idea, you capitalist pig!',
-        'no-result': 'Good thinking! Raising the price would not have been good for the environment! The budget department can kick rocks!',
+        'no-result': 'Good thinking! Raising the price would have discouraged people from using public transit! The budget department can kick rocks!',
         'airQualityRating': 1,
         'emissionsRating': 1,
         'energyRating': 1,
@@ -346,7 +346,7 @@ let questions = {
         'NPC-img-num': 6
     },
     18: {
-        'question': 'Mayor, this is a marketing disaster! Only 7% of RainCity citizens know what our biggest carbon impact really is! Should we increase our marketing budget to spread awareness about carbon footprints?',
+        'question': 'This is a marketing disaster! Only 7% of RainCity citizens know that our biggest carbon impact is is burning natural gas for heating and hot water! Should we increase our marketing budget to spread awareness?',
         'yes-result': 'Excellent! We can hire some junior software developers to make a game to raise awareness! Hmm... I think we should call it "Save RainCity"!',
         'no-result': 'You are right! What a waste of money! The budget department is going to throw an office party in your honor!',
         'airQualityRating': 1,
@@ -1324,13 +1324,7 @@ function endGameSequence() {
     let endGameScore = (mayoralRating / 20) * 100;
 
     // Timestamp of when the game ended
-    let currentDate = new Date();
-
-    let currentDayOfMonth = currentDate.getDate();
-    let currentMonth = currentDate.getMonth();
-    let currentYear = currentDate.getFullYear();
-
-    let timestamp = currentDayOfMonth + "-" + (currentMonth + 1) + "-" + currentYear;
+    let timestamp = firebase.firestore.FieldValue.serverTimestamp();
 
 
     // Remove everything
@@ -1445,7 +1439,7 @@ function endGameSequence() {
                                 db.collection('users').doc(user.uid)
                                     .collection('game-scores').doc()
                                     .set({
-                                        score: endGameScore,
+                                        score: endGameScore + '%',
                                         timestamp: timestamp
                                     })
                                     .then(function () {
