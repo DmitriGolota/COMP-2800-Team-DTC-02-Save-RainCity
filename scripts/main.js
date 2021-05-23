@@ -642,8 +642,8 @@ function intro() {
     var audio = document.getElementById('myaudio');
     audio.pause();
 
-    // Populate introduction scene
-
+    // Remove art painting button
+    document.getElementById('artbutton').remove();
 
     // Play boxPopAudio
     boxPopAudioOne.play()
