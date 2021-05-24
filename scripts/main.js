@@ -1,6 +1,7 @@
 let buttonClickOne = document.getElementById('buttonClickOne');
 let boxPopAudioOne = document.getElementById('boxPopAudioOne');
 let boxPopAudioThree = document.getElementById('boxPopAudioThree');
+let blip = document.getElementById('blip');
 var mainTheme = document.getElementById('mainSoundTrack');
 
 /*jshint esversion: 6 */
@@ -845,6 +846,7 @@ let introDialogueText = introDialogueArray.shift().split('');
 
 // Main function to run the intro dialogue
 function masterIntroDialogue() {
+    
     document.getElementById('intro-div').setAttribute('class', 'visible');
     document.getElementById("next-dialogue-button").src = "./assets/intro_box/ContinueButtonCllicked.png"
     buttonClickOne.play()
@@ -861,17 +863,24 @@ function masterIntroDialogue() {
     }, 30)
 };
 
+
 // Decomposed function to add each individual letter to text box with a timeout in-between
 function introDialogue() {
+    
     if (introDialogueArray.length === 0 && introDialogueText.length === 0) {
+        blip.pause();
+        blip.currentTime = 0;
         document.getElementById('next-dialogue-button').setAttribute('class', 'visible')
         return false
     } else if (introDialogueText.length > 0) {
+        blip.play();
         document.getElementById('intro-text').innerHTML += introDialogueText.shift();
         document.getElementById('next-dialogue-button').setAttribute('class', 'hidden')
     } else {
         introDialogueText = introDialogueArray.shift().split('');
         document.getElementById('next-dialogue-button').setAttribute('class', 'visible')
+        blip.pause();
+        blip.currentTime = 0;
         return false
     }
     setTimeout('introDialogue()', 30);
