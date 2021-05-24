@@ -346,7 +346,7 @@ let questions = {
         'NPC-img-num': 6
     },
     18: {
-        'question': 'This is a marketing disaster! Only 7% of RainCity citizens know that our biggest carbon impact is is burning natural gas for heating and hot water! Should we increase our marketing budget to spread awareness?',
+        'question': 'This is a marketing disaster! Only 7% of RainCity citizens know that our biggest carbon impact is burning natural gas for heating and hot water! Should we increase our marketing budget to spread awareness?',
         'yes-result': 'Excellent! We can hire some junior software developers to make a game to raise awareness! Hmm... I think we should call it "Save RainCity"!',
         'no-result': 'You are right! What a waste of money! The budget department is going to throw an office party in your honor!',
         'airQualityRating': 1,
@@ -365,7 +365,7 @@ let questions = {
     },
     19: {
         'question': 'Recent studies have shown that people who do not depend on a car are healthier and happier! Should we increase funding and promote Walk/Bike-To-Work programs for businesses?',
-        'yes-result': 'RainCity citizens are thriving! They have found a new passion for walking and cycling and starting to ditch their cars! Good work!',
+        'yes-result': 'RainCity citizens are thriving! They have found a new passion for walking and cycling and are starting to ditch their cars! Good work!',
         'no-result': 'People are still relying on their cars to commute and are complaining about traffic congestion. Try better next time!',
         'airQualityRating': 1,
         'emissionsRating': 1,
