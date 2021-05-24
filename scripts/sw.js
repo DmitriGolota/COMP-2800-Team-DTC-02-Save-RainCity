@@ -1,5 +1,5 @@
 
-let name = 'v1';
+let cacheName = 'v1';
 
 // Set all requried files under scope of SW
 // What is worth saving to cache?
@@ -21,6 +21,7 @@ let files = [
     '../styles.mainPNG.css',
     '../styles/profile.css',
     // Scripts
+    '../scripts/sw.js',
     '../scripts/index.js',
     '../scripts/profile.js',
     '../scripts/main.js',
@@ -29,13 +30,13 @@ let files = [
     '../scripts/saveScore.js',
     '../scripts/landingpages.js',
     // Assets
-    '../assets'
+    '../assets',
 ];
 
 
 self.addEventListener('install', function(event){
 
-    caches.open(name)
+    caches.open(cacheName)
         .then(function(cache) {
             cache.addAll(files)
     })
@@ -51,8 +52,9 @@ self.addEventListener('fetch', function(event){
                     console.log("to be filled")
                     fetch(event.request)
                         .then(function(response){
-                            return caches.open(name).then(function(cache){
+                            return caches.open(cacheName).then(function(cache){
                                 cache.put(event.request, response.clone())
+                                console.log(response)
                                 return response
                             })
                         })
