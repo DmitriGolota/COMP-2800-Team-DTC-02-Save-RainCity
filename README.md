@@ -51,10 +51,9 @@ Template for parts of our Readme:
 
 ## About The Project
 
-As passionate gamers and junior developers from the Computer Systems Technology program (CST) at BCIT, we were driven to create a fun, educational and relaxing game experience that encompasses the ideas set forth in the Climate Emergency Action Plan from the City of Vancouver. We are extremely passionate about bettering our community and providing people with a brief moment of respite in these trying times since the inception of this idea. We hope that you enjoy 'becoming mayor for a day' and gain some knowledge about how you can participate and contribute in our ever-changing city.
-
-As part of the City of Vancouvers initiative to focus on cutting carbon pollution from local sources - burning fossil fuels in 
+As passionate gamers and junior developers from the Computer Systems Technology program (CST) at BCIT, we were driven to create a fun, educational and relaxing game experience that encompasses the ideas set forth in the Climate Emergency Action Plan from the City of Vancouver. We are extremely passionate about bettering our community and providing people with a brief moment of respite in these trying times since the inception of this idea. We hope that you enjoy 'becoming mayor for a day' and gain some knowledge about how you can participate and contribute in our ever-changing city.<br>As part of the City of Vancouvers initiative to focus on cutting carbon pollution from local sources - burning fossil fuels in 
 vehicles (39%) and buildings (54%) - we wanted to make a game that could inform local communities with their cities initiatives and aleviate the stresses that many Vancouverites have beeb experiencing these last few years. We hope that after playing our game, players can feel a little more educated about their cities climate contributions. 
+
 <br><br>
 ------
 
