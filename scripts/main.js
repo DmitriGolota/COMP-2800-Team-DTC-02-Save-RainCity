@@ -1,3 +1,11 @@
+// GLOBAL VARIABLES  
+
+//Easter Egg State
+whaleClicked = false;
+duckClicked = false;
+shipClicked = false;
+
+// Main Audio
 let buttonClickOne = document.getElementById('buttonClickOne');
 let boxPopAudioOne = document.getElementById('boxPopAudioOne');
 let boxPopAudioThree = document.getElementById('boxPopAudioThree');
@@ -436,13 +444,6 @@ function intro() {
 
     setTimeout(masterIntroDialogue, 3000)
 }
-
-// GLOBAL VARIABLES  
-
-//Easter Egg State
-whaleClicked = false;
-duckClicked = false;
-shipClicked = false;
 
 // Master Easter Egg
 function displayEasterEggFinal() {

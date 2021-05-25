@@ -264,7 +264,7 @@ main div {
     position: absolute;
     color: rgb(235, 226, 226);
     font-family: Pixel;
-    font-size: 2.5vw;
+    font-size: 2.3vw;
     text-align: center;
     width: 62vw;
     left: 19vw;
@@ -526,11 +526,17 @@ a.shareaholic-service-icon:before {
     #endGameScoreText {
         top: 46vh;
     }
+    #question-prompt-text{
+        font-size: 2.3vw;
+    }
 }
 
 @media (max-aspect-ratio: 17/9) {
     #endGameScoreText {
         top: 47vh;
+    }
+    #question-prompt-text{
+        font-size: 2vw;
     }
 }
 
