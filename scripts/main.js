@@ -807,10 +807,6 @@ function hideAnswerBox() {
 
 // This is the main function to call the next yes/no question
 function nextQuestionPrompt() {
-<<<<<<< HEAD
-=======
-
->>>>>>> 52ffdf039450b65573a2e479b00d1ef2fefadb58
     // temporary change
     if (questionCounter === 20 || popularityScore === 0) {
         // end game
