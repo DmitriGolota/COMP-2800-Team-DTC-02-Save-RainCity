@@ -102,7 +102,6 @@ let suitAssets = {
     4: "./assets/suit/charsuit5.png",
     5: "./assets/suit/charsuit6.png",
     6: "./assets/suit/charsuit7.png",
-    7: "./assets/suit/charsuit8.png",
 };
 let suitAssetsLength = Object.keys(suitAssets).length - 1;
 
