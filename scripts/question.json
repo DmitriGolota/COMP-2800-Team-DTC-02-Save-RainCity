@@ -17,8 +17,8 @@
     },
     "1": {
         "question": "These bikers never look where they're going.. but I guess it's better than driving... Should we build more bike-only paths to encourage more cycling?",
-        "yes-result": "One of Vancouver\"s Climate Emergency Action Plan\"s targets is to ensure two-thirds of trips to be taken by active transportation by 2030. More bike paths will definitely help us meet this target!",
-        "no-result": "One of Vancouver\"s Climate Emergency Action Plan\"s targets is to ensure two-thirds of trips to be taken by active transportation by 2030. More bike paths would have helped us meet this target!",
+        "yes-result": "One of Vancouver's Climate Emergency Action Plan's targets is to ensure two-thirds of trips to be taken by active transportation by 2030. More bike paths will definitely help us meet this target!",
+        "no-result": "One of Vancouver's Climate Emergency Action Plan's targets is to ensure two-thirds of trips to be taken by active transportation by 2030. More bike paths would have helped us meet this target!",
         "airQualityRating": 3,
         "emissionsRating": 4,
         "energyRating": 0,
