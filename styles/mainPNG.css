@@ -303,6 +303,13 @@ main div {
     left: 42vw;
     top: 65vh;
 }
+#fireworks{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    z-index: -1;
+}
 /* End of question prompts */
 
 /* Question results */

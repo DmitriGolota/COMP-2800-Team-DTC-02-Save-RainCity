@@ -812,11 +812,20 @@ function nextQuestionPrompt() {
         if (popularityScore > 0) {
             // If player has made it through half the questions, advance to term 2
             createNewspaper("termSwitch");
+            //Play fireworks
+            let fireworks = document.createElement('img');
+            fireworks.setAttribute('src','./assets/fireworkoverlay.gif');
+            fireworks.setAttribute('id', 'fireworks');
+            document.getElementById('container').append(fireworks);
+            var audio = document.getElementById('easterEggSound')
+            audio.play();
+    
             var newspaper = document.getElementById("newspaper");
             newspaper.onclick = function () {
                 let audio = new Audio("./assets/Audio/newspaperAway.mp3")
                 var newspaper = document.getElementById('newspaper');
                 newspaper.remove();
+                fireworks.remove();
                 audio.play();
                 document.getElementById('currentTermImage').setAttribute('src', './assets/dialogue_box/TermTwo.png');
                 setTimeout(function () {
