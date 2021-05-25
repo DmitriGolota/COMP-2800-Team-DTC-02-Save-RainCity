@@ -6,3 +6,5 @@ function checkLoginStatus() {
         }
     })
 };
+
+checkLoginStatus();

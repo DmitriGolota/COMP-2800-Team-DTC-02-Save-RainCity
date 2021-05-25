@@ -13,7 +13,6 @@
   <!--StyleSheets-->
   <link rel="stylesheet" href="./styles/header.css">
   <link rel="stylesheet" href="./styles/profile.css">
-  <link rel="stylesheet" href="./styles/footer.css">
 
   <!--Favicon-->
   <link rel="icon" href="./assets/SRC-Favicon.png">
@@ -44,14 +43,10 @@
               <a class="nav-link main-link blue" href="ceap.html" >CEAP Information</a>
             </li>
             <li class="nav-item">
-<<<<<<< HEAD
-              <a class="nav-link main-link green" href="aboutUs.html">About the Devs</a>
-=======
               <a class="nav-link main-link" href="./leaderboard.html">Leaderboards</a>
             </li>
             <li class="nav-item">
               <a class="nav-link main-link" href="aboutUs.html">About the Devs</a>
->>>>>>> global_leaderboards_feature
             </li>
           </ul>
         </div>
@@ -77,30 +72,6 @@
     <h1 class="red">Delete Account</h1>
     <button id="deleteAccountButton">Click here to permanently delete your account</button>
   </section>
-  <footer>
-    <section class="about">
-      <h4>About the project</h4>
-      <p class="footerDescription"> A group of developers come together to create a fun and interactive game to teach
-        Vancouverites about the Climate Emergency Action Plan.</p>
-    </section>
-    <aside>
-      <h4>Navigation</h4>
-      <ul>
-        <li>
-          <a href="./index.html">Home</a>
-        </li>
-        <li>
-          <a href="./ceap.html">CEAP info</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link main-link" href="./leaderboard.html">Leaderboards</a>
-        </li>
-        <li>
-          <a href="./aboutUs.html">About the devs</a>
-        </li>
-      </ul>
-    </aside>
-  </footer>
 
 
   <!----------------------------------------------->
@@ -127,91 +98,6 @@
   <!--------------------------------------------------------------------->
   <!-- JS files: Your own JavaScript functions included here    -->
   <!--------------------------------------------------------------------->
-  <script>
-
-    // Add event listener for delete account button and name change button
-    document.getElementById('deleteAccountButton').addEventListener('click', deleteAccount);
-    document.getElementById('changeNameButton').addEventListener('click', changeUserName);
-
-    // Reference to user's name text field
-    let userNameField = document.getElementById('usersName');
-
-    // Set user's textcontent under Name header to name from firestore
-    firebase.auth().onAuthStateChanged(function (user) {
-      if (user) {
-        db.collection('users').doc(user.uid)
-          .get()
-          .then(function (doc) {
-            userNameField.textContent = doc.data().name;
-          })
-        db.collection('users').doc(user.uid)
-          .collection('game-scores')
-          .orderBy('score', 'desc')
-          .limit(5)
-          .get()
-          .then(function (snap) {
-            let referenceToHighscores = document.getElementById('scoresGoHere');
-            snap.forEach(function (doc) {
-              let score = doc.data().score;
-              let time = doc.data().timestamp;
-
-              let tableRow = document.createElement('tr');
-              let tableData = document.createElement('td');
-              tableData.innerHTML = '<span class="blue">Score:</span> ' + score + ' <span class="blue">Date:</span> ' + time;
-              tableRow.appendChild(tableData)
-              referenceToHighscores.after(tableRow);
-            })
-          })
-      } else {
-        window.location.assign('/index.html')
-      }
-    })
-
-    // Update user's name to input from user
-    function changeUserName() {
-      firebase.auth().onAuthStateChanged(function (user) {
-        if (user) {
-          let inputFromPrompt = prompt('Please enter your new name and select OK to change your name.')
-          if (inputFromPrompt != null) {
-            db.collection('users').doc(user.uid)
-              .update({
-                name: inputFromPrompt
-              })
-              .then(() => {
-                userNameField.textContent = inputFromPrompt;
-              })
-          }
-
-        };
-      })
-    };
-
-
-    // Delete user's account if they enter their name correctly into prompt
-    function deleteAccount() {
-      firebase.auth().onAuthStateChanged(function (user) {
-        if (user) {
-          let inputFromPrompt = prompt('Please enter your full name and select OK to delete your account.')
-          db.collection('users').doc(user.uid)
-            .get()
-            .then(function (doc) {
-              if (inputFromPrompt === doc.data().name) {
-                db.collection("users").doc(user.uid).delete().then(() => {
-                  console.log("Document successfully deleted!");
-                }).catch((error) => {
-                  console.error("Error removing document: ", error);
-                });
-                user.delete().then(function () {
-                  // User deleted.
-                  window.location.assign('/index.html')
-                }).catch(function (error) {
-                  // An error happened.
-                });
-              }
-            })
-        }
-      })
-    }
-  </script>
+  <script src="./scripts/profile.js"></script>
 </body>
 </html>

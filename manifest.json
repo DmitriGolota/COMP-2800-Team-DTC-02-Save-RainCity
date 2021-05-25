@@ -1,0 +1,17 @@
+{
+    "name": "Save RainCity",
+    "short_name": "SRC",
+    "start_url": "./index.html",
+    "display": "standalone",
+    "background_color": "#fff",
+    "description": "fill in",
+    "icons": [{
+      "src": "./assets/SRC-Favicon.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    }],
+    "related_applications": [{
+      "platform": "play",
+      "url": "https://saveraincity.web.app/"
+    }]
+  }
