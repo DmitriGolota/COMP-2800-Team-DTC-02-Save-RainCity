@@ -73,12 +73,17 @@ vehicles (39%) and buildings (54%) - we wanted to make a game that could inform 
 
 If you wish to work-on/improve our repository/project please consider the following:
 
-- Firestore / Firebase is connected to a private user
+- Firestore / Firebase is connected to a private user (API Key can be found in the firebase_api_saveraincity.js file)
 - All assets are scaled .png's
 - The webapp is currently being hosted on https://saveraincity.web.app/
 
+### Steps
 
-
+1. Download and install your prefered IDE and develpoment environment tools and support
+2. Request access as a contributer / editor on our saveraincity database with Firebase
+3. The firebase API key can be found in the ./server/firebase_api_saveraincity.js 
+4. All other required material are within the repository
+5. ///////// insert link to the test plan here ////////
 
 <!-- CONTACT INFORMATION -->
 ## Contact
