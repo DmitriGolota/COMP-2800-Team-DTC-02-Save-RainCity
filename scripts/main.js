@@ -502,11 +502,7 @@ let introDialogueArray = ['Congratulations on being appointed Mayor! What a long
 season that was! The world is in a state of climate emergency, and that includes RainCity!',
     "As you know, the citizens of RainCity revolted and threw the last Mayor out of office. The \
 citizens were furious at the Mayor's lack of action to reduce RainCity's carbon pollution!",
-<<<<<<< HEAD
-    "Let's hope that you can make more green decisions during your term as Mayor, and maybe even get elected for a second term!", 
-=======
     "The City of Vancouver has worked tirelessly on their Climate Emergency Action Plan to reduce our carbon emissions. Do your best as Mayor to follow this plan, and maybe even get elected for a second term!",
->>>>>>> 52ffdf039450b65573a2e479b00d1ef2fefadb58
     "Keep an eye on your eco-score and popularity hearts in the top-right corner! If you make too many unpopular decisions, and run out of hearts, the citizens will demand your resignation! Make wise, environmentally friendly decisions to Save RainCity!"]
 // Global variable for the first span of dialogue from introDialogueArray
 let introDialogueText = introDialogueArray.shift().split('');
@@ -1126,12 +1122,8 @@ function endGameSequence() {
                                         }
                                     })
                             })
-<<<<<<< HEAD
                     } else{
                         console.log("Login please")
-=======
-                    } else {
->>>>>>> 52ffdf039450b65573a2e479b00d1ef2fefadb58
                         window.open('./saveScore.html');
                     }
                 });
