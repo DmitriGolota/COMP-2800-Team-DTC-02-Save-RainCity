@@ -73,6 +73,12 @@ let hairAssets = {
     0: "./assets/hair/charhair1.png",
     1: "./assets/hair/charhair2.png",
     2: "./assets/hair/charhair3.png",
+    3: "./assets/hair/charhair4.png",
+    4: "./assets/hair/charhair5.png",
+    5: "./assets/hair/charhair6.png",
+    6: "./assets/hair/charhair7.png",
+    7: "./assets/hair/charhair8.png",
+
 };
 let hairAssetsLength = Object.keys(hairAssets).length - 1;
 
@@ -80,6 +86,11 @@ let skinAssets = {
     0: "./assets/skin/charskin1.png",
     1: "./assets/skin/charskin2.png",
     2: "./assets/skin/charskin3.png",
+    3: "./assets/skin/charskin4.png",
+    4: "./assets/skin/charskin5.png",
+    5: "./assets/skin/charskin6.png",
+    6: "./assets/skin/charskin7.png",
+    7: "./assets/skin/charskin8.png",
 };
 let skinAssetsLength = Object.keys(skinAssets).length - 1;
 
@@ -87,6 +98,11 @@ let suitAssets = {
     0: "./assets/suit/charsuit1.png",
     1: "./assets/suit/charsuit2.png",
     2: "./assets/suit/charsuit3.png",
+    3: "./assets/suit/charsuit4.png",
+    4: "./assets/suit/charsuit5.png",
+    5: "./assets/suit/charsuit6.png",
+    6: "./assets/suit/charsuit7.png",
+    7: "./assets/suit/charsuit8.png",
 };
 let suitAssetsLength = Object.keys(suitAssets).length - 1;
 
