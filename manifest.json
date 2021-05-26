@@ -1,7 +1,7 @@
 {
     "name": "Save RainCity",
     "short_name": "SRC",
-    "start_url": "./index.html",
+    "start_url": "/index.html",
     "display": "standalone",
     "background_color": "#fff",
     "description": "fill in",

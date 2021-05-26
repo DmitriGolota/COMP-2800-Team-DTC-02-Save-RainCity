@@ -1,5 +1,4 @@
-
-let cacheName = 'v1';
+let cachename = 'fold1';
 
 // Set all requried files under scope of SW
 // What is worth saving to cache?
@@ -18,7 +17,7 @@ let files = [
     '../styles/ceap.css',
     '../styles/index.css',
     '../styles/login.css',
-    '../styles.mainPNG.css',
+    '../styles/mainPNG.css',
     '../styles/profile.css',
     // Scripts
     '../scripts/sw.js',
@@ -34,13 +33,15 @@ let files = [
 ];
 
 
-self.addEventListener('install', function(event){
-
-    caches.open(cacheName)
+self.addEventListener('install', function(event) {
+    // Perform install steps
+      caches.open(cachename)
         .then(function(cache) {
-            cache.addAll(files)
-    })
-})
+          console.log('Opened cache');
+          cache.addAll(files);
+        })
+  });
+  
 
 self.addEventListener('fetch', function(event){
     event.respondWith(
@@ -52,9 +53,8 @@ self.addEventListener('fetch', function(event){
                     console.log("to be filled")
                     fetch(event.request)
                         .then(function(response){
-                            return caches.open(cacheName).then(function(cache){
+                            return caches.open(cachename).then(function(cache){
                                 cache.put(event.request, response.clone())
-                                console.log(response)
                                 return response
                             })
                         })
