@@ -516,7 +516,7 @@ function masterIntroDialogue() {
         document.getElementById("next-dialogue-button").src = "./assets/intro_box/ContinueButtonUncllicked.png"
         if (introDialogueArray.length === 0 && introDialogueText.length === 0) {
             document.getElementById('intro-div').remove()
-            setTimeout(endGameSequence, 5000);
+            setTimeout(firstPrompt, 5000);
         } else {
             let dialogueTextBox = document.getElementById('intro-text');
             dialogueTextBox.textContent = '';
