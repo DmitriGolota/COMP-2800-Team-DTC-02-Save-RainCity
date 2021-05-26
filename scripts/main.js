@@ -30,9 +30,9 @@ let questionCounter = 0;
 // Load questions JSON 
 var questions;
 fetch('./scripts/question.json')
-  .then(res => res.json())
-  .then(data => questions = data);
-  
+    .then(res => res.json())
+    .then(data => questions = data);
+
 
 //Extra metrics that show players end game stats
 //Shows how much they improved a quality of the city's greenness as a rating
@@ -508,7 +508,7 @@ let introDialogueText = introDialogueArray.shift().split('');
 
 // Main function to run the intro dialogue
 function masterIntroDialogue() {
-    
+
     document.getElementById('intro-div').setAttribute('class', 'visible');
     document.getElementById("next-dialogue-button").src = "./assets/intro_box/ContinueButtonCllicked.png"
     buttonClickOne.play()
@@ -528,7 +528,7 @@ function masterIntroDialogue() {
 
 // Decomposed function to add each individual letter to text box with a timeout in-between
 function introDialogue() {
-    
+
     if (introDialogueArray.length === 0 && introDialogueText.length === 0) {
         document.getElementById('next-dialogue-button').setAttribute('class', 'visible')
         return false
@@ -813,12 +813,12 @@ function nextQuestionPrompt() {
             createNewspaper("termSwitch");
             //Play fireworks
             let fireworks = document.createElement('img');
-            fireworks.setAttribute('src','./assets/fireworkoverlay.gif');
+            fireworks.setAttribute('src', './assets/fireworkoverlay.gif');
             fireworks.setAttribute('id', 'fireworks');
             document.getElementById('container').append(fireworks);
             var audio = document.getElementById('easterEggSound')
             audio.play();
-    
+
             var newspaper = document.getElementById("newspaper");
             newspaper.onclick = function () {
                 let audio = new Audio("./assets/Audio/newspaperAway.mp3")
@@ -988,12 +988,8 @@ function endGameSequence() {
     //Remove everything
     setTimeout(() => {
         container.remove()
-    },5000)
-    // Stop the main theme audio 
-    mainTheme.pause()
-    // Start the end game theme audio
-    var endAudio = document.getElementById('endSoundTrack');
-    endAudio.play()
+    }, 5000)
+
     // Calculate user's end game score here
     let endGameScore = Math.round((mayoralRating / 12) * 100);
 
@@ -1128,7 +1124,7 @@ function endGameSequence() {
                                         }
                                     })
                             })
-                    } else{
+                    } else {
                         console.log("Login please")
                         window.open('./saveScore.html');
                     }
@@ -1179,22 +1175,22 @@ function endGameSequence() {
 
         //Create hall of outro
         let hallOfFame = document.createElement('img');
-        if(popularityScore == 0){
+        if (popularityScore == 0) {
             hallOfFame.setAttribute('src', './assets/halloflame.png')
-        }else{
+        } else {
             hallOfFame.setAttribute('src', './assets/halloffame.png');
         }
 
         hallOfFame.id = 'hallOfFame'
-    
+
         let characterHair = document.createElement('img');
         characterHair.setAttribute("src", hairAssets[hairNum]);
         characterHair.id = "hallOfFameCharacter"
-    
+
         let characterBody = document.createElement('img');
         characterBody.setAttribute('src', suitAssets[suitNum]);
         characterBody.id = "hallOfFameCharacter";
-    
+
         let characterSkin = document.createElement('img');
         characterSkin.setAttribute('src', skinAssets[skinNum]);
         characterSkin.id = "hallOfFameCharacter";
@@ -1207,7 +1203,7 @@ function endGameSequence() {
         continueHint.id = 'continueHint'
         let continueHintText = document.createTextNode('Tap to end game...');
         continueHint.appendChild(continueHintText);
-    
+
         let hallOfFameContainer = document.createElement('div');
         hallOfFameContainer.id = 'hallOfFameContainer'
         hallOfFameContainer.setAttribute('class', 'fade-in-image');
@@ -1230,10 +1226,19 @@ function endGameSequence() {
                     var newspaper = document.getElementById('newspaper');
                     newspaper.remove();
                     audio.play();
+
+
+
+                    // Stop the main theme audio 
+                    mainTheme.pause()
+                    // Start the end game theme audio
+                    var endAudio = document.getElementById('endSoundTrack');
+                    endAudio.play()
+
                     //Create endgame screen
                     document.body.append(endgamebg);
                     document.body.append(flipcard);
-    
+
                 }
             }, 5000)
 
