@@ -911,7 +911,7 @@ let defineDefaultHeadline = () => {
 
 let defineCustomHeadline = (headlineDefiner) => {
     if (headlineDefiner == "termSwitch") {
-        return document.createTextNode("Current Mayor Has Been Re-elected to Run for a Second Term!")
+        return document.createTextNode("EXTRA EXTRA!! Beloved Mayor Has Been Re-elected for a Second Term!")
     }
     if (headlineDefiner == "endGame") {
         if (popularityScore == 0) {
