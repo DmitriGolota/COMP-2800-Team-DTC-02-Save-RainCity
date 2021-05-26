@@ -10,6 +10,7 @@ let buttonClickOne = document.getElementById('buttonClickOne');
 let boxPopAudioOne = document.getElementById('boxPopAudioOne');
 let boxPopAudioThree = document.getElementById('boxPopAudioThree');
 var mainTheme = document.getElementById('mainSoundTrack');
+mainTheme.loop = true; 
 
 /*jshint esversion: 6 */
 document.getElementById('char-customization').addEventListener('click', function () {
