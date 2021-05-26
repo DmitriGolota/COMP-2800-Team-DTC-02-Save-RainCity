@@ -516,7 +516,7 @@ function masterIntroDialogue() {
         document.getElementById("next-dialogue-button").src = "./assets/intro_box/ContinueButtonUncllicked.png"
         if (introDialogueArray.length === 0 && introDialogueText.length === 0) {
             document.getElementById('intro-div').remove()
-            setTimeout(firstPrompt, 5000);
+            setTimeout(endGameSequence, 5000);
         } else {
             let dialogueTextBox = document.getElementById('intro-text');
             dialogueTextBox.textContent = '';
@@ -983,13 +983,6 @@ let sharing = false;
 
 // If you finish all questions, or pop score reaches 0, end game.
 function endGameSequence() {
-    let container = document.getElementById('container');
-    container.classList.toggle('fade');
-    //Remove everything
-    setTimeout(() => {
-        container.remove()
-    }, 5000)
-
     // Calculate user's end game score here
     let endGameScore = Math.round((mayoralRating / 12) * 100);
 
@@ -1214,36 +1207,39 @@ function endGameSequence() {
         hallOfFameContainer.append(characterStatic);
         hallOfFameContainer.append(continueHint);
 
-        hallOfFameContainer.onclick = () => {
-            //Create newspaper Element
-            hallOfFameContainer.classList.toggle('fade');
+        createNewspaper("endGame");
+        var newspaper = document.getElementById("newspaper");
+        newspaper.onclick = function () {
+            let audio = new Audio("./assets/Audio/newspaperAway.mp3")
+            var newspaper = document.getElementById('newspaper');
+            newspaper.remove();
+            audio.play();
+            let container = document.getElementById('container');
+            container.classList.toggle('fade');
+            
             setTimeout(() => {
-                hallOfFameContainer.remove();
-                createNewspaper("endGame");
-                var newspaper = document.getElementById("newspaper");
-                newspaper.onclick = function () {
-                    let audio = new Audio("./assets/Audio/newspaperAway.mp3")
-                    var newspaper = document.getElementById('newspaper');
-                    newspaper.remove();
-                    audio.play();
+                //Remove everything
+                container.remove()
+            }, 2000)
 
 
-
-                    // Stop the main theme audio 
-                    mainTheme.pause()
-                    // Start the end game theme audio
-                    var endAudio = document.getElementById('endSoundTrack');
-                    endAudio.play()
-
-                    //Create endgame screen
+            //Create endgame screen
+            document.body.append(hallOfFameContainer);
+            hallOfFameContainer.onclick = () => {
+                //Create newspaper Element
+                hallOfFameContainer.classList.toggle('fade');
+                setTimeout(() => {
+                // Stop the main theme audio 
+                mainTheme.pause()
+                // Start the end game theme audio
+                var endAudio = document.getElementById('endSoundTrack');
+                endAudio.play()
+                    hallOfFameContainer.remove();
                     document.body.append(endgamebg);
                     document.body.append(flipcard);
-
-                }
-            }, 5000)
-
+                }, 5000)
         }
 
-        document.body.append(hallOfFameContainer);
+        }
     }, 100);
 };
