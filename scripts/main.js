@@ -988,8 +988,12 @@ let sharing = false;
 
 // If you finish all questions, or pop score reaches 0, end game.
 function endGameSequence() {
+    let container = document.getElementById('container');
+    container.classList.toggle('fade');
     //Remove everything
-    document.getElementById('container').remove();
+    setTimeout(() => {
+        container.remove()
+    },5000)
     // Stop the main theme audio 
     mainTheme.pause()
     // Start the end game theme audio
@@ -1001,8 +1005,6 @@ function endGameSequence() {
     // Timestamp of when the game ended
     let timestamp = firebase.firestore.FieldValue.serverTimestamp();
 
-
-    // Remove everything
     setTimeout(() => {
 
         let endGameBox = document.createElement('img');
@@ -1179,19 +1181,69 @@ function endGameSequence() {
         flipcardInner.append(gameOver);
         flipcardInner.append(advanced);
         flipcard.append(flipcardInner);
-        //Create newspaper Element
 
-        createNewspaper("endGame");
-        var newspaper = document.getElementById("newspaper");
-        newspaper.onclick = function () {
-            let audio = new Audio("./assets/Audio/newspaperAway.mp3")
-            var newspaper = document.getElementById('newspaper');
-            newspaper.remove();
-            audio.play();
-            //Create endgame screen
-            document.body.append(endgamebg);
-            document.body.append(flipcard);
+        //Create hall of outro
+        let hallOfFame = document.createElement('img');
+        if(popularityScore == 0){
+            hallOfFame.setAttribute('src', './assets/halloflame.png')
+        }else{
+            hallOfFame.setAttribute('src', './assets/halloffame.png');
+        }
+
+        hallOfFame.id = 'hallOfFame'
+    
+        let characterHair = document.createElement('img');
+        characterHair.setAttribute("src", hairAssets[hairNum]);
+        characterHair.id = "hallOfFameCharacter"
+    
+        let characterBody = document.createElement('img');
+        characterBody.setAttribute('src', suitAssets[suitNum]);
+        characterBody.id = "hallOfFameCharacter";
+    
+        let characterSkin = document.createElement('img');
+        characterSkin.setAttribute('src', skinAssets[skinNum]);
+        characterSkin.id = "hallOfFameCharacter";
+
+        let characterStatic = document.createElement('img');
+        characterStatic.setAttribute('src', './assets/static_elements/charbody.png')
+        characterStatic.id = "hallOfFameCharacter";
+
+        let continueHint = document.createElement('h1');
+        continueHint.id = 'continueHint'
+        let continueHintText = document.createTextNode('Tap to end game...');
+        continueHint.appendChild(continueHintText);
+    
+        let hallOfFameContainer = document.createElement('div');
+        hallOfFameContainer.id = 'hallOfFameContainer'
+        hallOfFameContainer.setAttribute('class', 'fade-in-image');
+        hallOfFameContainer.append(hallOfFame);
+        hallOfFameContainer.append(characterBody);
+        hallOfFameContainer.append(characterHair);
+        hallOfFameContainer.append(characterSkin);
+        hallOfFameContainer.append(characterStatic);
+        hallOfFameContainer.append(continueHint);
+
+        hallOfFameContainer.onclick = () => {
+            //Create newspaper Element
+            hallOfFameContainer.classList.toggle('fade');
+            setTimeout(() => {
+                hallOfFameContainer.remove();
+                createNewspaper("endGame");
+                var newspaper = document.getElementById("newspaper");
+                newspaper.onclick = function () {
+                    let audio = new Audio("./assets/Audio/newspaperAway.mp3")
+                    var newspaper = document.getElementById('newspaper');
+                    newspaper.remove();
+                    audio.play();
+                    //Create endgame screen
+                    document.body.append(endgamebg);
+                    document.body.append(flipcard);
+    
+                }
+            }, 5000)
 
         }
+
+        document.body.append(hallOfFameContainer);
     }, 100);
 };
