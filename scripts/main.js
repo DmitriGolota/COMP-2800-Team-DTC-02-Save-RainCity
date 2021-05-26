@@ -868,10 +868,6 @@ let defineDefaultHeadline = () => {
         papers[1] = true;
         return document.createTextNode("Riots Breakout as Discontent Increases With the Mayor");
     }
-    else if (popularityScore <= 0 && !papers[0] && prevPopularityScore > popularityScore) {
-        papers[0] = true;
-        return document.createTextNode("RainCity's Tyrant Mayor Overthrown by the Revolution");
-    }
     else if (popularityScore >= 7 && !papers[3] && prevPopularityScore < popularityScore) {
         papers[3] = true;
         return document.createTextNode("Citizens Celebrating the Mayor's Name with New Ruling");
