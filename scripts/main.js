@@ -22,13 +22,12 @@ let popularityScore = 10;
 let ecoScore = 0;
 let prevEcoScore = ecoScore;
 let prevPopularityScore = popularityScore;
-// Percentage of correct answers out of 20 questions
+// Percentage of correct answers out of 12 questions
 let mayoralRating = 0;
 
 let questionCounter = 0;
-//If correct-point is 1, the yes-result is correct. If correct-point is 0, the no-result is correct.
 
-// Load questions JSON
+// Load questions JSON 
 var questions;
 fetch('./scripts/question.json')
   .then(res => res.json())
@@ -50,7 +49,7 @@ let environmentRestorationRating = 0;
 //For easy questions
 function getRandomIntegersEasy() {
     var arr = [];
-    while (arr.length < 10) {
+    while (arr.length < 5) {
         var randInt = Math.floor(Math.random() * 10);
         if (arr.indexOf(randInt) === -1) arr.push(randInt);
     }
@@ -62,7 +61,7 @@ var arrOfRandomIntegersEasy = getRandomIntegersEasy();
 //For hard questions
 function getRandomIntegersHard() {
     var arr = [];
-    while (arr.length < 10) {
+    while (arr.length < 7) {
         var randInt = Math.floor(Math.random() * 10) + 10;
         if (arr.indexOf(randInt) === -1) arr.push(randInt);
     }
@@ -678,7 +677,7 @@ function selectYesButton() {
         // Increment question counter
         questionCounter += 1;
 
-        if (questionCounter === 20) {
+        if (questionCounter === 12) {
             setTimeout(displayAnswerBox, 1000);
             return false;
         }
@@ -753,7 +752,7 @@ function selectNoButton() {
 
         // Increment question counter
         questionCounter += 1;
-        if (questionCounter === 20) {
+        if (questionCounter === 12) {
             setTimeout(displayAnswerBox, 1000);
             return false;
         }
@@ -804,10 +803,10 @@ function hideAnswerBox() {
 // This is the main function to call the next yes/no question
 function nextQuestionPrompt() {
     // temporary change
-    if (questionCounter === 20 || popularityScore === 0) {
+    if (questionCounter === 12 || popularityScore === 0) {
         // end game
         endGameSequence();
-    } else if (questionCounter === 10) {
+    } else if (questionCounter === 5) {
         // put newspaper popup here. show newspaper with headline:
         if (popularityScore > 0) {
             // If player has made it through half the questions, advance to term 2
@@ -918,15 +917,15 @@ let defineCustomHeadline = (headlineDefiner) => {
             return document.createTextNode("RainCity's Tyrant Mayor Overthrown by the Revolution")
         }
 
-        else if (mayoralRating < 10) {
+        else if (mayoralRating < 6) {
             return document.createTextNode("Mayor's Terrible Administration Comes to an End")
         }
 
-        else if (mayoralRating == 20) {
+        else if (mayoralRating == 12) {
             return document.createTextNode("Citizens Mourn the Retirement of Raincity's Best Mayor")
         }
 
-        else if (mayoralRating >= 10) {
+        else if (mayoralRating >= 6) {
             return document.createTextNode("Mayor Decides to Retire After Two Fruitful Years")
         }
     }
@@ -996,7 +995,7 @@ function endGameSequence() {
     var endAudio = document.getElementById('endSoundTrack');
     endAudio.play()
     // Calculate user's end game score here
-    let endGameScore = (mayoralRating / 20) * 100;
+    let endGameScore = Math.round((mayoralRating / 12) * 100);
 
     // Timestamp of when the game ended
     let timestamp = firebase.firestore.FieldValue.serverTimestamp();
@@ -1080,13 +1079,13 @@ function endGameSequence() {
 
             //Populate advanceBoxText
             document.getElementById('answerBoxText').textContent = 'You improved Rain City\'s:\r\n' +
-                'Air quality rating - +' + Math.round(airQualityRating / 2) + '%\r\n' +
-                'Carbon emissions rating - +' + Math.round(emissionsRating / 2) + '%\r\n' +
-                'Energy consumption rating - +' + Math.round(energyRating / 2) + '%\r\n' +
-                'Transportation rating - +' + Math.round(transportRating / 2) + '%\r\n' +
-                'Walkability rating - +' + Math.round(walkabilityRating / 2) + '%\r\n' +
-                'Government action rating - +' + Math.round(governmentActionRating / 2) + '%\r\n' +
-                'Environment restoration rating - +' + Math.round(environmentRestorationRating / 2) + '%\r\n';
+                'Air quality rating - +' + Math.round(airQualityRating / 120 * 100) + '%\r\n' +
+                'Carbon emissions rating - +' + Math.round(emissionsRating / 120 * 100) + '%\r\n' +
+                'Energy consumption rating - +' + Math.round(energyRating / 120 * 100) + '%\r\n' +
+                'Transportation rating - +' + Math.round(transportRating / 120 * 100) + '%\r\n' +
+                'Walkability rating - +' + Math.round(walkabilityRating / 120 * 100) + '%\r\n' +
+                'Government action rating - +' + Math.round(governmentActionRating / 120 * 100) + '%\r\n' +
+                'Environment restoration rating - +' + Math.round(environmentRestorationRating / 120 * 100) + '%\r\n';
         }
 
         let saveScore = document.createElement('img');
@@ -1119,7 +1118,7 @@ function endGameSequence() {
                                     .then(function () {
                                         // if the user scored a perfect score aka 100%
                                         // this will be altered as 100 does no currently mean 100%
-                                        if (mayoralRating === 20) {
+                                        if (mayoralRating === 12) {
                                             db.collection('scores').doc()
                                                 .set({
                                                     name: name[0],

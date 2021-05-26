@@ -10,8 +10,10 @@
         "walkabilityRating": 7,
         "governmentActionRating": 4,
         "environmentRestorationRating": 4,
-        "eco-score": 1,
-        "pop-score": 1,
+        "eco-score-yes": 1,
+        "pop-score-yes": 1,
+        "eco-score-no": -1,
+        "pop-score-no": -1,
         "correct-point": 1,
         "NPC-img-num": 4
     },
