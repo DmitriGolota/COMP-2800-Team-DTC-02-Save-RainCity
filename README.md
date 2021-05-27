@@ -83,20 +83,19 @@ If you wish to work-on/improve our repository/project please consider the follow
 2. Request access as a contributer / editor on our saveraincity database with Firebase
 3. The firebase API key can be found in the ./server/firebase_api_saveraincity.js 
 4. All other required material are within the repository
-5. ///////// insert link to the test plan here ////////
 
 <!-- CONTACT INFORMATION -->
 ## Contact
 
-Brian Romaniuk - 
+Brian Romaniuk - bromaniuk@my.bcit.ca
 
 Dmitri Golota - http://www.golota.ca - dgolota@my.bcit.ca
 
 Joshua Camacho - jcamacho10@my.bcit.ca
 
-Ralph Li - 
+Ralph Li - cookiecraft2.0@gmail.com
 
-Max Wu - 
+Max Wu - mwu151@my.bcit.ca
 
 ## Acknowledgements
 
