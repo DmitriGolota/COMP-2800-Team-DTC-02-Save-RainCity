@@ -1,2 +1,9 @@
 .DS_Store
 .vscode
+.firebase/hosting..cache
+.firebaserc
+404.html
+firebase.json
+firestore.indexes.json
+firestore.rules
+storage.rules
