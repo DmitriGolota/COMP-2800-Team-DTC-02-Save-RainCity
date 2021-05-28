@@ -76,6 +76,7 @@ If you wish to work-on/improve our repository/project please consider the follow
 - Firestore / Firebase is connected to a private user (API Key can be found in the firebase_api_saveraincity.js file)
 - All assets are scaled .png's
 - The webapp is currently being hosted on https://saveraincity.web.app/
+- Test Plan Spreadsheet https://docs.google.com/spreadsheets/d/1j-xxfLwSnUgGuljWZvd4y054ejs5nsMso8MQpNz7nH4/edit#gid=0
 
 ### Steps
 
