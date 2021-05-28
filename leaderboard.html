@@ -11,7 +11,6 @@
     integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <!--Page Stylesheets-->
     <link rel="stylesheet" href="./styles/header.css">
-    <link rel="stylesheet" href="./styles/footer.css">
     <link rel="stylesheet" href="./styles/leaderboard.css">
     <!--Favicon-->
     <link rel="icon" href="./assets/SRC-Favicon.png">
@@ -29,16 +28,16 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                  <a class="nav-link main-link" href="login.html" id="profileAnchor">Profile</a>
+                  <a class="nav-link main-link orange" href="login.html" id="profileAnchor">Profile</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link main-link" href="./ceap.html">CEAP Information</a>
+                  <a class="nav-link main-link blue" href="./ceap.html">CEAP Information</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link main-link" href="./leaderboard.html">Leaderboards</a>
+                  <a class="nav-link main-link purple" href="./leaderboard.html">Leaderboards</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link main-link" href="./aboutUs.html">About the Devs</a>
+                  <a class="nav-link main-link green" href="./aboutUs.html">About the Devs</a>
                 </li>
               </ul>
             </div>
@@ -47,8 +46,8 @@
       </header>
 
       <div class="leaderboard">
-        <h1 class="hofHeader">RainCity's Mayoral Hall of Fame</h1>
-        <p class="green">Top 10 Most Recent Perfect Mayors</p>
+        <h1 class="hofHeader"><b>RainCity's Mayoral Hall of Fame</b></h1>
+        <p id="top10P">Top 10 Most Recent Perfect Mayors</p>
         <hr class="title">
         <ol id="list">
 
@@ -79,5 +78,6 @@
     <!-- JS files: Your own JavaScript functions included here    -->
     <!--------------------------------------------------------------------->
     <script src="./scripts/leaderboard.js"></script>
+    <script src="./scripts/landingpages.js"></script>
 </body>
 </html>

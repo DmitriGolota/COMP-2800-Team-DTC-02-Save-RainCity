@@ -1,7 +1,16 @@
+// GLOBAL VARIABLES  
+
+//Easter Egg State
+whaleClicked = false;
+duckClicked = false;
+shipClicked = false;
+
+// Main Audio
 let buttonClickOne = document.getElementById('buttonClickOne');
 let boxPopAudioOne = document.getElementById('boxPopAudioOne');
 let boxPopAudioThree = document.getElementById('boxPopAudioThree');
 var mainTheme = document.getElementById('mainSoundTrack');
+mainTheme.loop = true; 
 
 /*jshint esversion: 6 */
 document.getElementById('char-customization').addEventListener('click', function () {
@@ -14,374 +23,17 @@ let popularityScore = 10;
 let ecoScore = 0;
 let prevEcoScore = ecoScore;
 let prevPopularityScore = popularityScore;
-// Percentage of correct answers out of 20 questions
+// Percentage of correct answers out of 12 questions
 let mayoralRating = 0;
 
 let questionCounter = 0;
-//If correct-point is 1, the yes-result is correct. If correct-point is 0, the no-result is correct.
-let questions = {
-    0: {
-        'question': 'Mayor! People have raised concerns about how boring it is to walk in some neighbourhoods. \
-        Should we increase the amount of trees and plants near sidewalks to make them more enjoyable to walk?',
-        'yes-result': 'People are starting to walk more now! The less cars on the road the better!',
-        'no-result': 'People are still unmotivated to walk rather than drive. Hopefully your next decisions will be better!',
-        'airQualityRating': 6,
-        'emissionsRating': 2,
-        'energyRating': 0,
-        'transportRating': 2,
-        'walkabilityRating': 7,
-        'governmentActionRating': 4,
-        'environmentRestorationRating': 5,
-        'eco-score-yes': 1,
-        'pop-score-yes': 1,
-        'eco-score-no': -1,
-        'pop-score-no': -1,
-        'correct-point': 1,
-        'NPC-img-num': 4
-    },
-    1: {
-        'question': "These bikers never look where they're going.. but I guess it's better than driving... Should we build more bike-only paths to encourage more cycling?",
-        'yes-result': 'One of Vancouver\'s Climate Emergency Action Plan\'s targets is to ensure two-thirds of trips to be taken by active transportation by 2030. More bike paths will definitely help us meet this target!',
-        'no-result': 'One of Vancouver\'s Climate Emergency Action Plan\'s targets is to ensure two-thirds of trips to be taken by active transportation by 2030. More bike paths would have helped us meet this target!',
-        'airQualityRating': 7,
-        'emissionsRating': 3,
-        'energyRating': 0,
-        'transportRating': 0,
-        'walkabilityRating': 0,
-        'governmentActionRating': 0,
-        'environmentRestorationRating': 0,
-        'eco-score-yes': 1,
-        'pop-score-yes': 1,
-        'eco-score-no': -1,
-        'pop-score-no': -1,
-        'correct-point': 1,
-        'NPC-img-num': 5
-    },
-    2: {
-        'question': 'Traffic in Downtown RainCity is at an all time high and that means lots of vehicle carbon emissions! Should we charge a fee for private vehicles entering the Metro Core?',
-        'yes-result': "Great decision! The Vancouver CEAP is planning to implement transportation pricing within the Vancouver Metro Core. This will help with reducing traffic congestion and carbon emissions!",
-        'no-result': 'Drivers are happy to drive with no additional fees, but this would have helped to reduce traffic congestion and carbon emissions. The Vancouver CEAP is planning to implement transportation pricing within the Vancouver Metro Core.',
-        'airQualityRating': 1,
-        'emissionsRating': 1,
-        'energyRating': 1,
-        'transportRating': 1,
-        'walkabilityRating': 1,
-        'governmentActionRating': 1,
-        'environmentRestorationRating': 1,
-        'eco-score-yes': 1,
-        'pop-score-yes': -2,
-        'eco-score-no': -1,
-        'pop-score-no': 1,
-        'correct-point': 1,
-        'NPC-img-num': 3
-    },
-    3: {
-        'question': 'The bus system is getting expensive with the new eco-friendly policies! Should we reduce the schedule and frequency of buses to save money?',
-        'yes-result': 'Citizens of RainCity are now further discouraged to consider public transit! That was not a good move!',
-        'no-result': 'Commuters are glad to keep the regular bus schedules! The budget department can kick rocks!',
-        'airQualityRating': 1,
-        'emissionsRating': 1,
-        'energyRating': 1,
-        'transportRating': 1,
-        'walkabilityRating': 1,
-        'governmentActionRating': 1,
-        'environmentRestorationRating': 1,
-        'eco-score-yes': -1,
-        'pop-score-yes': -2,
-        'eco-score-no': 0,
-        'pop-score-no': 0,
-        'correct-point': 0,
-        'NPC-img-num': 1
-    },
-    4: {
-        'question': 'Yooo man... We gotta replant the trees dude. Should we enforce a law that requires people to plant a tree for every tree they chop down?',
-        'yes-result': 'Vancouver\'s CEAP is aiming to restore forests and coastal eco-systems by 2030. This is a totally tubular decision, man! The more trees the better!',
-        'no-result': 'Vancouver\'s CEAP is aiming to restore forests and coastal eco-systems by 2030. That was a bogus decision, bro! We are gonna run out of trees at this rate!',
-        'airQualityRating': 1,
-        'emissionsRating': 1,
-        'energyRating': 1,
-        'transportRating': 1,
-        'walkabilityRating': 1,
-        'governmentActionRating': 1,
-        'environmentRestorationRating': 1,
-        'eco-score-yes': 2,
-        'pop-score-yes': 1,
-        'eco-score-no': -1,
-        'pop-score-no': -1,
-        'correct-point': 1,
-        'NPC-img-num': 6
-    },
-    5: {
-        'question': 'We just got a call from Elon Musk! He is paying cities lots of DogeCoin to add more electric vehicle charging stations! Should we add more EV chargers around RainCity?',
-        'yes-result': 'Woohoo, that is a lot of DogeCoin! We are starting to see more electric vehicles across the city! Nicely done!',
-        'no-result': "Uh-oh, you do not want to get on Elon's bad side. It would have been a good idea to make electric vehicles more accessible too!",
-        'airQualityRating': 1,
-        'emissionsRating': 1,
-        'energyRating': 1,
-        'transportRating': 1,
-        'walkabilityRating': 1,
-        'governmentActionRating': 1,
-        'environmentRestorationRating': 1,
-        'eco-score-yes': 2,
-        'pop-score-yes': 2,
-        'eco-score-no': -1,
-        'pop-score-no': -2,
-        'correct-point': 1,
-        'NPC-img-num': 2
-    },
-    6: {
-        'question': 'Wow! So many people have started using public transit for their commutes! Should we increase the ticket price for buses and trains from $3 to $3.75?',
-        'yes-result': 'Citizens are furious at the new price spike! They are starting to consider driving rather than public transit! Bad idea, you capitalist pig!',
-        'no-result': 'Good thinking! Raising the price would not have been good for the environment! The budget department can kick rocks!',
-        'airQualityRating': 1,
-        'emissionsRating': 1,
-        'energyRating': 1,
-        'transportRating': 1,
-        'walkabilityRating': 1,
-        'governmentActionRating': 1,
-        'environmentRestorationRating': 1,
-        'eco-score-yes': -2,
-        'pop-score-yes': -4,
-        'eco-score-no': 0,
-        'pop-score-no': 1,
-        'correct-point': 0,
-        'NPC-img-num': 1
-    },
-    7: {
-        'question': 'People are complaining about the lack of parking in Downtown RainCity! Can we pave over a disabled-dog-park to build a parkade?',
-        'yes-result': 'What is wrong with you?! Think of those poor dogs! The citizens will have your head for this!',
-        'no-result': 'Phew! The people would have been furious if you paved over that dog-park!',
-        'airQualityRating': 1,
-        'emissionsRating': 1,
-        'energyRating': 1,
-        'transportRating': 1,
-        'walkabilityRating': 1,
-        'governmentActionRating': 1,
-        'environmentRestorationRating': 1,
-        'eco-score-yes': -2,
-        'pop-score-yes': -5,
-        'eco-score-no': 1,
-        'pop-score-no': 2,
-        'correct-point': 0,
-        'NPC-img-num': 3
-    },
-    8: {
-        'question': "Mayor! Still too many people are driving private vehicles unnecessarily! Should we expand our residential parking permits city-wide?",
-        'yes-result': 'The Vancouver CEAP is planning to expand the residential parking permits city-wide to discourage private vehicle ownership. While the citizens will not be happy, this will definitely reduce the amount of cars on the streets!',
-        'no-result': 'The Vancouver CEAP is planning to expand the residential parking permits city-wide to discourage private vehicle ownership. While the citizens are happy for now, this does not help reduce the amount of cars on the streets!',
-        'airQualityRating': 1,
-        'emissionsRating': 1,
-        'energyRating': 1,
-        'transportRating': 1,
-        'walkabilityRating': 1,
-        'governmentActionRating': 1,
-        'environmentRestorationRating': 1,
-        'eco-score-yes': 3,
-        'pop-score-yes': -1,
-        'eco-score-no': -2,
-        'pop-score-no': 1,
-        'correct-point': 1,
-        'NPC-img-num': 5
-    },
-    9: {
-        'question': 'Mayor, is it just me or is it hard to breathe downtown? Should we add an additional carbon pollution surcharge to parking permits for non-electric vehicles?',
-        'yes-result': 'Good idea! The citizens are not happy about the extra fees, but this will help us meet the Vancouver CEAP targets for 50% of the kms driven on Vancouver roads to be by zero emissions vehicles.',
-        'no-result': 'Uh oh! The citizens are happy to avoid extra fees, but this will not help us meet the Vancouver CEAP targets for 50% of the kms driven on Vancouver roads to be by zero emissions vehicles.',
-        'airQualityRating': 1,
-        'emissionsRating': 1,
-        'energyRating': 1,
-        'transportRating': 1,
-        'walkabilityRating': 1,
-        'governmentActionRating': 1,
-        'environmentRestorationRating': 1,
-        'eco-score-yes': 2,
-        'pop-score-yes': -2,
-        'eco-score-no': -2,
-        'pop-score-no': 0,
-        'correct-point': 1,
-        'NPC-img-num': 2
-    },
-    10: {
-        'question': 'A lot of carbon emissions can be eliminated by switching from natural gas to electricity for household heating. Should we require new home constructions to use electrical appliances for heating and hot water?',
-        'yes-result': 'Excellent choice! By January 1st, 2022, the city of Vancouver plans to require the majority of new home constructions to use electrical appliances for heating and hot water.',
-        'no-result': 'Bad choice! The smog produced by burning natural gas is getting worse! By January 1st, 2022, the city of Vancouver plans to require the majority of new home constructions to use electrical appliances for heating and hot water.',
-        'airQualityRating': 1,
-        'emissionsRating': 1,
-        'energyRating': 1,
-        'transportRating': 1,
-        'walkabilityRating': 1,
-        'governmentActionRating': 1,
-        'environmentRestorationRating': 1,
-        'eco-score-yes': 2,
-        'pop-score-yes': -1,
-        'eco-score-no': -2,
-        'pop-score-no': 1,
-        'correct-point': 1,
-        'NPC-img-num': 3
-    },
-    11: {
-        'question': 'We need to do something drastic to reduce our building carbon emissions. Should we begin issuing fines to building owners that still operate with non-renewable natural gas?',
-        'yes-result': 'While this is not an idea proposed by the Vancouver CEAP, this could help to reduce embodied emissions in new buildings and construction projects by 40% by 2030.',
-        'no-result': 'While this is not an idea proposed by the Vancouver CEAP, this could have helped to reduce embodied emissions in new buildings and construction projects by 40% by 2030.',
-        'airQualityRating': 1,
-        'emissionsRating': 1,
-        'energyRating': 1,
-        'transportRating': 1,
-        'walkabilityRating': 1,
-        'governmentActionRating': 1,
-        'environmentRestorationRating': 1,
-        'eco-score-yes': 3,
-        'pop-score-yes': -2,
-        'eco-score-no': -2,
-        'pop-score-no': 1,
-        'correct-point': 1,
-        'NPC-img-num': 5
-    },
-    12: {
-        'question': 'The Architects of Raincity think windows are a faux-pas! However, bigger windows allow for improved air flow which reduce energy used for household heating. Do you want to mandate the usage of big windows?',
-        'yes-result': 'Let there be light! Citizens are breathing a breathe of fresh air! Although, the architects are definitely not happy!',
-        'no-result': 'A great cloud of darkness descends upon the citizens of RainCity! Everyone is sadder and lacking Vitamin D!',
-        'airQualityRating': 1,
-        'emissionsRating': 1,
-        'energyRating': 1,
-        'transportRating': 1,
-        'walkabilityRating': 1,
-        'governmentActionRating': 1,
-        'environmentRestorationRating': 1,
-        'eco-score-yes': 2,
-        'pop-score-yes': -1,
-        'eco-score-no': -2,
-        'pop-score-no': -1,
-        'correct-point': 1,
-        'NPC-img-num': 2
-    },
-    13: {
-        'question': "Mayor! Should we expand our logging into the old-growth forests to make way for solar energy farms?",
-        'yes-result': 'While we have paved more space for a form of renewable energy, we wiped out thousands of habitats in the process! Not a good move!',
-        'no-result': 'The citizens of RainCity would have been furious if they found out about more deforestation! We can build solar energy farms elsewhere instead and keep the beautiful trees!',
-        'airQualityRating': 1,
-        'emissionsRating': 1,
-        'energyRating': 1,
-        'transportRating': 1,
-        'walkabilityRating': 1,
-        'governmentActionRating': 1,
-        'environmentRestorationRating': 1,
-        'eco-score-yes': -4,
-        'pop-score-yes': -3,
-        'eco-score-no': 1,
-        'pop-score-no': 1,
-        'correct-point': 0,
-        'NPC-img-num': 3
-    },
-    14: {
-        'question': 'Apartment dwellers in RainCity are asking for more parking spots within building parkades. Should we increase the maximum parking limit for residential buildings?',
-        'yes-result': 'Citizens love quick and easy parking! However, introducing a parking maximum would have been a good idea! We should focus on reducing the need for cars overall!',
-        'no-result': 'The citizens are not happy with their lack of parking. However, introducing a parking maximum is a good idea! We should focus on reducing the need for cars overall!',
-        'airQualityRating': 1,
-        'emissionsRating': 1,
-        'energyRating': 1,
-        'transportRating': 1,
-        'walkabilityRating': 1,
-        'governmentActionRating': 1,
-        'environmentRestorationRating': 1,
-        'eco-score-yes': -2,
-        'pop-score-yes': 1,
-        'eco-score-no': 3,
-        'pop-score-no': -1,
-        'correct-point': 0,
-        'NPC-img-num': 1
-    },
-    15: {
-        'question': 'Drivers are complaining about the bright streetlamps! Should we get rid of some streetlamps to accommodate late-night drivers?',
-        'yes-result': 'Residents no longer feel safe walking at night! Removing streetlamps is taking a step backward in our plan for creating more walkable neighborhoods.!',
-        'no-result': 'Good thinking! We should keep as many streetlamps as possible to promote walkable neighborhoods and the safety of pedestrians!',
-        'airQualityRating': 1,
-        'emissionsRating': 1,
-        'energyRating': 1,
-        'transportRating': 1,
-        'walkabilityRating': 1,
-        'governmentActionRating': 1,
-        'environmentRestorationRating': 1,
-        'eco-score-yes': -1,
-        'pop-score-yes': -2,
-        'eco-score-no': 1,
-        'pop-score-no': 0,
-        'correct-point': 0,
-        'NPC-img-num': 3
-    },
-    16: {
-        'question': "Exporting out massive amounts of wood is totally not the vibe, man. This goes against the grain of the trees, dude. Should we reduce the amount of trees we export?",
-        'yes-result': 'The forests are flourishing, but a large part of RainCity\'s economy is built around our forestry industry. This was a good environmental decision, but some citizens are losing their jobs.',
-        'no-result': 'Not a good call! Reducing the amount of trees we export would have allowed for more trees to capture even more carbon. The logging industry continues unchecked!',
-        'airQualityRating': 1,
-        'emissionsRating': 1,
-        'energyRating': 1,
-        'transportRating': 1,
-        'walkabilityRating': 1,
-        'governmentActionRating': 1,
-        'environmentRestorationRating': 1,
-        'eco-score-yes': 1,
-        'pop-score-yes': 2,
-        'eco-score-no': -1,
-        'pop-score-no': -1,
-        'correct-point': 1,
-        'NPC-img-num': 6
-    },
-    17: {
-        'question': 'Climate change is so not cool, man! But the warmer weather is really helping my tan! Should we ignore climate change so I can lay on the beach more often?',
-        'yes-result': 'Cowabunga! Catch me in my speedo at Catsilano Beach this weekend!',
-        'no-result': 'Total bummer, less beach time for me!',
-        'airQualityRating': 1,
-        'emissionsRating': 1,
-        'energyRating': 1,
-        'transportRating': 1,
-        'walkabilityRating': 1,
-        'governmentActionRating': 1,
-        'environmentRestorationRating': 1,
-        'eco-score-yes': -4,
-        'pop-score-yes': -2,
-        'eco-score-no': 2,
-        'pop-score-no': 1,
-        'correct-point': 0,
-        'NPC-img-num': 6
-    },
-    18: {
-        'question': 'Mayor, this is a marketing disaster! Only 7% of RainCity citizens know what our biggest carbon impact really is! Should we increase our marketing budget to spread awareness about carbon footprints?',
-        'yes-result': 'Excellent! We can hire some junior software developers to make a game to raise awareness! Hmm... I think we should call it "Save RainCity"!',
-        'no-result': 'You are right! What a waste of money! The budget department is going to throw an office party in your honor!',
-        'airQualityRating': 1,
-        'emissionsRating': 1,
-        'energyRating': 1,
-        'transportRating': 1,
-        'walkabilityRating': 1,
-        'governmentActionRating': 1,
-        'environmentRestorationRating': 1,
-        'eco-score-yes': 3,
-        'pop-score-yes': 2,
-        'eco-score-no': -1,
-        'pop-score-no': -1,
-        'correct-point': 1,
-        'NPC-img-num': 4
-    },
-    19: {
-        'question': 'Recent studies have shown that people who do not depend on a car are healthier and happier! Should we increase funding and promote Walk/Bike-To-Work programs for businesses?',
-        'yes-result': 'RainCity citizens are thriving! They have found a new passion for walking and cycling and starting to ditch their cars! Good work!',
-        'no-result': 'People are still relying on their cars to commute and are complaining about traffic congestion. Try better next time!',
-        'airQualityRating': 1,
-        'emissionsRating': 1,
-        'energyRating': 1,
-        'transportRating': 1,
-        'walkabilityRating': 1,
-        'governmentActionRating': 1,
-        'environmentRestorationRating': 1,
-        'eco-score-yes': 2,
-        'pop-score-yes': 2,
-        'eco-score-no': -2,
-        'pop-score-no': -2,
-        'correct-point': 1,
-        'NPC-img-num': 4
-    }
-};
+
+// Load questions JSON 
+var questions;
+fetch('./scripts/question.json')
+    .then(res => res.json())
+    .then(data => questions = data);
+
 
 //Extra metrics that show players end game stats
 //Shows how much they improved a quality of the city's greenness as a rating
@@ -398,7 +50,7 @@ let environmentRestorationRating = 0;
 //For easy questions
 function getRandomIntegersEasy() {
     var arr = [];
-    while (arr.length < 10) {
+    while (arr.length < 5) {
         var randInt = Math.floor(Math.random() * 10);
         if (arr.indexOf(randInt) === -1) arr.push(randInt);
     }
@@ -410,7 +62,7 @@ var arrOfRandomIntegersEasy = getRandomIntegersEasy();
 //For hard questions
 function getRandomIntegersHard() {
     var arr = [];
-    while (arr.length < 10) {
+    while (arr.length < 7) {
         var randInt = Math.floor(Math.random() * 10) + 10;
         if (arr.indexOf(randInt) === -1) arr.push(randInt);
     }
@@ -429,6 +81,12 @@ let hairAssets = {
     0: "./assets/hair/charhair1.png",
     1: "./assets/hair/charhair2.png",
     2: "./assets/hair/charhair3.png",
+    3: "./assets/hair/charhair4.png",
+    4: "./assets/hair/charhair5.png",
+    5: "./assets/hair/charhair6.png",
+    6: "./assets/hair/charhair7.png",
+    7: "./assets/hair/charhair8.png",
+
 };
 let hairAssetsLength = Object.keys(hairAssets).length - 1;
 
@@ -436,6 +94,11 @@ let skinAssets = {
     0: "./assets/skin/charskin1.png",
     1: "./assets/skin/charskin2.png",
     2: "./assets/skin/charskin3.png",
+    3: "./assets/skin/charskin4.png",
+    4: "./assets/skin/charskin5.png",
+    5: "./assets/skin/charskin6.png",
+    6: "./assets/skin/charskin7.png",
+    7: "./assets/skin/charskin8.png",
 };
 let skinAssetsLength = Object.keys(skinAssets).length - 1;
 
@@ -443,8 +106,16 @@ let suitAssets = {
     0: "./assets/suit/charsuit1.png",
     1: "./assets/suit/charsuit2.png",
     2: "./assets/suit/charsuit3.png",
+    3: "./assets/suit/charsuit4.png",
+    4: "./assets/suit/charsuit5.png",
+    5: "./assets/suit/charsuit6.png",
+    6: "./assets/suit/charsuit7.png",
 };
 let suitAssetsLength = Object.keys(suitAssets).length - 1;
+
+function test() {
+    console.log(hairNum)
+}
 
 function hairPrev() {
     //button movement
@@ -642,8 +313,8 @@ function intro() {
     var audio = document.getElementById('myaudio');
     audio.pause();
 
-    // Populate introduction scene
-
+    // Remove art painting button
+    document.getElementById('artbutton').remove();
 
     // Play boxPopAudio
     boxPopAudioOne.play()
@@ -778,13 +449,6 @@ function intro() {
     setTimeout(masterIntroDialogue, 3000)
 }
 
-// GLOBAL VARIABLES  
-
-//Easter Egg State
-whaleClicked = false;
-duckClicked = false;
-shipClicked = false;
-
 // Master Easter Egg
 function displayEasterEggFinal() {
     if (whaleClicked == true && duckClicked == true && shipClicked == true) {
@@ -845,6 +509,7 @@ let introDialogueText = introDialogueArray.shift().split('');
 
 // Main function to run the intro dialogue
 function masterIntroDialogue() {
+
     document.getElementById('intro-div').setAttribute('class', 'visible');
     document.getElementById("next-dialogue-button").src = "./assets/intro_box/ContinueButtonCllicked.png"
     buttonClickOne.play()
@@ -861,8 +526,10 @@ function masterIntroDialogue() {
     }, 30)
 };
 
+
 // Decomposed function to add each individual letter to text box with a timeout in-between
 function introDialogue() {
+
     if (introDialogueArray.length === 0 && introDialogueText.length === 0) {
         document.getElementById('next-dialogue-button').setAttribute('class', 'visible')
         return false
@@ -1011,7 +678,7 @@ function selectYesButton() {
         // Increment question counter
         questionCounter += 1;
 
-        if (questionCounter === 20) {
+        if (questionCounter === 12) {
             setTimeout(displayAnswerBox, 1000);
             return false;
         }
@@ -1086,7 +753,7 @@ function selectNoButton() {
 
         // Increment question counter
         questionCounter += 1;
-        if (questionCounter === 20) {
+        if (questionCounter === 12) {
             setTimeout(displayAnswerBox, 1000);
             return false;
         }
@@ -1136,21 +803,29 @@ function hideAnswerBox() {
 
 // This is the main function to call the next yes/no question
 function nextQuestionPrompt() {
-
     // temporary change
-    if (questionCounter === 20 || popularityScore === 0) {
+    if (questionCounter === 12 || popularityScore === 0) {
         // end game
         endGameSequence();
-    } else if (questionCounter === 10) {
+    } else if (questionCounter === 5) {
         // put newspaper popup here. show newspaper with headline:
         if (popularityScore > 0) {
             // If player has made it through half the questions, advance to term 2
             createNewspaper("termSwitch");
+            //Play fireworks
+            let fireworks = document.createElement('img');
+            fireworks.setAttribute('src', './assets/fireworkoverlay.gif');
+            fireworks.setAttribute('id', 'fireworks');
+            document.getElementById('container').append(fireworks);
+            var audio = document.getElementById('easterEggSound')
+            audio.play();
+
             var newspaper = document.getElementById("newspaper");
             newspaper.onclick = function () {
                 let audio = new Audio("./assets/Audio/newspaperAway.mp3")
                 var newspaper = document.getElementById('newspaper');
                 newspaper.remove();
+                fireworks.remove();
                 audio.play();
                 document.getElementById('currentTermImage').setAttribute('src', './assets/dialogue_box/TermTwo.png');
                 setTimeout(function () {
@@ -1192,10 +867,6 @@ let defineDefaultHeadline = () => {
     else if (popularityScore <= 1 && !papers[1] && prevPopularityScore > popularityScore) {
         papers[1] = true;
         return document.createTextNode("Riots Breakout as Discontent Increases With the Mayor");
-    }
-    else if (popularityScore <= 0 && !papers[0] && prevPopularityScore > popularityScore) {
-        papers[0] = true;
-        return document.createTextNode("RainCity's Tyrant Mayor Overthrown by the Revolution");
     }
     else if (popularityScore >= 7 && !papers[3] && prevPopularityScore < popularityScore) {
         papers[3] = true;
@@ -1240,22 +911,22 @@ let defineDefaultHeadline = () => {
 
 let defineCustomHeadline = (headlineDefiner) => {
     if (headlineDefiner == "termSwitch") {
-        return document.createTextNode("Current Mayor Has Been Re-elected to Run for a Second Term!")
+        return document.createTextNode("EXTRA EXTRA!! Beloved Mayor Has Been Re-elected for a Second Term!")
     }
     if (headlineDefiner == "endGame") {
         if (popularityScore == 0) {
             return document.createTextNode("RainCity's Tyrant Mayor Overthrown by the Revolution")
         }
 
-        else if (mayoralRating < 10) {
+        else if (mayoralRating < 6) {
             return document.createTextNode("Mayor's Terrible Administration Comes to an End")
         }
 
-        else if (mayoralRating == 20) {
+        else if (mayoralRating == 12) {
             return document.createTextNode("Citizens Mourn the Retirement of Raincity's Best Mayor")
         }
 
-        else if (mayoralRating >= 10) {
+        else if (mayoralRating >= 6) {
             return document.createTextNode("Mayor Decides to Retire After Two Fruitful Years")
         }
     }
@@ -1313,27 +984,12 @@ let sharing = false;
 
 // If you finish all questions, or pop score reaches 0, end game.
 function endGameSequence() {
-    //Remove everything
-    document.getElementById('container').remove();
-    // Stop the main theme audio 
-    mainTheme.pause()
-    // Start the end game theme audio
-    var endAudio = document.getElementById('endSoundTrack');
-    endAudio.play()
     // Calculate user's end game score here
-    let endGameScore = (mayoralRating / 20) * 100;
+    let endGameScore = Math.round((mayoralRating / 12) * 100);
 
     // Timestamp of when the game ended
-    let currentDate = new Date();
+    let timestamp = firebase.firestore.FieldValue.serverTimestamp();
 
-    let currentDayOfMonth = currentDate.getDate();
-    let currentMonth = currentDate.getMonth();
-    let currentYear = currentDate.getFullYear();
-
-    let timestamp = currentDayOfMonth + "-" + (currentMonth + 1) + "-" + currentYear;
-
-
-    // Remove everything
     setTimeout(() => {
 
         let endGameBox = document.createElement('img');
@@ -1413,13 +1069,13 @@ function endGameSequence() {
 
             //Populate advanceBoxText
             document.getElementById('answerBoxText').textContent = 'You improved Rain City\'s:\r\n' +
-                'Air quality rating - +' + Math.round(airQualityRating / 2) + '%\r\n' +
-                'Carbon emissions rating - +' + Math.round(emissionsRating / 2) + '%\r\n' +
-                'Energy consumption rating - +' + Math.round(energyRating / 2) + '%\r\n' +
-                'Transportation rating - +' + Math.round(transportRating / 2) + '%\r\n' +
-                'Walkability rating - +' + Math.round(walkabilityRating / 2) + '%\r\n' +
-                'Government action rating - +' + Math.round(governmentActionRating / 2) + '%\r\n' +
-                'Environment restoration rating - +' + Math.round(environmentRestorationRating / 2) + '%\r\n';
+                'Air quality rating - +' + Math.round(airQualityRating / 120 * 100) + '%\r\n' +
+                'Carbon emissions rating - +' + Math.round(emissionsRating / 120 * 100) + '%\r\n' +
+                'Energy consumption rating - +' + Math.round(energyRating / 120 * 100) + '%\r\n' +
+                'Transportation rating - +' + Math.round(transportRating / 120 * 100) + '%\r\n' +
+                'Walkability rating - +' + Math.round(walkabilityRating / 120 * 100) + '%\r\n' +
+                'Government action rating - +' + Math.round(governmentActionRating / 120 * 100) + '%\r\n' +
+                'Environment restoration rating - +' + Math.round(environmentRestorationRating / 120 * 100) + '%\r\n';
         }
 
         let saveScore = document.createElement('img');
@@ -1437,6 +1093,7 @@ function endGameSequence() {
                 firebase.auth().onAuthStateChanged(function (user) {
                     if (user) {
                         scoreSaved = true;
+                        console.log("Save Success");
                         var name = '';
                         db.collection('users').doc(user.uid)
                             .get()
@@ -1445,13 +1102,13 @@ function endGameSequence() {
                                 db.collection('users').doc(user.uid)
                                     .collection('game-scores').doc()
                                     .set({
-                                        score: endGameScore,
+                                        score: endGameScore + '%',
                                         timestamp: timestamp
                                     })
                                     .then(function () {
                                         // if the user scored a perfect score aka 100%
                                         // this will be altered as 100 does no currently mean 100%
-                                        if (mayoralRating === 20) {
+                                        if (mayoralRating === 12) {
                                             db.collection('scores').doc()
                                                 .set({
                                                     name: name[0],
@@ -1462,6 +1119,7 @@ function endGameSequence() {
                                     })
                             })
                     } else {
+                        console.log("Login please")
                         window.open('./saveScore.html');
                     }
                 });
@@ -1508,7 +1166,47 @@ function endGameSequence() {
         flipcardInner.append(gameOver);
         flipcardInner.append(advanced);
         flipcard.append(flipcardInner);
-        //Create newspaper Element
+
+        //Create hall of outro
+        let hallOfFame = document.createElement('img');
+        if (popularityScore == 0) {
+            hallOfFame.setAttribute('src', './assets/halloflame.png')
+        } else {
+            hallOfFame.setAttribute('src', './assets/halloffame.png');
+        }
+
+        hallOfFame.id = 'hallOfFame'
+
+        let characterHair = document.createElement('img');
+        characterHair.setAttribute("src", hairAssets[hairNum]);
+        characterHair.id = "hallOfFameCharacter"
+
+        let characterBody = document.createElement('img');
+        characterBody.setAttribute('src', suitAssets[suitNum]);
+        characterBody.id = "hallOfFameCharacter";
+
+        let characterSkin = document.createElement('img');
+        characterSkin.setAttribute('src', skinAssets[skinNum]);
+        characterSkin.id = "hallOfFameCharacter";
+
+        let characterStatic = document.createElement('img');
+        characterStatic.setAttribute('src', './assets/static_elements/charbody.png')
+        characterStatic.id = "hallOfFameCharacter";
+
+        let continueHint = document.createElement('h1');
+        continueHint.id = 'continueHint'
+        let continueHintText = document.createTextNode('Tap to end game...');
+        continueHint.appendChild(continueHintText);
+
+        let hallOfFameContainer = document.createElement('div');
+        hallOfFameContainer.id = 'hallOfFameContainer'
+        hallOfFameContainer.setAttribute('class', 'fade-in-image');
+        hallOfFameContainer.append(hallOfFame);
+        hallOfFameContainer.append(characterBody);
+        hallOfFameContainer.append(characterHair);
+        hallOfFameContainer.append(characterSkin);
+        hallOfFameContainer.append(characterStatic);
+        hallOfFameContainer.append(continueHint);
 
         createNewspaper("endGame");
         var newspaper = document.getElementById("newspaper");
@@ -1517,9 +1215,31 @@ function endGameSequence() {
             var newspaper = document.getElementById('newspaper');
             newspaper.remove();
             audio.play();
+            let container = document.getElementById('container');
+            container.classList.toggle('fade');
+            
+            setTimeout(() => {
+                //Remove everything
+                container.remove()
+            }, 2000)
+
+
             //Create endgame screen
-            document.body.append(endgamebg);
-            document.body.append(flipcard);
+            document.body.append(hallOfFameContainer);
+            hallOfFameContainer.onclick = () => {
+                //Create newspaper Element
+                hallOfFameContainer.classList.toggle('fade');
+                setTimeout(() => {
+                // Stop the main theme audio 
+                mainTheme.pause()
+                // Start the end game theme audio
+                var endAudio = document.getElementById('endSoundTrack');
+                endAudio.play()
+                    hallOfFameContainer.remove();
+                    document.body.append(endgamebg);
+                    document.body.append(flipcard);
+                }, 5000)
+        }
 
         }
     }, 100);

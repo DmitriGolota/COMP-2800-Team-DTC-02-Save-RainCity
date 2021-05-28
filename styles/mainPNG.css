@@ -13,7 +13,7 @@
 }
 
 body{
-    background-color: rgba(149, 168, 202, 0.301);
+    background-color: rgba(0, 0, 0, 0.993);
     overflow: hidden;
     margin: 0;
     padding: 0;
@@ -71,8 +71,14 @@ main div {
 
 /* Character Customization */
 #container {
+    opacity: 1;
     width: 100vw;
     height: 100vh;
+    transition: opacity 2s;
+    -webkit-transition: opacity 2s;
+    -moz-transition: opacity 2s;
+    -o-transition: opacity 2s;
+    -ms-transition: opacity 2s;
 }
 
 .notebook {
@@ -264,7 +270,7 @@ main div {
     position: absolute;
     color: rgb(235, 226, 226);
     font-family: Pixel;
-    font-size: 2.5vw;
+    font-size: 2.3vw;
     text-align: center;
     width: 62vw;
     left: 19vw;
@@ -302,6 +308,13 @@ main div {
     height: 16vh;
     left: 42vw;
     top: 65vh;
+}
+#fireworks{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    z-index: -1;
 }
 /* End of question prompts */
 
@@ -373,7 +386,7 @@ main div {
 
 #saveScore{
     width: 10vw;
-    height: 10vh;
+    height: 5.7vw;
     top: 65.5vh;
     left: 37vw;
 }
@@ -442,12 +455,50 @@ a.shareaholic-service-icon:before {
     height: 100%;
     -webkit-backface-visibility: hidden; /* Safari */
     backface-visibility: hidden;
-  }
+}
 
-  #advanced {
-      transform: rotateY(180deg);
-  }
+#advanced {
+    transform: rotateY(180deg);
+}
 
+#hallOfFameContainer {
+    opacity: 1;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    z-index: -2;
+    transition: opacity 5s;
+    -webkit-transition: opacity 5s;
+    -moz-transition: opacity 5s;
+    -o-transition: opacity 5s;
+    -ms-transition: opacity 5s;
+}
+
+#hallOfFame {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+}
+
+#hallOfFameCharacter{
+    position: absolute;
+    z-index: 5;
+    top: 28vh;
+    left: 39vw;
+    width: 20vw;
+    height: auto;
+}
+
+#continueHint {
+    position: absolute;
+    font-family: Pixel;
+    color: whitesmoke;
+    top: 80vh;
+    left: 35vw;
+    font-size: 5vw;
+}
 /* End of game over screen */
 
 /* Easter Egg button positions */
@@ -489,6 +540,7 @@ a.shareaholic-service-icon:before {
 
 /* End of easter egg button positions */
 
+/* CSS Animations */
 .fade-in-image {
     animation: fadeIn 5s;
     -webkit-animation: fadeIn 5s;
@@ -521,16 +573,32 @@ a.shareaholic-service-icon:before {
     100% {opacity:1;}
   }
 
+  #hallOfFameContainer.fade{
+      opacity: 0;
+  }
+
+  #container.fade{
+      opacity: 0;
+  }
+
+/* End of CSS Animations */
+
 /* Text-size media queries */
 @media (max-aspect-ratio: 19/9) {
     #endGameScoreText {
         top: 46vh;
+    }
+    #question-prompt-text{
+        font-size: 2.3vw;
     }
 }
 
 @media (max-aspect-ratio: 17/9) {
     #endGameScoreText {
         top: 47vh;
+    }
+    #question-prompt-text{
+        font-size: 2vw;
     }
 }
 
